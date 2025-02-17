@@ -1,10 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://cr7khfphhq7ct"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5go7i"]
-albedo_color = Color(0, 0.47103, 0.067055, 1)
+[ext_resource type="ArrayMesh" uid="uid://cx646uhxrdf3p" path="res://ArtAssets/Models/caterpillar.res" id="1_4td6u"]
 
 [node name="Pet" type="Node3D"]
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.250679, 0)
-material = SubResource("StandardMaterial3D_5go7i")
+[node name="Caterpillar" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.0599618, 0)
+mesh = ExtResource("1_4td6u")
