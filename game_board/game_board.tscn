@@ -5,7 +5,7 @@
 
 [node name="GameBoard" type="Node3D" node_paths=PackedStringArray("board_spaces")]
 script = ExtResource("1_7t848")
-board_spaces = [NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath("")]
+board_spaces = [NodePath("BoardSpaces/Start"), NodePath("BoardSpaces/Space1"), NodePath("BoardSpaces/Space2"), NodePath("BoardSpaces/Space3"), NodePath("BoardSpaces/Space4"), NodePath("BoardSpaces/Space5"), NodePath("BoardSpaces/Space6"), NodePath("BoardSpaces/Space7"), NodePath("BoardSpaces/Space8"), NodePath("BoardSpaces/Space9"), NodePath("BoardSpaces/Space10"), NodePath("BoardSpaces/Space11")]
 
 [node name="BoardSpaces" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -1.5)
