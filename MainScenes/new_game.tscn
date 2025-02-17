@@ -1,9 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://beeo6wb5btqkj"]
+[gd_scene load_steps=18 format=3 uid="uid://beeo6wb5btqkj"]
 
 [ext_resource type="PackedScene" uid="uid://dvvvs70p5muoe" path="res://game_board/game_board.tscn" id="1_5yeuy"]
 [ext_resource type="Script" path="res://UI/state_label.gd" id="1_rsuks"]
 [ext_resource type="PackedScene" uid="uid://bkg6qgamif8at" path="res://characters/player/player.tscn" id="1_xt7d8"]
+[ext_resource type="PackedScene" uid="uid://dcypsl0wpgbsn" path="res://UI/game_start_splash.tscn" id="2_glx7w"]
 [ext_resource type="PackedScene" uid="uid://cr7khfphhq7ct" path="res://characters/pet/pet.tscn" id="2_h3xiu"]
+[ext_resource type="PackedScene" uid="uid://bk1sva422qty8" path="res://UI/dice_pool.tscn" id="3_f6iub"]
 [ext_resource type="Script" path="res://addons/state_machine/state_machine.gd" id="4_4edl5"]
 [ext_resource type="Script" path="res://game_state_machine/load.gd" id="5_ocb74"]
 [ext_resource type="Script" path="res://game_state_machine/game_start.gd" id="6_p0lr1"]
@@ -33,6 +35,20 @@ text = "This is a fancy label"
 script = ExtResource("1_rsuks")
 state_machine = NodePath("../../StateMachine")
 
+[node name="GameSplash" parent="CanvasLayer" instance=ExtResource("2_glx7w")]
+visible = false
+offset_left = 813.0
+offset_top = 324.0
+offset_right = 1066.0
+offset_bottom = 418.0
+
+[node name="DicePool" parent="CanvasLayer" instance=ExtResource("3_f6iub")]
+visible = false
+offset_left = 1508.0
+offset_top = 232.0
+offset_right = 1633.0
+offset_bottom = 370.0
+
 [node name="GameBoard" parent="." node_paths=PackedStringArray("board_spaces") instance=ExtResource("1_5yeuy")]
 board_spaces = [NodePath("BoardSpaces/Start"), NodePath("BoardSpaces/Space1"), NodePath("BoardSpaces/Space2"), NodePath("BoardSpaces/Space3"), NodePath("BoardSpaces/Space4"), NodePath("BoardSpaces/Space5"), NodePath("BoardSpaces/Space6"), NodePath("BoardSpaces/Space7"), NodePath("BoardSpaces/Space8"), NodePath("BoardSpaces/Space9"), NodePath("BoardSpaces/Space10"), NodePath("BoardSpaces/Space11"), NodePath("BoardSpaces/Space12"), NodePath("BoardSpaces/Space13"), NodePath("BoardSpaces/Space14"), NodePath("BoardSpaces/Space15")]
 
@@ -55,17 +71,23 @@ game_start_state = NodePath("../GameStart")
 player = NodePath("../../Player")
 board = NodePath("../../GameBoard")
 
-[node name="GameStart" type="Node" parent="StateMachine"]
+[node name="GameStart" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_start_state", "game_start_splash")]
 script = ExtResource("6_p0lr1")
+turn_start_state = NodePath("../TurnStart")
+game_start_splash = NodePath("../../CanvasLayer/GameSplash")
 
-[node name="TurnStart" type="Node" parent="StateMachine"]
+[node name="TurnStart" type="Node" parent="StateMachine" node_paths=PackedStringArray("dice_roll_state")]
 script = ExtResource("7_0oow1")
+dice_roll_state = NodePath("../DiceRoll")
 
-[node name="DiceRoll" type="Node" parent="StateMachine"]
+[node name="DiceRoll" type="Node" parent="StateMachine" node_paths=PackedStringArray("player_move_state", "dice_pool")]
 script = ExtResource("8_mwk23")
+player_move_state = NodePath("../PlayerMove")
+dice_pool = NodePath("../../CanvasLayer/DicePool")
 
-[node name="PlayerMove" type="Node" parent="StateMachine"]
+[node name="PlayerMove" type="Node" parent="StateMachine" node_paths=PackedStringArray("story_interaction_state")]
 script = ExtResource("9_yogo3")
+story_interaction_state = NodePath("../StoryInteraction")
 
 [node name="StoryInteraction" type="Node" parent="StateMachine"]
 script = ExtResource("10_bacfe")

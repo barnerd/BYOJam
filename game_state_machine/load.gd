@@ -6,7 +6,8 @@ extends State
 
 
 func enter(previous_state: Node, data: Dictionary = {}) -> void:
-	player.move(board.get_space_location(0))
+	# move player to start
+	player.move_to_space(board.get_space_location(0))
 	
 	await get_tree().create_timer(2.0).timeout
 	
