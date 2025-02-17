@@ -1,13 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkg6qgamif8at"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_kvocm"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8lvvs"]
-albedo_color = Color(0.164046, 0.477972, 0.896791, 1)
+[ext_resource type="ArrayMesh" uid="uid://fo1sepal2g6s" path="res://ArtAssets/Models/bluey.res" id="2_q3crt"]
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1_kvocm")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
-transform = Transform3D(0.49036, 0, 0, 0, 0.800323, 0, 0, 0, 0.429433, 0, 0.750768, 0)
-material = SubResource("StandardMaterial3D_8lvvs")
+[node name="Bluey" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.1, 0)
+mesh = ExtResource("2_q3crt")

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bvjgbicp1cywx"]
+
+[resource]
+resource_name = "square11_mat"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.819681, 0.653679, 0.175351, 1)
+roughness = 0.4
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
