@@ -5,4 +5,4 @@ extends Node3D
 
 
 func get_space_location(num: int) -> Vector3:
-	return board_spaces[num].position
+	return board_spaces[num].global_position

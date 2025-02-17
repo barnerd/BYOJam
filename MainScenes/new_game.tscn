@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://beeo6wb5btqkj"]
+[gd_scene load_steps=19 format=3 uid="uid://beeo6wb5btqkj"]
 
 [ext_resource type="PackedScene" uid="uid://dvvvs70p5muoe" path="res://game_board/game_board.tscn" id="1_5yeuy"]
 [ext_resource type="Script" path="res://UI/state_label.gd" id="1_rsuks"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cr7khfphhq7ct" path="res://characters/pet/pet.tscn" id="2_h3xiu"]
 [ext_resource type="PackedScene" uid="uid://bk1sva422qty8" path="res://UI/dice_pool.tscn" id="3_f6iub"]
 [ext_resource type="Script" path="res://addons/state_machine/state_machine.gd" id="4_4edl5"]
+[ext_resource type="PackedScene" uid="uid://btuwfdgthh6q3" path="res://UI/restart_game.tscn" id="4_60g5q"]
 [ext_resource type="Script" path="res://game_state_machine/load.gd" id="5_ocb74"]
 [ext_resource type="Script" path="res://game_state_machine/game_start.gd" id="6_p0lr1"]
 [ext_resource type="Script" path="res://game_state_machine/turn_start.gd" id="7_0oow1"]
@@ -49,8 +50,15 @@ offset_top = 232.0
 offset_right = 1633.0
 offset_bottom = 370.0
 
+[node name="RestartGame" parent="CanvasLayer" instance=ExtResource("4_60g5q")]
+visible = false
+offset_left = 1502.0
+offset_top = 761.0
+offset_right = 1666.0
+offset_bottom = 842.0
+
 [node name="GameBoard" parent="." node_paths=PackedStringArray("board_spaces") instance=ExtResource("1_5yeuy")]
-board_spaces = [NodePath("BoardSpaces/Start"), NodePath("BoardSpaces/Space1"), NodePath("BoardSpaces/Space2"), NodePath("BoardSpaces/Space3"), NodePath("BoardSpaces/Space4"), NodePath("BoardSpaces/Space5"), NodePath("BoardSpaces/Space6"), NodePath("BoardSpaces/Space7"), NodePath("BoardSpaces/Space8"), NodePath("BoardSpaces/Space9"), NodePath("BoardSpaces/Space10"), NodePath("BoardSpaces/Space11"), null, null, null, null]
+board_spaces = [NodePath("BoardSpaces/Start"), NodePath("BoardSpaces/Space1"), NodePath("BoardSpaces/Space2"), NodePath("BoardSpaces/Space3"), NodePath("BoardSpaces/Space4"), NodePath("BoardSpaces/Space5"), NodePath("BoardSpaces/Space6"), NodePath("BoardSpaces/Space7"), NodePath("BoardSpaces/Space8"), NodePath("BoardSpaces/Space9"), NodePath("BoardSpaces/Space10"), NodePath("BoardSpaces/Space11")]
 
 [node name="Player" parent="." instance=ExtResource("1_xt7d8")]
 transform = Transform3D(3.13, 0, 0, 0, 3.13, 0, 0, 0, 3.13, 0.388916, 0.0180664, -1.32227)
@@ -85,21 +93,33 @@ script = ExtResource("8_mwk23")
 player_move_state = NodePath("../PlayerMove")
 dice_pool = NodePath("../../CanvasLayer/DicePool")
 
-[node name="PlayerMove" type="Node" parent="StateMachine" node_paths=PackedStringArray("story_interaction_state")]
+[node name="PlayerMove" type="Node" parent="StateMachine" node_paths=PackedStringArray("story_interaction_state", "player", "board")]
 script = ExtResource("9_yogo3")
 story_interaction_state = NodePath("../StoryInteraction")
+player = NodePath("../../Player")
+board = NodePath("../../GameBoard")
 
-[node name="StoryInteraction" type="Node" parent="StateMachine"]
+[node name="StoryInteraction" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_end_state")]
 script = ExtResource("10_bacfe")
+turn_end_state = NodePath("../TurnEnd")
 
-[node name="TurnEnd" type="Node" parent="StateMachine"]
+[node name="TurnEnd" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_start_state", "win_state", "lose_state", "player", "board")]
 script = ExtResource("11_7ea82")
+turn_start_state = NodePath("../TurnStart")
+win_state = NodePath("../Win")
+lose_state = NodePath("../Lose")
+player = NodePath("../../Player")
+board = NodePath("../../GameBoard")
 
-[node name="Win" type="Node" parent="StateMachine"]
+[node name="Win" type="Node" parent="StateMachine" node_paths=PackedStringArray("game_over_state")]
 script = ExtResource("12_5fs8w")
+game_over_state = NodePath("../GameOver")
 
-[node name="Lose" type="Node" parent="StateMachine"]
+[node name="Lose" type="Node" parent="StateMachine" node_paths=PackedStringArray("game_over_state")]
 script = ExtResource("13_xg40i")
+game_over_state = NodePath("../GameOver")
 
-[node name="GameOver" type="Node" parent="StateMachine"]
+[node name="GameOver" type="Node" parent="StateMachine" node_paths=PackedStringArray("load_state", "restart_game_button")]
 script = ExtResource("14_72xus")
+load_state = NodePath("../Load")
+restart_game_button = NodePath("../../CanvasLayer/RestartGame")

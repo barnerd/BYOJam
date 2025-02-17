@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://btuwfdgthh6q3"]
+
+[ext_resource type="Script" path="res://UI/restart_game.gd" id="1_h0uga"]
+
+[node name="RestartGame" type="PanelContainer"]
+script = ExtResource("1_h0uga")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Button" type="Button" parent="MarginContainer"]
+layout_mode = 2
+text = "Restart Game"

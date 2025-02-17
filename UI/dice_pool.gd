@@ -6,6 +6,10 @@ extends PanelContainer
 
 signal dice_rolled(value: int)
 
+func reset() -> void:
+	output_label.text = ""
+	roll_dice_button.disabled = false
+
 
 func _on_button_pressed() -> void:
 	var value: int = randi_range(1, 6)

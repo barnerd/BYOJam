@@ -6,9 +6,11 @@ extends State
 
 func enter(previous_state: Node, data: Dictionary = {}) -> void:
 	# show dice pool
+	dice_pool.reset()
 	dice_pool.visible = true
 	
-	dice_pool.dice_rolled.connect(on_dice_rolled)
+	if not dice_pool.dice_rolled.is_connected(on_dice_rolled):
+		dice_pool.dice_rolled.connect(on_dice_rolled)
 
 
 func exit() -> void:
