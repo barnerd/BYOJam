@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://beeo6wb5btqkj"]
+[gd_scene load_steps=21 format=3 uid="uid://beeo6wb5btqkj"]
 
 [ext_resource type="PackedScene" uid="uid://dvvvs70p5muoe" path="res://game_board/game_board.tscn" id="1_5yeuy"]
 [ext_resource type="Script" path="res://UI/state_label.gd" id="1_rsuks"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bk1sva422qty8" path="res://UI/dice_pool.tscn" id="3_f6iub"]
 [ext_resource type="Script" path="res://addons/state_machine/state_machine.gd" id="4_4edl5"]
 [ext_resource type="PackedScene" uid="uid://btuwfdgthh6q3" path="res://UI/restart_game.tscn" id="4_60g5q"]
+[ext_resource type="PackedScene" uid="uid://c0j5wdrc46ee5" path="res://Dialogue/dialogue.tscn" id="4_o5o0p"]
 [ext_resource type="Script" path="res://game_state_machine/load.gd" id="5_ocb74"]
 [ext_resource type="Script" path="res://game_state_machine/game_start.gd" id="6_p0lr1"]
 [ext_resource type="Script" path="res://game_state_machine/turn_start.gd" id="7_0oow1"]
@@ -50,6 +51,13 @@ offset_left = 1508.0
 offset_top = 232.0
 offset_right = 1633.0
 offset_bottom = 370.0
+
+[node name="Dialogue" parent="CanvasLayer" instance=ExtResource("4_o5o0p")]
+visible = false
+offset_left = 644.0
+offset_top = 711.0
+offset_right = 1194.0
+offset_bottom = 861.0
 
 [node name="RestartGame" parent="CanvasLayer" instance=ExtResource("4_60g5q")]
 visible = false
@@ -102,9 +110,10 @@ script = ExtResource("9_yogo3")
 story_interaction_state = NodePath("../StoryInteraction")
 player = NodePath("../../Player")
 
-[node name="StoryInteraction" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_end_state")]
+[node name="StoryInteraction" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_end_state", "dialogue_screen")]
 script = ExtResource("10_bacfe")
 turn_end_state = NodePath("../TurnEnd")
+dialogue_screen = NodePath("../../CanvasLayer/Dialogue")
 
 [node name="TurnEnd" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_start_state", "win_state", "lose_state", "player", "board")]
 script = ExtResource("11_7ea82")

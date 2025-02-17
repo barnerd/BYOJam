@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0j5wdrc46ee5"]
+[gd_scene load_steps=3 format=3 uid="uid://c0j5wdrc46ee5"]
+
+[ext_resource type="Script" path="res://Dialogue/dialogue.gd" id="1_euaaw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkkid"]
 bg_color = Color(0.435294, 0.94902, 0.976471, 1)
@@ -6,10 +8,9 @@ bg_color = Color(0.435294, 0.94902, 0.976471, 1)
 [node name="Dialogue" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 380.0
-offset_top = 422.0
-offset_right = 930.0
-offset_bottom = 572.0
+offset_right = 550.0
+offset_bottom = 150.0
+script = ExtResource("1_euaaw")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -50,6 +51,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer/ColorRect/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 autowrap_mode = 2
 
 [node name="ChoicesContainer" type="VBoxContainer" parent="HBoxContainer/ColorRect/MarginContainer/VBoxContainer"]

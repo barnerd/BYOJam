@@ -5,6 +5,7 @@ extends State
 
 
 func enter(previous_state: Node, data: Dictionary = {}) -> void:
+	await StoryManager.ink_player.loaded
 	# move player to start
 	player.game_reset()
 	

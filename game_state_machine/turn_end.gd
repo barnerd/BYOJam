@@ -11,7 +11,7 @@ var num_spaces_left: int = 0
 
 
 func enter(previous_state: Node, data: Dictionary = {}) -> void:
-	player.turns_taken += 1
+	player.finish_turn()
 	
 	await get_tree().create_timer(2.0).timeout
 	
