@@ -99,5 +99,4 @@ locale/translations=PackedStringArray("res://ProjectTemplate/Localization/Transl
 
 [rendering]
 
-renderer/rendering_method="mobile"
 environment/defaults/default_clear_color=Color(0.141176, 0.141176, 0.141176, 1)

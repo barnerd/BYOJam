@@ -1,11 +1,83 @@
-[gd_scene format=3 uid="uid://beeo6wb5btqkj"]
+[gd_scene load_steps=16 format=3 uid="uid://beeo6wb5btqkj"]
 
-[node name="NewGame" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://dvvvs70p5muoe" path="res://game_board/game_board.tscn" id="1_5yeuy"]
+[ext_resource type="Script" path="res://UI/state_label.gd" id="1_rsuks"]
+[ext_resource type="PackedScene" uid="uid://bkg6qgamif8at" path="res://characters/player/player.tscn" id="1_xt7d8"]
+[ext_resource type="PackedScene" uid="uid://cr7khfphhq7ct" path="res://characters/pet/pet.tscn" id="2_h3xiu"]
+[ext_resource type="Script" path="res://addons/state_machine/state_machine.gd" id="4_4edl5"]
+[ext_resource type="Script" path="res://game_state_machine/load.gd" id="5_ocb74"]
+[ext_resource type="Script" path="res://game_state_machine/game_start.gd" id="6_p0lr1"]
+[ext_resource type="Script" path="res://game_state_machine/turn_start.gd" id="7_0oow1"]
+[ext_resource type="Script" path="res://game_state_machine/dice_roll.gd" id="8_mwk23"]
+[ext_resource type="Script" path="res://game_state_machine/player_move.gd" id="9_yogo3"]
+[ext_resource type="Script" path="res://game_state_machine/story_interaction.gd" id="10_bacfe"]
+[ext_resource type="Script" path="res://game_state_machine/turn_end.gd" id="11_7ea82"]
+[ext_resource type="Script" path="res://game_state_machine/win.gd" id="12_5fs8w"]
+[ext_resource type="Script" path="res://game_state_machine/lose.gd" id="13_xg40i"]
+[ext_resource type="Script" path="res://game_state_machine/game_over.gd" id="14_72xus"]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 102.0
-offset_top = 72.0
-offset_right = 280.0
-offset_bottom = 171.0
-theme_override_font_sizes/font_size = 20
-text = "New Game!"
+[node name="NewGame" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.714377, -0.606011, 0.349879, 1.47563e-08, 0.499998, 0.866027, -0.69976, -0.61867, 0.357189, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StateLabel" type="Label" parent="CanvasLayer" node_paths=PackedStringArray("state_machine")]
+offset_left = 101.0
+offset_top = 85.0
+offset_right = 250.0
+offset_bottom = 108.0
+text = "This is a fancy label"
+script = ExtResource("1_rsuks")
+state_machine = NodePath("../../StateMachine")
+
+[node name="GameBoard" parent="." node_paths=PackedStringArray("board_spaces") instance=ExtResource("1_5yeuy")]
+board_spaces = [NodePath("BoardSpaces/Start"), NodePath("BoardSpaces/Space1"), NodePath("BoardSpaces/Space2"), NodePath("BoardSpaces/Space3"), NodePath("BoardSpaces/Space4"), NodePath("BoardSpaces/Space5"), NodePath("BoardSpaces/Space6"), NodePath("BoardSpaces/Space7"), NodePath("BoardSpaces/Space8"), NodePath("BoardSpaces/Space9"), NodePath("BoardSpaces/Space10"), NodePath("BoardSpaces/Space11"), NodePath("BoardSpaces/Space12"), NodePath("BoardSpaces/Space13"), NodePath("BoardSpaces/Space14"), NodePath("BoardSpaces/Space15")]
+
+[node name="Player" parent="." instance=ExtResource("1_xt7d8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.179199, 0)
+
+[node name="Pet" parent="Player" instance=ExtResource("2_h3xiu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.540301, -0.00769043, -0.119689)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.544945, 0.450594, 0, 0.637236, 0.770669, -0.707107, -0.544945, 0.450594, 2.73166, 5.16331, 3.32857)
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("4_4edl5")
+initial_state = NodePath("Load")
+
+[node name="Load" type="Node" parent="StateMachine" node_paths=PackedStringArray("game_start_state", "player", "board")]
+script = ExtResource("5_ocb74")
+game_start_state = NodePath("../GameStart")
+player = NodePath("../../Player")
+board = NodePath("../../GameBoard")
+
+[node name="GameStart" type="Node" parent="StateMachine"]
+script = ExtResource("6_p0lr1")
+
+[node name="TurnStart" type="Node" parent="StateMachine"]
+script = ExtResource("7_0oow1")
+
+[node name="DiceRoll" type="Node" parent="StateMachine"]
+script = ExtResource("8_mwk23")
+
+[node name="PlayerMove" type="Node" parent="StateMachine"]
+script = ExtResource("9_yogo3")
+
+[node name="StoryInteraction" type="Node" parent="StateMachine"]
+script = ExtResource("10_bacfe")
+
+[node name="TurnEnd" type="Node" parent="StateMachine"]
+script = ExtResource("11_7ea82")
+
+[node name="Win" type="Node" parent="StateMachine"]
+script = ExtResource("12_5fs8w")
+
+[node name="Lose" type="Node" parent="StateMachine"]
+script = ExtResource("13_xg40i")
+
+[node name="GameOver" type="Node" parent="StateMachine"]
+script = ExtResource("14_72xus")
