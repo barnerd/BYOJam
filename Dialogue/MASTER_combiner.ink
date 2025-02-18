@@ -53,5 +53,12 @@ VAR player_turns_taken = 0
 * [game_over] -> game_over
 
 
+=== function change_hunger_level(delta) ===
+~return
 
+=== function change_fear_level(delta) ===
+~return
+
+=== function move_player(delta) ===
+~return
 
