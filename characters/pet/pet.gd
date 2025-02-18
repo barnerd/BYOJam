@@ -19,6 +19,10 @@ func _init() -> void:
 	SignalBus.register_signal("pet_hunger_changed", pet_hunger_changed)
 
 
+func _ready() -> void:
+	SignalBus.connect_to_signal("game_reset", game_reset)
+
+
 func game_reset() -> void:
 	current_hunger = starting_hunger
 	pet_hunger_changed.emit(current_hunger)

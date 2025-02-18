@@ -19,6 +19,10 @@ func _init() -> void:
 	SignalBus.register_signal("turn_taken", turn_taken)
 
 
+func _ready() -> void:
+	SignalBus.connect_to_signal("game_reset", game_reset)
+
+
 func game_reset() -> void:
 	laps = 0
 	lap_completed.emit(laps)
@@ -45,8 +49,8 @@ func move_to_space(target_space: int) -> void:
 	set_position(target_position)
 
 
-func move_to_next_space() -> void:
-	move_to_space(current_game_space + 1)
+func move_to_next_space(backwards: bool = false) -> void:
+	move_to_space(current_game_space + (1 if not backwards else -1))
 
 
 func finish_turn() -> void:

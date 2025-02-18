@@ -16,6 +16,10 @@ func _init() -> void:
 	SignalBus.register_signal("board_fear_changed", board_fear_changed)
 
 
+func _ready() -> void:
+	SignalBus.connect_to_signal("game_reset", game_reset)
+
+
 func game_reset() -> void:
 	current_fear = starting_fear
 	board_fear_changed.emit(current_fear)
