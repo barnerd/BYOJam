@@ -4,7 +4,7 @@ extends State
 @export var restart_game_button: Control
 
 
-func enter(previous_state: Node, data: Dictionary = {}) -> void:
+func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 	restart_game_button.visible = true
 	
 	restart_game_button.connect_button(on_restart_game_request)

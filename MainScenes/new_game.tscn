@@ -110,18 +110,18 @@ script = ExtResource("9_yogo3")
 story_interaction_state = NodePath("../StoryInteraction")
 player = NodePath("../../Player")
 
-[node name="StoryInteraction" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_end_state", "dialogue_screen")]
+[node name="StoryInteraction" type="Node" parent="StateMachine" node_paths=PackedStringArray("player_move_state", "turn_end_state", "dialogue_screen")]
 script = ExtResource("10_bacfe")
+player_move_state = NodePath("../PlayerMove")
 turn_end_state = NodePath("../TurnEnd")
 dialogue_screen = NodePath("../../CanvasLayer/Dialogue")
 
-[node name="TurnEnd" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_start_state", "win_state", "lose_state", "player", "board")]
+[node name="TurnEnd" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_start_state", "win_state", "lose_state", "player")]
 script = ExtResource("11_7ea82")
 turn_start_state = NodePath("../TurnStart")
 win_state = NodePath("../Win")
 lose_state = NodePath("../Lose")
 player = NodePath("../../Player")
-board = NodePath("../../GameBoard")
 
 [node name="Win" type="Node" parent="StateMachine" node_paths=PackedStringArray("game_over_state")]
 script = ExtResource("12_5fs8w")

@@ -1,12 +1,28 @@
 class_name Dialogue
 extends Control
 
+signal story_moves_player(num_spaces: int)
 signal story_section_complete
 
 @onready var story_label: Label = $HBoxContainer/ColorRect/MarginContainer/VBoxContainer/Label
 @onready var choices_container = $HBoxContainer/ColorRect/MarginContainer/VBoxContainer/ChoicesContainer
 
 var choice_button: PackedScene = preload("res://Dialogue/choice_button.tscn")
+
+## at top of main Ink File:
+## EXTERNAL change_hunger_level(delta)
+## EXTERNAL change_fear_level(delta)
+## EXTERNAL move_player(delta)
+##
+## usage:
+## delta can be positive or negative
+## {change_hunger_level(delta)}
+## {change_fear_level(delta)}
+## {move_player(delta)}
+##
+
+func _init() -> void:
+	SignalBus.register_signal("story_moves_player", story_moves_player)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,6 +35,12 @@ func _ready() -> void:
 	SignalBus.connect_to_signal("lap_completed", on_lap_completed)
 	SignalBus.connect_to_signal("player_moved", on_player_moved)
 	SignalBus.connect_to_signal("turn_taken", on_turn_taken)
+	
+	# bind functions
+	await StoryManager.ink_player.loaded
+	StoryManager.ink_player.bind_external_function("change_hunger_level", $"../../Player/Pet", "change_hunger")
+	StoryManager.ink_player.bind_external_function("change_fear_level", $"../../GameBoard", "change_fear")
+	StoryManager.ink_player.bind_external_function("move_player", self, "move_player")
 
 
 func start_knot(knot: String = "") -> void:
@@ -93,12 +115,19 @@ func story_tags(tags) -> void:
 
 
 func on_lap_completed(_lap: int) -> void:
-	StoryManager.ink_player.set_variable("player_lap_count", _lap)
+	pass
+	#StoryManager.ink_player.set_variable("player_lap_count", _lap)
 
 
 func on_player_moved(_space: int) -> void:
-	StoryManager.ink_player.set_variable("player_space_num", _space)
+	pass
+	#StoryManager.ink_player.set_variable("player_space_num", _space)
 
 
 func on_turn_taken(_turn: int) -> void:
-	StoryManager.ink_player.set_variable("player_turns_taken", _turn)
+	pass
+	#StoryManager.ink_player.set_variable("player_turns_taken", _turn)
+
+
+func move_player(_delta: int) -> void:
+	story_moves_player.emit(_delta)

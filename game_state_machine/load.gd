@@ -4,7 +4,7 @@ extends State
 @export var player: Player
 
 
-func enter(previous_state: Node, data: Dictionary = {}) -> void:
+func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 	await StoryManager.ink_player.loaded
 	# move player to start
 	player.game_reset()

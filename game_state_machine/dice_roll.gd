@@ -4,7 +4,7 @@ extends State
 @export var dice_pool: DicePool
 
 
-func enter(previous_state: Node, data: Dictionary = {}) -> void:
+func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 	# show dice pool
 	dice_pool.reset()
 	dice_pool.visible = true
@@ -21,4 +21,4 @@ func exit() -> void:
 
 
 func on_dice_rolled(value: int) -> void:
-	finished.emit(player_move_state, { "dice_roll": value })
+	finished.emit(player_move_state, { "num_spaces": value })
