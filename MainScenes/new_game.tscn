@@ -66,8 +66,7 @@ offset_top = 761.0
 offset_right = 1666.0
 offset_bottom = 842.0
 
-[node name="GameBoard" parent="." node_paths=PackedStringArray("board_spaces") instance=ExtResource("1_5yeuy")]
-board_spaces = [NodePath("BoardSpaces/Start"), NodePath("BoardSpaces/Space1"), NodePath("BoardSpaces/Space2"), NodePath("BoardSpaces/Space3"), NodePath("BoardSpaces/Space4"), NodePath("BoardSpaces/Space5"), NodePath("BoardSpaces/Space6"), NodePath("BoardSpaces/Space7"), NodePath("BoardSpaces/Space8"), NodePath("BoardSpaces/Space9"), NodePath("BoardSpaces/Space10"), NodePath("BoardSpaces/Space11")]
+[node name="GameBoard" parent="." instance=ExtResource("1_5yeuy")]
 max_fear_threshold = 10
 
 [node name="Player" parent="." instance=ExtResource("1_xt7d8")]
