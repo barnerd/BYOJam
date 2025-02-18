@@ -115,18 +115,15 @@ func story_tags(tags) -> void:
 
 
 func on_lap_completed(_lap: int) -> void:
-	pass
-	#StoryManager.ink_player.set_variable("player_lap_count", _lap)
+	StoryManager.ink_player.set_variable("player_lap_count", _lap)
 
 
 func on_player_moved(_space: int) -> void:
-	pass
-	#StoryManager.ink_player.set_variable("player_space_num", _space)
+	StoryManager.ink_player.set_variable("player_space_num", _space)
 
 
 func on_turn_taken(_turn: int) -> void:
-	pass
-	#StoryManager.ink_player.set_variable("player_turns_taken", _turn)
+	StoryManager.ink_player.set_variable("player_turns_taken", _turn)
 
 
 func move_player(_delta: int) -> void:

@@ -19,9 +19,9 @@ func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 	print(_data)
 	
 	if _data.has("space_num"):
-		dialogue_screen.start_knot("space%d" % _data.space_num)
+		dialogue_screen.start_knot("space_%d" % (_data.space_num + 1))
 	else:
-		dialogue_screen.start_knot("space0")
+		dialogue_screen.start_knot("space_1")
 
 
 func story_moves_player(_num: int) -> void:
