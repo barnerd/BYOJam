@@ -21,7 +21,11 @@ func _init() -> void:
 
 func game_reset() -> void:
 	laps = 0
+	lap_completed.emit(laps)
+	
 	turns_taken = 0
+	turn_taken.emit(turns_taken)
+	
 	move_to_space(0)
 
 

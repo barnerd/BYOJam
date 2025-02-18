@@ -1,8 +1,8 @@
 [gd_scene load_steps=21 format=3 uid="uid://beeo6wb5btqkj"]
 
 [ext_resource type="PackedScene" uid="uid://dvvvs70p5muoe" path="res://game_board/game_board.tscn" id="1_5yeuy"]
-[ext_resource type="Script" path="res://UI/state_label.gd" id="1_rsuks"]
 [ext_resource type="PackedScene" uid="uid://bkg6qgamif8at" path="res://characters/player/player.tscn" id="1_xt7d8"]
+[ext_resource type="PackedScene" uid="uid://ddawfdqr52jcb" path="res://UI/debug_game_variables.tscn" id="1_xym1b"]
 [ext_resource type="PackedScene" uid="uid://dcypsl0wpgbsn" path="res://UI/game_start_splash.tscn" id="2_glx7w"]
 [ext_resource type="PackedScene" uid="uid://cr7khfphhq7ct" path="res://characters/pet/pet.tscn" id="2_h3xiu"]
 [ext_resource type="PackedScene" uid="uid://bk1sva422qty8" path="res://UI/dice_pool.tscn" id="3_f6iub"]
@@ -29,13 +29,7 @@ shadow_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="StateLabel" type="Label" parent="CanvasLayer" node_paths=PackedStringArray("state_machine")]
-offset_left = 101.0
-offset_top = 85.0
-offset_right = 250.0
-offset_bottom = 108.0
-text = "This is a fancy label"
-script = ExtResource("1_rsuks")
+[node name="DebugGameVariables" parent="CanvasLayer" node_paths=PackedStringArray("state_machine") instance=ExtResource("1_xym1b")]
 state_machine = NodePath("../../StateMachine")
 
 [node name="GameSplash" parent="CanvasLayer" instance=ExtResource("2_glx7w")]
@@ -86,9 +80,10 @@ transform = Transform3D(0.707107, -0.544945, 0.450594, 0, 0.637236, 0.770669, -0
 script = ExtResource("4_4edl5")
 initial_state = NodePath("Load")
 
-[node name="Load" type="Node" parent="StateMachine" node_paths=PackedStringArray("game_start_state", "player")]
+[node name="Load" type="Node" parent="StateMachine" node_paths=PackedStringArray("game_start_state", "board", "player")]
 script = ExtResource("5_ocb74")
 game_start_state = NodePath("../GameStart")
+board = NodePath("../../GameBoard")
 player = NodePath("../../Player")
 
 [node name="GameStart" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_start_state", "game_start_splash")]
