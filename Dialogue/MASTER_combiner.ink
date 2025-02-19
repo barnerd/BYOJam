@@ -1,4 +1,6 @@
 ///// LIST OF GODOT FUNCTIONS
+EXTERNAL set_variable(variable_name, value)
+EXTERNAL change_variable(variable_name, delta)
 EXTERNAL change_hunger_level(delta)
 EXTERNAL change_fear_level(delta)
 EXTERNAL move_player(delta)
@@ -52,6 +54,12 @@ VAR player_turns_taken = 0
 * [fear_crisis] -> fear_crisis
 * [game_over] -> game_over
 
+
+=== function set_variable(variable_name, value) ===
+~return
+
+=== function change_variable(variable_name, delta) ===
+~return
 
 === function change_hunger_level(delta) ===
 ~return

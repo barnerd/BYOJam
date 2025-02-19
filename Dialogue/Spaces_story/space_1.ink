@@ -3,7 +3,7 @@
 This is space 1.
 
 ///Add one to the hunger. 
-~ change_hunger_level(1)
+~ change_variable("hunger", 1)
 ///What does the hunger say now?
 
 This is lap number: {player_lap_count+1}!
