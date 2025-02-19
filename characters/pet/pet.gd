@@ -21,11 +21,17 @@ func _init() -> void:
 
 func _ready() -> void:
 	SignalBus.connect_to_signal("game_reset", game_reset)
+	SignalBus.connect_to_signal("story_variable_changed", on_story_variable_changed)
 
 
 func game_reset() -> void:
 	current_hunger = starting_hunger
 	pet_hunger_changed.emit(current_hunger)
+
+
+func on_story_variable_changed(variable_name: String, delta: float) -> void:
+	if variable_name == "hunger":
+		change_hunger(delta)
 
 
 func change_hunger(_delta: int) -> void:

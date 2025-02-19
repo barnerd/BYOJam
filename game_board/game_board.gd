@@ -18,6 +18,7 @@ func _init() -> void:
 
 func _ready() -> void:
 	SignalBus.connect_to_signal("game_reset", game_reset)
+	SignalBus.connect_to_signal("story_variable_changed", on_story_variable_changed)
 
 
 func game_reset() -> void:
@@ -27,6 +28,11 @@ func game_reset() -> void:
 
 func get_space_location(num: int) -> Vector3:
 	return board_spaces[num].global_position
+
+
+func on_story_variable_changed(variable_name: String, delta: float) -> void:
+	if variable_name == "fear":
+		change_fear(delta)
 
 
 func change_fear(_delta: int) -> void:
