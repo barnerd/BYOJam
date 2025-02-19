@@ -6,9 +6,9 @@ extends State
 var num_spaces_left: int = 0
 
 
-func enter(previous_state: Node, data: Dictionary = {}) -> void:
-	if data.has("dice_roll"):
-		num_spaces_left = data.dice_roll
+func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
+	if _data.has("num_spaces"):
+		num_spaces_left = _data.num_spaces
 	
 	while num_spaces_left > 0:
 		num_spaces_left -= 1
@@ -20,4 +20,4 @@ func enter(previous_state: Node, data: Dictionary = {}) -> void:
 		
 		await get_tree().create_timer(1.0).timeout
 	
-	finished.emit(story_interaction_state)
+	finished.emit(story_interaction_state, { "space_num": player.current_game_space })

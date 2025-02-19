@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://cj6brd8fr37vo"
+path="res://.godot/imported/MASTER_combiner.ink.json-c83257474fc84727a8f1b8224a178fa5.res"
+
+[deps]
+
+source_file="res://Dialogue/MASTER_combiner.ink.json"
+dest_files=["res://.godot/imported/MASTER_combiner.ink.json-c83257474fc84727a8f1b8224a178fa5.res"]
+
+[params]
+
+compress=true

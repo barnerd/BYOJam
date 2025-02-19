@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://ckjx6684bex1w"
+path="res://.godot/imported/game_over.ink-55b323dff0d3699b3e4d2dcf49ec7d37.res"
+
+[deps]
+
+source_file="res://Dialogue/Special_events_story/game_over.ink"
+dest_files=["res://.godot/imported/game_over.ink-55b323dff0d3699b3e4d2dcf49ec7d37.res"]
+
+[params]
+

@@ -4,7 +4,7 @@ extends State
 @export var game_start_splash: Control
 
 
-func enter(previous_state: Node, data: Dictionary = {}) -> void:
+func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 	# show game start splash
 	game_start_splash.visible = true
 	
