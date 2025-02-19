@@ -42,10 +42,12 @@ func bind_functions() -> void:
 
 func set_variable(variable_name: String, value: float) -> void:
 	story_variable_set.emit(variable_name, value)
+	ink_player.continue_story()
 
 
 func change_variable(variable_name: String, delta: float) -> void:
 	story_variable_changed.emit(variable_name, delta)
+	ink_player.continue_story()
 
 
 
