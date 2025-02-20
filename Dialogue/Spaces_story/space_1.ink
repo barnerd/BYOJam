@@ -4,6 +4,11 @@ VAR you_chose_to_destroy_grandmas_house = false
 
 ==== space_1 ====
 
+///Add one to the hunger. 
+/// ~ change_variable("hunger", 1)
+///What does the hunger say now?
+
+
 {testing_in_ink == true: 
 * [space_1_interaction_1] -> space_1_interaction_1
 * [space_1_interaction_2] -> space_1_interaction_2
@@ -11,7 +16,6 @@ VAR you_chose_to_destroy_grandmas_house = false
 * [space_1_interaction_4] -> space_1_interaction_4
 * [space_1_interaction_5] -> space_1_interaction_5
 * [space_1_destroyed_1] -> space_1_destroyed_1
-
 - else: 
 {not space_1_interaction_1: -> space_1_interaction_1}
 {not space_1_interaction_2: -> space_1_interaction_2}

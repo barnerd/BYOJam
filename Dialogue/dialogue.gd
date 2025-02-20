@@ -128,3 +128,4 @@ func on_turn_taken(_turn: int) -> void:
 
 func move_player(_delta: int) -> void:
 	story_moves_player.emit(_delta)
+	StoryManager.ink_player.continue_story()

@@ -1,6 +1,31 @@
 /// Switch this to false when exporting
 VAR testing_in_ink = false
 
+///// LIST OF GODOT FUNCTIONS
+EXTERNAL set_variable(variable_name, value)
+EXTERNAL change_variable(variable_name, delta)
+EXTERNAL change_hunger_level(delta)
+EXTERNAL change_fear_level(delta)
+EXTERNAL move_player(delta)
+
+//// EQUIVILENT INK FUNCTIONS
+=== function set_variable(variable_name, value) ===
+~return
+=== function change_variable(variable_name, delta) ===
+~return
+=== function change_hunger_level(delta) ===
+~return
+=== function change_fear_level(delta) ===
+~return
+=== function move_player(delta) ===
+~return
+
+/// HOW TO USE ABOVE FUNCTIONS
+//Note: delta can be positive or negative
+// ~ change_hunger_level(delta)
+// ~ change_fear_level(delta)
+// ~ move_player(delta)
+
 /// Reference to story spaces
 INCLUDE Spaces_story/space_1.ink
 INCLUDE Spaces_story/space_2.ink
@@ -53,18 +78,3 @@ VAR very_strong_effect = 5
 * [game_over] -> game_over
 
 
-
-
-///// LIST OF GODOT FUNCTIONS
-EXTERNAL change_hunger_level(delta)
-EXTERNAL change_fear_level(delta)
-EXTERNAL move_player(delta)
-
-EXTERNAL set_variable(variable_name, value)
-EXTERNAL change_variable(variable_name, delta)
-
-=== function set_variable(variable_name, value) ===
-~ return
-
-=== function change_variable(variable_name, delta) ===
-~ return

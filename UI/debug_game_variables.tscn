@@ -28,6 +28,7 @@ text = "Game State:"
 
 [node name="Value" type="Label" parent="MarginContainer/VBoxContainer/StateContainer"]
 layout_mode = 2
+text = "null"
 
 [node name="HungerContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -38,6 +39,7 @@ text = "Pet Hunger:"
 
 [node name="Value" type="Label" parent="MarginContainer/VBoxContainer/HungerContainer"]
 layout_mode = 2
+text = "0"
 
 [node name="FearContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -48,6 +50,7 @@ text = "Town Fear:"
 
 [node name="Value" type="Label" parent="MarginContainer/VBoxContainer/FearContainer"]
 layout_mode = 2
+text = "0"
 
 [node name="PlayerLapContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -58,6 +61,7 @@ text = "Player Lap:"
 
 [node name="Value" type="Label" parent="MarginContainer/VBoxContainer/PlayerLapContainer"]
 layout_mode = 2
+text = "0"
 
 [node name="PlayerTurnContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -68,6 +72,7 @@ text = "Player Turn:"
 
 [node name="Value" type="Label" parent="MarginContainer/VBoxContainer/PlayerTurnContainer"]
 layout_mode = 2
+text = "0"
 
 [node name="PlayerSpaceContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -78,3 +83,4 @@ text = "Player Space:"
 
 [node name="Value" type="Label" parent="MarginContainer/VBoxContainer/PlayerSpaceContainer"]
 layout_mode = 2
+text = "0"
