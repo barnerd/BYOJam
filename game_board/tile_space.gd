@@ -7,10 +7,13 @@ enum UpgradeType { NONE, MAX_FEAR_BONUS, BONUS_LAP_FOOD }
 @export var current_type: TileType
 @export var current_upgrade: UpgradeType
 
-@export var food_type_color: Color
-@export var fear_type_color: Color
-@export var upgrade_type_color: Color
-@export var destroyed_type_color: Color
+@export var space_num: int = 0
+
+@onready var game_board_mesh: Mesh = $"../../Gameboard".mesh
+
+
+func set_type_material(_mat: StandardMaterial3D) -> void:
+	game_board_mesh.surface_set_material(space_num, _mat)
 
 
 func perform_passing_effect(_player: Player) -> void:
@@ -33,7 +36,7 @@ func perform_landing_effect(_player: Player) -> void:
 			_player.board.change_fear(3)
 
 
-func destory_tile() -> void:
+func destroy_tile(_destroyed_mat: StandardMaterial3D) -> void:
 	current_type = TileType.DESTROYED
-	# TODO: change color to red
+	set_type_material(_destroyed_mat)
 	# TODO: call function to animate destroying tile

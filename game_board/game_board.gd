@@ -10,6 +10,13 @@ signal board_fear_changed(num: int)
 @export var starting_fear: int
 @export var starting_max_fear_bonus: int
 
+const SPACE_TYPE_MATERIALS: Dictionary = {
+	TileSpace.TileType.FOOD: preload("res://ArtAssets/Materials/gameboard/food_green_mat.tres") as StandardMaterial3D,
+	TileSpace.TileType.FEAR: preload("res://ArtAssets/Materials/gameboard/fear_yellow_mat.tres") as StandardMaterial3D,
+	TileSpace.TileType.UPGRADE: preload("res://ArtAssets/Materials/gameboard/upgrade_blue_mat.tres") as StandardMaterial3D,
+	TileSpace.TileType.DESTROYED: preload("res://ArtAssets/Materials/gameboard/destroyed_red_mat.tres") as StandardMaterial3D,
+}
+
 var current_fear: int
 var current_max_fear_bonus: int
 
@@ -31,6 +38,9 @@ func game_reset() -> void:
 	current_fear = starting_fear
 	current_max_fear_bonus = starting_max_fear_bonus
 	board_fear_changed.emit(current_fear)
+	
+	for space in board_spaces:
+		space.set_type_material(SPACE_TYPE_MATERIALS[space.current_type])
 
 
 func get_space_location(num: int) -> Vector3:
@@ -66,7 +76,7 @@ func on_pet_starved() -> void:
 
 
 func destroy_tile(_space: int) -> void:
-	board_spaces[_space].destroy_tile()
+	board_spaces[_space].destroy_tile(SPACE_TYPE_MATERIALS[TileSpace.TileType.DESTROYED])
 
 
 func perform_passing_effect(_space: int, _player: Player) -> void:
