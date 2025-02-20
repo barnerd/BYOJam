@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bk1sva422qty8"]
+[gd_scene load_steps=3 format=3 uid="uid://bk1sva422qty8"]
 
 [ext_resource type="Script" path="res://UI/dice_pool.gd" id="1_fe3bi"]
+[ext_resource type="PackedScene" uid="uid://drv8mv5oq80x8" path="res://characters/player/dice_pool/dice.tscn" id="2_pd3gk"]
 
 [node name="DicePool" type="PanelContainer"]
 script = ExtResource("1_fe3bi")
@@ -23,5 +24,17 @@ size_flags_vertical = 8
 layout_mode = 2
 size_flags_vertical = 8
 text = "Roll Dice"
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="SubViewportContainer" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_pd3gk")]
+layout_mode = 2
+dice_color = Color(0, 1, 0, 1)
+
+[node name="SubViewportContainer2" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_pd3gk")]
+layout_mode = 2
+dice_color = Color(1, 0, 0, 1)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

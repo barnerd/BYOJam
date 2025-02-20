@@ -16,5 +16,7 @@ func _on_button_pressed() -> void:
 	
 	output_label.text = "You rolled a %d!" % value
 	
-	roll_dice_button.disabled = true
+	#roll_dice_button.disabled = true
+	$MarginContainer/VBoxContainer/GridContainer/SubViewportContainer.roll_dice()
+	$MarginContainer/VBoxContainer/GridContainer/SubViewportContainer2.roll_dice()
 	dice_rolled.emit(value)
