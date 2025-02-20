@@ -8,18 +8,6 @@ EXTERNAL change_hunger_level(delta)
 EXTERNAL change_fear_level(delta)
 EXTERNAL move_player(delta)
 
-//// EQUIVILENT INK FUNCTIONS
-=== function set_variable(variable_name, value) ===
-~return
-=== function change_variable(variable_name, delta) ===
-~return
-=== function change_hunger_level(delta) ===
-~return
-=== function change_fear_level(delta) ===
-~return
-=== function move_player(delta) ===
-~return
-
 /// HOW TO USE ABOVE FUNCTIONS
 //Note: delta can be positive or negative
 // ~ change_hunger_level(delta)
@@ -78,3 +66,14 @@ VAR very_strong_effect = 5
 * [game_over] -> game_over
 
 
+//// EQUIVILENT INK FUNCTIONS
+=== function set_variable(variable_name, value) ===
+~return
+=== function change_variable(variable_name, delta) ===
+~return
+=== function change_hunger_level(delta) ===
+~return
+=== function change_fear_level(delta) ===
+~return
+=== function move_player(delta) ===
+~return
