@@ -1,13 +1,5 @@
-///// LIST OF GODOT FUNCTIONS
-EXTERNAL change_hunger_level(delta)
-EXTERNAL change_fear_level(delta)
-EXTERNAL move_player(delta)
-
-/// HOW TO USE ABOVE FUNCTIONS
-//Note: delta can be positive or negative
-// ~ change_hunger_level(delta)
-// ~ change_fear_level(delta)
-// ~ move_player(delta)
+/// Switch this to false when exporting
+VAR testing_in_ink = false
 
 /// Reference to story spaces
 INCLUDE Spaces_story/space_1.ink
@@ -35,6 +27,14 @@ VAR player_lap_count = 0
 VAR player_space_num = 0
 VAR player_turns_taken = 0
 
+/// INK SPECIFIC VARIABLES
+/// NOTE: These are variables to standardize the amounts of change. 
+
+VAR weak_effect = 1
+VAR medium_effect = 2
+VAR strong_effect = 3
+VAR very_strong_effect = 5
+
 * [space_1] -> space_1
 * [space_2] -> space_2
 * [space_3] -> space_3
@@ -53,12 +53,18 @@ VAR player_turns_taken = 0
 * [game_over] -> game_over
 
 
-=== function change_hunger_level(delta) ===
-~return
 
-=== function change_fear_level(delta) ===
-~return
 
-=== function move_player(delta) ===
-~return
+///// LIST OF GODOT FUNCTIONS
+EXTERNAL change_hunger_level(delta)
+EXTERNAL change_fear_level(delta)
+EXTERNAL move_player(delta)
 
+EXTERNAL set_variable(variable_name, value)
+EXTERNAL change_variable(variable_name, delta)
+
+=== function set_variable(variable_name, value) ===
+~ return
+
+=== function change_variable(variable_name, delta) ===
+~ return
