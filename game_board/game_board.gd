@@ -39,7 +39,7 @@ func get_space_location(num: int) -> Vector3:
 
 func on_story_variable_changed(variable_name: String, delta: float) -> void:
 	if variable_name == "fear":
-		change_fear(delta)
+		change_fear(int(delta))
 
 
 func on_lap_completed(_lap: int) -> void:
@@ -52,8 +52,6 @@ func on_turn_taken(_turns: int) -> void:
 
 
 func change_fear(_delta: int) -> void:
-	var prev_fear = current_fear
-	
 	current_fear += _delta
 	board_fear_changed.emit(current_fear)
 	

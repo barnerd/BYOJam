@@ -1,26 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://drv8mv5oq80x8"]
+[gd_scene load_steps=4 format=3 uid="uid://drv8mv5oq80x8"]
 
+[ext_resource type="Theme" uid="uid://8rtfbrfbseru" path="res://game_theme.tres" id="1_jyup7"]
 [ext_resource type="Script" path="res://characters/player/dice_pool/dice.gd" id="1_pspbx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qr8tk"]
 albedo_color = Color(0, 1, 0, 1)
 
-[node name="SubViewportContainer" type="SubViewportContainer"]
+[node name="PanelContainer" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+theme = ExtResource("1_jyup7")
+theme_type_variation = &"Dice"
 script = ExtResource("1_pspbx")
 roll_time = 1.5
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(75, 75)
 render_target_update_mode = 4
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.912699, 0.190632, -0.361443, 0, 0.884516, 0.46651, 0.408633, -0.425783, 0.807296, 0, 0, 0)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="SubViewport"]
+[node name="CSGBox3D" type="CSGBox3D" parent="SubViewportContainer/SubViewport"]
 material = SubResource("StandardMaterial3D_qr8tk")
 
-[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.50955)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
+theme_type_variation = &"DiceValue"
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

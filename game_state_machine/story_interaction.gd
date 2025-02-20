@@ -33,7 +33,7 @@ func story_moves_player(_num: int) -> void:
 
 func _on_section_complete() -> void:
 	if move_player:
-		finished.emit(player_move_state, { "num_spaces": num_spaces })
+		finished.emit(player_move_state, { "num_spaces": num_spaces, "story_push": true })
 	else:
 		finished.emit(turn_end_state)
 

@@ -18,6 +18,8 @@ func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 		num_spaces_left -= 1
 		player.move_to_next_space(backwards)
 		
+		if not (_data.has("story_push") and _data.story_push):
+			player.pet.change_hunger(-1)
 		# check squares for "passing" effects
 		
 		# rotate on corners

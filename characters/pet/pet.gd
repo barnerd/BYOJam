@@ -1,3 +1,4 @@
+class_name Pet
 extends Node3D
 
 signal pet_hunger_starving
@@ -38,9 +39,9 @@ func game_reset() -> void:
 
 func on_story_variable_changed(variable_name: String, delta: float) -> void:
 	if variable_name == "hunger":
-		change_hunger(delta)
+		change_hunger(int(delta))
 	if variable_name == "lap_bonus_food":
-		add_lap_bonus(delta)
+		add_lap_bonus(int(delta))
 
 
 func on_lap_completed(_laps: int) -> void:
@@ -54,8 +55,6 @@ func add_lap_bonus(_bonus: int) -> void:
 
 
 func change_hunger(_delta: int) -> void:
-	var prev_hunger = current_hunger
-	
 	current_hunger += _delta
 	
 	pet_hunger_changed.emit(current_hunger)
