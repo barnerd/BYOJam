@@ -102,10 +102,11 @@ script = ExtResource("8_mwk23")
 player_move_state = NodePath("../PlayerMove")
 dice_pool = NodePath("../../CanvasLayer/DicePool")
 
-[node name="PlayerMove" type="Node" parent="StateMachine" node_paths=PackedStringArray("story_interaction_state", "player")]
+[node name="PlayerMove" type="Node" parent="StateMachine" node_paths=PackedStringArray("story_interaction_state", "player", "board")]
 script = ExtResource("9_yogo3")
 story_interaction_state = NodePath("../StoryInteraction")
 player = NodePath("../../Player")
+board = NodePath("../../GameBoard")
 
 [node name="StoryInteraction" type="Node" parent="StateMachine" node_paths=PackedStringArray("player_move_state", "turn_end_state", "dialogue_screen")]
 script = ExtResource("10_bacfe")

@@ -4,7 +4,7 @@ extends Node3D
 signal board_fear_max
 signal board_fear_changed(num: int)
 
-@export var board_spaces: Array[Node3D]
+@export var board_spaces: Array[TileSpace]
 
 @export var max_fear: int
 @export var starting_fear: int
@@ -66,4 +66,14 @@ func on_pet_starved() -> void:
 
 
 func destroy_tile(_space: int) -> void:
-	print("Destroy tile #%d" % _space)
+	board_spaces[_space].destroy_tile()
+
+
+func perform_passing_effect(_space: int, _player: Player) -> void:
+	if _space > 0 and _space < board_spaces.size():
+		board_spaces[_space].perform_passing_effect(_player)
+
+
+func perform_landing_effect(_space: int, _player: Player) -> void:
+	if _space > 0 and _space < board_spaces.size():
+		board_spaces[_space].perform_landing_effect(_player)
