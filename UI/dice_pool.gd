@@ -21,8 +21,12 @@ func game_reset() -> void:
 	for child in dice_container.get_children():
 		child.queue_free()
 	
-	add_new_dice(1, 1, Color.FIREBRICK)
-	add_new_dice(2, 2, Color.WEB_GREEN)
+	add_new_dice(0, 0, Color.FIREBRICK)
+	add_new_dice(1, 1, Color.WEB_GREEN)
+	add_new_dice(3, 3, Color.BLUE)
+	add_new_dice(4, 4, Color.GREEN)
+	add_new_dice(6, 6, Color.BLUE)
+	add_new_dice(12, 12, Color.GREEN)
 
 
 func add_new_dice(_min: int, _max: int, _color: Color) -> void:

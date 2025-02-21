@@ -24,7 +24,7 @@ func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 		
 		# rotate on corners
 		
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(0.35).timeout
 	
 	board.perform_landing_effect(player.current_game_space, player)
 	

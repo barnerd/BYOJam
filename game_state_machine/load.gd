@@ -15,6 +15,6 @@ func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 	await StoryManager.ink_player.loaded
 	game_reset.emit()
 	
-	await get_tree().create_timer(2.0).timeout
+	#await get_tree().create_timer(2.0).timeout
 	
 	finished.emit(game_start_state)
