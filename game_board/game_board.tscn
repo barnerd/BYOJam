@@ -1,49 +1,96 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvvvs70p5muoe"]
+[gd_scene load_steps=4 format=3 uid="uid://dvvvs70p5muoe"]
 
 [ext_resource type="Script" path="res://game_board/game_board.gd" id="1_7t848"]
 [ext_resource type="ArrayMesh" uid="uid://dr8at617j5miw" path="res://ArtAssets/Models/gameboard.res" id="2_3jv3q"]
+[ext_resource type="Script" path="res://game_board/tile_space.gd" id="2_lrcl5"]
 
 [node name="GameBoard" type="Node3D" node_paths=PackedStringArray("board_spaces")]
 script = ExtResource("1_7t848")
 board_spaces = [NodePath("BoardSpaces/Start"), NodePath("BoardSpaces/Space1"), NodePath("BoardSpaces/Space2"), NodePath("BoardSpaces/Space3"), NodePath("BoardSpaces/Space4"), NodePath("BoardSpaces/Space5"), NodePath("BoardSpaces/Space6"), NodePath("BoardSpaces/Space7"), NodePath("BoardSpaces/Space8"), NodePath("BoardSpaces/Space9"), NodePath("BoardSpaces/Space10"), NodePath("BoardSpaces/Space11")]
+max_fear = 5
+fear_per_turn = 1
 
 [node name="BoardSpaces" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -1.5)
 
 [node name="Start" type="Node3D" parent="BoardSpaces"]
+script = ExtResource("2_lrcl5")
+space_num = 1
+passing_hunger_effect = -1
 
 [node name="Space1" type="Node3D" parent="BoardSpaces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+script = ExtResource("2_lrcl5")
+space_num = 2
+passing_hunger_effect = -1
 
 [node name="Space2" type="Node3D" parent="BoardSpaces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+script = ExtResource("2_lrcl5")
+space_num = 3
+passing_hunger_effect = -1
 
 [node name="Space3" type="Node3D" parent="BoardSpaces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+script = ExtResource("2_lrcl5")
+space_num = 4
+passing_hunger_effect = -1
 
 [node name="Space4" type="Node3D" parent="BoardSpaces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+script = ExtResource("2_lrcl5")
+space_num = 5
+passing_hunger_effect = -1
 
 [node name="Space5" type="Node3D" parent="BoardSpaces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2)
+script = ExtResource("2_lrcl5")
+space_num = 6
+passing_hunger_effect = -1
 
 [node name="Space6" type="Node3D" parent="BoardSpaces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+script = ExtResource("2_lrcl5")
+space_num = 7
+current_type = 1
+passing_hunger_effect = -1
 
 [node name="Space7" type="Node3D" parent="BoardSpaces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+script = ExtResource("2_lrcl5")
+space_num = 8
+current_type = 1
+passing_hunger_effect = -1
 
 [node name="Space8" type="Node3D" parent="BoardSpaces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+script = ExtResource("2_lrcl5")
+space_num = 9
+current_type = 1
+passing_hunger_effect = -1
 
 [node name="Space9" type="Node3D" parent="BoardSpaces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+script = ExtResource("2_lrcl5")
+space_num = 10
+current_type = 2
+passing_hunger_effect = -1
 
 [node name="Space10" type="Node3D" parent="BoardSpaces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+script = ExtResource("2_lrcl5")
+space_num = 11
+current_type = 2
+current_upgrade = 1
+passing_hunger_effect = -1
 
 [node name="Space11" type="Node3D" parent="BoardSpaces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+script = ExtResource("2_lrcl5")
+space_num = 12
+current_type = 2
+current_upgrade = 2
+passing_hunger_effect = -1
 
 [node name="Gameboard" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)

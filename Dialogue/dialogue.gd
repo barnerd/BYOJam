@@ -4,7 +4,7 @@ extends Control
 signal story_moves_player(num_spaces: int)
 signal story_section_complete
 
-@onready var story_label: Label = $HBoxContainer/ColorRect/MarginContainer/VBoxContainer/Label
+@onready var story_label: RichTextLabel = $HBoxContainer/ColorRect/MarginContainer/VBoxContainer/Label
 @onready var choices_container = $HBoxContainer/ColorRect/MarginContainer/VBoxContainer/ChoicesContainer
 
 var choice_button: PackedScene = preload("res://Dialogue/choice_button.tscn")
@@ -128,3 +128,4 @@ func on_turn_taken(_turn: int) -> void:
 
 func move_player(_delta: int) -> void:
 	story_moves_player.emit(_delta)
+	StoryManager.ink_player.continue_story()

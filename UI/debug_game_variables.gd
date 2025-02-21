@@ -41,5 +41,5 @@ func on_pet_hunger_changed(_num: int) -> void:
 	hunger_value.text = str(_num)
 
 
-func on_board_fear_changed(_num: int) -> void:
-	fear_value.text = str(_num)
+func on_board_fear_changed(_num: int, _max: int) -> void:
+	fear_value.text = "%d / %d" % [_num, _max]
