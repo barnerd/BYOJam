@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpvmsa1eggpnb"]
+
+[ext_resource type="Script" path="res://UI/meter/ui_meter.gd" id="1_kr86e"]
+[ext_resource type="Texture2D" uid="uid://nbi3nu8q7l8g" path="res://ArtAssets/2D Art/ui_art/meter.PNG" id="1_xh3bi"]
+[ext_resource type="Texture2D" uid="uid://dkjh0pao2uh2w" path="res://ArtAssets/2D Art/ui_art/meter_arrow.PNG" id="3_7kyj7"]
+
+[node name="Meter" type="MarginContainer"]
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+script = ExtResource("1_kr86e")
+label_text = "meter"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Background" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_xh3bi")
+
+[node name="Arrow" type="TextureRect" parent="VBoxContainer/Background"]
+layout_mode = 0
+offset_left = -17.0
+offset_top = 42.0
+offset_right = 155.0
+offset_bottom = 203.0
+pivot_offset = Vector2(164, 141)
+texture = ExtResource("3_7kyj7")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "meter"
+horizontal_alignment = 1

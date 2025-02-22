@@ -15,10 +15,10 @@
 [ext_resource type="Script" path="res://game_state_machine/turn_start.gd" id="7_0oow1"]
 [ext_resource type="Script" path="res://characters/pet/pet.gd" id="8_bxuc7"]
 [ext_resource type="Script" path="res://game_state_machine/dice_roll.gd" id="8_mwk23"]
-[ext_resource type="Texture2D" uid="uid://nbi3nu8q7l8g" path="res://ArtAssets/2D Art/ui_art/meter.PNG" id="9_b3fuq"]
 [ext_resource type="Theme" uid="uid://8rtfbrfbseru" path="res://game_theme.tres" id="9_yncrg"]
 [ext_resource type="Script" path="res://game_state_machine/player_move.gd" id="9_yogo3"]
 [ext_resource type="Script" path="res://game_state_machine/story_interaction.gd" id="10_bacfe"]
+[ext_resource type="PackedScene" uid="uid://dpvmsa1eggpnb" path="res://UI/meter/ui_meter.tscn" id="10_md4fb"]
 [ext_resource type="Script" path="res://game_state_machine/turn_end.gd" id="11_7ea82"]
 [ext_resource type="Script" path="res://game_state_machine/win.gd" id="12_5fs8w"]
 [ext_resource type="Script" path="res://game_state_machine/lose.gd" id="13_xg40i"]
@@ -137,42 +137,15 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="HungerMeter" type="MarginContainer" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HungerMeter" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("10_md4fb")]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_right = 50
+label_text = "HUNGER"
+signal_name = "pet_hunger_percent_changed"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/HungerMeter"]
+[node name="FearMeter2" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("10_md4fb")]
 layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/HungerMeter/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_b3fuq")
-
-[node name="Label" type="Label" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/HungerMeter/VBoxContainer"]
-layout_mode = 2
-text = "HUNGER"
-horizontal_alignment = 1
-
-[node name="FearMeter" type="MarginContainer" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_right = 50
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/FearMeter"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/FearMeter/VBoxContainer2"]
-layout_mode = 2
-texture = ExtResource("9_b3fuq")
-
-[node name="Label" type="Label" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/FearMeter/VBoxContainer2"]
-layout_mode = 2
-text = "FEAR
-"
-horizontal_alignment = 1
+label_text = "FEAR"
+signal_name = "board_fear_percent_changed"
 
 [node name="DicePool" type="PanelContainer" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -191,6 +164,7 @@ offset_right = 1066.0
 offset_bottom = 418.0
 
 [node name="Dialogue" parent="PopupLayer" instance=ExtResource("4_o5o0p")]
+visible = false
 offset_left = -220.0
 offset_right = -220.0
 

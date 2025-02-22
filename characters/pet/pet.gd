@@ -4,6 +4,7 @@ extends Node3D
 signal pet_hunger_starving
 signal pet_hunger_full
 signal pet_hunger_changed(num: int)
+signal pet_hunger_percent_changed(percent: float)
 
 enum EvolutionStage { CATERPILLAR, COCOON, MOTH } 
 
@@ -23,6 +24,7 @@ func _init() -> void:
 	SignalBus.register_signal("pet_hunger_starving", pet_hunger_starving)
 	SignalBus.register_signal("pet_hunger_full", pet_hunger_full)
 	SignalBus.register_signal("pet_hunger_changed", pet_hunger_changed)
+	SignalBus.register_signal("pet_hunger_percent_changed", pet_hunger_percent_changed)
 
 
 func _ready() -> void:
@@ -35,6 +37,7 @@ func game_reset() -> void:
 	current_lap_bonus_food = starting_lap_bonus_food
 	current_hunger = starting_hunger
 	pet_hunger_changed.emit(current_hunger)
+	pet_hunger_percent_changed.emit(current_hunger / float(max_hunger))
 
 
 func on_story_variable_changed(variable_name: String, delta: float) -> void:
@@ -57,9 +60,10 @@ func add_lap_bonus(_bonus: int) -> void:
 func change_hunger(_delta: int) -> void:
 	current_hunger += _delta
 	
-	pet_hunger_changed.emit(current_hunger)
-	
 	current_hunger = clamp(current_hunger, min_hunger, max_hunger)
+	pet_hunger_changed.emit(current_hunger)
+	pet_hunger_percent_changed.emit(current_hunger / float(max_hunger))
+	
 	if current_hunger == min_hunger:
 		pet_hunger_starving.emit()
 	

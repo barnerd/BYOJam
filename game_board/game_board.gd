@@ -3,6 +3,7 @@ extends Node3D
 
 signal board_fear_max
 signal board_fear_changed(num: int, max: int)
+signal board_fear_percent_changed(percent: float)
 
 const SPACE_TYPE_MATERIALS: Dictionary = {
 	TileSpace.TileType.FOOD: preload("res://ArtAssets/Materials/gameboard/food_green_mat.tres") as StandardMaterial3D,
@@ -26,6 +27,7 @@ var current_max_fear_bonus: int
 func _init() -> void:
 	SignalBus.register_signal("board_fear_max", board_fear_max)
 	SignalBus.register_signal("board_fear_changed", board_fear_changed)
+	SignalBus.register_signal("board_fear_percent_changed", board_fear_percent_changed)
 
 
 func _ready() -> void:
@@ -40,6 +42,7 @@ func game_reset() -> void:
 	current_fear = starting_fear
 	current_max_fear_bonus = starting_max_fear_bonus
 	board_fear_changed.emit(current_fear, max_fear + current_max_fear_bonus)
+	board_fear_percent_changed.emit(current_fear / float(max_fear + current_max_fear_bonus))
 	
 	for space in board_spaces:
 		space.set_type_material(SPACE_TYPE_MATERIALS[space.current_type])
@@ -57,6 +60,7 @@ func on_story_variable_changed(variable_name: String, delta: float) -> void:
 func on_lap_completed(_lap: int) -> void:
 	current_fear = 0
 	board_fear_changed.emit(current_fear, max_fear + current_max_fear_bonus)
+	board_fear_percent_changed.emit(current_fear / float(max_fear + current_max_fear_bonus))
 
 
 func on_turn_taken(_turns: int) -> void:
@@ -66,6 +70,7 @@ func on_turn_taken(_turns: int) -> void:
 func change_fear(_delta: int) -> void:
 	current_fear += _delta
 	board_fear_changed.emit(current_fear, max_fear + current_max_fear_bonus)
+	board_fear_percent_changed.emit(current_fear / float(max_fear + current_max_fear_bonus))
 	
 	if current_fear >= (max_fear + current_max_fear_bonus):
 		current_fear = (max_fear + current_max_fear_bonus)
