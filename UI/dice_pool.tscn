@@ -25,7 +25,7 @@ size_flags_vertical = 8
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-text = "Roll Dice"
+text = "ROLL"
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

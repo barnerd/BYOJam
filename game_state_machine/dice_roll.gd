@@ -17,7 +17,7 @@ func exit() -> void:
 	# TODO: Should I pass dice_pool and hide it after moving?
 	await get_tree().create_timer(2.0).timeout
 	
-	dice_pool.visible = false
+	#dice_pool.visible = false
 
 
 func on_dice_rolled(value: int) -> void:
