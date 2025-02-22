@@ -12,7 +12,7 @@ var num_spaces_left: int = 0
 func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 	player.finish_turn()
 	
-	await get_tree().create_timer(2.0).timeout
+	#await get_tree().create_timer(2.0).timeout
 	
 	# TODO: put win and lose conditions here
 	#if player.laps >= 1:
