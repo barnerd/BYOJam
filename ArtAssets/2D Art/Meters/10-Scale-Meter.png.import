@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nbi3nu8q7l8g"
-path="res://.godot/imported/meter.PNG-a81a4c7fa68d22d9ede6555274d1bcdf.ctex"
+uid="uid://b2qwwk7eawsww"
+path="res://.godot/imported/10-Scale-Meter.png-4a52a0d4f8b22e6837f1f5e4c0d6c22e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtAssets/2D Art/ui_art/meter.PNG"
-dest_files=["res://.godot/imported/meter.PNG-a81a4c7fa68d22d9ede6555274d1bcdf.ctex"]
+source_file="res://ArtAssets/2D Art/Meters/10-Scale-Meter.png"
+dest_files=["res://.godot/imported/10-Scale-Meter.png-4a52a0d4f8b22e6837f1f5e4c0d6c22e.ctex"]
 
 [params]
 

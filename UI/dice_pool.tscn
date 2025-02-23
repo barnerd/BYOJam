@@ -5,6 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://bnts7nufb1f7g" path="res://ArtAssets/2D Art/Dice/2-roll-tilt-right.PNG" id="2_t0lip"]
 
 [node name="DicePool" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 10
 script = ExtResource("1_fe3bi")
 
@@ -17,6 +22,7 @@ layout_mode = 2
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 6
 columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer"]

@@ -43,10 +43,7 @@ func _on_button_pressed() -> void:
 func on_dice_selected(selected_value: int, rolled_values: Array[int]) -> void:
 	# dice_animation make visible
 	# update dice images
-	var img = Image.new()
-	img.load(dice_pip_images[rolled_values[0]][randi_range(0, 2)])
-	$MarginContainer/VBoxContainer/GridContainer/TextureRect.texture = ImageTexture.create_from_image(img)
-	img.load(dice_pip_images[rolled_values[1]][randi_range(0, 2)])
-	$MarginContainer/VBoxContainer/GridContainer/TextureRect2.texture = ImageTexture.create_from_image(img)
+	$MarginContainer/VBoxContainer/GridContainer/TextureRect.texture = load(dice_pip_images[rolled_values[0]][randi_range(0, 2)])
+	$MarginContainer/VBoxContainer/GridContainer/TextureRect2.texture = load(dice_pip_images[rolled_values[1]][randi_range(0, 2)])
 	
 	dice_selected.emit(selected_value)

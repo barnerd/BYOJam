@@ -69,14 +69,15 @@ func on_turn_taken(_turns: int) -> void:
 
 func change_fear(_delta: int) -> void:
 	current_fear += _delta
-	board_fear_changed.emit(current_fear, max_fear + current_max_fear_bonus)
-	board_fear_percent_changed.emit(current_fear / float(max_fear + current_max_fear_bonus))
 	
 	if current_fear >= (max_fear + current_max_fear_bonus):
 		current_fear = (max_fear + current_max_fear_bonus)
-		current_fear = 0.0
+		current_fear = 0
 		board_fear_max.emit()
 		destroy_tile(randi_range(0, board_spaces.size() - 1))
+	
+	board_fear_changed.emit(current_fear, max_fear + current_max_fear_bonus)
+	board_fear_percent_changed.emit(current_fear / float(max_fear + current_max_fear_bonus))
 
 
 func on_pet_starved() -> void:

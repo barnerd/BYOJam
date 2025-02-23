@@ -1,11 +1,11 @@
 class_name Dialogue
-extends Control
+extends PanelContainer
 
 signal story_moves_player(num_spaces: int)
 signal story_section_complete
 
-@onready var story_label: RichTextLabel = $HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/ColorRect/MarginContainer/Label
-@onready var choices_container = $HBoxContainer/VBoxContainer/ChoicesContainer
+@onready var story_label: RichTextLabel = $CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/ColorRect/MarginContainer/Label
+@onready var choices_container = $CenterContainer/HBoxContainer/VBoxContainer/ChoicesContainer
 
 var choice_button: PackedScene = preload("res://Dialogue/choice_button.tscn")
 var regex = RegEx.new()

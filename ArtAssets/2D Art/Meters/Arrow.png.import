@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkjh0pao2uh2w"
-path="res://.godot/imported/meter_arrow.PNG-3f7a669fe39a1a4981653a71389d3270.ctex"
+uid="uid://jqat50mb3cqr"
+path="res://.godot/imported/Arrow.png-b2ecf4ec066b4cbfd5463a16b0e29002.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtAssets/2D Art/ui_art/meter_arrow.PNG"
-dest_files=["res://.godot/imported/meter_arrow.PNG-3f7a669fe39a1a4981653a71389d3270.ctex"]
+source_file="res://ArtAssets/2D Art/Meters/Arrow.png"
+dest_files=["res://.godot/imported/Arrow.png-b2ecf4ec066b4cbfd5463a16b0e29002.ctex"]
 
 [params]
 
