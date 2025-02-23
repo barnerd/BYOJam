@@ -35,7 +35,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/inkgd/plugin.cfg", "res://addons/state_machine/plugin.cfg")
+enabled=PackedStringArray("res://addons/destronoi/plugin.cfg", "res://addons/inkgd/plugin.cfg", "res://addons/state_machine/plugin.cfg")
 
 [inkgd]
 
@@ -96,6 +96,10 @@ attack_3={
 [internationalization]
 
 locale/translations=PackedStringArray("res://ProjectTemplate/Localization/Translations/translations.en_US.translation", "res://ProjectTemplate/Localization/Translations/translations.es.translation", "res://ProjectTemplate/Localization/Translations/translations.de.translation", "res://ProjectTemplate/Localization/Translations/translations.fr.translation")
+
+[physics]
+
+3d/physics_engine="JoltPhysics3D"
 
 [rendering]
 
