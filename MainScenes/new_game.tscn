@@ -1,92 +1,192 @@
-[gd_scene load_steps=20 format=3 uid="uid://beeo6wb5btqkj"]
+[gd_scene load_steps=26 format=3 uid="uid://beeo6wb5btqkj"]
 
 [ext_resource type="PackedScene" uid="uid://dvvvs70p5muoe" path="res://game_board/game_board.tscn" id="1_5yeuy"]
-[ext_resource type="Script" path="res://UI/state_label.gd" id="1_rsuks"]
 [ext_resource type="PackedScene" uid="uid://bkg6qgamif8at" path="res://characters/player/player.tscn" id="1_xt7d8"]
+[ext_resource type="PackedScene" uid="uid://ddawfdqr52jcb" path="res://UI/debug_game_variables.tscn" id="1_xym1b"]
 [ext_resource type="PackedScene" uid="uid://dcypsl0wpgbsn" path="res://UI/game_start_splash.tscn" id="2_glx7w"]
 [ext_resource type="PackedScene" uid="uid://cr7khfphhq7ct" path="res://characters/pet/pet.tscn" id="2_h3xiu"]
-[ext_resource type="PackedScene" uid="uid://bk1sva422qty8" path="res://UI/dice_pool.tscn" id="3_f6iub"]
+[ext_resource type="Texture2D" uid="uid://dvm6io8lldaiq" path="res://ArtAssets/2D Art/ui_art/tree.PNG" id="2_wehj0"]
+[ext_resource type="PackedScene" uid="uid://djh6ctsqiwsnr" path="res://UI/dice_pool.tscn" id="3_f6iub"]
 [ext_resource type="Script" path="res://addons/state_machine/state_machine.gd" id="4_4edl5"]
 [ext_resource type="PackedScene" uid="uid://btuwfdgthh6q3" path="res://UI/restart_game.tscn" id="4_60g5q"]
+[ext_resource type="PackedScene" uid="uid://c0j5wdrc46ee5" path="res://Dialogue/dialogue.tscn" id="4_o5o0p"]
 [ext_resource type="Script" path="res://game_state_machine/load.gd" id="5_ocb74"]
 [ext_resource type="Script" path="res://game_state_machine/game_start.gd" id="6_p0lr1"]
 [ext_resource type="Script" path="res://game_state_machine/turn_start.gd" id="7_0oow1"]
 [ext_resource type="Script" path="res://characters/pet/pet.gd" id="8_bxuc7"]
 [ext_resource type="Script" path="res://game_state_machine/dice_roll.gd" id="8_mwk23"]
+[ext_resource type="Theme" uid="uid://8rtfbrfbseru" path="res://game_theme.tres" id="9_yncrg"]
 [ext_resource type="Script" path="res://game_state_machine/player_move.gd" id="9_yogo3"]
 [ext_resource type="Script" path="res://game_state_machine/story_interaction.gd" id="10_bacfe"]
+[ext_resource type="PackedScene" uid="uid://dpvmsa1eggpnb" path="res://UI/meter/ui_meter.tscn" id="10_md4fb"]
 [ext_resource type="Script" path="res://game_state_machine/turn_end.gd" id="11_7ea82"]
 [ext_resource type="Script" path="res://game_state_machine/win.gd" id="12_5fs8w"]
 [ext_resource type="Script" path="res://game_state_machine/lose.gd" id="13_xg40i"]
 [ext_resource type="Script" path="res://game_state_machine/game_over.gd" id="14_72xus"]
+[ext_resource type="PackedScene" uid="uid://bk1sva422qty8" path="res://UI/dice_animation.tscn" id="14_bjnu6"]
+[ext_resource type="Texture2D" uid="uid://crko2pqu08s84" path="res://ArtAssets/2D Art/ui_art/mountain_background.PNG" id="21_h7uqt"]
 
-[node name="NewGame" type="Node3D"]
+[node name="NewGame" type="Node"]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.714377, -0.606011, 0.349879, 1.47563e-08, 0.499998, 0.866027, -0.69976, -0.61867, 0.357189, 0, 0, 0)
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="MountainBG" type="TextureRect" parent="BackgroundLayer"]
+show_behind_parent = true
+z_index = -1
+offset_right = 1421.0
+offset_bottom = 1021.0
+texture = ExtResource("21_h7uqt")
+stretch_mode = 2
+
+[node name="Tree1" type="TextureRect" parent="BackgroundLayer"]
+offset_left = 117.0
+offset_top = 253.0
+offset_right = 247.0
+offset_bottom = 547.0
+texture = ExtResource("2_wehj0")
+
+[node name="Tree2" type="TextureRect" parent="BackgroundLayer"]
+offset_left = 1274.0
+offset_top = 240.0
+offset_right = 1404.0
+offset_bottom = 534.0
+texture = ExtResource("2_wehj0")
+
+[node name="Tree3" type="TextureRect" parent="BackgroundLayer"]
+offset_left = 1077.0
+offset_top = 124.0
+offset_right = 1207.0
+offset_bottom = 418.0
+texture = ExtResource("2_wehj0")
+
+[node name="Tree4" type="TextureRect" parent="BackgroundLayer"]
+offset_left = 306.0
+offset_top = 123.0
+offset_right = 436.0
+offset_bottom = 417.0
+texture = ExtResource("2_wehj0")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_left = -107.0
+offset_top = -265.0
+offset_right = 1429.0
+offset_bottom = 1271.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1536, 1536)
+render_target_update_mode = 4
+
+[node name="GameBoard" parent="SubViewportContainer/SubViewport" node_paths=PackedStringArray("board_spaces") instance=ExtResource("1_5yeuy")]
+board_spaces = [NodePath("BoardSpaces/Start"), NodePath("BoardSpaces/Space1"), NodePath("BoardSpaces/Space2"), NodePath("BoardSpaces/Space3"), NodePath("BoardSpaces/Space4"), NodePath("BoardSpaces/Space5"), NodePath("BoardSpaces/Space6"), NodePath("BoardSpaces/Space7"), NodePath("BoardSpaces/Space8"), NodePath("BoardSpaces/Space9"), NodePath("BoardSpaces/Space10"), NodePath("BoardSpaces/Space11")]
+
+[node name="Player" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_xt7d8")]
+transform = Transform3D(3.13, 0, 0, 0, 3.13, 0, 0, 0, 3.13, 0.388916, 0.0180664, -1.32227)
+
+[node name="Pet" parent="SubViewportContainer/SubViewport/Player" instance=ExtResource("2_h3xiu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.061381, -0.00769043, -0.113527)
+script = ExtResource("8_bxuc7")
+max_hunger = 10
+food_on_lap = 3
+starting_hunger = 10
+laps_per_morph = 3
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.707107, -0.544945, 0.450594, 0, 0.637236, 0.770669, -0.707107, -0.544945, 0.450594, 2.73166, 5.16331, 3.32857)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.714378, -0.606011, 0.349879, 1.47563e-08, 0.499998, 0.866027, -0.69976, -0.61867, 0.357187, 0, 0, 0)
 shadow_enabled = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UILayer" type="CanvasLayer" parent="."]
 
-[node name="StateLabel" type="Label" parent="CanvasLayer" node_paths=PackedStringArray("state_machine")]
-offset_left = 101.0
-offset_top = 85.0
-offset_right = 250.0
-offset_bottom = 108.0
-text = "This is a fancy label"
-script = ExtResource("1_rsuks")
+[node name="DebugGameVariables" parent="UILayer" node_paths=PackedStringArray("state_machine") instance=ExtResource("1_xym1b")]
+offset_left = 83.0
+offset_top = 822.0
+offset_right = 251.0
+offset_bottom = 1010.0
 state_machine = NodePath("../../StateMachine")
 
-[node name="GameSplash" parent="CanvasLayer" instance=ExtResource("2_glx7w")]
-visible = false
-offset_left = 813.0
-offset_top = 324.0
-offset_right = 1066.0
-offset_bottom = 418.0
-
-[node name="DicePool" parent="CanvasLayer" instance=ExtResource("3_f6iub")]
-visible = false
-offset_left = 1508.0
-offset_top = 232.0
-offset_right = 1633.0
-offset_bottom = 370.0
-
-[node name="RestartGame" parent="CanvasLayer" instance=ExtResource("4_60g5q")]
+[node name="RestartGame" parent="UILayer" instance=ExtResource("4_60g5q")]
 visible = false
 offset_left = 1502.0
 offset_top = 761.0
 offset_right = 1666.0
 offset_bottom = 842.0
 
-[node name="GameBoard" parent="." node_paths=PackedStringArray("board_spaces") instance=ExtResource("1_5yeuy")]
-board_spaces = [NodePath("BoardSpaces/Start"), NodePath("BoardSpaces/Space1"), NodePath("BoardSpaces/Space2"), NodePath("BoardSpaces/Space3"), NodePath("BoardSpaces/Space4"), NodePath("BoardSpaces/Space5"), NodePath("BoardSpaces/Space6"), NodePath("BoardSpaces/Space7"), NodePath("BoardSpaces/Space8"), NodePath("BoardSpaces/Space9"), NodePath("BoardSpaces/Space10"), NodePath("BoardSpaces/Space11")]
-max_fear_threshold = 10
+[node name="PanelContainer" type="PanelContainer" parent="UILayer"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("9_yncrg")
 
-[node name="Player" parent="." instance=ExtResource("1_xt7d8")]
-transform = Transform3D(3.13, 0, 0, 0, 3.13, 0, 0, 0, 3.13, 0.388916, 0.0180664, -1.32227)
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="Pet" parent="Player" instance=ExtResource("2_h3xiu")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.061381, -0.00769043, -0.113527)
-script = ExtResource("8_bxuc7")
-full_hunger_threshold = 10
-starting_hunger = 8
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.707107, -0.544945, 0.450594, 0, 0.637236, 0.770669, -0.707107, -0.544945, 0.450594, 2.73166, 5.16331, 3.32857)
+[node name="HungerMeter" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("10_md4fb")]
+layout_mode = 2
+label_text = "HUNGER"
+signal_name = "pet_hunger_percent_changed"
+
+[node name="FearMeter2" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("10_md4fb")]
+layout_mode = 2
+label_text = "FEAR"
+signal_name = "board_fear_percent_changed"
+
+[node name="DicePool" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer" node_paths=PackedStringArray("dice_animation") instance=ExtResource("3_f6iub")]
+layout_mode = 2
+dice_animation = NodePath("../../../../../PopupLayer/DiceAnimation")
+
+[node name="PopupLayer" type="CanvasLayer" parent="."]
+
+[node name="GameSplash" parent="PopupLayer" instance=ExtResource("2_glx7w")]
+visible = false
+offset_left = 813.0
+offset_top = 324.0
+offset_right = 1066.0
+offset_bottom = 418.0
+
+[node name="Dialogue" parent="PopupLayer" instance=ExtResource("4_o5o0p")]
+visible = false
+offset_left = -220.0
+offset_right = -220.0
+
+[node name="DiceAnimation" parent="PopupLayer" instance=ExtResource("14_bjnu6")]
+visible = false
+offset_left = -189.5
+offset_top = -90.0
+offset_right = 189.5
+offset_bottom = 90.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_4edl5")
 initial_state = NodePath("Load")
 
-[node name="Load" type="Node" parent="StateMachine" node_paths=PackedStringArray("game_start_state", "player")]
+[node name="Load" type="Node" parent="StateMachine" node_paths=PackedStringArray("game_start_state", "board", "player")]
 script = ExtResource("5_ocb74")
 game_start_state = NodePath("../GameStart")
-player = NodePath("../../Player")
+board = NodePath("../../SubViewportContainer/SubViewport/GameBoard")
+player = NodePath("../../SubViewportContainer/SubViewport/Player")
 
 [node name="GameStart" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_start_state", "game_start_splash")]
 script = ExtResource("6_p0lr1")
 turn_start_state = NodePath("../TurnStart")
-game_start_splash = NodePath("../../CanvasLayer/GameSplash")
+game_start_splash = NodePath("../../PopupLayer/GameSplash")
 
 [node name="TurnStart" type="Node" parent="StateMachine" node_paths=PackedStringArray("dice_roll_state")]
 script = ExtResource("7_0oow1")
@@ -95,24 +195,26 @@ dice_roll_state = NodePath("../DiceRoll")
 [node name="DiceRoll" type="Node" parent="StateMachine" node_paths=PackedStringArray("player_move_state", "dice_pool")]
 script = ExtResource("8_mwk23")
 player_move_state = NodePath("../PlayerMove")
-dice_pool = NodePath("../../CanvasLayer/DicePool")
+dice_pool = NodePath("../../UILayer/PanelContainer/MarginContainer/VBoxContainer/DicePool")
 
-[node name="PlayerMove" type="Node" parent="StateMachine" node_paths=PackedStringArray("story_interaction_state", "player")]
+[node name="PlayerMove" type="Node" parent="StateMachine" node_paths=PackedStringArray("story_interaction_state", "player", "board")]
 script = ExtResource("9_yogo3")
 story_interaction_state = NodePath("../StoryInteraction")
-player = NodePath("../../Player")
+player = NodePath("../../SubViewportContainer/SubViewport/Player")
+board = NodePath("../../SubViewportContainer/SubViewport/GameBoard")
 
-[node name="StoryInteraction" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_end_state")]
+[node name="StoryInteraction" type="Node" parent="StateMachine" node_paths=PackedStringArray("player_move_state", "turn_end_state", "dialogue_screen")]
 script = ExtResource("10_bacfe")
+player_move_state = NodePath("../PlayerMove")
 turn_end_state = NodePath("../TurnEnd")
+dialogue_screen = NodePath("../../PopupLayer/Dialogue")
 
-[node name="TurnEnd" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_start_state", "win_state", "lose_state", "player", "board")]
+[node name="TurnEnd" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_start_state", "win_state", "lose_state", "player")]
 script = ExtResource("11_7ea82")
 turn_start_state = NodePath("../TurnStart")
 win_state = NodePath("../Win")
 lose_state = NodePath("../Lose")
-player = NodePath("../../Player")
-board = NodePath("../../GameBoard")
+player = NodePath("../../SubViewportContainer/SubViewport/Player")
 
 [node name="Win" type="Node" parent="StateMachine" node_paths=PackedStringArray("game_over_state")]
 script = ExtResource("12_5fs8w")
@@ -125,4 +227,4 @@ game_over_state = NodePath("../GameOver")
 [node name="GameOver" type="Node" parent="StateMachine" node_paths=PackedStringArray("load_state", "restart_game_button")]
 script = ExtResource("14_72xus")
 load_state = NodePath("../Load")
-restart_game_button = NodePath("../../CanvasLayer/RestartGame")
+restart_game_button = NodePath("../../UILayer/RestartGame")

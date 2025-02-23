@@ -1,15 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0j5wdrc46ee5"]
+[gd_scene load_steps=6 format=3 uid="uid://c0j5wdrc46ee5"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkkid"]
-bg_color = Color(0.435294, 0.94902, 0.976471, 1)
+[ext_resource type="Script" path="res://Dialogue/dialogue.gd" id="1_euaaw"]
+[ext_resource type="Texture2D" uid="uid://kaijmib1gunt" path="res://ArtAssets/2D Art/ui_art/character_portrait.PNG" id="2_fbhxi"]
+[ext_resource type="Texture2D" uid="uid://dmslqvhl14re8" path="res://ArtAssets/2D Art/ui_art/speech_bubble_left_pointer.PNG" id="4_qm30b"]
+[ext_resource type="Texture2D" uid="uid://dsgv6asg246x3" path="res://ArtAssets/2D Art/ui_art/dialogue_continue_arrow.PNG" id="5_2q1wf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tv200"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="Dialogue" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 380.0
-offset_top = 422.0
-offset_right = 930.0
-offset_bottom = 572.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+script = ExtResource("1_euaaw")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -18,42 +28,80 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -275.0
-offset_top = -150.0
-offset_right = 275.0
+offset_left = -320.5
+offset_top = -318.0
+offset_right = 320.5
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = 0
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("2_fbhxi")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="ColorRect" type="PanelContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(400, 75)
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_nkkid")
+size_flags_horizontal = 10
+size_flags_vertical = 8
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ColorRect"]
+[node name="ChoicesContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ColorRect/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
-[node name="Label" type="Label" parent="HBoxContainer/ColorRect/MarginContainer/VBoxContainer"]
+[node name="SpeechBubbleArrow" type="TextureRect" parent="HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("4_qm30b")
+stretch_mode = 2
+
+[node name="ColorRect" type="PanelContainer" parent="HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_tv200")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/ColorRect"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="ContinueArrow" type="TextureRect" parent="HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("5_2q1wf")
+stretch_mode = 4
+
+[node name="Label" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/ColorRect/MarginContainer"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Test. Here's some really long text. Let's make sure it [i]works[/i]. Let's see this again."
 autowrap_mode = 2
-
-[node name="ChoicesContainer" type="VBoxContainer" parent="HBoxContainer/ColorRect/MarginContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

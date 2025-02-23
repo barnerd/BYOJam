@@ -1,20 +1,52 @@
 class_name DicePool
 extends PanelContainer
 
-@onready var output_label = $MarginContainer/VBoxContainer/Label
-@onready var roll_dice_button = $MarginContainer/VBoxContainer/Button
+signal dice_selected(value: int)
 
-signal dice_rolled(value: int)
+@export var dice_animation: DiceAnimation
 
-func reset() -> void:
-	output_label.text = ""
-	roll_dice_button.disabled = false
+var dice_pip_images: Array = [
+	[
+		"res://ArtAssets/2D Art/Dice/1-roll-tilt-left.PNG",
+		"res://ArtAssets/2D Art/Dice/1-roll-tilt-right.PNG",
+		"res://ArtAssets/2D Art/Dice/1-roll.PNG",
+		],
+	[
+		"res://ArtAssets/2D Art/Dice/2-roll-tilt-left.PNG",
+		"res://ArtAssets/2D Art/Dice/2-roll-tilt-right.PNG",
+		"res://ArtAssets/2D Art/Dice/2-roll.PNG",
+		],
+	[
+		"res://ArtAssets/2D Art/Dice/3-roll-tilt-left.PNG",
+		"res://ArtAssets/2D Art/Dice/3-roll-tilt-right.PNG",
+		"res://ArtAssets/2D Art/Dice/3-roll.PNG",
+		],
+]
+
+@onready var roll_button: Button = $MarginContainer/VBoxContainer/Button
+
+
+func _ready() -> void:
+	dice_animation.dice_rolled.connect(on_dice_selected)
+
+
+func ready_to_roll() -> void:
+	roll_button.disabled = false
 
 
 func _on_button_pressed() -> void:
-	var value: int = randi_range(1, 6)
+	roll_button.disabled = true
+	# dice_animation make visible
+	dice_animation.roll_dice()
+
+
+func on_dice_selected(selected_value: int, rolled_values: Array[int]) -> void:
+	# dice_animation make visible
+	# update dice images
+	var img = Image.new()
+	img.load(dice_pip_images[rolled_values[0]][randi_range(0, 2)])
+	$MarginContainer/VBoxContainer/GridContainer/TextureRect.texture = ImageTexture.create_from_image(img)
+	img.load(dice_pip_images[rolled_values[1]][randi_range(0, 2)])
+	$MarginContainer/VBoxContainer/GridContainer/TextureRect2.texture = ImageTexture.create_from_image(img)
 	
-	output_label.text = "You rolled a %d!" % value
-	
-	roll_dice_button.disabled = true
-	dice_rolled.emit(value)
+	dice_selected.emit(selected_value)
