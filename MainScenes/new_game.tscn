@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://beeo6wb5btqkj"]
+[gd_scene load_steps=26 format=3 uid="uid://beeo6wb5btqkj"]
 
 [ext_resource type="PackedScene" uid="uid://dvvvs70p5muoe" path="res://game_board/game_board.tscn" id="1_5yeuy"]
 [ext_resource type="PackedScene" uid="uid://bkg6qgamif8at" path="res://characters/player/player.tscn" id="1_xt7d8"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dcypsl0wpgbsn" path="res://UI/game_start_splash.tscn" id="2_glx7w"]
 [ext_resource type="PackedScene" uid="uid://cr7khfphhq7ct" path="res://characters/pet/pet.tscn" id="2_h3xiu"]
 [ext_resource type="Texture2D" uid="uid://dvm6io8lldaiq" path="res://ArtAssets/2D Art/ui_art/tree.PNG" id="2_wehj0"]
-[ext_resource type="PackedScene" uid="uid://bk1sva422qty8" path="res://UI/dice_pool.tscn" id="3_f6iub"]
+[ext_resource type="PackedScene" uid="uid://djh6ctsqiwsnr" path="res://UI/dice_pool.tscn" id="3_f6iub"]
 [ext_resource type="Script" path="res://addons/state_machine/state_machine.gd" id="4_4edl5"]
 [ext_resource type="PackedScene" uid="uid://btuwfdgthh6q3" path="res://UI/restart_game.tscn" id="4_60g5q"]
 [ext_resource type="PackedScene" uid="uid://c0j5wdrc46ee5" path="res://Dialogue/dialogue.tscn" id="4_o5o0p"]
@@ -23,6 +23,7 @@
 [ext_resource type="Script" path="res://game_state_machine/win.gd" id="12_5fs8w"]
 [ext_resource type="Script" path="res://game_state_machine/lose.gd" id="13_xg40i"]
 [ext_resource type="Script" path="res://game_state_machine/game_over.gd" id="14_72xus"]
+[ext_resource type="PackedScene" uid="uid://bk1sva422qty8" path="res://UI/dice_animation.tscn" id="14_bjnu6"]
 [ext_resource type="Texture2D" uid="uid://crko2pqu08s84" path="res://ArtAssets/2D Art/ui_art/mountain_background.PNG" id="21_h7uqt"]
 
 [node name="NewGame" type="Node"]
@@ -147,12 +148,9 @@ layout_mode = 2
 label_text = "FEAR"
 signal_name = "board_fear_percent_changed"
 
-[node name="DicePool" type="PanelContainer" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="DicePool" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer" node_paths=PackedStringArray("dice_animation") instance=ExtResource("3_f6iub")]
 layout_mode = 2
-size_flags_vertical = 10
-
-[node name="DicePool" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/DicePool" instance=ExtResource("3_f6iub")]
-layout_mode = 2
+dice_animation = NodePath("../../../../../PopupLayer/DiceAnimation")
 
 [node name="PopupLayer" type="CanvasLayer" parent="."]
 
@@ -167,6 +165,13 @@ offset_bottom = 418.0
 visible = false
 offset_left = -220.0
 offset_right = -220.0
+
+[node name="DiceAnimation" parent="PopupLayer" instance=ExtResource("14_bjnu6")]
+visible = false
+offset_left = -189.5
+offset_top = -90.0
+offset_right = 189.5
+offset_bottom = 90.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_4edl5")
@@ -190,7 +195,7 @@ dice_roll_state = NodePath("../DiceRoll")
 [node name="DiceRoll" type="Node" parent="StateMachine" node_paths=PackedStringArray("player_move_state", "dice_pool")]
 script = ExtResource("8_mwk23")
 player_move_state = NodePath("../PlayerMove")
-dice_pool = NodePath("../../UILayer/PanelContainer/MarginContainer/VBoxContainer/DicePool/DicePool")
+dice_pool = NodePath("../../UILayer/PanelContainer/MarginContainer/VBoxContainer/DicePool")
 
 [node name="PlayerMove" type="Node" parent="StateMachine" node_paths=PackedStringArray("story_interaction_state", "player", "board")]
 script = ExtResource("9_yogo3")

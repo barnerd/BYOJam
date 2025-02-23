@@ -11,7 +11,6 @@ var turns_taken: int = 0
 
 @onready var board: GameBoard = $"../GameBoard"
 @onready var pet: Pet = $Pet
-@onready var dice_pool: DicePool = $"../../../UILayer/PanelContainer/MarginContainer/VBoxContainer/DicePool/DicePool"
 
 
 func _init() -> void:

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk1sva422qty8"]
+
+[ext_resource type="Theme" uid="uid://8rtfbrfbseru" path="res://game_theme.tres" id="1_3hs0l"]
+[ext_resource type="Script" path="res://UI/dice_animation.gd" id="1_fe3bi"]
+
+[node name="DiceAnimation" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -40.0
+offset_right = 25.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_3hs0l")
+script = ExtResource("1_fe3bi")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 2

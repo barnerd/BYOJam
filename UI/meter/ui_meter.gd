@@ -17,7 +17,7 @@ func _ready() -> void:
 	if not Engine.is_editor_hint():
 		SignalBus.connect_to_signal(signal_name, set_value)
 		
-	start_new_tween()
+		start_new_tween()
 
 
 #func _process(delta: float) -> void:
