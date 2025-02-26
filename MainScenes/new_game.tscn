@@ -1,13 +1,14 @@
-[gd_scene load_steps=29 format=3 uid="uid://beeo6wb5btqkj"]
+[gd_scene load_steps=32 format=3 uid="uid://beeo6wb5btqkj"]
 
 [ext_resource type="PackedScene" uid="uid://dvvvs70p5muoe" path="res://game_board/game_board.tscn" id="1_5yeuy"]
 [ext_resource type="PackedScene" uid="uid://bkg6qgamif8at" path="res://characters/player/player.tscn" id="1_xt7d8"]
 [ext_resource type="PackedScene" uid="uid://ddawfdqr52jcb" path="res://UI/debug_game_variables.tscn" id="1_xym1b"]
 [ext_resource type="PackedScene" uid="uid://dcypsl0wpgbsn" path="res://UI/game_start_splash.tscn" id="2_glx7w"]
 [ext_resource type="PackedScene" uid="uid://cr7khfphhq7ct" path="res://characters/pet/pet.tscn" id="2_h3xiu"]
-[ext_resource type="Texture2D" uid="uid://dvm6io8lldaiq" path="res://ArtAssets/2D Art/ui_art/tree.PNG" id="2_wehj0"]
+[ext_resource type="Texture2D" uid="uid://byvi2sxkw6sff" path="res://ArtAssets/2D Art/ui_art/Tree-Blue.png" id="2_r57ih"]
 [ext_resource type="Shader" uid="uid://btytsavr8d5qb" path="res://shaders/tree_sway.tres" id="3_c1l1q"]
 [ext_resource type="PackedScene" uid="uid://djh6ctsqiwsnr" path="res://UI/dice_pool.tscn" id="3_f6iub"]
+[ext_resource type="Texture2D" uid="uid://e1mjgaom7ek3" path="res://ArtAssets/2D Art/ui_art/Tree-Green.png" id="3_rqme5"]
 [ext_resource type="Script" path="res://addons/state_machine/state_machine.gd" id="4_4edl5"]
 [ext_resource type="PackedScene" uid="uid://btuwfdgthh6q3" path="res://UI/restart_game.tscn" id="4_60g5q"]
 [ext_resource type="PackedScene" uid="uid://c0j5wdrc46ee5" path="res://Dialogue/dialogue.tscn" id="4_o5o0p"]
@@ -19,12 +20,14 @@
 [ext_resource type="Theme" uid="uid://8rtfbrfbseru" path="res://game_theme.tres" id="9_yncrg"]
 [ext_resource type="Script" path="res://game_state_machine/player_move.gd" id="9_yogo3"]
 [ext_resource type="Script" path="res://game_state_machine/story_interaction.gd" id="10_bacfe"]
-[ext_resource type="PackedScene" uid="uid://dpvmsa1eggpnb" path="res://UI/meter/ui_meter.tscn" id="10_md4fb"]
+[ext_resource type="PackedScene" uid="uid://dpvmsa1eggpnb" path="res://UI/meter/hunger_meter.tscn" id="10_md4fb"]
 [ext_resource type="Script" path="res://game_state_machine/turn_end.gd" id="11_7ea82"]
 [ext_resource type="Script" path="res://game_state_machine/win.gd" id="12_5fs8w"]
+[ext_resource type="Texture2D" uid="uid://ce0ew4jtwg8r8" path="res://ArtAssets/2D Art/ui_art/Meter-Sprite-Sheet.png" id="12_8p5at"]
 [ext_resource type="Script" path="res://game_state_machine/lose.gd" id="13_xg40i"]
 [ext_resource type="Script" path="res://game_state_machine/game_over.gd" id="14_72xus"]
 [ext_resource type="PackedScene" uid="uid://bk1sva422qty8" path="res://UI/dice_animation.tscn" id="14_bjnu6"]
+[ext_resource type="PackedScene" uid="uid://bxtoj7uy6uso0" path="res://UI/meter/fear_meter.tscn" id="14_grw6w"]
 [ext_resource type="Texture2D" uid="uid://crko2pqu08s84" path="res://ArtAssets/2D Art/ui_art/mountain_background.PNG" id="21_h7uqt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4x7mg"]
@@ -41,47 +44,47 @@ shader_parameter/WindStrength = 8.0
 
 [node name="Tree1" type="Sprite2D" parent="Trees"]
 material = SubResource("ShaderMaterial_4x7mg")
-position = Vector2(183, 399)
+position = Vector2(136, 404)
 scale = Vector2(0.76, 0.76)
-texture = ExtResource("2_wehj0")
+texture = ExtResource("2_r57ih")
 
 [node name="Tree2" type="Sprite2D" parent="Trees"]
 material = SubResource("ShaderMaterial_4x7mg")
-position = Vector2(371, 281)
+position = Vector2(274, 247)
 scale = Vector2(0.76, 0.76)
-texture = ExtResource("2_wehj0")
+texture = ExtResource("2_r57ih")
 
 [node name="Tree3" type="Sprite2D" parent="Trees"]
 material = SubResource("ShaderMaterial_4x7mg")
-position = Vector2(1143, 276)
+position = Vector2(1106, 337)
 scale = Vector2(0.76, 0.76)
-texture = ExtResource("2_wehj0")
+texture = ExtResource("2_r57ih")
 
 [node name="Tree4" type="Sprite2D" parent="Trees"]
 material = SubResource("ShaderMaterial_4x7mg")
-position = Vector2(1344, 376)
+position = Vector2(1228, 281)
 scale = Vector2(0.76, 0.76)
-texture = ExtResource("2_wehj0")
+texture = ExtResource("2_r57ih")
 
 [node name="Tree5" type="Sprite2D" parent="Trees"]
 material = SubResource("ShaderMaterial_konqa")
 position = Vector2(222, 826)
-texture = ExtResource("2_wehj0")
+texture = ExtResource("3_rqme5")
 
 [node name="Tree6" type="Sprite2D" parent="Trees"]
 material = SubResource("ShaderMaterial_konqa")
 position = Vector2(450, 998)
-texture = ExtResource("2_wehj0")
+texture = ExtResource("3_rqme5")
 
 [node name="Tree7" type="Sprite2D" parent="Trees"]
 material = SubResource("ShaderMaterial_konqa")
 position = Vector2(1035, 1077)
-texture = ExtResource("2_wehj0")
+texture = ExtResource("3_rqme5")
 
 [node name="Tree8" type="Sprite2D" parent="Trees"]
 material = SubResource("ShaderMaterial_konqa")
 position = Vector2(1250, 812)
-texture = ExtResource("2_wehj0")
+texture = ExtResource("3_rqme5")
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -165,20 +168,42 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="HungerMeter" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("10_md4fb")]
-layout_mode = 2
-current_bg_scale = 1
-label_text = "HUNGER"
+[node name="PanelContainer" type="Sprite2D" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer"]
+texture = ExtResource("12_8p5at")
+centered = false
+region_enabled = true
+region_rect = Rect2(516, 0, 572, 651)
+
+[node name="HungerMeter" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer" instance=ExtResource("10_md4fb")]
+position = Vector2(101, 31)
 signal_name = "pet_hunger_percent_changed"
 
-[node name="FearMeter2" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("10_md4fb")]
-layout_mode = 2
-current_bg_scale = 0
-label_text = "FEAR"
+[node name="FearMeter" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer" instance=ExtResource("14_grw6w")]
+position = Vector2(101, 325)
 signal_name = "board_fear_percent_changed"
 
+[node name="FoodIcon" type="Sprite2D" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
+position = Vector2(95, 100)
+texture = ExtResource("12_8p5at")
+region_enabled = true
+region_rect = Rect2(23, 25, 104, 139)
+
+[node name="HappyIcon" type="Sprite2D" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
+position = Vector2(95, 384)
+texture = ExtResource("12_8p5at")
+region_enabled = true
+region_rect = Rect2(0, 325, 123, 108)
+
+[node name="AfraidIcon" type="Sprite2D" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
+position = Vector2(469, 384)
+texture = ExtResource("12_8p5at")
+region_enabled = true
+region_rect = Rect2(386, 321, 124, 109)
+
 [node name="DicePool" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer" node_paths=PackedStringArray("dice_animation") instance=ExtResource("3_f6iub")]
+custom_minimum_size = Vector2(573, 381)
 layout_mode = 2
+size_flags_horizontal = 4
 dice_animation = NodePath("../../../../../PopupLayer/DiceAnimation")
 
 [node name="PopupLayer" type="CanvasLayer" parent="."]

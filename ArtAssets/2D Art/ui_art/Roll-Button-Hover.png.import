@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2qwwk7eawsww"
-path="res://.godot/imported/10-Scale-Meter.png-4a52a0d4f8b22e6837f1f5e4c0d6c22e.ctex"
+uid="uid://cmt2ovipb2wmf"
+path="res://.godot/imported/Roll-Button-Hover.png-25e020f73c97b012e744a2673ec062b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtAssets/2D Art/Meters/10-Scale-Meter.png"
-dest_files=["res://.godot/imported/10-Scale-Meter.png-4a52a0d4f8b22e6837f1f5e4c0d6c22e.ctex"]
+source_file="res://ArtAssets/2D Art/ui_art/Roll-Button-Hover.png"
+dest_files=["res://.godot/imported/Roll-Button-Hover.png-25e020f73c97b012e744a2673ec062b8.ctex"]
 
 [params]
 

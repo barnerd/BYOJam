@@ -23,7 +23,7 @@ var dice_pip_images: Array = [
 		],
 ]
 
-@onready var roll_button: Button = $MarginContainer/VBoxContainer/Button
+@onready var roll_button: TextureButton = $MarginContainer/VBoxContainer/Button
 
 
 func _ready() -> void:

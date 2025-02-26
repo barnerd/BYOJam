@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdfdg5q181uxd"
-path="res://.godot/imported/5-Scale-Meter.png-69eb73000b49ae8c303905381d05444a.ctex"
+uid="uid://yik50xpdfijw"
+path="res://.godot/imported/Dice-Background.png-6a58e52c421c77a6a3012dacd02c2782.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtAssets/2D Art/Meters/5-Scale-Meter.png"
-dest_files=["res://.godot/imported/5-Scale-Meter.png-69eb73000b49ae8c303905381d05444a.ctex"]
+source_file="res://ArtAssets/2D Art/ui_art/Dice-Background.png"
+dest_files=["res://.godot/imported/Dice-Background.png-6a58e52c421c77a6a3012dacd02c2782.ctex"]
 
 [params]
 
