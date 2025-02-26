@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://beeo6wb5btqkj"]
+[gd_scene load_steps=35 format=3 uid="uid://beeo6wb5btqkj"]
 
 [ext_resource type="PackedScene" uid="uid://dvvvs70p5muoe" path="res://game_board/game_board.tscn" id="1_5yeuy"]
 [ext_resource type="PackedScene" uid="uid://bkg6qgamif8at" path="res://characters/player/player.tscn" id="1_xt7d8"]
@@ -11,9 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://e1mjgaom7ek3" path="res://ArtAssets/2D Art/ui_art/Tree-Green.png" id="3_rqme5"]
 [ext_resource type="Script" path="res://addons/state_machine/state_machine.gd" id="4_4edl5"]
 [ext_resource type="PackedScene" uid="uid://btuwfdgthh6q3" path="res://UI/restart_game.tscn" id="4_60g5q"]
+[ext_resource type="Texture2D" uid="uid://dvebxak5d7vsg" path="res://ArtAssets/2D Art/ui_art/Bush.png" id="4_fjsrp"]
 [ext_resource type="PackedScene" uid="uid://c0j5wdrc46ee5" path="res://Dialogue/dialogue.tscn" id="4_o5o0p"]
 [ext_resource type="Script" path="res://game_state_machine/load.gd" id="5_ocb74"]
+[ext_resource type="Texture2D" uid="uid://crtioxvdcu41u" path="res://ArtAssets/2D Art/ui_art/Mountain-Background.png" id="5_ovu54"]
 [ext_resource type="Script" path="res://game_state_machine/game_start.gd" id="6_p0lr1"]
+[ext_resource type="Texture2D" uid="uid://bbv5ri2t4l0j4" path="res://ArtAssets/2D Art/ui_art/Ground-Background.png" id="6_pakdk"]
 [ext_resource type="Script" path="res://game_state_machine/turn_start.gd" id="7_0oow1"]
 [ext_resource type="Script" path="res://characters/pet/pet.gd" id="8_bxuc7"]
 [ext_resource type="Script" path="res://game_state_machine/dice_roll.gd" id="8_mwk23"]
@@ -28,7 +31,6 @@
 [ext_resource type="Script" path="res://game_state_machine/game_over.gd" id="14_72xus"]
 [ext_resource type="PackedScene" uid="uid://bk1sva422qty8" path="res://UI/dice_animation.tscn" id="14_bjnu6"]
 [ext_resource type="PackedScene" uid="uid://bxtoj7uy6uso0" path="res://UI/meter/fear_meter.tscn" id="14_grw6w"]
-[ext_resource type="Texture2D" uid="uid://crko2pqu08s84" path="res://ArtAssets/2D Art/ui_art/mountain_background.PNG" id="21_h7uqt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4x7mg"]
 shader = ExtResource("3_c1l1q")
@@ -46,11 +48,12 @@ shader_parameter/WindStrength = 8.0
 
 [node name="Tree1" type="Sprite2D" parent="Trees"]
 material = SubResource("ShaderMaterial_4x7mg")
-position = Vector2(136, 404)
-scale = Vector2(0.76, 0.76)
+position = Vector2(97, 318)
+scale = Vector2(0.93, 0.93)
 texture = ExtResource("2_r57ih")
 
 [node name="Tree2" type="Sprite2D" parent="Trees"]
+visible = false
 material = SubResource("ShaderMaterial_4x7mg")
 position = Vector2(274, 247)
 scale = Vector2(0.76, 0.76)
@@ -70,7 +73,7 @@ texture = ExtResource("2_r57ih")
 
 [node name="Tree5" type="Sprite2D" parent="Trees"]
 material = SubResource("ShaderMaterial_konqa")
-position = Vector2(222, 826)
+position = Vector2(162, 817)
 texture = ExtResource("3_rqme5")
 
 [node name="Tree6" type="Sprite2D" parent="Trees"]
@@ -80,13 +83,23 @@ texture = ExtResource("3_rqme5")
 
 [node name="Tree7" type="Sprite2D" parent="Trees"]
 material = SubResource("ShaderMaterial_konqa")
-position = Vector2(1035, 1077)
+position = Vector2(1008, 1043)
 texture = ExtResource("3_rqme5")
 
 [node name="Tree8" type="Sprite2D" parent="Trees"]
 material = SubResource("ShaderMaterial_konqa")
-position = Vector2(1250, 812)
+position = Vector2(1221, 842)
 texture = ExtResource("3_rqme5")
+
+[node name="Bushes1" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_konqa")
+position = Vector2(153, 452)
+texture = ExtResource("4_fjsrp")
+
+[node name="Bushes2" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_konqa")
+position = Vector2(1220, 428)
+texture = ExtResource("4_fjsrp")
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -94,9 +107,30 @@ layer = -1
 [node name="MountainBG" type="TextureRect" parent="BackgroundLayer"]
 show_behind_parent = true
 z_index = -1
-offset_right = 1421.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_right = 960.0
 offset_bottom = 1021.0
-texture = ExtResource("21_h7uqt")
+grow_horizontal = 2
+texture = ExtResource("5_ovu54")
+stretch_mode = 2
+
+[node name="GrassBG" type="TextureRect" parent="BackgroundLayer"]
+show_behind_parent = true
+z_index = -1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -654.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_pakdk")
 stretch_mode = 2
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
