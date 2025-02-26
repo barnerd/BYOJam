@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://beeo6wb5btqkj"]
+[gd_scene load_steps=33 format=3 uid="uid://beeo6wb5btqkj"]
 
 [ext_resource type="PackedScene" uid="uid://dvvvs70p5muoe" path="res://game_board/game_board.tscn" id="1_5yeuy"]
 [ext_resource type="PackedScene" uid="uid://bkg6qgamif8at" path="res://characters/player/player.tscn" id="1_xt7d8"]
@@ -37,6 +37,8 @@ shader_parameter/WindStrength = 4.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_konqa"]
 shader = ExtResource("3_c1l1q")
 shader_parameter/WindStrength = 8.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eq86l"]
 
 [node name="NewGame" type="Node"]
 
@@ -156,6 +158,7 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
 theme = ExtResource("9_yncrg")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_eq86l")
 
 [node name="MarginContainer" type="MarginContainer" parent="UILayer/PanelContainer"]
 layout_mode = 2
