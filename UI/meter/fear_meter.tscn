@@ -10,8 +10,9 @@ script = ExtResource("1_oqkro")
 position = Vector2(46, 53)
 texture = ExtResource("2_lux7q")
 centered = false
+flip_h = true
 region_enabled = true
-region_rect = Rect2(137, 396, 239, 142)
+region_rect = Rect2(128, 85, 240, 143)
 
 [node name="Arrow" type="Sprite2D" parent="Background"]
 position = Vector2(122, 127)
