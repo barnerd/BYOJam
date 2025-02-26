@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://beeo6wb5btqkj"]
+[gd_scene load_steps=29 format=3 uid="uid://beeo6wb5btqkj"]
 
 [ext_resource type="PackedScene" uid="uid://dvvvs70p5muoe" path="res://game_board/game_board.tscn" id="1_5yeuy"]
 [ext_resource type="PackedScene" uid="uid://bkg6qgamif8at" path="res://characters/player/player.tscn" id="1_xt7d8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dcypsl0wpgbsn" path="res://UI/game_start_splash.tscn" id="2_glx7w"]
 [ext_resource type="PackedScene" uid="uid://cr7khfphhq7ct" path="res://characters/pet/pet.tscn" id="2_h3xiu"]
 [ext_resource type="Texture2D" uid="uid://dvm6io8lldaiq" path="res://ArtAssets/2D Art/ui_art/tree.PNG" id="2_wehj0"]
+[ext_resource type="Shader" uid="uid://btytsavr8d5qb" path="res://shaders/tree_sway.tres" id="3_c1l1q"]
 [ext_resource type="PackedScene" uid="uid://djh6ctsqiwsnr" path="res://UI/dice_pool.tscn" id="3_f6iub"]
 [ext_resource type="Script" path="res://addons/state_machine/state_machine.gd" id="4_4edl5"]
 [ext_resource type="PackedScene" uid="uid://btuwfdgthh6q3" path="res://UI/restart_game.tscn" id="4_60g5q"]
@@ -26,7 +27,61 @@
 [ext_resource type="PackedScene" uid="uid://bk1sva422qty8" path="res://UI/dice_animation.tscn" id="14_bjnu6"]
 [ext_resource type="Texture2D" uid="uid://crko2pqu08s84" path="res://ArtAssets/2D Art/ui_art/mountain_background.PNG" id="21_h7uqt"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4x7mg"]
+shader = ExtResource("3_c1l1q")
+shader_parameter/WindStrength = 4.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_konqa"]
+shader = ExtResource("3_c1l1q")
+shader_parameter/WindStrength = 8.0
+
 [node name="NewGame" type="Node"]
+
+[node name="Trees" type="Node2D" parent="."]
+
+[node name="Tree1" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_4x7mg")
+position = Vector2(183, 399)
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("2_wehj0")
+
+[node name="Tree2" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_4x7mg")
+position = Vector2(371, 281)
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("2_wehj0")
+
+[node name="Tree3" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_4x7mg")
+position = Vector2(1143, 276)
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("2_wehj0")
+
+[node name="Tree4" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_4x7mg")
+position = Vector2(1344, 376)
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("2_wehj0")
+
+[node name="Tree5" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_konqa")
+position = Vector2(222, 826)
+texture = ExtResource("2_wehj0")
+
+[node name="Tree6" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_konqa")
+position = Vector2(450, 998)
+texture = ExtResource("2_wehj0")
+
+[node name="Tree7" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_konqa")
+position = Vector2(1035, 1077)
+texture = ExtResource("2_wehj0")
+
+[node name="Tree8" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_konqa")
+position = Vector2(1250, 812)
+texture = ExtResource("2_wehj0")
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -38,34 +93,6 @@ offset_right = 1421.0
 offset_bottom = 1021.0
 texture = ExtResource("21_h7uqt")
 stretch_mode = 2
-
-[node name="Tree1" type="TextureRect" parent="BackgroundLayer"]
-offset_left = 117.0
-offset_top = 253.0
-offset_right = 247.0
-offset_bottom = 547.0
-texture = ExtResource("2_wehj0")
-
-[node name="Tree2" type="TextureRect" parent="BackgroundLayer"]
-offset_left = 1274.0
-offset_top = 240.0
-offset_right = 1404.0
-offset_bottom = 534.0
-texture = ExtResource("2_wehj0")
-
-[node name="Tree3" type="TextureRect" parent="BackgroundLayer"]
-offset_left = 1077.0
-offset_top = 124.0
-offset_right = 1207.0
-offset_bottom = 418.0
-texture = ExtResource("2_wehj0")
-
-[node name="Tree4" type="TextureRect" parent="BackgroundLayer"]
-offset_left = 306.0
-offset_top = 123.0
-offset_right = 436.0
-offset_bottom = 417.0
-texture = ExtResource("2_wehj0")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 offset_left = -107.0
