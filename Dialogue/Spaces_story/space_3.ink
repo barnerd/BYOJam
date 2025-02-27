@@ -1,3 +1,5 @@
+VAR moth_color = "blue"
+
 == space_3 ==
 
 This is space 3.
@@ -8,12 +10,19 @@ This is space 3.
 
 
 === space_3_interaction_1 === 
-Test_1
+What color do you think the moth looks best in?
+* [Blue] 
+    ~ moth_color = "blue"
+* [Red]
+    ~ moth_color = "red"
+- Great!
+
 {testing_in_ink== true: -> space_3}
 -> DONE
 
 
 === space_3_interaction_2 === 
+Wow, I love the moth's shining {moth_color} eyes!
 Test_2
 {testing_in_ink== true: -> space_3}
 -> DONE

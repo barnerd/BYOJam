@@ -1,227 +1,213 @@
-VAR MONSTER_NAME = "<i>Un-named Bug Friend</i>"
-VAR MONSTER_NAME_ACCORDING_TO_GRANDMA = "<i>Un-named Bug Friend</i>"
-VAR you_chose_to_destroy_grandmas_house = false
+/// VAR pc_name = "Rosy"
+/// MONSTER_NAME
+/// Podcaster
+/// ⚅
+
+VAR kick_to_end_active = false
+VAR locations_visited = 0
+
+VAR moth_origin_found = false
+
 
 ==== space_1 ====
-
-///Add one to the hunger. 
-/// ~ change_variable("hunger", 1)
-///What does the hunger say now?
-
+{moth_origin_found == true: 
+-> space_1_moth_found_aftermath
+}
 
 {testing_in_ink == true: 
-* [space_1_interaction_1] -> space_1_interaction_1
-* [space_1_interaction_2] -> space_1_interaction_2
-* [space_1_interaction_3] -> space_1_interaction_3
-* [space_1_interaction_4] -> space_1_interaction_4
-* [space_1_interaction_5] -> space_1_interaction_5
-* [space_1_destroyed_1] -> space_1_destroyed_1
-- else: 
-{not space_1_interaction_1: -> space_1_interaction_1}
-{not space_1_interaction_2: -> space_1_interaction_2}
-{not space_1_interaction_3: -> space_1_interaction_3}
-{not space_1_interaction_4: -> space_1_interaction_4}
-{not space_1_interaction_5: -> space_1_interaction_5}
-/// {TBD variable that sends you to rubble_thread: -> space_1_destroyed_1}
-}
-
-=== space_1_interaction_1 ===
-Hey there, grandkiddo! And who's this? Your new friend? 
-You're just like your mother, always bringing in strays-- which is <i>exactly</i> what I said when she brought your father home for the first time!
-Now tell me, have you picked a name for this, uh, <i>unusual</i> pet?
-* [Marshmallow] 
-    ~ MONSTER_NAME = "Marshmallow"
-    ~ MONSTER_NAME_ACCORDING_TO_GRANDMA = "Marshall"
-
-* [I haven't decided yet] Well, I'll ask you the next time you stop by. Think of a good one! 
-
-- Okay, {MONSTER_NAME_ACCORDING_TO_GRANDMA}! Open wide!
-
-{MONSTER_NAME_ACCORDING_TO_GRANDMA == "Marshall": 
-* [Grandma, it's <i>Marshmallow!</i>]
-    ~ MONSTER_NAME = "Marshmallow"
-    Oh, {MONSTER_NAME_ACCORDING_TO_GRANDMA}! Of course, Grandma was just being silly.
-    {testing_in_ink== true: -> space_1}
-    -> DONE
-* [<i>Let it be.</i>] -> DONE
-}
-
-{testing_in_ink== true: -> space_1}
--> DONE
-
-=== space_1_interaction_2 ===
-Bless my stars, that thing's now twice the size you are!
-What do your parents think of you taking care of this... <i>thing?</i>
-{MONSTER_NAME != "<i>Un-named Bug Friend</i>":
-    * [He's not a thing, his name is <i>{MONSTER_NAME}!</i>]
-    Yes, yes! {MONSTER_NAME_ACCORDING_TO_GRANDMA}! How could I forget!
-    -> space_1_interaction_2_addendum_1
++ [space_1_interaction_1] -> space_1_interaction_1
 - else:
-    * [He's not a "thing," he's my <i>pet!</i>]
-    He might be for now, but what if he keeps growing?
-    -> space_1_interaction_2_addendum_1
-}
-* [It was either that or let me get a horse]
-Well, horses are sentient people in this world, so I can understand why they wouldn't want to just "get" you a horse... 
-    -> space_1_interaction_2_addendum_1
-
-== space_1_interaction_2_addendum_1 ==
-Anyway, here's some cookies for you and {MONSTER_NAME_ACCORDING_TO_GRANDMA}. Now do you know if your parents are home? 
-Because I might want to talk them about something, not that you <i>or</i> {MONSTER_NAME_ACCORDING_TO_GRANDMA} need to worry about it!
-{MONSTER_NAME == "<i>Un-named Bug Friend</i>":
-* [Grandma, I picked a name for the bug: Francis!]
-    ~ MONSTER_NAME = "Francis"
-    ~ MONSTER_NAME_ACCORDING_TO_GRANDMA = "Frank"
-    <i>{MONSTER_NAME_ACCORDING_TO_GRANDMA}</i>, that's a wonderful name.
-        ** [No, it's <i>{MONSTER_NAME}!</i>]
-        ~ MONSTER_NAME_ACCORDING_TO_GRANDMA = "Francis"
-        Oh, {MONSTER_NAME_ACCORDING_TO_GRANDMA}! Of course, Grandma was just being silly.
-        -> space_1_interaction_2_addendum_3
-        ** [Leave it be]
-        -> space_1_interaction_2_addendum_3
-    
-* [I'm still thinking of a name.]
-Okay, grandkiddo, take your time.
--> space_1_interaction_2_addendum_3
-}
-    
-{testing_in_ink== true: -> space_1}
--> DONE
-
-== space_1_interaction_2_addendum_3 ==
-{testing_in_ink== true: -> space_1}
--> DONE
-
-
-=== space_1_interaction_3 ===
-Listen, honey. I talked to your parents about you keeping {MONSTER_NAME_ACCORDING_TO_GRANDMA}, and I'm starting to get worried. 
-Just look at him! He's bigger than you and good gravy-- we don't even know <i>what</i> he even is!
-* [Look at his friendly eyes! He's nice!]
-    Honey, I know you think you're doing the right thing by taking care of him, but this is not a normal pet! What if he eats my precious grandbaby whole?
-* [You going to feed him, or what?]
-    Now, you listen to Grandma! I'm scared for you. Keeping this thing, this monster-- <i>it ain't right!</i> Nothing good is going to come from this! 
-- You know I love you to the mooncake and back, but I think it's time you set this creature free. It's the right thing to do.
-{MONSTER_NAME != "<i>Un-named Bug Friend</i>":
-    * [His name is {MONSTER_NAME}!] 
-        FINE, HIS NAME IS {MONSTER_NAME}! Child, you are impossible! Just like your ungrateful, stubborn mother!
-        -> space_1_interaction_3_addendum_1
+{moth_origin_found == false: -> space_1_interaction_1}
 }
 
-* [I'm keeping him, and there's nothing you can do!] 
-    You are IMPOSSIBLE! You are just like your ungrateful, stubborn mother!
-    -> space_1_interaction_3_addendum_1
-    
-* [{MONSTER_NAME}, attack grandma!] 
-    <i>The monster roars and surges ahead towards Grandma's house!</i>
-    ~ change_variable("hunger", very_strong_effect)
-    /// Destroy this space permanently.
-    ~ you_chose_to_destroy_grandmas_house = true
-    <i>With a sound like the Earth splitting in two, the house is leveled.</i>
-    <i>When the dust clears, Grandma is no where to be seen.</i>
-    ** [That'll show her.] -> space_1_interaction_3_addendum_2
-    <i>{MONSTER_NAME} burbles happily. </i>
-    ** [Gra.. Grandma?] 
-    <i>You look through the rubble, but she's no where to be seen.</i>
-    -> space_1_interaction_3_addendum_2
-    
+=== space_1_interaction_1 === 
 
-== space_1_interaction_3_addendum_1 ==
+{space_1_interaction_1_explanation == false: -> space_1_interaction_1_explanation}
+{space_1_interaction_1_tutorial == false: -> space_1_interaction_1_tutorial}
 
-/// Need to talk to David about this, but we need to talk about how 
 
-...
-Grandma needs some time alone now. 
-I baked these cookies, so you might as well have them.
-...
-Take care of yourself, grandkiddo.
-
-{MONSTER_NAME == "<i>Un-named Bug Friend</i>":
-* [Grandma, wait! I thought of a name for my bug!] 
-    THIS IS NOT A GOOD TIME!
-    <i>Grandma slams the door shut.</i>
-    -> space_1_interaction_3_addendum_2
-* [<i>Leave.</i>] -> space_1_interaction_3_addendum_2
+/// INVESTIGATE HUB OPTIONS
+Where should we investigate?
+{locations_visited >= 3:
++ [I think I know what made the egg...]
+    -> space_1_guess
 }
 
-{testing_in_ink== true: -> space_1}
--> DONE
+{space_1_interaction_1_bedroom == false: 
+* [Investigate Bed Room] 
+    ~ locations_visited += 1 
+    ~ kick_to_end_active = true
+    -> space_1_interaction_1_bedroom
+- else:
++ [Revisit Bed Room] -> space_1_interaction_1_bedroom
+}
 
-== space_1_interaction_3_addendum_2 ==
-{testing_in_ink== true: -> space_1}
--> DONE
+{space_1_interaction_1_basement == false:
+* [Investigate Basement] 
+    ~ locations_visited += 1 
+    ~ kick_to_end_active = true
+    -> space_1_interaction_1_basement
+- else: 
++ [Revisit Basement] -> space_1_interaction_1_basement
+}
 
+{space_1_interaction_1_kitchen == false:
+* [Investigate Kitchen] 
+    ~ locations_visited += 1 
+    ~ kick_to_end_active = true
+    -> space_1_interaction_1_kitchen
+- else: 
++ [Revisit Kitchen] -> space_1_interaction_1_kitchen
+}
 
-
-=== space_1_interaction_4 === 
-<i>You knock on the door, but there is no answer.</i>
-<i>You notice on the porch is a basket of cookies and a note.</i>
--> space_1_interaction_4_addendum_1
-
-== space_1_interaction_4_addendum_1 == 
-* [Feed cookies to monster] 
-    <i>The monster devours the cookies and basket whole.</i>
-    ~ change_variable("hunger", medium_effect)
-    -> space_1_interaction_4_addendum_1
-* [read note]
-    Hi, grandkiddo. 
-    I'm taking the day off to do some thinking. 
-    You know, when you were a baby and your parents first moved to town, I was so excited! I couldn't wait to get a front row seat to watching you grow into an incredible young woman. 
-    But sometimes it's hard watching you get older and make different choices than I would have made for you. 
-    You know I don't understand those internet "mee-mee's" you're always laughing at, why you think mint (which tastes like toothpase) is the best dessert flavor, or why on Dog's green earth you want to raise a giant monster insect-thing. 
-    
-    So suffice to say, I have a <i>lot</i> to think about. 
-    Anyways, enjoy the mint cookies. I know they're your favorite.
-        <i>Grandma</i>
-    -> space_1_interaction_4_addendum_1
-* [leave]
-    {testing_in_ink== true: -> space_1}
-    -> DONE
-
-
-<i></i>
-
-{testing_in_ink== true: -> space_1}
--> DONE
-
-=== space_1_interaction_5 ===
-Hey kiddo! 
-<i>Grandma stands up from the porch, waving you over.</i>
-* [Grandma? Are you okay?]
-    Aren't you sweet, asking about little old me? 
-* [If you're going to be mean to {MONSTER_NAME}, I'm leaving.]
-    I won't be mean to him, I promise.
-- What I wanted to say is that I don't understand you or your connection to this thing. But then I did some thinking and realized it's not a grandma's job to understand you or what you're up to.
-    But it is a grandma's job to love and support her grandbaby, no matter who or <i>what</i> she drags home.
-    Just ask your mother about the time she told me she was marrying your father!
-    {MONSTER_NAME != "<i>Un-named Bug Friend</i>":
-    Now, here's an extra helping of cookies for for you and <i>{MONSTER_NAME_ACCORDING_TO_GRANDMA}</i>.
-    - else: 
-        Now, here's an extra helping of cookies for you and... Honey, this is getting ridiculous! It's time you picked out a name for for your pet already! 
-                * [I'm going to name him Gemma, after you!]
-                    ~ MONSTER_NAME = "Gemma"
-                    ~ MONSTER_NAME_ACCORDING_TO_GRANDMA = "Gemma"
-                    Honey, you're too sweet, and I can't wait to watch you grow. 
-                    The <i>both</i> of you!
-                    -> space_1_interaction_5_addendum_1
-                * [I'm going to name him Cookie!]
-                    ~ MONSTER_NAME = "Cookie"
-                    ~ MONSTER_NAME_ACCORDING_TO_GRANDMA = "Cookie"
-                    That's a precious name, and I can't wait to watch you grow. 
-                    The <i>both</i> of you!
-                    -> space_1_interaction_5_addendum_1
-    }
-    
-{testing_in_ink== true: -> space_1}
--> DONE
+{space_1_interaction_1_frontyard == false:
+* [Investigate Front Yard] 
+    ~ locations_visited += 1 
+    ~ kick_to_end_active = true
+    -> space_1_interaction_1_frontyard
+- else: 
++ [Revisit Front Yard] -> space_1_interaction_1_frontyard
+}
 
 
-=== space_1_interaction_5_addendum_1 ===
-{testing_in_ink== true: -> space_1}
--> DONE
+/// 
+
+{testing_in_ink:-> space_1|-> DONE}
+
+=== space_1_interaction_1_explanation === 
+Hey there, listeners. This is Lotta Scoops, and you may know me from my podcast Small Town Killers, Little Murder in the Big City, and my latest series: It's Always the Boyfriend! 
+Today, I'm launching a new season of my seminal show: Origins of a Monster. 
+Though previously I focused on getting inside the head of the Monroe Street Murderer, this series is going to have a new different focus. 
+Listeners, meet mild mannered, local sweet heart, {pc_name}. 
+* [Is this going to be on streaming?]
+    You better believe it! Just don't ask for any residuals. 
+* [I'm going to say the worst words I know! <i>BUTT AND FARTS!</i>]
+    Oh, sweetie, we say far worse words on this show.
+- Let me explain. I was looking for new material for my true crime podcast, and when I saw your giant monsterthat seemingly came out of no where, I was like, hello? Opportunity? Is that <i>you</i> knocking on my door?
+Together, you and I can get to the bottom of your bug's mysterious origins while creating a hit podcast! Win-win, especially for me. 
+This could finally be the thing that gets me a sponsorship from Square Space. So far, they've said I'm too small time and that exclusively reporting on grizzly murders is "deeply exploitative of real world tragedy and those who are still working through their own grief."
+Now tell me everything you can about the origin of your bug. I want to know it all! 
+* [<i>Tell her everything that happened.</i>]
+    -> space_1_interaction_1_add_2
+* [<i>Say butts and farts again.</i>]
+    You know I'm not broadcasting this live, right? 
+    * * [<i>Tell her everything that happened.</i>]
+        -> space_1_interaction_1_add_2
+    * * [<i>Say poop.</i>]
+        ...Okay, anything else? 
+        * * * [<i>Tell her everything that happened.</i>]
+            -> space_1_interaction_1_add_2
+        * * * [<i>Say poop.</i>]
+            Okay, let's just get it out of your system. 
+            * * * * [<i>Tell her everything that happened.</i>]
+                -> space_1_interaction_1_add_2
+            * * * * [Ask her what other bad words she knows.]
+                Ugh, just tell me about the day your moth appeared already!
+                    * * * * * [<i>Tell her everything that happened.</i>]
+                        -> space_1_interaction_1_add_2
+        
+        
+== space_1_interaction_1_add_2 ==
+
+<i>Last Thursday, you went to bed. It was a perfectly normal night, or so you thought. When you woke up in the morning, a strange EGG was sitting at the front of your bed.</i>
+<i>You pushed the egg under your bed and three days later, it hatched into {MONSTER_NAME}.</i>
+Fascinating! I'm going to go home and rerecord all of this with my ASMR voice, but the next time we meet, we're going to investigate this mystery for real. 
+Here, have some trail mix for your trouble, and come find me soon. My fans are already waiting for the first episode!
+{testing_in_ink:-> space_1|-> DONE}
+
+=== space_1_interaction_1_tutorial ===
+Good to see you again, {pc_name}! Ready to get investigating?
+* [How does this work?]
+* [I brought a magnifying glass]
+    Very cute. Just try and keep your giant invertebrate friend and source of the mystery from stepping on the evidence. 
+
+- So here's how it's going to work. There are <b>four</b> locations we can visit where we can search for clues.
+After you've visited at least three of the four locations, feel free to take a guess as to your bug's origin. 
+Now this isn't a "how-to" series, so let's get investigating!
+-> space_1_interaction_1
+{testing_in_ink:-> space_1|-> DONE}
 
 
-=== space_1_destroyed_1 === 
-Grandma's house is a pile of rubble.
-{testing_in_ink== true: -> space_1}
--> DONE
+== space_1_guess == 
++ [The moth came from demons]
+    "Hmm, that's an interesting idea. There are all these chalk drawings around."
+    "Plus there were those claw marks on the window, like something was trying to get in." 
+    "But I don't think it could have been demons. After all, the whole family ate a big meal of garlic, which is a demonic deterrent per that book of yours."
+    "Looks like we'll have to try figuring this out later..."
+    "<i>Dang it. We'll have to try solving this next time we come here.</i>"
+    {testing_in_ink:-> space_1|-> DONE}
++ [The moth came from a yeti]
+    "I can see why you think that! Neighbor Greg exhibits the poor musical ability of a hirsute monstrosity." 
+    "But as weird as he is, I don't think he's a yeti." 
+    "That book of yours says yetis can never resist doing pranks, and if you remember: he watched your house the entire week!" 
+    "And he didn't do any pranks, he fixed your microwave. So I don't think it can be him..."
+    "<i>Dang it. We'll have to try solving this next time we come here.</i>"
+    {testing_in_ink:-> space_1|-> DONE}
++ [The moth came from the tooth fairy]
+    ~ moth_origin_found = true
+    -> space_1_moth_origin_solved
++ [The moth came from aliens]
+    "Now that's an intriguing thought! Aliens coming down and leaving a little piece of themselves with us."
+    "And it makes sense, you did talk about being very disoriented when you woke up that morning." 
+    "Unfortunately, it can't be them because they're terrified of fish, and guess what you have on your wall, next to where you sleep?" 
+    "That's right: a giant poster of an aquarium with pictures of all those fish." 
+    "No, I don't think it's aliens, as exciting as that would be..."
+    "<i>Dang it. We'll have to try solving this next time we come here.</i>"
+    {testing_in_ink:-> space_1|-> DONE}
 
+
+=== space_1_moth_origin_solved ===
+"The tooth fairy, huh?" 
+"I suppose it does make sense..." 
+"When we talked about the dinner you ate the night before, you talked about eating slowly for unknown reasons." 
+"Then there's the tassles that you bought, even though your parents cut off your allowance." 
+"Then there's the matter of the light." 
+"Neighbor Greg said he saw an orange light the night the egg appeared in your room." 
+"But then we learned separately that he always wears yellow glasses at night."
+"So we can conclude that the color he wasn't orange, but red! It only looked orange because he saw them through his yellow tinted glasses."
+"But I don't understand... How did the tooth fairy go from giving you money for a tooth to giving you a giant weird monster moth?" 
+
+"Wait until my viewers hear this! I'm going to start livestreaming our discovery right now!"
+Just when Lotta hits the record button, there is a BURST of light!
+"Don't hit that record button."
+A strange figure appears before the three of you. It's... THE FREGGIN' TOOTH FAIRY. 
+I'll explain everything provided you don't spill the beans on me!
+You and Lotta share a look. Lotta stops recording. 
+
+The tooth fairy clears their throat. 
+
+Over the centuries, I've collected a lot of teeth. In fact, I've been keeping count. Last week, I got up to 999,999,041. 
+You fly around the globe, paying kids money for teeth, you wind up getting a little bored. 
+So I thought, I'd mix things up for my billionth tooth collected. 
+I decided to grant a wish to the lucky kid who would have the billionth tooth that I collected. 
+And wouldn't you know it: it was this little girl righ here. 
+I asked her what she wanted, and I'm not sure if she heard me. But she had on that mouthguard of hers and was mumbling something about her mom. 
+I poked her, and she shouted: "BIG BAD MOMTH."
+
+Or that's what it sounded like to me. A fairy's magic is binding, and so even though I knew she meant mom, my magic created her an egg which turned into this big giant moth. 
+Anyways, magic's real, and your neighbor is a half yeti, bye!
+
+With that, the tooth fairy departs in a puff of smoke. 
+
+Lotta Scoops stares slackjawed. 
+Wow. My listeners are never going to believe this. 
+
+Well, thanks for helping me solve the mystery. I doubt I can turn this into a binge-worthy podcast, but at least we got to the bottom of it. 
+Here, have come chocolate for your trouble. 
+
+If you need anymore, come swing by the stuido, and I can get you and your tooth fairy creation fed!
+With that, Lotta exits. 
+You pat {MONSTER_NAME}. 
+* [It doesn't matter where you came from, you'll always be my bud.]
+    {MONSTER_NAME} licks your face, nearly knocking you over. 
+* [I'm going to name you Toothy!]
+    ~ MONSTER_NAME = "Toothy"
+- <i>Case closed!</i>
+{testing_in_ink:-> space_1|-> DONE}
+
+
+== space_1_moth_found_aftermath ==
+You visit Lotta in her recording studio. 
+She's in the middle of doing voice over for her podcast about a string of horrifying murders committed in the seventies.
+You and {MONSTER_NAME} grab some snacks and leave her to recording.
+{testing_in_ink:-> space_1|-> DONE}
