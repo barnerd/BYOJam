@@ -1,140 +1,243 @@
+VAR MONSTER_NAME = "<i>Un-named Bug Friend</i>"
+VAR MONSTER_NAME_ACCORDING_TO_GRANDMA = "<i>Un-named Bug Friend</i>"
+VAR you_chose_to_destroy_grandmas_house = false
+
+/// Reminder to change default name to "buggy" and update all conditionals that check for it. 
+
 == space_4 ==
+
+///Add one to the hunger. 
+/// ~ change_variable("hunger", 1)
+///What does the hunger say now?
+
+/// Copy and paste this in at the start of every day. 
+{testing_in_ink == true: 
+* [space_4_interaction_1] -> space_4_interaction_1
+* [space_4_interaction_2] -> space_4_interaction_2
+* [space_4_interaction_3] -> space_4_interaction_3
+* [space_4_interaction_4] -> space_4_interaction_4
+* [space_4_interaction_5] -> space_4_interaction_5
+* [space_4_destroyed_1] -> space_4_destroyed_1
+- else: 
 {not space_4_interaction_1: -> space_4_interaction_1}
 {not space_4_interaction_2: -> space_4_interaction_2}
 {not space_4_interaction_3: -> space_4_interaction_3}
 {not space_4_interaction_4: -> space_4_interaction_4}
 {not space_4_interaction_5: -> space_4_interaction_5}
-{not space_4_interaction_6: -> space_4_interaction_6}
-{not space_4_interaction_7: -> space_4_interaction_7}
-{not space_4_interaction_8: -> space_4_interaction_8}
+/// {TBD variable that sends you to rubble_thread: -> space_4_destroyed_1}
+}
+
+=== space_4_interaction_1 ===
+Hey there, grandkiddo! And who's this? Your new friend? 
+You're just like your mother, always bringing in strays-- which is <i>exactly</i> what I said when she brought your father home for the first time!
+Now tell me, have you picked a name for this, uh, <i>unusual</i> pet?
+* [Marshmallow] 
+    ~ MONSTER_NAME = "Marshmallow"
+    ~ MONSTER_NAME_ACCORDING_TO_GRANDMA = "Marshall"
+
+* [I haven't decided yet] Well, I'll ask you the next time you stop by. Think of a good one! 
+
+- Okay, {MONSTER_NAME_ACCORDING_TO_GRANDMA}! Open wide!
+
+{MONSTER_NAME_ACCORDING_TO_GRANDMA == "Marshall": 
+* [Grandma, it's <i>Marshmallow!</i>]
+    ~ MONSTER_NAME = "Marshmallow"
+    Oh, {MONSTER_NAME_ACCORDING_TO_GRANDMA}! Of course, Grandma was just being silly.
+    {testing_in_ink== true: -> space_4}
+    -> DONE
+* [<i>Let it be.</i>] 
+{testing_in_ink== true: -> space_4}
+-> DONE
+}
+
+{testing_in_ink== true: -> space_4}
+-> DONE
+
+=== space_4_interaction_2 ===
+Bless my stars, that thing's now twice the size you are!
+What do your parents think of you taking care of this... <i>thing?</i>
+{MONSTER_NAME != "<i>Un-named Bug Friend</i>":
+    * [He's not a thing, his name is <i>{MONSTER_NAME}!</i>]
+    Yes, yes! {MONSTER_NAME_ACCORDING_TO_GRANDMA}! How could I forget!
+    -> space_4_interaction_2_addendum_1
+- else:
+    * [He's not a "thing," he's my <i>pet!</i>]
+    He might be for now, but what if he keeps growing?
+    -> space_4_interaction_2_addendum_1
+}
+* [It was either that or let me get a horse]
+Well, horses are sentient people in this world, so I can understand why they wouldn't want to just "get" you a horse... 
+    -> space_4_interaction_2_addendum_1
+
+== space_4_interaction_2_addendum_1 ==
+Anyway, here's some cookies for you and {MONSTER_NAME_ACCORDING_TO_GRANDMA}. Now do you know if your parents are home? 
+Because I might want to talk them about something, not that you <i>or</i> {MONSTER_NAME_ACCORDING_TO_GRANDMA} need to worry about it!
+{MONSTER_NAME == "<i>Un-named Bug Friend</i>":
+* [Grandma, I picked a name for the bug: Francis!]
+    ~ MONSTER_NAME = "Francis"
+    ~ MONSTER_NAME_ACCORDING_TO_GRANDMA = "Frank"
+    <i>{MONSTER_NAME_ACCORDING_TO_GRANDMA}</i>, that's a wonderful name.
+        ** [No, it's <i>{MONSTER_NAME}!</i>]
+        ~ MONSTER_NAME_ACCORDING_TO_GRANDMA = "Francis"
+        Oh, {MONSTER_NAME_ACCORDING_TO_GRANDMA}! Of course, Grandma was just being silly.
+        -> space_4_interaction_2_addendum_3
+        ** [Leave it be]
+        -> space_4_interaction_2_addendum_3
+    
+* [I'm still thinking of a name.]
+Okay, grandkiddo, take your time.
+-> space_4_interaction_2_addendum_3
+}
+    
+{testing_in_ink== true: -> space_4}
+-> DONE
+
+== space_4_interaction_2_addendum_3 ==
+{testing_in_ink== true: -> space_4}
+-> DONE
 
 
-+[choice one] -> space_4_interaction_1
-+[choice two] ->space_4_interaction_2
-+[choice three] ->space_4_interaction_3
-+[choice four] ->space_4_interaction_4
-+[choice five] ->space_4_interaction_5
-+[choice six] ->space_4_interaction_6
-+[choice seven] ->space_4_interaction_7
-+[choice eight]->space_4_interaction_8
+=== space_4_interaction_3 ===
+Listen, honey. I talked to your parents about you keeping {MONSTER_NAME_ACCORDING_TO_GRANDMA}, and I'm starting to get worried. 
+Just look at him! He's bigger than you and good gravy-- we don't even know <i>what</i> he even is!
+* [He's got gentle eyes. He's nice, and I know it!]
+    Honey, I know you think you're doing the right thing by taking care of him, but this is not a normal pet! What if he eats my precious grandbaby whole?
+* [You going to feed him, or what?]
+    Now, you listen to Grandma! I'm scared for you. Keeping this thing, this monster-- <i>it ain't right!</i> Nothing good is going to come from this! 
+- You know I love you to the mooncake and back, but I think it's time you set this creature free. It's the right thing to do.
+{MONSTER_NAME != "<i>Un-named Bug Friend</i>":
+    * [His name is {MONSTER_NAME}!] 
+        FINE, HIS NAME IS {MONSTER_NAME}! Child, you are impossible! Just like your ungrateful, stubborn mother!
+        -> space_4_interaction_3_addendum_1
+}
 
-==space_4_interaction_1==
-#speaker:KS
-Knight Squeaksworth: “Maybe if I adjust this line here… no, that’s not right. What about if I blend these two colors here… ARRRGH DOG GONE IT ALL! Oh I’m sorry I didn’t see you two there, I apologize you had to hear all that. Painting has been difficult for me lately. No matter what, when I try to create a new piece it’s never to my satisfaction.”
+* [I'm keeping him, and there's nothing you can do!] 
+    You are IMPOSSIBLE! You are just like your ungrateful, stubborn mother!
+    -> space_4_interaction_3_addendum_1
+    
+* [{MONSTER_NAME}, attack grandma!] 
+    <i>The monster roars and surges ahead towards Grandma's house!</i>
+    ~ change_variable("hunger", very_strong_effect)
+    /// Destroy this space permanently.
+    ~ you_chose_to_destroy_grandmas_house = true
+    <i>With a sound like the Earth splitting in two, the house is leveled.</i>
+    <i>When the dust clears, Grandma is no where to be seen.</i>
+    ** [That'll show her.] -> space_4_interaction_3_addendum_2
+    <i>{MONSTER_NAME} burbles happily. </i>
+    ** [Gra.. Grandma?] 
+    <i>You look through the rubble, but she's no where to be seen.</i>
+    -> space_4_interaction_3_addendum_2
+    
 
-+["Can I see?"]
+== space_4_interaction_3_addendum_1 ==
 
-KS: “You’re welcome to gaze. Take a picture if you want to as well. It'll last longer that way.”
+...
+Grandma needs some time alone now. 
+I baked these cookies, so you might as well have them.
+...
+Take care of yourself, grandkiddo.
 
-+[“I love this piece! It’s super cool looking, and it seems like {MONSTER_NAME} is ecstatic about it as well.”]
+{MONSTER_NAME == "<i>Un-named Bug Friend</i>":
+* [Grandma, wait! I thought of a name for my bug!] 
+    THIS IS NOT A GOOD TIME!
+    <i>Grandma slams the door shut.</i>
+    -> space_4_interaction_3_addendum_2
+* [<i>Leave.</i>] -> space_4_interaction_3_addendum_2
+}
 
-	KS: “Oh! Well thank you both… uh… uhm… I ordered too many fries with this meal I got to eat alongside my work. Would you two like some?”
-	
-+[“Fries? Yum, thank you!”]
-#speaker: Narrator
-You all enjoy a good snack together, and those fries hit just right.
-///~ change_variable("hunger", Donut)
-->DONE
+{testing_in_ink== true: -> space_4}
+-> DONE
 
-==space_4_interaction_2==
-#speaker:KS
-KS: “Oh hey you two! I forgot to ask you your names last time. Could you both tell me a bit more about yourselves? I hadn’t seen you two around town ever before last time we met.”
+== space_4_interaction_3_addendum_2 ==
+{testing_in_ink== true: -> space_4}
+-> DONE
 
-+[Tell Knight Squeaksworth your names, about some of your adventures, and how you met {MONSTER_NAME}.]
 
-KS: “My, my those are quite some tales. Fitting for a heroic portrait if I do say so myself… but anyways I don’t want to hold you two up. Why don’t you take some of these melon buns for the road? I always buy too many, but the corner store always has a spectacular three for one deal that’d be a waste to pass up on.”
-///~ change_variable("hunger", Donut)
-->DONE
 
-==space_4_interaction_3==
-#speaker:KS
-KS: “Hey {pc_name} and {MONSTER_NAME}! I’ve gotten my creative spirit back lately. I remember that my inspiration came from people and things I’d never seen before, or stuff off the beaten path. Can I paint your portrait, {MONSTER_NAME}? I don’t have any money to compensate you but you can take this Joyful Meal I got earlier, it even has a toy in it!”
-#speaker: Narrator
-{MONSTER_NAME} seems ecstatic to pose for their portrait, practicing through different styles and looks.
+=== space_4_interaction_4 === 
+<i>You knock on the door, but there is no answer.</i>
+<i>You notice on the porch is a basket of cookies and a note.</i>
+-> space_4_interaction_4_addendum_1
 
-+[“Absolutely, Knight!”]
+== space_4_interaction_4_addendum_1 == 
+* [Feed cookies to monster] 
+    <i>The monster devours the cookies and basket whole.</i>
+    ~ change_variable("hunger", medium_effect)
+    -> space_4_interaction_4_addendum_1
+* [read note]
+    Hi, grandkiddo. 
+    I'm taking the day off to do some thinking. 
+    You know, when you were a baby and your parents first moved to town, I was so excited! I couldn't wait to get a front row seat to watching you grow into an incredible young woman. 
+    But sometimes it's hard watching you get older and make different choices than I would have made for you. 
+    And as much as I care about you, you sometimes like things and make decisions that I can't make heads or tail feathers of!
+    I don't understand those internet "mee-mee's," or why you think mint (which tastes like toothpase) is the best dessert flavor, or why on Dog's green earth you want to raise a giant monster insect-thing. 
+    
+    So suffice to say, I have a <i>lot</i> to think about. 
+    Anyways, enjoy the mint cookies. I know they're your favorite.
+        <i>Grandma</i>
+    -> space_4_interaction_4_addendum_1
+* [leave]
+    {testing_in_ink== true: -> space_4}
+    -> DONE
 
-	Knight begins painting and is silent for a bit before they speak…
-#speaker: KS
-KS: “I’ve heard rumblings from some people that {MONSTER_NAME} is a monster. My two cents is that those words aren’t kind things to say. Plus even if you were a monster {MONSTER_NAME}, you’re the coolest one I’ve ever met; and I’ve met scarier monsters out there, one’s that we’d say look normal on the outside. But it’s their destructive words and actions which are deadlier than a laser beam or a crushed building. You can see the damage it caused then. The stuff that isn’t always visible roots itself deep. 
-I know that because I used to live among some real monsters in my past homes. So even if some people look at you and see a monster, take a moment to reflect on what you’ve done and not your appearance. It doesn’t often line up with the tall tales they tell amongst themselves.
-Sorry I rambled there, but I like to fill up the space sometimes while I work. Take a gander at how awesome you look! And here’s some food for your troubles, these Joyful Meals are the best.”
-///~ change_variable("hunger", Donut)
-->DONE
 
-==space_4_interaction_4
-#speaker:KS
-KS: “My two favorite muses! Welcome, welcome. I can’t wait to show you all my latest works!”
-#speaker:Narrator
-Knight pulls out their phone and begins to flip through pictures of pictures, sculptures, paintings, collages, and drawings.
- #speaker:KS
- “I haven’t felt this alive for quite awhile. Thank you both for helping me out of my slump. Please, take this for your troubles.”
-#speaker:Narrator
-Knight produces a gift basket of goodies. 
-#speaker:KS
-“I don’t usually splurge much outside of art supplies, but you two deserve a treat for all your inspiration. I’ve got to run but please enjoy, au revoir!”
-///~ change_variable("hunger", Donut)
-->DONE
+<i></i>
 
-==space_4_interaction_5==
-#speaker:KS
-KS: “{MONSTER_NAME}, {pc_name}! I’m blessed to see you two again! Luckily I’ve got a new gallery show to display all my latest work at, and as a result I have a bit of pocket change to spare. I insist we all have a meal together, on me. I won’t hear no for an answer!”
-#speaker:Narrator
-Midway through your meal…
- #speaker:KS
-KS: “I’ve been meaning to ask… {MONSTER_NAME}, in your opinion do you believe that you’re a monster?”
-#speaker:Narrator
-You take a moment and look deep into {MONSTER_NAME}’s eyes and gleam his answer.
-+[“No.”]
-#speaker:KS
-KS: “Hmmm… hm. Well, I’m glad to hear that you aren’t buying into what some people might say about you. Even if you were a monster though {MONSTER_NAME}, then I’d accept you all the same, whoever you are, or whoever you may be. I’ve been thinking, maybe being a monster doesn’t mean that one is always hurtful or acts the same way as another ‘monster’. There’s layers not everyone recognizes I suppose.
-	Thank you for being vulnerable and answering my question {MONSTER_NAME}, it was pretty personal. Now, let’s get back to savoring this meal. Oh and would you look at that! They’ve even got key lime pie on the specials menu! I could go for a slice…”
-	///~ change_variable("hunger", Donut)
-	->DONE
-	
-+[ “Yes.”]
+{testing_in_ink== true: -> space_4}
+-> DONE
 
-#speaker:KS
-KS: “Hmmm… hm. Well, if that’s who you are {MONSTER_NAME}, then I accept you as a monster wholeheartedly, whoever you are now, and whoever you may be. We’re all blessed to have you here with us, and I won’t try to change your mind. Maybe being a monster doesn’t mean that one is always hurtful or acts the same way as another ‘monster’. There’s layers not everyone recognizes I suppose.
-    Thank you for being vulnerable and answering my question {MONSTER_NAME}, it was pretty personal. Now, let’s get back to savoring this meal. Oh and would you look at that! They’ve even got key lime pie on the specials menu! I could go for a slice…”
-    ///~ change_variable("hunger", Donut)
-->DONE
+=== space_4_interaction_5 ===
+Hey kiddo! 
+<i>Grandma stands up from the porch, waving you over.</i>
+* [Grandma? Are you okay?]
+    Aren't you sweet, asking about little old me? 
+* [If you're going to be mean to {MONSTER_NAME}, I'm leaving.]
+    I won't be mean this time, I promise.
+- What I wanted to say is that I don't understand you or your connection to this thing. But then I did some thinking and realized it's not a grandma's job to understand you or what you're up to.
+    Honestly, the older I get, the more I realize how big and wild the world is. There's not enough smarts in this old gal to wrap her head around all the "what's-its" and "thing-a-ma-whatevers."
+    But it is a grandma's job to love and support her grandbaby, no matter who or <i>what</i> she drags home.
+    Just ask your mother about the time she told me she was marrying your father!
+    {MONSTER_NAME != "<i>Un-named Bug Friend</i>":
+    Now, here's an extra helping of cookies for you and <i>{MONSTER_NAME_ACCORDING_TO_GRANDMA}</i>.
+        * [Thanks, Grandma]
+            Now come here, and give this old lady a squeeze. And you too, you giant, invertebrate boyo!
+            -> space_4_interaction_5_addendum_1
+            
+        * [I'm glad you came around to {MONSTER_NAME}]
+            Any friend of yours is a friend of mine. Now come here, and give this old lady a squeeze. And you too, you giant, invertebrate boyo!
+                -> space_4_interaction_5_addendum_1
+    - else: 
+        Now, here's an extra helping of cookies for you and... Honey, this is getting ridiculous! It's time you picked out a name for your pet already! 
+                * [I'm going to name him Gemma, after you!]
+                    ~ MONSTER_NAME = "Gemma"
+                    ~ MONSTER_NAME_ACCORDING_TO_GRANDMA = "Gemma"
+                    Honey, you're too sweet, and I can't wait to watch you grow. 
+                    The <i>both</i> of you!
+                    -> space_4_interaction_5_addendum_1
+                * [I'm going to name him Cookie!]
+                    ~ MONSTER_NAME = "Cookie"
+                    ~ MONSTER_NAME_ACCORDING_TO_GRANDMA = "Cookie"
+                    That's a precious name, and I can't wait to watch you grow. 
+                    The <i>both</i> of you!
+                    -> space_4_interaction_5_addendum_1
+    }
+    
+{testing_in_ink== true: -> space_4}
+-> DONE
 
-==space_4_interaction_6==
-#speaker:KS
-KS: “I’m leaving this place soon. Don’t tear up my darlings, it won’t be forever I promise! It’s to show off my newest creations to the world; along with some older works I was too afraid to show anyone else before. 
-At first I wanted to leave here to record the atrocities of the real monsters out there that I’ve seen; to hold their feet to the fire so someone knows what they do in the light and the dark. Though I don’t think I want to only create those pieces anymore. I’d rather create moments of joy; experiences we sometimes forget, or that we have trouble recognizing everyday. Forever sulking and grieving will NOT be the whole of the collection.
- I promise to send letters to you both about my adventures. Maybe you two will be inspired to venture outside of this cozy little town as well.”
- 
-+[Hug Knight goodbye]
-#speaker:KS
-"I love you both so much. Ciao bella, {MONSTER_NAME} and {pc_name}!"
-///~ change_variable("hunger", Donut)
-->DONE
 
-==space_4_interaction_7==
-#speaker:Narrator
-A letter addressed to {MONSTER_NAME} and {pc_name} from Knight Squeaksworth is handed to you by the local postdog. 
-#speaker:KS
-“Dear {MONSTER_NAME} and {pc_name},
-	How are you two faring so far? Delightfully I’m hoping, though, however you are I’d love to genuinely hear. As for me, the train ride across the countryside was a welcome respite filled with many inspiring scenes, along with some new friendly faces. West Barkgundy awaits though! 
-I found this gift card in my wallet for a local cafe back home. Since it’s of no use here, it’s better that you two grab some good grub.
-Until next time,
-	—Knight Squeaksworth”
-	///~ change_variable("hunger", Donut)
-	->DONE
-	
-==space_4_interaction_8==
-#speaker:Narrator
-Another letter from Knight has arrived!
-#speaker:KS
-“Dear {MONSTER_NAME} and {pc_name},
-	There’s been some important moments of reflection in my life as of late. When I began creating my newest collection in the town, I placed the responsibility solely on your two shoulders. But my therapist reminded me of all the effort I put in, and how even when I place the control outside of myself, I’m the one doing the work. How I bring my value to my creations, not that my creations determine my value.
-If you felt indebted somehow or that you had to do what I asked, I apologize. Or rather, thank you two for being kind friends. You two are wonderful beings. 
-For your support, {MONSTER_NAME} and {pc_name}, I’ve included a small parcel of beginner art supplies, as well as some of the local candies from where I’m visiting. Go forth, dream big, dream beautiful, and create in whatever form it takes! 
-Until next time,
-—Knight Squeaksworth”
-#speaker:Narrator
-A collection of art supplies and an assortment of foreign candies has been gifted to you, which you can use however you see fit.
-///~ change_variable("hunger", Donut)
-->DONE
+=== space_4_interaction_5_addendum_1 ===
+Grandma waits for you and {MONSTER_NAME} on her porch. 
+Today, she's baked a giant cake for the two of you. You sit there on the stoop and share it together, watching the world whirl by.
+
+{testing_in_ink== true: -> space_4}
+-> DONE
+
+
+=== space_4_destroyed_1 === 
+Grandma's house is a pile of rubble. A desolate wind blows by.
+Seeing you, a family walking by on the sidewalk crosses over to the other side of the road. 
+
+You miss Grandma. 
+{testing_in_ink== true: -> space_4}
+-> DONE
