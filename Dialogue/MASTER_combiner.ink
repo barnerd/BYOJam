@@ -1,7 +1,12 @@
 /// Switch this to false when exporting
 VAR testing_in_ink = true
 
-/// Let it be on day 1 is ending prematurely.
+/// hunger
+/// lap_bonus_food
+/// fear
+/// Syntax example: ~ change_variable("hunger", 2)
+/// To move player
+/// ~ move_player(delta)
 
 ///// LIST OF GODOT FUNCTIONS
 EXTERNAL set_variable(variable_name, value)
@@ -34,12 +39,6 @@ INCLUDE Spaces_story/space_12.ink
 INCLUDE Special_events_story/hunger_crisis.ink
 INCLUDE Special_events_story/fear_crisis.ink
 INCLUDE Special_events_story/game_over.ink
-
-/// Reference to mystery_search_locations for space 1
-INCLUDE Spaces_story/mystery/space_1_bedroom.ink
-INCLUDE Spaces_story/mystery/space_1_basement.ink
-INCLUDE Spaces_story/mystery/space_1_kitchen.ink
-INCLUDE Spaces_story/mystery/space_1_frontyard.ink
 
 
 /// VARIABLES

@@ -8,6 +8,11 @@ VAR locations_visited = 0
 
 VAR moth_origin_found = false
 
+/// Reference to mystery_search_locations for space 1
+INCLUDE Spaces_story/mystery/space_1_bedroom.ink
+INCLUDE Spaces_story/mystery/space_1_basement.ink
+INCLUDE Spaces_story/mystery/space_1_kitchen.ink
+INCLUDE Spaces_story/mystery/space_1_frontyard.ink
 
 ==== space_1 ====
 {moth_origin_found == true: 

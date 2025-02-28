@@ -148,11 +148,15 @@ VAR rule_together = false
 }    
 
 == space_12_interaction_1 == 
+
 You and {MONSTER_NAME} head down the street when you are interrupted by a piercing SCREAM. 
+# speaker: Ringo
 "Big sister, help!" 
-You and your bug race around the corner to see your brother Ringo being shaken down by neighborhood bully Chad." 
+# speaker: Narrator
+<i>You and your bug race around the corner to see your brother Ringo being shaken down by neighborhood bully Chad."</i>
 "{pc_name}, you gotta save me! He's trying to take my lunch money!" 
 The bully looks to you with a smirk. 
+# speaker: Chad
 "You think I'm scared of your sister and her abnormally large bug monster? Don't make me laugh! I'm Chad Lynch, baby!"
 * [Tell {MONSTER_NAME} to attack]
 * ["How about we negotiate?"]
