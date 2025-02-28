@@ -1,12 +1,5 @@
 /// Switch this to false when exporting
-VAR testing_in_ink = true
-
-/// hunger
-/// lap_bonus_food
-/// fear
-/// Syntax example: ~ change_variable("hunger", 2)
-/// To move player
-/// ~ move_player(delta)
+VAR testing_in_ink = false
 
 ///// LIST OF GODOT FUNCTIONS
 EXTERNAL set_variable(variable_name, value)
