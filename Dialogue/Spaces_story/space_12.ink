@@ -119,6 +119,7 @@ RANDOM ONE LINERS
 VAR current_foe = "level_1_bully"
 VAR current_fight_intro_heard = false
 VAR fights_concluded = false
+VAR rule_together = false
 
 === space_12 === 
 
@@ -129,6 +130,7 @@ VAR fights_concluded = false
     * [space_12_interaction_3] -> space_12_bullyno3_intro
     * [space_12_interaction_4] -> space_12_bullyno4_intro
 - else:
+    {rule_together == true}: -> space_12_ruletogether
     {fights_concluded == true: -> space_12_fights_concluded}
 
     {current_foe == "level_1_bully" && current_fight_intro_heard == false: -> space_12_interaction_1}
@@ -491,7 +493,13 @@ The structure reveals itself to be an enormous bi-pedal mech with a cockpit in t
 "What say you, sister?" 
 
 * [Rule together] 
-    /// I need to write a thread for this. 
+    ~ rule_together = true
+    "Yes, sister. Truly, this is what mother and father have prepared us for all our lives!" 
+    "Soon, the world will meet its new monarchs, and they will genuflect and experience the joy that only comes from the generous rule of child dictators." 
+    "But I'm getting ahead of myself. The civilized world will probably put up some tedious struggle and try to paint as being unfit to rule even though you're six and know basically everything." 
+    "When next you complete a circuit around the board, I can make you extra food." 
+    "And in the meantime we can begin planning for our future roles in world government!" 
+    
     {testing_in_ink:-> space_12|-> DONE}
 * [Fight your brother] 
 /// Ringo
@@ -591,4 +599,12 @@ Your brother gives you an extra helping of food for your help in saving him from
 "Thanks for saving me from myself, sis." 
 "The craziest part of all this? Chad and I are becoming friends." 
 "What a world, huh?"
+{testing_in_ink:-> space_12|-> DONE}
+
+
+=== space_12_ruletogether ===
+"Sister and future queen of the world!" 
+"Come, there is much work to do to prepare the way for our righteous reign." 
+You and Ringo spend a pleasant afternoon making campaign slogans and creating social media accounts for your new world order. 
+Everyone in town simply thinks the two of you are being "cute" which results in the town's panic of {MONSTER_NAME} lowering. 
 {testing_in_ink:-> space_12|-> DONE}
