@@ -11,11 +11,11 @@ enum UpgradeType { NONE, MAX_FEAR_BONUS, BONUS_LAP_FOOD }
 
 @export var passing_hunger_effect: int
 
-@onready var game_board_mesh: Mesh = $"../../Gameboard".mesh
+@onready var game_board: MeshInstance3D = $"../../StaticBody3D/Gameboard"
 
 
 func set_type_material(_mat: StandardMaterial3D) -> void:
-	game_board_mesh.surface_set_material(space_num, _mat)
+	game_board.mesh.surface_set_material(space_num, _mat)
 
 
 func perform_passing_effect(_player: Player) -> void:

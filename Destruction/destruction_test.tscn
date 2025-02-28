@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://delw27rd8dc37"]
+
+[ext_resource type="Script" path="res://Destruction/destructable.gd" id="1_0y2la"]
+[ext_resource type="Script" path="res://addons/destronoi/DestronoiNode.gd" id="2_4b7qb"]
+[ext_resource type="ArrayMesh" uid="uid://cnhjy5nkbrj7o" path="res://ArtAssets/Models/pCube1.res" id="3_o5hy3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5l76c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ehi4c"]
+size = Vector3(1.91675, 0.80304, 1.97858)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_625qi"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.116138, 0.441292)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.578436, 0.463638, -0.671158, -0.0306751, 0.809826, 0.585867, 0.81515, 0.359474, -0.45421, -0.911932, 4.40962, 1.06109)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_5l76c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0360334, -0.40157, -0.0206207)
+shape = SubResource("BoxShape3D_ehi4c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00315118, -0.00570291, 0.0053497)
+mesh = SubResource("PlaneMesh_625qi")
+skeleton = NodePath("")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13131, 0.945414, 0.703614)
+
+[node name="Destructable" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0582987, 0)
+script = ExtResource("1_0y2la")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Destructable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0197013, 0)
+gravity_scale = 0.0
+
+[node name="DestronoiNode" type="Node" parent="Destructable/RigidBody3D"]
+script = ExtResource("2_4b7qb")
+tree_height = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Destructable/RigidBody3D"]
+transform = Transform3D(1, -1.25761e-07, 6.46137e-08, -4.10617e-08, 1, 5.96046e-08, -1.44493e-08, 0, 1, 0, -0.0297822, 0)
+mesh = ExtResource("3_o5hy3")
+skeleton = NodePath("../../..")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="Destructable" method="_on_timer_timeout"]

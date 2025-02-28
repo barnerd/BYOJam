@@ -1,0 +1,144 @@
+[gd_resource type="VisualShader" load_steps=14 format=3 uid="uid://btytsavr8d5qb"]
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_6wgjq"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_8lqq3"]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_unx7x"]
+function = 0
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_fph7e"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_hp5m8"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_2araq"]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_crvig"]
+default_input_values = [0, Vector2(0, 0)]
+op_type = 0
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_pvnqk"]
+op_type = 0
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_1jjij"]
+parameter_name = "WindStrength"
+hint = 1
+min = 2.0
+max = 10.0
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_bgteo"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_1bbd6"]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_v8smc"]
+default_input_values = [0, Vector2(0, 0)]
+op_type = 0
+
+[sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_3ic4y"]
+function = 31
+
+[resource]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform float WindStrength : hint_range(2, 10);
+
+
+
+void vertex() {
+// Input:2
+	vec2 n_out2p0 = VERTEX;
+
+
+// VectorDecompose:3
+	float n_out3p0 = n_out2p0.x;
+	float n_out3p1 = n_out2p0.y;
+
+
+// FloatParameter:5
+	float n_out5p0 = WindStrength;
+
+
+// Input:7
+	vec2 n_out7p0 = UV;
+
+
+// VectorDecompose:8
+	float n_out8p0 = n_out7p0.x;
+	float n_out8p1 = n_out7p0.y;
+
+
+// FloatFunc:9
+	float n_out9p0 = 1.0 - n_out8p1;
+
+
+// FloatOp:10
+	float n_out10p0 = n_out5p0 * n_out9p0;
+
+
+// Input:11
+	float n_out11p0 = TIME;
+
+
+// FloatOp:14
+	float n_out14p0 = n_out3p0 + n_out11p0;
+
+
+// FloatFunc:12
+	float n_out12p0 = sin(n_out14p0);
+
+
+// FloatOp:13
+	float n_out13p0 = n_out10p0 * n_out12p0;
+
+
+// FloatOp:6
+	float n_out6p0 = n_out3p0 + n_out13p0;
+
+
+// VectorCompose:4
+	vec2 n_out4p0 = vec2(n_out6p0, n_out3p1);
+
+
+// Output:0
+	VERTEX = n_out4p0;
+
+
+}
+"
+mode = 1
+flags/light_only = false
+nodes/vertex/0/position = Vector2(1680, 540)
+nodes/vertex/2/node = SubResource("VisualShaderNodeInput_2araq")
+nodes/vertex/2/position = Vector2(-2120, -40)
+nodes/vertex/3/node = SubResource("VisualShaderNodeVectorDecompose_crvig")
+nodes/vertex/3/position = Vector2(-1540, -100)
+nodes/vertex/4/node = SubResource("VisualShaderNodeVectorCompose_pvnqk")
+nodes/vertex/4/position = Vector2(1280, 340)
+nodes/vertex/5/node = SubResource("VisualShaderNodeFloatParameter_1jjij")
+nodes/vertex/5/position = Vector2(-1070.24, 402)
+nodes/vertex/6/node = SubResource("VisualShaderNodeFloatOp_bgteo")
+nodes/vertex/6/position = Vector2(660, -40)
+nodes/vertex/7/node = SubResource("VisualShaderNodeInput_1bbd6")
+nodes/vertex/7/position = Vector2(-1280, 1000)
+nodes/vertex/8/node = SubResource("VisualShaderNodeVectorDecompose_v8smc")
+nodes/vertex/8/position = Vector2(-660, 1000)
+nodes/vertex/9/node = SubResource("VisualShaderNodeFloatFunc_3ic4y")
+nodes/vertex/9/position = Vector2(-160, 940)
+nodes/vertex/10/node = SubResource("VisualShaderNodeFloatOp_6wgjq")
+nodes/vertex/10/position = Vector2(231.76, 794)
+nodes/vertex/11/node = SubResource("VisualShaderNodeInput_8lqq3")
+nodes/vertex/11/position = Vector2(-1900, 1420)
+nodes/vertex/12/node = SubResource("VisualShaderNodeFloatFunc_unx7x")
+nodes/vertex/12/position = Vector2(60, 1420)
+nodes/vertex/13/node = SubResource("VisualShaderNodeFloatOp_fph7e")
+nodes/vertex/13/position = Vector2(760, 1180)
+nodes/vertex/14/node = SubResource("VisualShaderNodeFloatOp_hp5m8")
+nodes/vertex/14/position = Vector2(-781.721, 1531.08)
+nodes/vertex/connections = PackedInt32Array(2, 0, 3, 0, 4, 0, 0, 0, 3, 0, 6, 0, 3, 1, 4, 1, 6, 0, 4, 0, 7, 0, 8, 0, 8, 1, 9, 0, 9, 0, 10, 1, 5, 0, 10, 0, 10, 0, 13, 0, 12, 0, 13, 1, 13, 0, 6, 1, 11, 0, 14, 1, 14, 0, 12, 0, 3, 0, 14, 0)
+nodes/fragment/0/position = Vector2(2260, 400)

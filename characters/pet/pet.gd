@@ -61,14 +61,16 @@ func change_hunger(_delta: int) -> void:
 	current_hunger += _delta
 	
 	current_hunger = clamp(current_hunger, min_hunger, max_hunger)
-	pet_hunger_changed.emit(current_hunger)
-	pet_hunger_percent_changed.emit(current_hunger / float(max_hunger))
 	
 	if current_hunger == min_hunger:
+		current_hunger = max_hunger
 		pet_hunger_starving.emit()
 	
-	if current_hunger == max_hunger:
-		pet_hunger_full.emit()
+	#if current_hunger == max_hunger:
+		#pet_hunger_full.emit()
+	
+	pet_hunger_changed.emit(current_hunger)
+	pet_hunger_percent_changed.emit(current_hunger / float(max_hunger))
 
 
 func morph_pet() -> void:
