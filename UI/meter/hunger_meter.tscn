@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpvmsa1eggpnb"]
+
+[ext_resource type="Script" path="res://UI/meter/ui_meter.gd" id="1_kr86e"]
+[ext_resource type="Texture2D" uid="uid://ce0ew4jtwg8r8" path="res://ArtAssets/2D Art/ui_art/Meter-Sprite-Sheet.png" id="2_5xkdc"]
+
+[node name="Meter" type="Node2D"]
+script = ExtResource("1_kr86e")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(46, 53)
+texture = ExtResource("2_5xkdc")
+centered = false
+flip_h = true
+region_enabled = true
+region_rect = Rect2(137, 396, 239, 142)
+
+[node name="Arrow" type="Sprite2D" parent="Background"]
+position = Vector2(122, 127)
+texture = ExtResource("2_5xkdc")
+offset = Vector2(-1, -85)
+region_enabled = true
+region_rect = Rect2(397, 34, 67, 188)
+
+[node name="Label" type="Sprite2D" parent="."]
+position = Vector2(170, 233)
+texture = ExtResource("2_5xkdc")
+region_enabled = true
+region_rect = Rect2(85, 239, 340, 56)

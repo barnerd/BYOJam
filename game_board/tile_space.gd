@@ -4,20 +4,22 @@ extends Node3D
 enum TileType { FOOD, FEAR, UPGRADE, DESTROYED }
 enum UpgradeType { NONE, MAX_FEAR_BONUS, BONUS_LAP_FOOD }
 
+@export var space_num: int = 0
+
 @export var current_type: TileType
 @export var current_upgrade: UpgradeType
 
-@export var space_num: int = 0
+@export var passing_hunger_effect: int
 
-@onready var game_board_mesh: Mesh = $"../../Gameboard".mesh
+@onready var game_board: MeshInstance3D = $"../../StaticBody3D/Gameboard"
 
 
 func set_type_material(_mat: StandardMaterial3D) -> void:
-	game_board_mesh.surface_set_material(space_num, _mat)
+	game_board.mesh.surface_set_material(space_num, _mat)
 
 
 func perform_passing_effect(_player: Player) -> void:
-	_player.pet.change_hunger(-1)
+	_player.pet.change_hunger(passing_hunger_effect)
 
 
 func perform_landing_effect(_player: Player) -> void:

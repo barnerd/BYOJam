@@ -1,13 +1,14 @@
 class_name Dialogue
-extends Control
+extends PanelContainer
 
 signal story_moves_player(num_spaces: int)
 signal story_section_complete
 
-@onready var story_label: Label = $HBoxContainer/ColorRect/MarginContainer/VBoxContainer/Label
-@onready var choices_container = $HBoxContainer/ColorRect/MarginContainer/VBoxContainer/ChoicesContainer
+@onready var story_label: RichTextLabel = $CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/ColorRect/MarginContainer/Label
+@onready var choices_container = $CenterContainer/HBoxContainer/VBoxContainer/ChoicesContainer
 
 var choice_button: PackedScene = preload("res://Dialogue/choice_button.tscn")
+var regex = RegEx.new()
 
 ## at top of main Ink File:
 ## EXTERNAL change_hunger_level(delta)
@@ -38,8 +39,8 @@ func _ready() -> void:
 	
 	# bind functions
 	await StoryManager.ink_player.loaded
-	StoryManager.ink_player.bind_external_function("change_hunger_level", $"../../Player/Pet", "change_hunger")
-	StoryManager.ink_player.bind_external_function("change_fear_level", $"../../GameBoard", "change_fear")
+	StoryManager.ink_player.bind_external_function("change_hunger_level", $"../../SubViewportContainer/SubViewport/Player/Pet", "change_hunger")
+	StoryManager.ink_player.bind_external_function("change_fear_level", $"../../SubViewportContainer/SubViewport/GameBoard", "change_fear")
 	StoryManager.ink_player.bind_external_function("move_player", self, "move_player")
 
 
@@ -62,7 +63,7 @@ func _continue_story(text: String, tags) -> void:
 	if tags:
 		story_tags(tags)
 	
-	story_label.text = text
+	story_label.text = remap_style_tags(text)
 	
 	if StoryManager.ink_player.has_choices:
 		StoryManager.ink_player.continue_story()
@@ -75,10 +76,11 @@ func _prompt_choices(choices: Array) -> void:
 		#print(choices)
 		
 		for choice in choices:
-			var new_button = choice_button.instantiate()
-			new_button.text = choice.text
-			new_button.pressed.connect(_select_choice.bind(choice.index))
-			choices_container.add_child(new_button)
+			var new_choice_button = choice_button.instantiate() as DialogueChoiceButton
+			choices_container.add_child(new_choice_button)
+			
+			new_choice_button.update_text(remap_style_tags(choice.text))
+			new_choice_button.connect_to_button_signal(_select_choice.bind(choice.index))
 			print(choice.index)
 
 
@@ -112,6 +114,15 @@ func story_tags(tags) -> void:
 				pass
 			"unhighlight":
 				pass
+
+
+func remap_style_tags(_text: String) -> String:
+	_text = _text.replacen("<i>", "[i]")
+	_text = _text.replacen("</i>", "[/i]")
+	_text = _text.replacen("<b>", "[b]")
+	_text = _text.replacen("</b>", "[/b]")
+	
+	return _text
 
 
 func on_lap_completed(_lap: int) -> void:
