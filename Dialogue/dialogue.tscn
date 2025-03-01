@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://c0j5wdrc46ee5"]
 
 [ext_resource type="Script" path="res://Dialogue/dialogue.gd" id="1_euaaw"]
-[ext_resource type="Texture2D" uid="uid://kaijmib1gunt" path="res://ArtAssets/2D Art/ui_art/character_portrait.PNG" id="2_fbhxi"]
+[ext_resource type="Texture2D" uid="uid://bypewpxhv7vnl" path="res://ArtAssets/2D Art/Characters/Bluey-Main-Character.png" id="2_svaw3"]
 [ext_resource type="Texture2D" uid="uid://dmslqvhl14re8" path="res://ArtAssets/2D Art/ui_art/speech_bubble_left_pointer.PNG" id="4_qm30b"]
-[ext_resource type="Texture2D" uid="uid://dsgv6asg246x3" path="res://ArtAssets/2D Art/ui_art/dialogue_continue_arrow.PNG" id="5_2q1wf"]
+[ext_resource type="Texture2D" uid="uid://lvggnwxusx5l" path="res://ArtAssets/2D Art/Characters/Continue-Button.png" id="4_v6gmg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tv200"]
 bg_color = Color(1, 1, 1, 1)
@@ -30,9 +30,8 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-texture = ExtResource("2_fbhxi")
-expand_mode = 5
-stretch_mode = 4
+texture = ExtResource("2_svaw3")
+stretch_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
@@ -79,11 +78,11 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-texture = ExtResource("5_2q1wf")
+texture = ExtResource("4_v6gmg")
 stretch_mode = 4
 
 [node name="Label" type="RichTextLabel" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/ColorRect/MarginContainer"]
-custom_minimum_size = Vector2(350, 0)
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
@@ -91,6 +90,10 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
 text = "Test. Here's some really long text. Let's make sure it [i]works[/i]. Let's see this again."
 autowrap_mode = 2
