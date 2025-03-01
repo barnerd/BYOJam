@@ -46,8 +46,11 @@ func set_variable(variable_name: String, value: float) -> void:
 
 
 func change_variable(variable_name: String, delta: float) -> void:
+	print("here")
 	story_variable_changed.emit(variable_name, delta)
-	ink_player.continue_story()
+	print("there")
+	#ink_player.continue_story()
+	print("yea, right")
 
 
 

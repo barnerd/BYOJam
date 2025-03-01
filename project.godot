@@ -25,6 +25,7 @@ SceneManager="*res://ProjectTemplate/SceneManager/scene_manager.gd"
 SoundManager="*res://ProjectTemplate/SoundManager/sound_manager.gd"
 SettingsManager="*res://ProjectTemplate/SettingsManager/settings_manager.gd"
 StoryManager="*res://ProjectTemplate/StoryManager/story_manager.gd"
+GameAutoload="*res://scripts/game_autoload.gd"
 
 [display]
 

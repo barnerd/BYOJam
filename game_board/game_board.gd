@@ -28,6 +28,8 @@ func _init() -> void:
 	SignalBus.register_signal("board_fear_max", board_fear_max)
 	SignalBus.register_signal("board_fear_changed", board_fear_changed)
 	SignalBus.register_signal("board_fear_percent_changed", board_fear_percent_changed)
+	
+	GameAutoload.board = self
 
 
 func _ready() -> void:
