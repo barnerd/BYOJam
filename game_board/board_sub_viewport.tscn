@@ -32,8 +32,10 @@ starting_hunger = 10
 laps_per_morph = 3
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport"]
-transform = Transform3D(0.707107, -0.544945, 0.450594, 0, 0.637236, 0.770669, -0.707107, -0.544945, 0.450594, 2.73166, 5.16331, 3.32857)
+transform = Transform3D(0.707107, -0.353553, 0.612373, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612373, 2, 3, 2)
+projection = 1
 current = true
+size = 10.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport"]
 transform = Transform3D(0.714378, -0.606011, 0.349879, 1.47563e-08, 0.499998, 0.866027, -0.69976, -0.61867, 0.357187, 0, 0, 0)
