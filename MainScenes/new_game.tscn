@@ -1,10 +1,7 @@
-[gd_scene load_steps=35 format=3 uid="uid://beeo6wb5btqkj"]
+[gd_scene load_steps=32 format=3 uid="uid://beeo6wb5btqkj"]
 
-[ext_resource type="PackedScene" uid="uid://dvvvs70p5muoe" path="res://game_board/game_board.tscn" id="1_5yeuy"]
-[ext_resource type="PackedScene" uid="uid://bkg6qgamif8at" path="res://characters/player/player.tscn" id="1_xt7d8"]
 [ext_resource type="PackedScene" uid="uid://ddawfdqr52jcb" path="res://UI/debug_game_variables.tscn" id="1_xym1b"]
 [ext_resource type="PackedScene" uid="uid://dcypsl0wpgbsn" path="res://UI/game_start_splash.tscn" id="2_glx7w"]
-[ext_resource type="PackedScene" uid="uid://cr7khfphhq7ct" path="res://characters/pet/pet.tscn" id="2_h3xiu"]
 [ext_resource type="Texture2D" uid="uid://byvi2sxkw6sff" path="res://ArtAssets/2D Art/ui_art/Tree-Blue.png" id="2_r57ih"]
 [ext_resource type="Shader" uid="uid://btytsavr8d5qb" path="res://shaders/tree_sway.tres" id="3_c1l1q"]
 [ext_resource type="PackedScene" uid="uid://djh6ctsqiwsnr" path="res://UI/dice_pool.tscn" id="3_f6iub"]
@@ -18,7 +15,7 @@
 [ext_resource type="Script" path="res://game_state_machine/game_start.gd" id="6_p0lr1"]
 [ext_resource type="Texture2D" uid="uid://bbv5ri2t4l0j4" path="res://ArtAssets/2D Art/ui_art/Ground-Background.png" id="6_pakdk"]
 [ext_resource type="Script" path="res://game_state_machine/turn_start.gd" id="7_0oow1"]
-[ext_resource type="Script" path="res://characters/pet/pet.gd" id="8_bxuc7"]
+[ext_resource type="PackedScene" uid="uid://cmlama2v015m5" path="res://game_board/board_sub_viewport.tscn" id="7_8h4ji"]
 [ext_resource type="Script" path="res://game_state_machine/dice_roll.gd" id="8_mwk23"]
 [ext_resource type="Theme" uid="uid://8rtfbrfbseru" path="res://game_theme.tres" id="9_yncrg"]
 [ext_resource type="Script" path="res://game_state_machine/player_move.gd" id="9_yogo3"]
@@ -133,40 +130,7 @@ grow_vertical = 0
 texture = ExtResource("6_pakdk")
 stretch_mode = 2
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-offset_left = -107.0
-offset_top = -265.0
-offset_right = 1429.0
-offset_bottom = 1271.0
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
-own_world_3d = true
-transparent_bg = true
-handle_input_locally = false
-size = Vector2i(1536, 1536)
-render_target_update_mode = 4
-
-[node name="GameBoard" parent="SubViewportContainer/SubViewport" node_paths=PackedStringArray("board_spaces") instance=ExtResource("1_5yeuy")]
-board_spaces = [NodePath("BoardSpaces/Start"), NodePath("BoardSpaces/Space1"), NodePath("BoardSpaces/Space2"), NodePath("BoardSpaces/Space3"), NodePath("BoardSpaces/Space4"), NodePath("BoardSpaces/Space5"), NodePath("BoardSpaces/Space6"), NodePath("BoardSpaces/Space7"), NodePath("BoardSpaces/Space8"), NodePath("BoardSpaces/Space9"), NodePath("BoardSpaces/Space10"), NodePath("BoardSpaces/Space11")]
-
-[node name="Player" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_xt7d8")]
-transform = Transform3D(3.13, 0, 0, 0, 3.13, 0, 0, 0, 3.13, 0.388916, 0.0180664, -1.32227)
-
-[node name="Pet" parent="SubViewportContainer/SubViewport/Player" instance=ExtResource("2_h3xiu")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.061381, -0.00769043, -0.113527)
-script = ExtResource("8_bxuc7")
-max_hunger = 10
-food_on_lap = 3
-starting_hunger = 10
-laps_per_morph = 3
-
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.707107, -0.544945, 0.450594, 0, 0.637236, 0.770669, -0.707107, -0.544945, 0.450594, 2.73166, 5.16331, 3.32857)
-current = true
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.714378, -0.606011, 0.349879, 1.47563e-08, 0.499998, 0.866027, -0.69976, -0.61867, 0.357187, 0, 0, 0)
-shadow_enabled = true
+[node name="SubViewportContainer" parent="." instance=ExtResource("7_8h4ji")]
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
@@ -254,6 +218,7 @@ offset_bottom = 418.0
 
 [node name="Dialogue" parent="PopupLayer" instance=ExtResource("4_o5o0p")]
 visible = false
+offset_right = -600.0
 
 [node name="DiceAnimation" parent="PopupLayer" instance=ExtResource("14_bjnu6")]
 visible = false
@@ -274,8 +239,8 @@ initial_state = NodePath("Load")
 [node name="Load" type="Node" parent="StateMachine" node_paths=PackedStringArray("game_start_state", "board", "player")]
 script = ExtResource("5_ocb74")
 game_start_state = NodePath("../GameStart")
-board = NodePath("../../SubViewportContainer/SubViewport/GameBoard")
-player = NodePath("../../SubViewportContainer/SubViewport/Player")
+board = NodePath("")
+player = NodePath("")
 
 [node name="GameStart" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_start_state", "game_start_splash")]
 script = ExtResource("6_p0lr1")
@@ -294,8 +259,8 @@ dice_pool = NodePath("../../UILayer/PanelContainer/MarginContainer/VBoxContainer
 [node name="PlayerMove" type="Node" parent="StateMachine" node_paths=PackedStringArray("story_interaction_state", "player", "board")]
 script = ExtResource("9_yogo3")
 story_interaction_state = NodePath("../StoryInteraction")
-player = NodePath("../../SubViewportContainer/SubViewport/Player")
-board = NodePath("../../SubViewportContainer/SubViewport/GameBoard")
+player = NodePath("")
+board = NodePath("")
 
 [node name="StoryInteraction" type="Node" parent="StateMachine" node_paths=PackedStringArray("player_move_state", "turn_end_state", "dialogue_screen")]
 script = ExtResource("10_bacfe")
@@ -308,7 +273,7 @@ script = ExtResource("11_7ea82")
 turn_start_state = NodePath("../TurnStart")
 win_state = NodePath("../Win")
 lose_state = NodePath("../Lose")
-player = NodePath("../../SubViewportContainer/SubViewport/Player")
+player = NodePath("")
 
 [node name="Win" type="Node" parent="StateMachine" node_paths=PackedStringArray("game_over_state")]
 script = ExtResource("12_5fs8w")
