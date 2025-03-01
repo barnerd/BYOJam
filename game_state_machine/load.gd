@@ -3,8 +3,6 @@ extends State
 signal game_reset
 
 @export var game_start_state: State
-@export var board: GameBoard
-@export var player: Player
 
 
 func _init() -> void:

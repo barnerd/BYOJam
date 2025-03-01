@@ -4,13 +4,11 @@ extends State
 @export var win_state: State
 @export var lose_state: State
 
-@export var player: Player
-
 var num_spaces_left: int = 0
 
 
 func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
-	player.finish_turn()
+	GameAutoload.player.finish_turn()
 	
 	#await get_tree().create_timer(2.0).timeout
 	

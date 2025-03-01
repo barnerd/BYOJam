@@ -21,6 +21,7 @@ func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 		dialogue_screen.story_section_complete.connect(_on_section_complete)
 	
 	if _data.has("space_num"):
+		# TODO: Pull knot name from TileSpace
 		dialogue_screen.start_knot("space_%d" % (_data.space_num + 1))
 	else:
 		dialogue_screen.start_knot("space_1")

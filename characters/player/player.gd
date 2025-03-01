@@ -17,6 +17,8 @@ func _init() -> void:
 	SignalBus.register_signal("lap_completed", lap_completed)
 	SignalBus.register_signal("player_moved", player_moved)
 	SignalBus.register_signal("turn_taken", turn_taken)
+	
+	GameAutoload.player = self
 
 
 func _ready() -> void:

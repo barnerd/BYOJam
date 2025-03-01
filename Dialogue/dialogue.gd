@@ -107,6 +107,8 @@ func _on_next_button_pressed() -> void:
 func story_tags(tags) -> void:
 	print(tags)
 	for tag in tags:
+		print(tag.left(7))
+		print(tag.right(-8))
 		match tag:
 			"highlight_temperature_lever":
 				pass
