@@ -20,7 +20,7 @@
 The weather is gorgeous so the lake is full of people out fishing today. However it seems like most people are having no luck. {MONSTER_NAME} is determined to see what a fish looks like though. 
 {MONSTER_NAME} darts away from your side towards the lake. Reaching a superspeed faster than your paws can carry you, they take off across the surface of the lake. Suddenly tons of fish start flopping out of the water trying to take a snap out of {MONSTER_NAME}’s body.
 	In the fishes' fruitless endeavors, their mouths find their way onto fishing hooks, or their bodies land on the ground. This is the biggest bounty anyone has ever seen, plus {MONSTER_NAME} is ecstatic to have finally seen a fish.
-~ change_variable("hunger", Pancake)
+~ change_variable("hunger", 1)
 ->DONE
 	
 ==space_2_interaction_2==
@@ -28,7 +28,7 @@ The weather is gorgeous so the lake is full of people out fishing today. However
 There’s a notice at the entrance to the lake:
 	BY THE ORDER OF THE DOGPARTMENT OF NATURAL RESOURCES: NO FISHING FOR A MONTH DUE TO OVERFISHING. FINE OF UP TO 2500 BONES AND GAME LICENSE SUSPENSION. 
 Looks like last week’s ruckus might have caused a bit too much commotion, better steer clear of here for a bit. Your stomach’s rumble with guilt and puts off your collective appetites for a bit.
-~ change_variable("hunger", French)
+~ change_variable("hunger", -1)
 ->DONE
 
 ==space_2_interaction_3==
@@ -36,14 +36,14 @@ Looks like last week’s ruckus might have caused a bit too much commotion, bett
 Another gorgeous day with perfect weather, and lots of families are out barbecuing. Almost everyone is playing fetch with their pets. Maybe joining a group would be fun!
 
 	Everybody’s pets love {MONSTER_NAME}! So much so that the ground is left much messier than before and mud is plastered across all the pavilion buildings. Everyone has worked up an appetite from all the exercise, but thankfully there’s more than enough BBQ to go around. You’re even able to leave with a doggy bag of leftovers
-~ change_variable("hunger", Pancake)
+~ change_variable("hunger", 1)
 ->DONE
 
 ==space_2_interaction_4==
 	#speaker:Narrator
 A second notice has popped up at the entrance to the lake under the first: BY THE ORDER OF THE DOGPARTMENT OF PARKS AND RECREATION: PICNIC PAVILIONS UNDER REPAIR UNTIL FURTHER NOTICE. PLEASE PARDON OUR DUST.
 Welp, another endeavor failed successfully. Better be more careful next time. 
-~ change_variable("hunger", French)
+~ change_variable("hunger", -1)
 ->DONE
 
 
@@ -63,7 +63,7 @@ Uh oh…
 #speaker:Narrator
 A 10, a 10, and a 9. A near perfect score! The cosplayer, gathering their senses, grabs one of {MONSTER_NAME}’s limbs and raises it up in mutual victory. Not one to look a gift monster in the mouth, you’re awarded the grand prize of a contest with Godzilla: A huge box of Snacks, Candies, Noodles, Tea, along with a year long subscription to CrunchyRoll. 
 What a steal!
-~ change_variable("hunger", Pancake)
+~ change_variable("hunger", 1)
 ->DONE
 
 
@@ -73,5 +73,5 @@ A third sign has popped up under the previous two:
  WARNING: THE ENVIRONMENTAL PUPTECTION AGENCY HAS DETECTED TRACE AMOUNT OF RADIATION IN THE AREA. ENTER AT YOUR OWN RISK.
 #speaker:{pc_name}
 {MONSTER_NAME}, we may have done a bit too much damage here, I’m starting to feel a bit queasy… 
-~ change_variable("hunger", French)
+~ change_variable("hunger", -1)
 ->DONE

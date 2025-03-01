@@ -20,7 +20,7 @@
 
 ==space_5_interaction_1==
 #speaker:KS
-Knight Squeaksworth: “Maybe if I adjust this line here… no, that’s not right. What about if I blend these two colors here… ARRRGH DOG GONE IT ALL! Oh I’m sorry I didn’t see you two there, I apologize you had to hear all that. Painting has been difficult for me lately. No matter what, when I try to create a new piece it’s never to my satisfaction.”
+Knight Squeaksworth: “Maybe if I adjust this line here… no, that’s not right. What about if I blend these two colors here... ARRRGH DOG GONE IT ALL! Oh I’m sorry I didn’t see you two there, I apologize you had to hear all that. Painting has been difficult for me lately. No matter what, when I try to create a new piece it’s never to my satisfaction.”
 
 +["Can I see?"]
 
@@ -32,7 +32,7 @@ KS: “You’re welcome to gaze. Take a picture if you want to as well. It'll la
 	
 +[“Fries? Yum, thank you!”]
 #speaker: Narrator
-You all enjoy a good snack together, and those fries hit just right.
+- You all enjoy a good snack together, and those fries hit just right.
 ///~ change_variable("hunger", Donut)
 ->DONE
 

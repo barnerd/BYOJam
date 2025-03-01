@@ -21,7 +21,7 @@ While out on a walk you two see Dogtor Leasha waving goodbye to a family as they
 #speaker: Player
 Player: It’s my new mons— pet! Yeah, pet. His name is {MONSTER_NAME}. I adopted him recently from a family member who had a litter of uh… adorable little bundles of joy!
 #speaker: Leasha
-Leasha: Well I’m glad to hear you’re getting outside and getting some exercise with them. But that’s only a part of what makes a healthy and happy life. You two should stop by soon, You’re due for a check up soon anyways, {pc_nmae}. I’ll let you two go though, and take a sucker with you.
+Leasha: Well I’m glad to hear you’re getting outside and getting some exercise with them. But that’s only a part of what makes a healthy and happy life. You two should stop by soon, You’re due for a check up soon anyways, {pc_name}. I’ll let you two go though, and take a sucker with you.
 #speaker: Narrator
 Now knowing how to help {MONSTER_NAME} grow into a happy and healthy pet, his appetite expands. More visits here will guarantee that continues.
 ///~ change_variable("hunger", 1)
