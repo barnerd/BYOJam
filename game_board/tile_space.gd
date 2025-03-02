@@ -11,13 +11,13 @@ enum UpgradeType { NONE, MAX_FEAR_BONUS, BONUS_LAP_FOOD }
 
 @export var passing_hunger_effect: int
 
-#@onready var game_board: MeshInstance3D = $"../../StaticBody3D/Gameboard"
+@export var tile_mesh: GeometryInstance3D
 
 
 func set_type_material(_mat: StandardMaterial3D) -> void:
 	# TODO: change material to destroyed material
 	print("TODO!")
-	#game_board.mesh.surface_set_material(space_num, _mat)
+	tile_mesh.material_override = _mat
 
 
 func perform_passing_effect(_player: Player) -> void:
