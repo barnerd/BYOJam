@@ -120,6 +120,14 @@ func destroy_tile(_reason: String) -> void:
 	buildings[building_to_destroy].destroy()
 
 
+func is_tile_destroyed(_space: int) -> bool:
+	return board_spaces[_space].current_type == TileSpace.TileType.DESTROYED
+
+
+func get_story_knot(_space: int) -> String:
+	return board_spaces[_space].story_knot
+
+
 func perform_passing_effect(_space: int, _player: Player) -> void:
 	if _space >= 0 and _space < board_spaces.size():
 		board_spaces[_space].perform_passing_effect(_player)

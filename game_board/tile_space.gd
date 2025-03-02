@@ -5,6 +5,7 @@ enum TileType { FOOD, FEAR, UPGRADE, DESTROYED }
 enum UpgradeType { NONE, MAX_FEAR_BONUS, BONUS_LAP_FOOD }
 
 @export var space_num: int = 0
+@export var story_knot: String
 
 @export var current_type: TileType
 @export var current_upgrade: UpgradeType
