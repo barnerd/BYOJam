@@ -8,6 +8,8 @@ signal story_variable_changed(variable_name: String, value: float)
 var is_story_loaded: bool = false
 var story_variables: Dictionary = {}
 
+
+
 func _init() -> void:
 	SignalBus.register_signal("story_variable_set", story_variable_set)
 	SignalBus.register_signal("story_variable_changed", story_variable_changed)
@@ -54,6 +56,7 @@ func change_variable(variable_name: String, delta: float) -> void:
 	print("yea, right")
 
 
+# TODO (after jam): have objects register callables to variables and then call them here
 func get_variable(variable_name: String) -> float:
 	match variable_name:
 		"hunger":

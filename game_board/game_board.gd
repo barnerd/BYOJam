@@ -22,6 +22,8 @@ const SPACE_TYPE_MATERIALS: Dictionary = {
 
 var current_fear: int
 var current_max_fear_bonus: int
+var non_destroyed_tiles: Array[int]
+var non_destroyed_buildings: Array[int]
 
 
 func _init() -> void:
@@ -46,8 +48,12 @@ func game_reset() -> void:
 	board_fear_changed.emit(current_fear, max_fear + current_max_fear_bonus)
 	board_fear_percent_changed.emit(current_fear / float(max_fear + current_max_fear_bonus))
 	
+	var i = 0
 	for space in board_spaces:
 		space.set_type_material(SPACE_TYPE_MATERIALS[space.current_type])
+		non_destroyed_tiles.append(i)
+		non_destroyed_buildings.append(i)
+		i += 1
 
 
 func get_space_location(num: int) -> Vector3:
@@ -76,26 +82,36 @@ func change_fear(_delta: int) -> void:
 		current_fear = (max_fear + current_max_fear_bonus)
 		current_fear = 0
 		board_fear_max.emit()
-		destroy_tile(randi_range(0, board_spaces.size() - 1), "fear")
+		destroy_tile("fear")
 	
 	board_fear_changed.emit(current_fear, max_fear + current_max_fear_bonus)
 	board_fear_percent_changed.emit(current_fear / float(max_fear + current_max_fear_bonus))
 
 
 func on_pet_starved() -> void:
-	destroy_tile(randi_range(0, board_spaces.size() - 1), "hunger")
+	destroy_tile("hunger")
 
 
-func destroy_tile(_space: int, _reason: String) -> void:
-	board_spaces[_space].destroy_tile(SPACE_TYPE_MATERIALS[TileSpace.TileType.DESTROYED])
+func destroy_tile(_reason: String) -> void:
+	var index = randi_range(0, non_destroyed_tiles.size())
+	var space_to_destroy = non_destroyed_tiles[index]
+	non_destroyed_tiles.erase(index)
+	
+	board_spaces[space_to_destroy].destroy_tile(SPACE_TYPE_MATERIALS[TileSpace.TileType.DESTROYED])
+	
 	# TODO: Do something different based on _reason == fear or hunger
 	print("switch to knot: %s" % _reason)
+	
 	# TODO: Destroy a random building
+	index = randi_range(0, non_destroyed_buildings.size())
+	var building_to_destroy = non_destroyed_buildings[index]
 
 
 func perform_passing_effect(_space: int, _player: Player) -> void:
 	if _space >= 0 and _space < board_spaces.size():
 		board_spaces[_space].perform_passing_effect(_player)
+		if [0, 3, 6, 9].has(_space):
+			_player.turn_corner()
 
 
 func perform_landing_effect(_space: int, _player: Player) -> void:

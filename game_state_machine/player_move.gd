@@ -14,6 +14,7 @@ func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 	num_spaces_left = abs(num_spaces_left)
 	
 	while num_spaces_left > 0:
+		# TODO: set player moving animation
 		num_spaces_left -= 1
 		GameAutoload.player.move_to_next_space(backwards)
 		
@@ -23,6 +24,7 @@ func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 		# rotate on corners
 		
 		await get_tree().create_timer(0.8).timeout
+	# TODO: set player idle animation
 	
 	GameAutoload.board.perform_landing_effect(GameAutoload.player.current_game_space, GameAutoload.player)
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0j5wdrc46ee5"]
+[gd_scene load_steps=12 format=3 uid="uid://c0j5wdrc46ee5"]
 
 [ext_resource type="Script" path="res://Dialogue/dialogue.gd" id="1_euaaw"]
 [ext_resource type="Texture2D" uid="uid://bypewpxhv7vnl" path="res://ArtAssets/2D Art/Characters/Bluey-Main-Character.png" id="2_svaw3"]
@@ -14,6 +14,9 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tv200"]
 bg_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpsmt"]
+bg_color = Color(0.670588, 0.203922, 0, 1)
+
 [node name="Dialogue" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +27,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 script = ExtResource("1_euaaw")
 
-[node name="TextureRect" type="Sprite2D" parent="."]
+[node name="Portrait" type="Sprite2D" parent="."]
 position = Vector2(270, 776)
 texture = ExtResource("2_svaw3")
 
@@ -116,5 +119,30 @@ bbcode_enabled = true
 text = "Test. Here's some really long text. Let's make sure it [i]works[/i]. Let's see this again."
 fit_content = true
 autowrap_mode = 2
+
+[node name="NameTag" type="MarginContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 130
+theme_override_constants/margin_top = -40
+
+[node name="Background" type="PanelContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/NameTag"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kpsmt")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/NameTag/Background"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/NameTag/Background/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_od5xx")
+theme_override_font_sizes/font_size = 35
+text = "Name
+"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -6,9 +6,16 @@ signal story_section_complete
 
 @onready var story_label: RichTextLabel = $CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/ColorRect/MarginContainer/Label
 @onready var choices_container = $CenterContainer/HBoxContainer/VBoxContainer/MarginContainer2/ChoicesContainer
+@onready var character_portrait = $Portrait
+@onready var speech_bubble_arrow = $CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/SpeechBubbleArrow
+@onready var name_tag: Label = $CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/NameTag/Background/MarginContainer/Label
 
 var choice_button: PackedScene = preload("res://Dialogue/choice_button.tscn")
 var regex = RegEx.new()
+
+var portrait_file_names: Dictionary = {
+	"rosy": "res://ArtAssets/2D Art/Characters/Bluey-Main-Character.png",
+}
 
 ## at top of main Ink File:
 ## EXTERNAL change_hunger_level(delta)
@@ -106,8 +113,10 @@ func _on_next_button_pressed() -> void:
 func story_tags(tags) -> void:
 	print(tags)
 	for tag in tags:
-		print(tag.left(7))
-		print(tag.right(-8))
+		if tag.left(7) == "speaker":
+			var speaker: String = tag.right(-8)
+			change_name_tag(speaker)
+			swap_portrait(speaker)
 		match tag:
 			"highlight_temperature_lever":
 				pass
@@ -141,3 +150,19 @@ func on_turn_taken(_turn: int) -> void:
 func move_player(_delta: int) -> void:
 	story_moves_player.emit(_delta)
 	StoryManager.ink_player.continue_story()
+
+
+func change_name_tag(_name: String) -> void:
+	name_tag.text = _name.to_upper()
+
+
+func swap_portrait(_name: String) -> void:
+	var speaker_name = _name.to_snake_case()
+	if portrait_file_names.has(speaker_name):
+		character_portrait.texture = load(portrait_file_names[speaker_name])
+		character_portrait.visible = true
+		speech_bubble_arrow.visible = true
+	else:
+		print("%s filename not found" % speaker_name)
+		character_portrait.visible = false
+		speech_bubble_arrow.visible = false

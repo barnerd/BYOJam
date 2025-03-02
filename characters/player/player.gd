@@ -52,6 +52,10 @@ func move_to_next_space(backwards: bool = false) -> void:
 	move_to_space(current_game_space + (1 if not backwards else -1))
 
 
+func turn_corner() -> void:
+	rotate_y(-PI / 2)
+
+
 func finish_turn() -> void:
 	turns_taken += 1
 	turn_taken.emit(turns_taken)
