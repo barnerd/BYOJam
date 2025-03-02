@@ -59,7 +59,7 @@ func _on_gui_input(event: InputEvent) -> void:
 
 
 func _continue_story(text: String, tags) -> void:
-	print("continue story")
+	#print("continue story")
 	if tags:
 		story_tags(tags)
 	
@@ -70,7 +70,7 @@ func _continue_story(text: String, tags) -> void:
 
 
 func _prompt_choices(choices: Array) -> void:
-	print("prompt choices")
+	#print("prompt choices")
 	if not choices.is_empty():
 		choices_container.visible = true
 		#print(choices)
@@ -85,13 +85,13 @@ func _prompt_choices(choices: Array) -> void:
 
 
 func on_story_ended() -> void:
-	print("The End")
+	#print("The End")
 	visible = false
 	story_section_complete.emit()
 
 
 func _select_choice(index: int) -> void:
-	print(index)
+	#print(index)
 	choices_container.visible = false
 	for child in choices_container.get_children():
 		child.queue_free()
@@ -105,12 +105,12 @@ func _on_next_button_pressed() -> void:
 
 
 func story_tags(tags) -> void:
-	print(tags)
 	for tag in tags:
 		if tag.left(7) == "speaker":
 			var speaker: String = tag.right(-8)
 			change_name_tag(speaker)
 			swap_portrait(speaker)
+			continue
 		match tag:
 			"highlight_temperature_lever":
 				pass
@@ -118,6 +118,8 @@ func story_tags(tags) -> void:
 				pass
 			"unhighlight":
 				pass
+			_:
+				print("unused tag: %s" % tag)
 
 
 func remap_style_tags(_text: String) -> String:
@@ -143,7 +145,7 @@ func on_turn_taken(_turn: int) -> void:
 
 func move_player(_delta: int) -> void:
 	story_moves_player.emit(_delta)
-	StoryManager.ink_player.continue_story()
+	#StoryManager.ink_player.continue_story()
 
 
 func change_name_tag(_name: String) -> void:

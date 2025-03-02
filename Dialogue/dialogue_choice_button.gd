@@ -17,5 +17,4 @@ func connect_to_button_signal(_call: Callable) -> void:
 func _on_button_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			print("pressed!")
 			on_pressed_callable.call()
