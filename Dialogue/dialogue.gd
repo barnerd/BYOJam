@@ -81,7 +81,7 @@ func _prompt_choices(choices: Array) -> void:
 			
 			new_choice_button.update_text(remap_style_tags(choice.text))
 			new_choice_button.connect_to_button_signal(_select_choice.bind(choice.index))
-			print(choice.index)
+			#print(choice.index)
 
 
 func on_story_ended() -> void:
