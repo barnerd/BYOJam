@@ -13,6 +13,7 @@ const SPACE_TYPE_MATERIALS: Dictionary = {
 }
 
 @export var board_spaces: Array[TileSpace]
+@export var buildings: Array[Destructable]
 
 @export var max_fear: int
 @export var starting_fear: int
@@ -24,6 +25,8 @@ var current_fear: int
 var current_max_fear_bonus: int
 var non_destroyed_tiles: Array[int]
 var non_destroyed_buildings: Array[int]
+
+var spaces_destroyed: int
 
 
 func _init() -> void:
@@ -48,9 +51,15 @@ func game_reset() -> void:
 	board_fear_changed.emit(current_fear, max_fear + current_max_fear_bonus)
 	board_fear_percent_changed.emit(current_fear / float(max_fear + current_max_fear_bonus))
 	
+	non_destroyed_tiles.clear()
+	non_destroyed_buildings.clear()
+	
+	spaces_destroyed = 0
+	
 	var i = 0
 	for space in board_spaces:
-		space.set_type_material(SPACE_TYPE_MATERIALS[space.current_type])
+		# TODO: figure out how to reset tile mats
+		#space.set_type_material(SPACE_TYPE_MATERIALS[space.current_type])
 		non_destroyed_tiles.append(i)
 		non_destroyed_buildings.append(i)
 		i += 1
@@ -98,13 +107,17 @@ func destroy_tile(_reason: String) -> void:
 	non_destroyed_tiles.erase(index)
 	
 	board_spaces[space_to_destroy].destroy_tile(SPACE_TYPE_MATERIALS[TileSpace.TileType.DESTROYED])
+	spaces_destroyed += 1
 	
 	# TODO: Do something different based on _reason == fear or hunger
 	print("switch to knot: %s" % _reason)
 	
-	# TODO: Destroy a random building
+	# Destroy a random building
 	index = randi_range(0, non_destroyed_buildings.size() - 1)
 	var building_to_destroy = non_destroyed_buildings[index]
+	non_destroyed_buildings.erase(index)
+	
+	buildings[building_to_destroy].destroy()
 
 
 func perform_passing_effect(_space: int, _player: Player) -> void:

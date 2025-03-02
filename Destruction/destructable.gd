@@ -1,3 +1,4 @@
+class_name Destructable
 extends Node
 
 @onready var rigid_body = get_node('RigidBody3D')

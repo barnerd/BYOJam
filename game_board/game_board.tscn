@@ -682,9 +682,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_je278")
 
-[node name="GameBoard" type="Node3D" node_paths=PackedStringArray("board_spaces")]
+[node name="GameBoard" type="Node3D" node_paths=PackedStringArray("board_spaces", "buildings")]
 script = ExtResource("1_7t848")
 board_spaces = [NodePath("BoardSpaces/Start"), NodePath("BoardSpaces/Space1"), NodePath("BoardSpaces/Space2"), NodePath("BoardSpaces/Space3"), NodePath("BoardSpaces/Space4"), NodePath("BoardSpaces/Space5"), NodePath("BoardSpaces/Space6"), NodePath("BoardSpaces/Space7"), NodePath("BoardSpaces/Space8"), NodePath("BoardSpaces/Space9"), NodePath("BoardSpaces/Space10"), NodePath("BoardSpaces/Space11")]
+buildings = [NodePath("Buildings/Building1"), NodePath("Buildings/Building2"), NodePath("Buildings/Building3"), NodePath("Buildings/Building4"), NodePath("Buildings/Building5"), NodePath("Buildings/Building6"), NodePath("Buildings/Building7"), NodePath("Buildings/Building8"), NodePath("Buildings/Building9"), NodePath("Buildings/Building10"), NodePath("Buildings/Building11"), NodePath("Buildings/Building12")]
 max_fear = 5
 fear_per_turn = 1
 

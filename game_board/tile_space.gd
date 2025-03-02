@@ -16,7 +16,7 @@ enum UpgradeType { NONE, MAX_FEAR_BONUS, BONUS_LAP_FOOD }
 
 func set_type_material(_mat: StandardMaterial3D) -> void:
 	# TODO: change material to destroyed material
-	print("TODO!")
+	#print("TODO!")
 	tile_mesh.material_override = _mat
 
 
