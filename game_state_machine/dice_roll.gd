@@ -13,12 +13,6 @@ func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 	dice_pool.ready_to_roll()
 
 
-func exit() -> void:
-	# TODO: Should I pass dice_pool and hide it after moving?
-	await get_tree().create_timer(2.0).timeout
-	
-	#dice_pool.visible = false
-
-
 func on_dice_selected(value: int) -> void:
+	await get_tree().create_timer(0.75).timeout
 	finished.emit(player_move_state, { "num_spaces": value })
