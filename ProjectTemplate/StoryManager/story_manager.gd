@@ -38,6 +38,7 @@ func _on_story_loaded(is_successful: bool) -> void:
 func bind_functions() -> void:
 	ink_player.bind_external_function("set_variable", self, "set_variable")
 	ink_player.bind_external_function("change_variable", self, "change_variable")
+	ink_player.bind_external_function("get_variable", self, "get_variable")
 
 
 func set_variable(variable_name: String, value: float) -> void:
@@ -51,6 +52,18 @@ func change_variable(variable_name: String, delta: float) -> void:
 	print("there")
 	#ink_player.continue_story()
 	print("yea, right")
+
+
+func get_variable(variable_name: String) -> float:
+	match variable_name:
+		"hunger":
+			return GameAutoload.player.pet.current_hunger
+		"fear":
+			return GameAutoload.board.current_fear
+		"laps":
+			return GameAutoload.player.turns_taken
+		_:
+			return 0.0
 
 
 

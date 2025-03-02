@@ -25,6 +25,10 @@ func start_new_tween() -> void:
 	current_rotation *= -1
 	var tween = get_tree().create_tween()
 	# " - .2 * PI" because of slice of arrow. remove with actual image
-	tween.tween_property(arrow, "rotation", current_rotation * randf_range(PI / 200.0, PI / 100.0) + current_value * PI - 0.5 * PI, randf_range(0.25, 0.5))
+	var random_rotation = current_rotation
+	random_rotation *= randf_range(0.5, 1.0) * PI / 100# * 4 * current_value
+	random_rotation += current_value * PI - 0.5 * PI
+	var random_time = randf_range(0.25, 0.5)# + 0.25 * current_value
+	tween.tween_property(arrow, "rotation", random_rotation, random_time)
 	tween.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 	tween.tween_callback(start_new_tween)

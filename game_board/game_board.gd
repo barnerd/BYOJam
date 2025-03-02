@@ -76,18 +76,21 @@ func change_fear(_delta: int) -> void:
 		current_fear = (max_fear + current_max_fear_bonus)
 		current_fear = 0
 		board_fear_max.emit()
-		destroy_tile(randi_range(0, board_spaces.size() - 1))
+		destroy_tile(randi_range(0, board_spaces.size() - 1), "fear")
 	
 	board_fear_changed.emit(current_fear, max_fear + current_max_fear_bonus)
 	board_fear_percent_changed.emit(current_fear / float(max_fear + current_max_fear_bonus))
 
 
 func on_pet_starved() -> void:
-	destroy_tile(randi_range(0, board_spaces.size() - 1))
+	destroy_tile(randi_range(0, board_spaces.size() - 1), "hunger")
 
 
-func destroy_tile(_space: int) -> void:
+func destroy_tile(_space: int, _reason: String) -> void:
 	board_spaces[_space].destroy_tile(SPACE_TYPE_MATERIALS[TileSpace.TileType.DESTROYED])
+	# TODO: Do something different based on _reason == fear or hunger
+	print("switch to knot: %s" % _reason)
+	# TODO: Destroy a random building
 
 
 func perform_passing_effect(_space: int, _player: Player) -> void:

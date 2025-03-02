@@ -240,10 +240,11 @@ initial_state = NodePath("Load")
 script = ExtResource("5_ocb74")
 game_start_state = NodePath("../GameStart")
 
-[node name="GameStart" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_start_state", "game_start_splash")]
+[node name="GameStart" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_start_state", "game_start_splash", "dialogue_screen")]
 script = ExtResource("6_p0lr1")
 turn_start_state = NodePath("../TurnStart")
 game_start_splash = NodePath("../../PopupLayer/GameSplash")
+dialogue_screen = NodePath("../../PopupLayer/Dialogue")
 
 [node name="TurnStart" type="Node" parent="StateMachine" node_paths=PackedStringArray("dice_roll_state")]
 script = ExtResource("7_0oow1")
@@ -264,11 +265,12 @@ player_move_state = NodePath("../PlayerMove")
 turn_end_state = NodePath("../TurnEnd")
 dialogue_screen = NodePath("../../PopupLayer/Dialogue")
 
-[node name="TurnEnd" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_start_state", "win_state", "lose_state")]
+[node name="TurnEnd" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_start_state", "win_state", "lose_state", "game_over")]
 script = ExtResource("11_7ea82")
 turn_start_state = NodePath("../TurnStart")
 win_state = NodePath("../Win")
 lose_state = NodePath("../Lose")
+game_over = NodePath("../GameOver")
 
 [node name="Win" type="Node" parent="StateMachine" node_paths=PackedStringArray("game_over_state")]
 script = ExtResource("12_5fs8w")

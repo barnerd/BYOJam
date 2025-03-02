@@ -5,7 +5,7 @@ signal story_moves_player(num_spaces: int)
 signal story_section_complete
 
 @onready var story_label: RichTextLabel = $CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/ColorRect/MarginContainer/Label
-@onready var choices_container = $CenterContainer/HBoxContainer/VBoxContainer/ChoicesContainer
+@onready var choices_container = $CenterContainer/HBoxContainer/VBoxContainer/MarginContainer2/ChoicesContainer
 
 var choice_button: PackedScene = preload("res://Dialogue/choice_button.tscn")
 var regex = RegEx.new()
@@ -38,9 +38,8 @@ func _ready() -> void:
 	SignalBus.connect_to_signal("turn_taken", on_turn_taken)
 	
 	# bind functions
-	await StoryManager.ink_player.loaded
-	StoryManager.ink_player.bind_external_function("change_hunger_level", $"../../SubViewportContainer/SubViewport/Player/Pet", "change_hunger")
-	StoryManager.ink_player.bind_external_function("change_fear_level", $"../../SubViewportContainer/SubViewport/GameBoard", "change_fear")
+	if not StoryManager.is_story_loaded:
+		await StoryManager.ink_player.loaded
 	StoryManager.ink_player.bind_external_function("move_player", self, "move_player")
 
 

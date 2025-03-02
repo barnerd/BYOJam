@@ -3,6 +3,7 @@ extends State
 @export var turn_start_state: State
 @export var win_state: State
 @export var lose_state: State
+@export var game_over: State
 
 var num_spaces_left: int = 0
 

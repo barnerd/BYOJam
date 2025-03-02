@@ -81,3 +81,4 @@ func morph_pet() -> void:
 		EvolutionStage.COCOON:
 			current_stage = EvolutionStage.MOTH
 			print("morph pet into Moth")
+	print("switch to pet morph knot")
