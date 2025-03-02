@@ -178,6 +178,7 @@ region_rect = Rect2(516, 0, 572, 651)
 [node name="HungerMeter" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer" instance=ExtResource("10_md4fb")]
 position = Vector2(101, 31)
 signal_name = "pet_hunger_percent_changed"
+is_right_high = false
 
 [node name="FearMeter" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer" instance=ExtResource("14_grw6w")]
 position = Vector2(101, 325)
