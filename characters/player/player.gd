@@ -44,12 +44,17 @@ func move_to_space(target_space: int, use_signal: bool = true) -> void:
 	
 	if use_signal:
 		player_moved.emit(current_game_space)
+	
 	var target_position = board.get_space_location(current_game_space)
-	set_position(target_position)
+	
+	var move_tween = get_tree().create_tween()
+	move_tween.tween_property(self, "position", target_position, 1.5)
+	
+	await move_tween.finished
 
 
 func move_to_next_space(backwards: bool = false) -> void:
-	move_to_space(current_game_space + (1 if not backwards else -1))
+	await move_to_space(current_game_space + (1 if not backwards else -1))
 
 
 func turn_corner() -> void:

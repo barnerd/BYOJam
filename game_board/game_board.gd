@@ -12,6 +12,8 @@ const SPACE_TYPE_MATERIALS: Dictionary = {
 	TileSpace.TileType.DESTROYED: preload("res://ArtAssets/Materials/gameboard/destroyed_mat.tres") as StandardMaterial3D,
 }
 
+const CORNER_SPACES: Array[int] = [0, 3, 6, 9]
+
 @export var board_spaces: Array[TileSpace]
 @export var buildings: Array[Destructable]
 
@@ -131,8 +133,8 @@ func get_story_knot(_space: int) -> String:
 func perform_passing_effect(_space: int, _player: Player) -> void:
 	if _space >= 0 and _space < board_spaces.size():
 		board_spaces[_space].perform_passing_effect(_player)
-		if [0, 3, 6, 9].has(_space):
-			_player.turn_corner()
+	if CORNER_SPACES.has(_space):
+		_player.turn_corner()
 
 
 func perform_landing_effect(_space: int, _player: Player) -> void:
