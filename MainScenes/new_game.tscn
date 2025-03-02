@@ -26,8 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://ce0ew4jtwg8r8" path="res://ArtAssets/2D Art/ui_art/Meter-Sprite-Sheet.png" id="12_8p5at"]
 [ext_resource type="Script" path="res://game_state_machine/lose.gd" id="13_xg40i"]
 [ext_resource type="Script" path="res://game_state_machine/game_over.gd" id="14_72xus"]
-[ext_resource type="PackedScene" uid="uid://bk1sva422qty8" path="res://UI/dice_animation.tscn" id="14_bjnu6"]
 [ext_resource type="PackedScene" uid="uid://bxtoj7uy6uso0" path="res://UI/meter/fear_meter.tscn" id="14_grw6w"]
+[ext_resource type="PackedScene" uid="uid://cpxvx57rkly6u" path="res://UI/dice_animation_2d.tscn" id="17_t36u5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4x7mg"]
 shader = ExtResource("3_c1l1q")
@@ -206,7 +206,7 @@ region_rect = Rect2(386, 321, 124, 109)
 custom_minimum_size = Vector2(573, 381)
 layout_mode = 2
 size_flags_horizontal = 4
-dice_animation = NodePath("../../../../../PopupLayer/DiceAnimation")
+dice_animation = NodePath("../../../../../PopupLayer/DiceAnimation2")
 
 [node name="PopupLayer" type="CanvasLayer" parent="."]
 
@@ -221,7 +221,7 @@ offset_bottom = 418.0
 visible = false
 offset_right = -600.0
 
-[node name="DiceAnimation" parent="PopupLayer" instance=ExtResource("14_bjnu6")]
+[node name="DiceAnimation2" parent="PopupLayer" instance=ExtResource("17_t36u5")]
 visible = false
 anchors_preset = 15
 anchor_left = 0.0
