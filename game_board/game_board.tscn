@@ -1,24 +1,23 @@
-[gd_scene load_steps=58 format=4 uid="uid://dvvvs70p5muoe"]
+[gd_scene load_steps=55 format=4 uid="uid://dvvvs70p5muoe"]
 
 [ext_resource type="Script" path="res://game_board/game_board.gd" id="1_7t848"]
 [ext_resource type="Script" path="res://game_board/tile_space.gd" id="2_lrcl5"]
+[ext_resource type="Texture2D" uid="uid://drp7cvbanib5a" path="res://ArtAssets/2D Art/Tiles/Food-Hunger.png" id="3_cbp1i"]
 [ext_resource type="Material" uid="uid://ctqsrbfx860v1" path="res://ArtAssets/Materials/gameboard/double_food_mat.tres" id="4_hgsll"]
+[ext_resource type="Texture2D" uid="uid://cas3r84ny1jpv" path="res://ArtAssets/2D Art/Tiles/Lower-Fear.png" id="5_8ehxq"]
 [ext_resource type="Material" uid="uid://cpjppc536ejyp" path="res://ArtAssets/Materials/gameboard/springboard.tres" id="5_ukrwy"]
 [ext_resource type="Material" uid="uid://bn6bbxnd4p1lf" path="res://ArtAssets/Materials/gameboard/perm_fear_mat.tres" id="6_xq213"]
-[ext_resource type="Material" uid="uid://c5ccsh62uf1h7" path="res://ArtAssets/Materials/gameboard/fear_mat.tres" id="7_mdwp5"]
-[ext_resource type="Material" uid="uid://dbn1qbos6lc14" path="res://ArtAssets/Materials/gameboard/perm_food_mat.tres" id="8_vq3qo"]
 [ext_resource type="Script" path="res://addons/destronoi/DestronoiNode.gd" id="9_5hcxt"]
 [ext_resource type="Material" uid="uid://hvrxf81crmwp" path="res://ArtAssets/Materials/house_mat.tres" id="9_kntqi"]
-[ext_resource type="Material" uid="uid://e43v25n1y6o" path="res://ArtAssets/Materials/gameboard/food_mat.tres" id="9_lb7pd"]
 [ext_resource type="Script" path="res://Destruction/destructable.gd" id="9_v4c7f"]
 [ext_resource type="Material" uid="uid://bc8s4lbga6w2s" path="res://ArtAssets/Materials/roof.tres" id="10_gvo4m"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0absj"]
+[ext_resource type="Texture2D" uid="uid://0rupd7l5br0o" path="res://ArtAssets/2D Art/Tiles/Perm-Increase-Food.png" id="10_mqcgu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lesse"]
 resource_name = "food_mat"
 vertex_color_use_as_albedo = true
-albedo_texture = SubResource("CompressedTexture2D_0absj")
+albedo_color = Color(0.5, 0.5, 0.5, 1)
+albedo_texture = ExtResource("3_cbp1i")
 roughness = 0.4
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
@@ -58,12 +57,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0sfbn")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1afcm"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wt05h"]
 resource_name = "fear_mat"
 vertex_color_use_as_albedo = true
-albedo_texture = SubResource("CompressedTexture2D_1afcm")
+albedo_color = Color(0.5, 0.5, 0.5, 1)
+albedo_texture = ExtResource("5_8ehxq")
 roughness = 0.4
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
@@ -238,12 +236,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_gq1kr")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fkgpy"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbrtd"]
 resource_name = "permfood_mat"
 vertex_color_use_as_albedo = true
-albedo_texture = SubResource("CompressedTexture2D_fkgpy")
+albedo_color = Color(0.5, 0.5, 0.5, 1)
+albedo_texture = ExtResource("10_mqcgu")
 roughness = 0.4
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
@@ -799,12 +796,10 @@ tile_mesh = NodePath("../../GameBoardGeo/space11")
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="start" type="MeshInstance3D" parent="GameBoardGeo"]
-material_override = ExtResource("9_lb7pd")
 mesh = SubResource("ArrayMesh_nt3qn")
 skeleton = NodePath("")
 
 [node name="space1" type="MeshInstance3D" parent="GameBoardGeo"]
-material_override = ExtResource("7_mdwp5")
 mesh = SubResource("ArrayMesh_d2b6a")
 skeleton = NodePath("")
 
@@ -824,7 +819,6 @@ mesh = SubResource("ArrayMesh_3oq3r")
 skeleton = NodePath("")
 
 [node name="space5" type="MeshInstance3D" parent="GameBoardGeo"]
-material_override = ExtResource("8_vq3qo")
 mesh = SubResource("ArrayMesh_mtfgp")
 skeleton = NodePath("")
 
@@ -839,12 +833,10 @@ mesh = SubResource("ArrayMesh_jh1gd")
 skeleton = NodePath("")
 
 [node name="space8" type="MeshInstance3D" parent="GameBoardGeo"]
-material_override = ExtResource("7_mdwp5")
 mesh = SubResource("ArrayMesh_w8qus")
 skeleton = NodePath("")
 
 [node name="space9" type="MeshInstance3D" parent="GameBoardGeo"]
-material_override = ExtResource("9_lb7pd")
 mesh = SubResource("ArrayMesh_gk07d")
 skeleton = NodePath("")
 
@@ -854,7 +846,6 @@ mesh = SubResource("ArrayMesh_ymess")
 skeleton = NodePath("")
 
 [node name="space11" type="MeshInstance3D" parent="GameBoardGeo"]
-material_override = ExtResource("8_vq3qo")
 mesh = SubResource("ArrayMesh_dqf8h")
 skeleton = NodePath("")
 
