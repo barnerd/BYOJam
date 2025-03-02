@@ -6,10 +6,10 @@ signal board_fear_changed(num: int, max: int)
 signal board_fear_percent_changed(percent: float)
 
 const SPACE_TYPE_MATERIALS: Dictionary = {
-	TileSpace.TileType.FOOD: preload("res://ArtAssets/Materials/gameboard/food_green_mat.tres") as StandardMaterial3D,
-	TileSpace.TileType.FEAR: preload("res://ArtAssets/Materials/gameboard/fear_yellow_mat.tres") as StandardMaterial3D,
-	TileSpace.TileType.UPGRADE: preload("res://ArtAssets/Materials/gameboard/upgrade_blue_mat.tres") as StandardMaterial3D,
-	TileSpace.TileType.DESTROYED: preload("res://ArtAssets/Materials/gameboard/destroyed_red_mat.tres") as StandardMaterial3D,
+	TileSpace.TileType.FOOD: preload("res://ArtAssets/Materials/gameboard/food_mat.tres") as StandardMaterial3D,
+	TileSpace.TileType.FEAR: preload("res://ArtAssets/Materials/gameboard/fear_mat.tres") as StandardMaterial3D,
+	TileSpace.TileType.UPGRADE: preload("res://ArtAssets/Materials/gameboard/perm_food_mat.tres") as StandardMaterial3D,
+	TileSpace.TileType.DESTROYED: preload("res://ArtAssets/Materials/gameboard/destroyed_mat.tres") as StandardMaterial3D,
 }
 
 @export var board_spaces: Array[TileSpace]
