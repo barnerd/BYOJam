@@ -1,9 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://cr7khfphhq7ct"]
+[gd_scene load_steps=4 format=3 uid="uid://cr7khfphhq7ct"]
 
-[ext_resource type="ArrayMesh" uid="uid://cx646uhxrdf3p" path="res://ArtAssets/Models/caterpillar.res" id="1_4td6u"]
+[ext_resource type="PackedScene" uid="uid://btq6odbofyomf" path="res://characters/pet/caccoon.tscn" id="1_253do"]
+[ext_resource type="PackedScene" uid="uid://dgybj3o37qwys" path="res://characters/pet/caterpillar.tscn" id="2_cbloj"]
+[ext_resource type="PackedScene" uid="uid://bqxd54twud6tv" path="res://characters/pet/mothra.tscn" id="3_a3c76"]
 
 [node name="Pet" type="Node3D"]
 
-[node name="Caterpillar" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.0599618, 0)
-mesh = ExtResource("1_4td6u")
+[node name="caccoon" parent="." instance=ExtResource("1_253do")]
+
+[node name="caterpillar" parent="." instance=ExtResource("2_cbloj")]
+
+[node name="Skeleton3D" parent="caterpillar" index="0"]
+bones/2/position = Vector3(0.104861, -2.77556e-17, -8.56593e-18)
+bones/2/rotation = Quaternion(1.14036e-15, 1.09258e-15, 0.707107, 0.707107)
+bones/3/position = Vector3(0.149388, -8.32667e-17, -2.88077e-18)
+bones/3/rotation = Quaternion(-1.95674e-31, -3.69779e-32, -3.46945e-18, 1)
+bones/4/position = Vector3(0.149388, 0, -2.88077e-18)
+bones/4/rotation = Quaternion(6.16298e-33, 2.46519e-32, 1.73472e-18, 1)
+bones/5/position = Vector3(0.149388, 0, -3.14978e-18)
+bones/5/rotation = Quaternion(6.16298e-33, 1.2326e-32, 1.73472e-18, 1)
+
+[node name="mothra" parent="." instance=ExtResource("3_a3c76")]
+
+[node name="Skeleton3D" parent="mothra" index="0"]
+bones/2/rotation = Quaternion(0, 0, -0.707107, 0.707107)
+bones/3/rotation = Quaternion(0.707107, -0.707107, 4.32978e-17, -4.32978e-17)
+
+[editable path="caccoon"]
+[editable path="caterpillar"]
+[editable path="mothra"]
