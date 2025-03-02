@@ -1,4 +1,4 @@
-extends Control
+extends TextureButton
 
 @onready var credits_window: PackedScene = preload("res://MainScenes/Credits/credits_window.tscn")
 

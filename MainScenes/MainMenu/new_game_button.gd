@@ -1,4 +1,4 @@
-extends Label
+extends TextureButton
 
 @export var new_game_scene_path: String
 
