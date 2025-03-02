@@ -14,7 +14,9 @@ var choice_button: PackedScene = preload("res://Dialogue/choice_button.tscn")
 var regex = RegEx.new()
 
 var portrait_file_names: Dictionary = {
-	"ruby": "res://ArtAssets/2D Art/Characters/Bluey-Main-Character.png",
+	"rosey": "res://ArtAssets/2D Art/Characters/Bluey-Main-Character.png",
+	"granny": "res://ArtAssets/2D Art/Characters/Allison-Wheeler.png",
+	"ringo": "res://ArtAssets/2D Art/Characters/Ringo-Wheeler.png",
 }
 
 
