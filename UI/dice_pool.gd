@@ -7,19 +7,19 @@ signal dice_selected(value: int)
 
 var dice_pip_images: Array = [
 	[
-		"res://ArtAssets/2D Art/Dice/1-roll-tilt-left.PNG",
-		"res://ArtAssets/2D Art/Dice/1-roll-tilt-right.PNG",
-		"res://ArtAssets/2D Art/Dice/1-roll.PNG",
+		"res://ArtAssets/2D Art/Dice/1-left.PNG",
+		"res://ArtAssets/2D Art/Dice/1-right.PNG",
+		"res://ArtAssets/2D Art/Dice/1-none.PNG",
 		],
 	[
-		"res://ArtAssets/2D Art/Dice/2-roll-tilt-left.PNG",
-		"res://ArtAssets/2D Art/Dice/2-roll-tilt-right.PNG",
-		"res://ArtAssets/2D Art/Dice/2-roll.PNG",
+		"res://ArtAssets/2D Art/Dice/2-left.PNG",
+		"res://ArtAssets/2D Art/Dice/2-right.PNG",
+		"res://ArtAssets/2D Art/Dice/2-none.PNG",
 		],
 	[
-		"res://ArtAssets/2D Art/Dice/3-roll-tilt-left.PNG",
-		"res://ArtAssets/2D Art/Dice/3-roll-tilt-right.PNG",
-		"res://ArtAssets/2D Art/Dice/3-roll.PNG",
+		"res://ArtAssets/2D Art/Dice/3-left.PNG",
+		"res://ArtAssets/2D Art/Dice/3-right.PNG",
+		"res://ArtAssets/2D Art/Dice/3-none.PNG",
 		],
 ]
 

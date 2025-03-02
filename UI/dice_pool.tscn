@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://UI/dice_pool.gd" id="1_fe3bi"]
 [ext_resource type="Texture2D" uid="uid://yik50xpdfijw" path="res://ArtAssets/2D Art/ui_art/Dice-Background.png" id="1_isisw"]
-[ext_resource type="Texture2D" uid="uid://b6w361mw7iv64" path="res://ArtAssets/2D Art/Dice/1-roll-tilt-left.PNG" id="1_tqqn8"]
-[ext_resource type="Texture2D" uid="uid://bnts7nufb1f7g" path="res://ArtAssets/2D Art/Dice/2-roll-tilt-right.PNG" id="2_t0lip"]
+[ext_resource type="Texture2D" uid="uid://b6w361mw7iv64" path="res://ArtAssets/2D Art/Dice/1-left.PNG" id="1_tqqn8"]
+[ext_resource type="Texture2D" uid="uid://bnts7nufb1f7g" path="res://ArtAssets/2D Art/Dice/2-right.PNG" id="2_t0lip"]
 [ext_resource type="Texture2D" uid="uid://ct65u005bvg8q" path="res://ArtAssets/2D Art/ui_art/Roll-Button-Press.png" id="5_28eor"]
 [ext_resource type="Texture2D" uid="uid://ce4vmheyn2hq8" path="res://ArtAssets/2D Art/ui_art/Roll-Button-Disabled.png" id="5_ctgv4"]
 [ext_resource type="Texture2D" uid="uid://cvnk4nro4v1ua" path="res://ArtAssets/2D Art/ui_art/Roll-Button.png" id="6_pt1rl"]

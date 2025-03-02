@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cej0ljts7mng5"
-path="res://.godot/imported/2-roll-tilt-left.PNG-74fe4ef5861552552622fabefac8f3bb.ctex"
+uid="uid://dfpody5ri571v"
+path="res://.godot/imported/3-right.PNG-78f01475c430ac68a0c9552274c3229f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtAssets/2D Art/Dice/2-roll-tilt-left.PNG"
-dest_files=["res://.godot/imported/2-roll-tilt-left.PNG-74fe4ef5861552552622fabefac8f3bb.ctex"]
+source_file="res://ArtAssets/2D Art/Dice/3-right.PNG"
+dest_files=["res://.godot/imported/3-right.PNG-78f01475c430ac68a0c9552274c3229f.ctex"]
 
 [params]
 

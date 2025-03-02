@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cya04df66wmww"
-path="res://.godot/imported/1-roll.PNG-8003176395e484e1d27ea7724ae9de9e.ctex"
+uid="uid://8g8qr1nxav0e"
+path="res://.godot/imported/3-none.PNG-458842b12d5622558daca4f98899634b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtAssets/2D Art/Dice/1-roll.PNG"
-dest_files=["res://.godot/imported/1-roll.PNG-8003176395e484e1d27ea7724ae9de9e.ctex"]
+source_file="res://ArtAssets/2D Art/Dice/3-none.PNG"
+dest_files=["res://.godot/imported/3-none.PNG-458842b12d5622558daca4f98899634b.ctex"]
 
 [params]
 
