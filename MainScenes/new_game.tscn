@@ -282,7 +282,8 @@ game_over_state = NodePath("../GameOver")
 script = ExtResource("13_xg40i")
 game_over_state = NodePath("../GameOver")
 
-[node name="GameOver" type="Node" parent="StateMachine" node_paths=PackedStringArray("load_state", "restart_game_button")]
+[node name="GameOver" type="Node" parent="StateMachine" node_paths=PackedStringArray("load_state", "restart_game_button", "dialogue_screen")]
 script = ExtResource("14_72xus")
 load_state = NodePath("../Load")
 restart_game_button = NodePath("../../UILayer/RestartGame")
+dialogue_screen = NodePath("../../PopupLayer/Dialogue")
