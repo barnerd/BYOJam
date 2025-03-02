@@ -93,7 +93,7 @@ func on_pet_starved() -> void:
 
 
 func destroy_tile(_reason: String) -> void:
-	var index = randi_range(0, non_destroyed_tiles.size())
+	var index = randi_range(0, non_destroyed_tiles.size() - 1)
 	var space_to_destroy = non_destroyed_tiles[index]
 	non_destroyed_tiles.erase(index)
 	
@@ -103,7 +103,7 @@ func destroy_tile(_reason: String) -> void:
 	print("switch to knot: %s" % _reason)
 	
 	# TODO: Destroy a random building
-	index = randi_range(0, non_destroyed_buildings.size())
+	index = randi_range(0, non_destroyed_buildings.size() - 1)
 	var building_to_destroy = non_destroyed_buildings[index]
 
 
