@@ -91,13 +91,6 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 70
 theme_override_constants/margin_bottom = 50
 
-[node name="ContinueArrow" type="TextureRect" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/ColorRect/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-texture = ExtResource("4_v6gmg")
-stretch_mode = 4
-
 [node name="Label" type="RichTextLabel" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/ColorRect/MarginContainer"]
 custom_minimum_size = Vector2(650, 325)
 layout_mode = 2
@@ -120,12 +113,26 @@ text = "Test. Here's some really long text. Let's make sure it [i]works[/i]. Let
 fit_content = true
 autowrap_mode = 2
 
+[node name="MarginContainer2" type="MarginContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/ColorRect"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ContinueArrow" type="TextureRect" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/ColorRect/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("4_v6gmg")
+stretch_mode = 4
+
 [node name="NameTag" type="MarginContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_constants/margin_left = 130
-theme_override_constants/margin_top = -40
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = -20
 
 [node name="Background" type="PanelContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/NameTag"]
 layout_mode = 2
@@ -133,16 +140,15 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_kpsmt")
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/NameTag/Background"]
 layout_mode = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
 
 [node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/NameTag/Background/MarginContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_od5xx")
 theme_override_font_sizes/font_size = 35
-text = "Name
-"
+text = "NAME"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

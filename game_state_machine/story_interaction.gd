@@ -27,6 +27,11 @@ func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 		dialogue_screen.start_knot("space_1")
 
 
+func exit() -> void:
+	dialogue_screen.story_section_complete.disconnect(_on_section_complete)
+	dialogue_screen.visible = false
+
+
 func story_moves_player(_num: int) -> void:
 	move_player = true
 	num_spaces = _num
@@ -37,7 +42,3 @@ func _on_section_complete() -> void:
 		finished.emit(player_move_state, { "num_spaces": num_spaces, "story_push": true })
 	else:
 		finished.emit(turn_end_state)
-
-
-func exit() -> void:
-	dialogue_screen.visible = false

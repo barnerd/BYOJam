@@ -14,20 +14,9 @@ var choice_button: PackedScene = preload("res://Dialogue/choice_button.tscn")
 var regex = RegEx.new()
 
 var portrait_file_names: Dictionary = {
-	"rosy": "res://ArtAssets/2D Art/Characters/Bluey-Main-Character.png",
+	"ruby": "res://ArtAssets/2D Art/Characters/Bluey-Main-Character.png",
 }
 
-## at top of main Ink File:
-## EXTERNAL change_hunger_level(delta)
-## EXTERNAL change_fear_level(delta)
-## EXTERNAL move_player(delta)
-##
-## usage:
-## delta can be positive or negative
-## {change_hunger_level(delta)}
-## {change_fear_level(delta)}
-## {move_player(delta)}
-##
 
 func _init() -> void:
 	SignalBus.register_signal("story_moves_player", story_moves_player)

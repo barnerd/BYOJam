@@ -55,18 +55,14 @@ func roll_complete() -> void:
 
 
 func _on_mouse_entered() -> void:
-	print(is_rolled)
 	if is_rolled:
 		is_hover = true
-		print("hover")
 		self.theme_type_variation = StringName("DiceHighlight")
 
 
 func _on_mouse_exited() -> void:
-	print(is_rolled)
 	if is_rolled:
 		is_hover = false
-		print("off-hover")
 		self.theme_type_variation = StringName("Dice")
 
 
