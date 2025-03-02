@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://bhycv4n252lx1"
+path="res://.godot/imported/game_intro.ink-4f4ae839e41adb02fe2123876dceaabc.res"
+
+[deps]
+
+source_file="res://Dialogue/Special_events_story/game_intro.ink"
+dest_files=["res://.godot/imported/game_intro.ink-4f4ae839e41adb02fe2123876dceaabc.res"]
+
+[params]
+

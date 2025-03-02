@@ -135,6 +135,7 @@ stretch_mode = 2
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="DebugGameVariables" parent="UILayer" node_paths=PackedStringArray("state_machine") instance=ExtResource("1_xym1b")]
+visible = false
 offset_left = 83.0
 offset_top = 822.0
 offset_right = 251.0

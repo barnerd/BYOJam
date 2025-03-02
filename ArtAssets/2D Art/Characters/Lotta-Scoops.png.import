@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yy153vac2alt"
-path="res://.godot/imported/Continue-Button.png-04153cf33cdcb5cb4e06215e5fadbaa8.ctex"
+uid="uid://4e30ya76d2dv"
+path="res://.godot/imported/Lotta-Scoops.png-1ac652eb06e2e5f0497104f53ac9c580.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtAssets/2D Art/Characters/Continue-Button.png"
-dest_files=["res://.godot/imported/Continue-Button.png-04153cf33cdcb5cb4e06215e5fadbaa8.ctex"]
+source_file="res://ArtAssets/2D Art/Characters/Lotta-Scoops.png"
+dest_files=["res://.godot/imported/Lotta-Scoops.png-1ac652eb06e2e5f0497104f53ac9c580.ctex"]
 
 [params]
 

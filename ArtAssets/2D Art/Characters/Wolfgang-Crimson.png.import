@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yy153vac2alt"
-path="res://.godot/imported/Continue-Button.png-04153cf33cdcb5cb4e06215e5fadbaa8.ctex"
+uid="uid://b2um5c6piaxak"
+path="res://.godot/imported/Wolfgang-Crimson.png-e8c6f4f8aee56cebb80856ebf3b9a2ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtAssets/2D Art/Characters/Continue-Button.png"
-dest_files=["res://.godot/imported/Continue-Button.png-04153cf33cdcb5cb4e06215e5fadbaa8.ctex"]
+source_file="res://ArtAssets/2D Art/Characters/Wolfgang-Crimson.png"
+dest_files=["res://.godot/imported/Wolfgang-Crimson.png-e8c6f4f8aee56cebb80856ebf3b9a2ab.ctex"]
 
 [params]
 
