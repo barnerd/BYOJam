@@ -16,8 +16,7 @@ func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 	if not dialogue_screen.story_section_complete.is_connected(_on_section_complete):
 		dialogue_screen.story_section_complete.connect(_on_section_complete)
 	
-	# TODO: change this to game_start knot
-	dialogue_screen.start_knot("game_over")
+	dialogue_screen.start_knot("game_intro")
 
 
 func exit() -> void:

@@ -15,8 +15,11 @@ var regex = RegEx.new()
 
 var portrait_file_names: Dictionary = {
 	"rosey": "res://ArtAssets/2D Art/Characters/Bluey-Main-Character.png",
-	"granny": "res://ArtAssets/2D Art/Characters/Allison-Wheeler.png",
+	"allison_wheeler": "res://ArtAssets/2D Art/Characters/Allison-Wheeler.png",
 	"ringo": "res://ArtAssets/2D Art/Characters/Ringo-Wheeler.png",
+	"wolfgang_crimson": "res://ArtAssets/2D Art/Characters/Wolfgang-Crimson.png",
+	"lotta": "res://ArtAssets/2D Art/Characters/Lotta-Scoops.png",
+	"bug": "res://ArtAssets/2D Art/Characters/Caterpillar.png",
 }
 
 
@@ -148,7 +151,7 @@ func change_name_tag(_name: String) -> void:
 
 
 func swap_portrait(_name: String) -> void:
-	var speaker_name = _name.to_snake_case()
+	var speaker_name = _name.trim_prefix(" ").to_snake_case()
 	if portrait_file_names.has(speaker_name):
 		character_portrait.texture = load(portrait_file_names[speaker_name])
 		character_portrait.visible = true

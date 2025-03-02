@@ -43,7 +43,7 @@ VAR vampire_slain = false
 # speaker: Wolfgang Crimson
 So <i>this</i> is the so-called "beast" that hath the whipped the town into a furor?
 # speaker: Wolfgang Crimson
-Ha! This lowly invertebrate is naught compared to the terror of the night, the dread vampire hound himself: <i><b>Wolfgang Crimson!</i></b>
+Ha! This lowly invertebrate is naught compared to the terror of the night, the dread vampire hound himself: <i><b>Wolfgang Crimson!</b></i>
 * (liked_cape)[I love your cape!]
     # speaker: Wolfgang Crimson
     Watch thy tone when you speak to your betters! 

@@ -21,8 +21,7 @@ VAR amount_5 = 5
 ///// LIST OF GODOT FUNCTIONS
 EXTERNAL set_variable(variable_name, value)
 EXTERNAL change_variable(variable_name, delta)
-EXTERNAL change_hunger_level(delta)
-EXTERNAL change_fear_level(delta)
+EXTERNAL get_variable(variable_name)
 EXTERNAL move_player(delta)
 
 /// HOW TO USE ABOVE FUNCTIONS
@@ -93,9 +92,7 @@ VAR very_strong_effect = 5
 ~return
 === function change_variable(variable_name, delta) ===
 ~return
-=== function change_hunger_level(delta) ===
-~return
-=== function change_fear_level(delta) ===
+=== function get_variable(variable_name) ===
 ~return
 === function move_player(delta) ===
 ~return
