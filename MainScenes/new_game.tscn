@@ -70,7 +70,7 @@ texture = ExtResource("2_r57ih")
 
 [node name="Tree5" type="Sprite2D" parent="Trees"]
 material = SubResource("ShaderMaterial_konqa")
-position = Vector2(162, 817)
+position = Vector2(125, 847)
 texture = ExtResource("3_rqme5")
 
 [node name="Tree6" type="Sprite2D" parent="Trees"]
