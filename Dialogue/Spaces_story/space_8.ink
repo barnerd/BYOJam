@@ -20,7 +20,7 @@ Hey,hey! Welcome to my boutique, how can we style you today? Oh! That is one... 
 "EEK! I didn't think something more horrifying was possible! Though.. it kinda works, not gonna lie."
 //~ change_variable("fear", Bagel)
 
-#speaker: Rosy
+#speaker: Rosey
 - "Let's come back again sometime {MONSTER_NAME}, I got a good feeling about this place!"
 ->DONE
 
@@ -57,7 +57,7 @@ You can feel Kayleigh's judgment of your fashion choices already, but you've mad
 +[Double Wing.]
 "SLAY!!"
 //~ change_variable("fear", Bagel)
-#speaker: Rosy
+#speaker: Rosey
 -"I'm so proud of {MONSTER_NAME} embracing different styles!"
 ->DONE
 ==space_8_interaction_4==
@@ -87,13 +87,13 @@ You can feel Kayleigh's judgment of your fashion choices already, but you've mad
 +[Flourescent Lightbulb Earrings]
 "It's giving... craft fair vibes. Honestly, not a bad choice!"
 //~ change_variable("fear", Bagel)
-#speaker: Rosy
+#speaker: Rosey
 -"What would we ever do without this shop? I hope this place never closes."
 ->DONE
 
 
 
 ==space_8_interaction_6==
-#speaker: Rosy
+#speaker: Rosey
 Kayleigh seems to be advising another person dipping their toes into the realm, of fashion for the first time. We should probably let her cook without any interuption.
 ->DONE

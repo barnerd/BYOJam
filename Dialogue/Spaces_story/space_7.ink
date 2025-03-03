@@ -13,7 +13,10 @@
 ==space_7_interaction_1==
 #speaker: Ruby
 “Come on, come down here Whiskers. It’s safe. I promise that I’ll catch you!
-Drat! I thought that would work for sure… UGGGH, if only I had brought a ladder with me. I just had to be on lunch break when the diner owner’s cat got stuck in a tree. What in Dog’s name do I do now?”
+Drat! I thought that would work for sure… UGGGH, if only I had brought a ladder with me. 
+
+I just had to be on lunch break when the diner owner’s cat got stuck in a tree. What in Dog’s name do I do now?”
+
  +[Have your pet screech at the cat.]
 #speaker: Narrator
 {MONSTER_NAME} musters all his strength, letting the air seep deep within, and then unleashes a guttural screech. Whiskers’ fur is blown back, his claws loosen their grasp, and his body leaps to the ground. He scores a perfect ten point landing into the arms of Ruby!
@@ -25,7 +28,7 @@ Drat! I thought that would work for sure… UGGGH, if only I had brought a ladde
 #speaker: Narrator
 	You gaze deep into {MONSTER_NAME}’s eyes. You ask: Do you trust me? {MONSTER_NAME} thinks for a moment then nods with confirmation. You scoop {MONSTER_NAME} up like a football and chuck him at Whiskers. 
 	
-	In a flash Whiskers eyes are greeted with the sight of something they’ve never witnessed before and loosens their grasp on the tree branch. Whiskers leaps into one of Ruby’s hands, and the other hand catches {MONSTER_NAME} as well.
+	In a flash, Whiskers eyes are greeted with the sight of something they’ve never witnessed before. Whiskers loosens their grasp on the tree branch. They leap into one of Ruby’s hands, and the other hand catches {MONSTER_NAME}.
 	#speaker: Ruby
 “A bit unorthodox if I say so myself, but hey it worked! Good thing I played football back in highschool. Here’s your uh, pet, back. Thanks for the help, I gotta tell the squad down at the station about this one, hahahaa!”
 ///~ change_variable("fear”, Bagel)
@@ -34,8 +37,11 @@ Drat! I thought that would work for sure… UGGGH, if only I had brought a ladde
 #speaker: Narrator
 	You see Ruby walking up the driveway of an elderly neighbor’s house.
 #speaker: Ruby
-"Hey friends, happy to see you two again! Would you mind joining me for this wellness check? Old dog Barkson enjoys having fun visitors, and I forgot to bring the squad’s emotional support iguana, Larry, with me. Plus Barkson likes giving away his spare change, so your good deed won’t go unrewarded. What do you say?"
+"Hey friends, happy to see you two again! Would you mind joining me for this wellness check? Old dog Barkson enjoys having fun visitors, and I forgot to bring the squad’s emotional support iguana, Larry, with me.
+
+Plus Barkson likes giving away his spare change, so your good deed won’t go unrewarded. What do you say?"
 +["Sure, let’s go {MONSTER_NAME}!"]
+	
 	#speaker: Narrator
 You, {MONSTER_NAME}, and Ruby go in and check on Old dog Barkson. He’s intrigued by {MONSTER_NAME} and asks to hear what hijinks you youths have gotten up to these days. After a few stories and a refreshing round of tea and cookies, he sends you on your way with ten bones. 
 ///~ change_variable("fear”, Bagel)
@@ -59,15 +65,20 @@ While passing the fire station you see Ruby outside in the yard with a group of 
 Sirens and lights are going off in a flurry as the firetruck stops across the street from you and {MONSTER_NAME}. 
 
 Looking over, you see one of the local stores ablaze. Ruby and her squad are already on the scene, attaching the hose to a fire hydrant and busting into the store to get everyone out. But for some reason the water isn’t coming out of the hose. That’s when you spot that in all the panic, a passing car ran over the hose and tore open a hole. 
+
 +[Use {MONSTER_NAME}’s saliva to patch up the hose.]
+	
 	#speaker: Ruby
 "Thank you both! Come by the station sometime soon and I’ll be sure to give you two a tour! I wouldn’t have been able to put out that fire without your help!"
 ///~ change_variable("fear”, Bagel)
 ->DONE
 
 +[Use {MONSTER_NAME}’s ice beam to put out the fire.]
+	
 	#speaker: Ruby
-"Now that was something to behold! If I had the power to shoot off ice beams from my ears, I’d never retire. Why don’t you two come on down by the station sometime soon and I’ll give you both a tour! I wouldn’t have been able to put out that fire without the help!"
+"Now that was something to behold! 
+
+If I had the power to shoot off ice beams from my ears, I’d never retire. Why don’t you two come on down by the station sometime soon and I’ll give you both a tour! I wouldn’t have been able to put out that fire without the help!"
 	 ///~ change_variable("fear”, Bagel)
 ->DONE
 
@@ -87,7 +98,9 @@ Larry, wearing his little firefighter helmet, snaps a fly out of the air with hi
 ==space_7_interaction_6==
 #speaker: Narrator
 You see Ruby outside the station repainting her firetruck. It would probably be nice to lend a hand. 
+
 +[Lend a hand.]
+
 You help out and feel a sense of warmth inside yourself. {MONSTER_NAME} smiles at you, joyful for a little break from anything too dramatic.
 ///~ change_variable("fear”, Bagel)
 ->DONE
@@ -130,6 +143,6 @@ Ruby places the tiny helmet back on Larry’s head. Larry simply continues to wa
 ->DONE
 
 ==space_7_interaction_9==
-#speaker: Rosy
+#speaker: Rosey
 Looks like Ruby is out on a call right now, helping whereverver she can. She's an amazing dog! Let's hope there's no serious emergencies going on.
 ->DONE

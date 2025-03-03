@@ -13,6 +13,7 @@
 ==space_5_interaction_1==
 #speaker: Knight Squeaksworth
 “Maybe if I adjust this line here… no, that’s not right. What about if I blend these two colors here... ARRRGH DOG GONE IT ALL! 
+
 Oh, I’m sorry I didn’t see you two there, I apologize you had to hear all that. Painting has been difficult for me lately. No matter what, when I try to create a new piece it’s never to my satisfaction.”
 
 +["Can I see?"]
@@ -35,7 +36,9 @@ Oh, I’m sorry I didn’t see you two there, I apologize you had to hear all th
 
 +[Tell Knight Squeaksworth your names, about some of your adventures, and how you met {MONSTER_NAME}.]
 #speaker: Knight Squeaksworth
-“My, my those are quite some tales. Fitting for a heroic portrait if I do say so myself… but anyways I don’t want to hold you two up. Why don’t you take some of these melon buns for the road? I always buy too many, but the corner store always has a spectacular three for one deal that’d be a waste to pass up on.”
+“My, my those are quite some tales. Fitting for a heroic portrait if I do say so myself… but anyways I don’t want to hold you two up. 
+
+Why don’t you take some of these melon buns for the road? I always buy too many, but the corner store always has a spectacular three for one deal that’d be a waste to pass up on.”
 ///~ change_variable("hunger", Donut)
 ->DONE
 
@@ -49,7 +52,9 @@ Oh, I’m sorry I didn’t see you two there, I apologize you had to hear all th
 
 	Knight begins painting and is silent for a bit before they speak…
 #speaker: Knight Squeaksworth
-“I’ve heard rumblings from some people that {MONSTER_NAME} is a monster. My two cents is that those words aren’t kind things to say. Plus even if you were a monster {MONSTER_NAME}, you’re the coolest one I’ve ever met; and I’ve met scarier monsters out there. Monsters that we’d say look normal on the outside. But it’s their destructive words and actions which are deadlier than a laser beam or a crushed building. You can see the damage it caused then. The stuff that isn’t always visible roots itself deep. 
+“I’ve heard rumblings from some people that {MONSTER_NAME} is a monster. My two cents is that those words aren’t kind things to say. Plus even if you were a monster {MONSTER_NAME}, you’re the coolest one I’ve ever met; and I’ve met scarier monsters out there. Monsters that we’d say look normal on the outside. 
+
+But it’s their destructive words and actions which are deadlier than a laser beam or a crushed building. You can see the damage it caused then. The stuff that isn’t always visible roots itself deep. 
 
 I know that because I used to live among some real monsters in my past homes. So even if some people look at you and see a monster, take a moment to reflect on what you’ve done and not your appearance. It doesn’t often line up with the tall tales they tell amongst themselves.
 
@@ -67,7 +72,7 @@ Knight pulls out their phone and begins to flip through pictures of pictures, sc
 #speaker: Narrator
 Knight produces a gift basket of goodies. 
 #speaker: Knight Squeaksworth
-“I don’t usually splurge much outside of art supplies, but you two deserve a treat for all your inspiration. I’ve got to run but please enjoy, au revoir!”
+“I don’t usually splurge much outside of art supplies, but you two deserve a treat for all your inspiration. I’ve got to run but, please enjoy, au revoir!”
 ///~ change_variable("hunger", Donut)
 ->DONE
 
@@ -77,7 +82,7 @@ Knight produces a gift basket of goodies.
 #speaker: Narrator
 Midway through your meal…
  #speaker: Knight Squeaksworth
-“I’ve been meaning to ask… {MONSTER_NAME}, in your opinion do you believe that you’re a monster?”
+“I’ve been meaning to ask… {MONSTER_NAME}, in your opinion, do you believe that you’re a monster?”
 #speaker:Narrator
 You take a moment and look deep into {MONSTER_NAME}’s eyes and gleam his answer.
 +[“No.”]
@@ -120,7 +125,8 @@ I promise to send letters to you both about my adventures. Maybe you two will be
 A letter addressed to {MONSTER_NAME} and {pc_name} from Knight Squeaksworth is handed to you by the local postdog. 
 #speaker: Knight Squeaksworth
 “Dear {MONSTER_NAME} and {pc_name},
-	How are you two faring so far? Delightfully I’m hoping, though, however you are I’d love to genuinely hear. As for me, the train ride across the countryside was a welcome respite filled with many inspiring scenes, along with some new friendly faces. West Barkgundy awaits though! 
+
+How are you two faring so far? Delightfully I’m hoping, though, however you are I’d love to genuinely hear. As for me, the train ride across the countryside was a welcome respite filled with many inspiring scenes, along with some new friendly faces. West Barkgundy awaits though! 
 
 I found this gift card in my wallet for a local cafe back home. Since it’s of no use here, it’s better that you two grab some good grub.
 
@@ -134,7 +140,8 @@ Until next time,
 Another letter from Knight has arrived!
 #speaker: Knight Squeaksworth
 “Dear {MONSTER_NAME} and {pc_name},
-	There’s been some important moments of reflection in my life as of late. When I began creating my newest collection in the town, I placed the responsibility solely on your two shoulders. But my therapist reminded me of all the effort I put in, and how even when I place the control outside of myself, I’m the one doing the work. How I bring my value to my creations, not that my creations determine my value.
+
+There’s been some important moments of reflection in my life as of late. When I began creating my newest collection in the town, I placed the responsibility solely on your two shoulders. But my therapist reminded me of all the effort I put in, and how even when I place the control outside of myself, I’m the one doing the work. How I bring my value to my creations, not that my creations determine my value.
 
 If you felt indebted somehow or that you had to do what I asked, I apologize. Or rather, thank you two for being kind friends. You two are wonderful beings. 
 
@@ -148,6 +155,6 @@ A collection of art supplies and an assortment of foreign candies has been gifte
 ->DONE
 
 ==space_5_interaction_9==
-#speaker: Rosy
+#speaker: Rosey
 While walking through the art museum you ponder what Knight would have to say about some of these pieces. Though on second thought, they'd probably be answering your questions with more questions directed towards you. Maybe they'd be better as a docent and not a companion here.
 ->DONE

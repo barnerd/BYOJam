@@ -11,7 +11,7 @@
 "Ah excuse me, you two, Would you be able to tell me what time it is? I seem to have forgotten my watch at home. You know my wife is always having to remind me of all the important clutter I leave behind stormin’  in and out of the house on business. By Dog, I feel terrible, and I need to get better. 
 
 Anywho I’m sorry for rambling, I do that sometimes, what’s the time again?"
-#speaker: Rosy
+#speaker: Rosey
 +["It’s 3:02 PM."] 
 -
 #speaker: Columbone
@@ -35,7 +35,7 @@ Actually, that’s not true. My wife has been telling me I gotta be more honest 
 
 Have you happened to see anything suspicous lately regarding that monster rumor?
 
-#speaker: Rosy
+#speaker: Rosey
 
 +[Nope, can't say I have!]
 
@@ -107,6 +107,6 @@ So take a couple days and then say goodbye, okay kid? I won't bother you again, 
 ->DONE
 
 ==space_9_interaction_5==
-#speaker: Rosy
+#speaker: Rosey
 Columbone is nowhere to be found, but you always seem to feel his presance watching your every move... maybe it's best to move away from this space.
 ->DONE
