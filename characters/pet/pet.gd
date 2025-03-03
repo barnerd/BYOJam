@@ -56,10 +56,11 @@ func game_reset() -> void:
 
 
 func on_story_variable_changed(variable_name: String, delta: float) -> void:
-	if variable_name == "hunger":
-		change_hunger(int(delta))
-	if variable_name == "lap_bonus_food":
-		add_lap_bonus(int(delta))
+	match variable_name:
+		"hunger":
+			change_hunger(int(delta))
+		"lap_bonus_food":
+			add_lap_bonus(int(delta))
 
 
 func on_lap_completed(_laps: int) -> void:

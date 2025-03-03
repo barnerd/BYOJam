@@ -72,8 +72,12 @@ func get_space_location(num: int) -> Vector3:
 
 
 func on_story_variable_changed(variable_name: String, delta: float) -> void:
-	if variable_name == "fear":
-		change_fear(int(delta))
+	match variable_name:
+		"fear":
+			change_fear(int(delta))
+		"max_fear_threshold":
+			current_max_fear_bonus += delta
+			board_fear_percent_changed.emit(current_fear / float(max_fear + current_max_fear_bonus))
 
 
 func on_lap_completed(_lap: int) -> void:
