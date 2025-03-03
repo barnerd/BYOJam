@@ -92,7 +92,7 @@ WARNING: THE ENVIRONMENTAL PUPTECTION AGENCY HAS DETECTED TRACE AMOUNT OF RADIAT
 ->DONE
 
 ==space_2_interaction_7==
-
+# speaker: Narrator
 A placid lake rests undistrubed by the the world; to disturb that peace would be a grave shame. Perhaps we ought to move on.
 ->DONE
 
@@ -100,6 +100,6 @@ A placid lake rests undistrubed by the the world; to disturb that peace would be
 # speaker: Narrator
 The lake is dried out. The park trampled and the play structure is in ruins.
 # speaker: Bug
-{MONSTER_NAME} gazes upon his mighty work with a self satisfied roar. 
+{MONSTER_NAME} gazes upon his mighty work with a satisfied roar. 
 ~ coin_flip_for_panic_generatior()
 -> DONE

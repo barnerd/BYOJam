@@ -12,7 +12,7 @@ VAR day_last_visited = 0
 * [space_3_interaction_3] -> space_3_usher
 * [space_3_interaction_4] -> space_3_usher
 * [space_3_interaction_5] -> space_3_usher
-* [space_3_interaction_6] -> space_3_usher
++ [space_3_interaction_6] -> space_3_usher
 - else: 
     {get_variable("is_current_destroyed"): -> space_3_destroyed}
     {not space_3_usher_intro: -> space_3_usher_intro}
@@ -25,13 +25,14 @@ You arrive in your town's church, which you mostly come to for its squeaky and s
 # speaker: Narrator
 An usher approaches you with a beatific smile. 
 # speaker: Church Usher
-{pc_name}, you'll get an extra good treat if you visit our space multiple days in a row. 
+{pc_name}, you'll get an extra good treat if you visit our humble house of Dog multiple days in a row. 
 But since this is your first time coming in a while, here. Have some delicious square pizza courtesy the archdiocese.
-~ change_variable("hunger", amount_d) 
+~ change_variable("hunger", amount_c) 
 # speaker: Church Usher
 But if you miss a day of service, we won't chastise you. You'll just get a slightly smaller reward. 
 # speaker: Church Usher
 Now, why don't you head in? I hear Elijah, the youth pastor, wanted to speak with you.
++ [Proceed]
 
 ~ day_last_visited = current_day
 -> space_3_interaction_1
@@ -42,15 +43,15 @@ Now, why don't you head in? I hear Elijah, the youth pastor, wanted to speak wit
 - day_last_visited == current_day + 1:
     /// Reward for coming to church multiple days in a row.
     # speaker: Narrator
-    The church usher grins at you. 
+    The usher grins as you return back to church. 
     # speaker: Church Usher
     I appreciate you coming to service multiple days in a row like this. I hope Dog will smile down upon you this blessed day!
-    Here, enjoy some tasty treats courtesy Her generosity.
+    Here, enjoy a tasty grilled cheese sandwich courtesy Her generosity.
     ~ change_variable("hunger", amount_d) 
 - day_last_visited == current_day:
     /// mild reward for coming multiple days in a row
     # speaker: Narrator
-    The church usher smiles. 
+    The usher smiles as you return back to church.
     # speaker: Church Usher
     Back again so soon? I feel like you were just here!
     # speaker: Church Usher
@@ -59,7 +60,7 @@ Now, why don't you head in? I hear Elijah, the youth pastor, wanted to speak wit
 - else:
     /// Light chastisement for missing a church service.
     # speaker: Church Usher
-    Ah, {pc_name}, you were missed at our last service. 
+    Ah, {pc_name}, you were missed at our last church service. 
     # speaker: Church Usher
     Be that as it may, you are always welcome here. Speaking of, enjoy a small treat for stopping by!
 }
@@ -86,7 +87,7 @@ You head to inside the church's high ceiling chapel and are met at the door by t
 # speaker: Elijah 
 Hey, there, {pc_name}! I hope you're having a blessed and totally "on fleek" day and-- what is that thing? 
 # speaker: Bug
-BUZZZZZZZZ!
+<i>BUZZZZZZZZ!</i>
 # speaker: Elijah 
 Just when you think you've seen all the wonders of Dog's creation, She turns around and surprises you with somethign new. Haha!
 # speaker: Elijah 
@@ -130,7 +131,7 @@ Our families down through the generations have kept the faith throughout famine,
 # speaker: Elijah 
 I'm sure after a night's rumination, I'll shrug off this nagging feeling I've got from seeing this other worldly pet. 
 # speaker: Elijah 
-And this feeling isn't "doubt!" No, no. I'm rock solid in my faith! The only thing I'm nervous about is our annual chew toy drive. 
+And this feeling isn't "doubt!" No, no. I'm rock solid in my faith! The only thing I'm nervous about is creating the poster for our annual chew toy drive. 
 # speaker: Elijah 
 Any chance you know how to use photoshop?
 {testing_in_ink:-> space_3|-> DONE}
@@ -158,9 +159,9 @@ I scoured the Good Boy Book, but there is nothing. Nothing that tells me how I'm
 
 * [Call the pope!]
     # speaker: Elijah 
-    I tried, but he just kept telling me to just let it fly that "old bug" out the window? 
+    I tried, but he just kept telling me to let that "old bug" fly out the window? 
     # speaker: Elijah 
-     Maybe that's some kind of papal riddle, but I don't know. He's twenty-two which is really old in dog years.
+     Maybe that's some kind of papal riddle, but I don't know. He's twenty-two which is ancient in dog years...
     
 - 
 # speaker: Elijah 
@@ -173,7 +174,7 @@ You find Elijah in the church gym alone, shooting free throws.
 # speaker: Elijah 
 Oh, hey there, {pc_name}. You think I've got a shot at making the NBA this year, or what? 
 # speaker: Narrator
-He shoots. He doesn't even hit the rim.
+He shoots and doesn't even hit the rim.
 # speaker: Elijah 
 I came from a big litter and when I was a kid, the court was the one place I could be alone with my thoughts. 
 # speaker: Elijah
@@ -192,7 +193,7 @@ He shoots. He hits the rim, but the ball bounces out.
     # speaker: Elijah
     I want to keep the faith. I really do. But it's hard to see living proof of something that exists outside everything I thought I knew.
     # speaker: Elijah
-    I shouldn't lay this all on you, {pc_name}. Then again, maybe it's good to know that no one has it all figured out.
+    I shouldn't lay this all on you, {pc_name}. Then again, maybe it's good for kids to see that no one, not adults or ordained priests truly have it all figured out...
     # speaker: Elijah
     We're all out here, just trying to piece it together. 
 
@@ -202,7 +203,7 @@ He shoots. The ball circles the rim before dropping down.
 # speaker: Elijah
 Boom! Call the scouting agent. I'm trading the cloth for a b-ball jersey!
 # speaker: Elijah
-Although while I'm waiting, maybe I should get started writing tomorrow's sermon. 
+Although while I'm waiting, maybe I should get started writing tomorrow's sermon. Plus, there's a new leave-in conditioner I've been meaning to try...
 {testing_in_ink:-> space_3|-> DONE}
 
 === space_3_interaction_5 ===

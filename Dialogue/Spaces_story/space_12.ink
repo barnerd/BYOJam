@@ -14,11 +14,11 @@ VAR roll_success = false
 
 
 === function print_dice_results() ===
-    {dice_1_result > 0: {dice_1_result}   }<>
-    {dice_2_result > 0: {dice_2_result}   }<>
-    {dice_3_result > 0: {dice_3_result}   }<>
-    {dice_4_result > 0: {dice_4_result}   }<>
-    {dice_5_result > 0: {dice_5_result}}
+    {dice_1_result > 0: <i>Dice one result: {dice_1_result}</i>}
+    {dice_2_result > 0: <i>Dice two result: {dice_2_result}</i>}
+    {dice_3_result > 0: <i>Dice three result: {dice_3_result}</i>}
+    {dice_4_result > 0: <i>Dice four result: {dice_4_result}</i>}
+    {dice_5_result > 0: <i>Dice five result: {dice_5_result}</i>}
 
 === function roll_dice(number_dice, threshold) ===
     {
@@ -129,6 +129,7 @@ VAR rule_together = false
     * [space_12_interaction_2] -> space_12_bullyno2_intro
     * [space_12_interaction_3] -> space_12_bullyno3_intro
     * [space_12_interaction_4] -> space_12_bullyno4_intro
+    + [destroyed option] -> space_12_destroyed
 - else:
 
     {get_variable("is_current_destroyed"): -> space_12_destroyed}
@@ -154,65 +155,65 @@ VAR rule_together = false
 # speaker: Narrator
 You and {MONSTER_NAME} head down the street when you are interrupted by a piercing SCREAM. 
 # speaker: Ringo
-"Big sister, help!" 
+Big sister, help!
 # speaker: Narrator
-<i>You and your bug race around the corner to see your brother Ringo being shaken down by neighborhood bully Chad."</i>
-"{pc_name}, you gotta save me! He's trying to take my lunch money!" 
+<i>You and your bug race around the corner to see your brother Ringo being shaken down by neighborhood bully Chad.</i>
+{pc_name}, you gotta save me! He's trying to take my lunch money!
 The bully looks to you with a smirk. 
 # speaker: Chad
-"You think I'm scared of your sister and her abnormally large bug monster? Don't make me laugh! I'm Chad Lynch, baby!"
+You think I'm scared of your sister and her abnormally large bug monster? Don't make me laugh! I'm Chad Lynch, baby!
 * [Tell {MONSTER_NAME} to attack]
-* ["How about we negotiate?"]
+* [How about we negotiate?]
     # speaker: Ringo
-    "Sis, you can't negotiate with Chad! The only language he speaks is violence." 
+    Sis, you can't negotiate with Chad! The only language he speaks is violence.
     # speaker: Chad
-    "I can't understand what you're saying, so I'm just going to keep punching." 
+    I can't understand what you're saying, so I'm just going to keep punching.
     # speaker: Ringo
-    "See what I mean, sis? Also-- ow! Owww!" 
+    See what I mean, sis? Also-- ow! Owww!
         * * [Let's fight!] 
-        * * ["Have we really exhausted all non-violent options?"]
+        * * [Have we really exhausted all non-violent options?]
             # speaker: Ringo
-            "Sister, if you don't do something, he's going to exhaust me-- <i>of living!</i>. 
+            Sister, if you don't do something, he's going to exhaust me-- <i>of living!</i>. 
             * * * [Okay, fight time!]
             * * * [I just think we weirdly valorize violence as a society.]
                 # speaker: Ringo
-                "Sister, I'm only five, and I am getting punched. In the face. <i>A lot!</i>"
-                * * * * ["Okay, enough being difficult. It's fight o' clock."]
+                Sister, I'm only five, and I am getting punched. In the face. <i>A lot!</i>
+                * * * * [Okay, enough being difficult. It's fight o' clock.]
                 * * * * [Maybe I like watching you get hurt?]
                     # speaker: Ringo
-                    "If you don't help me, I'll tell Mom and Dad you ate the box of jelly beans.
+                    If you don't help me, I'll tell Mom and Dad you ate the box of jelly beans.
                     * * * * * [Okay, I'll fight your bully.]
             
 - 
 # speaker: Ringo
-"Okay, but first let me tell you how bug fighting works."
+Okay, but first let me tell you how bug fighting works.
 # speaker: Ringo
-"I learned everything I know after I made two ant farm societies wage a brutal three day war to fight for possession of a molding banana." 
+I learned everything about bug combat after I made two ant farm societies wage a brutal three day war to fight for possession of a molding banana. 
 # speaker: Ringo
-"Here's how it works: you'll roll a number six sided dice based off your monster's current size. 
+Here's how it works: you'll roll a number of six sided dice based off your monster's current size. 
 
 {
 - current_moth_state == "caterpillar": 
     # speaker: Ringo
-    "Your beast is still on the shrimpy end, so you'll roll one six sided die."
+    Your beast is still on the shrimpy end, so you'll roll one six sided die.
 - current_moth_state == "cocoon":
     # speaker: Ringo
-    "Your beast is getting chunky, so you'll roll two six sided dice."
+    Your beast is getting chunky, so you'll roll two six sided dice.
 - else:
     # speaker: Ringo
-    "Your beast is big time, so you'll roll three six sided dice."
+    Your beast is big time, so you'll roll three six sided dice.
 }
 # speaker: Ringo
 All you need to do is get at least one result that is greater than or equal to the bullie's challenge value. 
 # speaker: Ringo
-Chad is kind of a pushover, so his challenge value is a measly two. That means all you need to beat him is a result of two or higher. 
+Chad is kind of a pushover, so his challenge value is a measly <b>two</b>. That means all you need to beat him is a result of two or higher. 
 
 # speaker: Ringo
-"If you want, your monster can flex before the fight. This will raise the town's panic; but it'll give you an extra dice." 
+If you want, your monster can flex before the fight. This will raise the town's panic; but it'll give you an extra dice. 
 # speaker: Ringo
-"And watch out! If you lose, your current enemy will take some of your lunch, lowering {MONSTER_NAME}'s hunger." 
+And watch out! If you lose, your current enemy will take some of your lunch, lowering {MONSTER_NAME}'s food.
 # speaker: Ringo
-"Okay, so what are you going to do?" 
+Okay, so what are you going to do?
 ~ current_fight_intro_heard = true
 ~ dice_pool_based_on_size()
 -> space_12_interaction_1_fight_1
@@ -223,16 +224,18 @@ Chad is kind of a pushover, so his challenge value is a measly two. That means a
 # speaker: Narrator
 You return to the street and find Chad once again shaking your little brother down for money. 
 # speaker: Ringo
-"There you are, sis! Save me from Chad already!" 
+There you are, sis! Save me from Chad already! 
 -> space_12_interaction_1_fight_1
 
 
 == space_12_interaction_1_fight_1 ==
 # speaker: Ringo
-"Your current dice pool is {battle_current_number_dice}. Your enemy's challenge value is 2. 
+Your current dice pool is {battle_current_number_dice}. Your enemy's challenge value is 2. 
 {battle_current_number_dice < 5:
     + [Gain one town panic to gain one additional dice.] 
         # speaker: Narrator
+        ~ battle_current_number_dice += 1
+        ~ change_variable("fear", amount_a)
         Your monster flexes, growing stronger for the upcoming fight. 
         -> space_12_interaction_1_fight_1
 }
@@ -249,19 +252,20 @@ You return to the street and find Chad once again shaking your little brother do
 # speaker: Narrator
 {MONSTER_NAME} squares up against Chad. The air crackles with tension.
 # speaker: Chad
-"Your bug ain't no match for my left hook!"
+Your bug ain't no match for my left hook!
 
 ~roll_dice(battle_current_number_dice, 2)
 /// Need to find a way to make this not appear on the same line. 
 # speaker: Narrator
-You rolled... <>
+Dice roll time! Let's check the results... 
 ~print_dice_results()
 
 {
 - roll_success == true: 
-    
+    Success!
     -> space_12_interaction_1_fight_1_chad_success
 - else:     
+    Defeat!
     -> space_12_interaction_1_fight_1_chad_fail
 }
     
@@ -276,14 +280,14 @@ In the middle of him attempting to do a one handed push up, {MONSTER_NAME} amble
 # speaker: Narrator
 Chad just goes flying over a neighbor's fence and lands face first in a hedge bush. 
 # speaker: Ringo
-"Sister, that was amazing! Your giant bug saved me!" 
+Sister, that was amazing! Your giant bug saved me! 
 # speaker: Chad
-"My whole body hurts..." 
+My whole body hurts...
 # speaker: Ringo
 ~ change_variable("lap_bonus_food", amount_a)  
-"As a reward for helping me, I'll work with mom to make you and {MONSTER_NAME} an extra big snack when you cross twelve space twelve and come back home. 
+As a reward for helping me, I'll work with mom to make you and {MONSTER_NAME} an extra big snack when you cross twelve space twelve and come back home. 
 # speaker: Ringo
-"Come back again soon. I've got a feeling we haven't heard the last from Chad..." 
+Come back again soon. I've got a feeling we haven't heard the last from Chad...
 ~ current_foe = "level_2_bully" 
 ~ current_fight_intro_heard = false
 {testing_in_ink:-> space_12|-> DONE}
@@ -297,7 +301,7 @@ Your beast gets themselves stuck in the side of a building, and Chad reins a flu
 # speaker: Narrator
 What really hurts is when Chad manages to steal food you meant to give your pet. 
 # speaker: Ringo
-"Too bad, sis. Looks like you'll have to try this again next time." 
+Too bad, sis. Looks like you'll have to try this again next time. 
 {testing_in_ink:-> space_12|-> DONE}
 
 
@@ -308,17 +312,17 @@ What really hurts is when Chad manages to steal food you meant to give your pet.
 
 ~ current_fight_intro_heard = true
 # speaker: Ringo
-"{pc_name}! <i>{pc_name}!</i>"
+{pc_name}! <i>{pc_name}!</i>
 # speaker: Ringo
-"Remember when you beat up Chad with your enormous bug pet?"
+Remember when you beat up Chad with your enormous bug pet?
 # speaker: Ringo
-"I thought that after he'd been humbled and that he'd finally take it easy." 
+I thought that after he'd been humbled, he'd finally take it easy.
 # speaker: Ringo
-"But Chad is fury given abs and the cracking voice of a tween retriever." 
+But Chad is fury given abs and the cracking voice of a tween retriever.
 # speaker: Ringo
-"As soon as you left, he started talking about kicking your bug's thorax so hard that it would break the and boundaries of known and unknown worlds." 
+As soon as you left, he started talking about kicking your bug's thorax so hard that it would break the and boundaries of known and unknown worlds. 
 # speaker: Ringo
-"He said that aliens would come from across the galaxy to research and study how a butt was kicked to levels theoretical scientists didn't think possible!" 
+He said that aliens would come from across the galaxy to research and study how a butt was kicked to levels theoretical scientists didn't think possible!
 # speaker: Ringo
 The guy's serious. He even enrolled in a karate class but for <i>adults!<i>
 # speaker: Ringo
@@ -326,13 +330,11 @@ Look alive, sis. He's here.
 
 # speaker: Narrator
 Young chad eats muscle powder straight from the jug and tosses the empty container aside where it rolls across the road like a tumbleweed.
-# speaker: Narrator
-He rolls his shoulders. His muscles bulging from his too tight shirt. 
 
 # speaker: Ringo
 Get ready, sis. Looks like it's round two for you and Chad!
 # speaker: Ringo
-This time, his challenge value is 3! So you'll need a three or higher to beat him.
+This time, his challenge value is <b>3!</b> So you'll need a three or higher to beat him.
 ~ dice_pool_based_on_size()
 -> space_12_bullyno2_battle
 
@@ -347,11 +349,12 @@ Chad has been shouting for a rematch all day. His voice is hoarse, and no one's 
 
 == space_12_bullyno2_battle == 
 # speaker: Ringo
-"Your current dice pool is {battle_current_number_dice}. Your enemy's challenge value is 3. 
+Your current dice pool is {battle_current_number_dice}. Your enemy's challenge value is 3. 
 {battle_current_number_dice < 5:
     + [Gain one town panic to gain one additional dice.] 
         ~ battle_current_number_dice += 1
         # speaker: Narrator
+        ~ change_variable("fear", amount_a)
         Your monster flexes, growing stronger for the upcoming fight. 
         -> space_12_bullyno2_battle
 }
@@ -361,7 +364,7 @@ Chad has been shouting for a rematch all day. His voice is hoarse, and no one's 
     # speaker: Narrator
     Your brother shakes his head in disappointment as you and {MONSTER_NAME} continue on your walk. 
     # speaker: Ringo
-    "Coward!"
+    Coward!
     {testing_in_ink:-> space_12|-> DONE}
 
 
@@ -370,13 +373,11 @@ Chad has been shouting for a rematch all day. His voice is hoarse, and no one's 
 === space_12_bullyno2_fight ===
 /// Chad
 # speaker: Chad
-Since last we last met, I have watched all the youtube fitness guys my algorhythms sent me.
+Since last we last met, I have watched all the youtube fitness guys my algorhythm sent me.
 # speaker: Chad
 I bought a gym membership and workout clothes that aren't just t-shirts that are too ratty to wear anywhere else.
 # speaker: Chad
-I have spent every moment since our last meeting angling on how to best you, how to make sure you taste the bitter sting of defeat.
-# speaker: Chad
-I hope you face your doom honorably.
+I have spent every moment since our last meeting preparing to make sure you taste the bitter sting of defeat!
 # speaker: Chad
 Let us... begin!
 
@@ -384,14 +385,16 @@ Let us... begin!
 ~roll_dice(battle_current_number_dice, 3)
 /// Need to find a way to make this not appear on the same line. 
 # speaker: Narrator
-You rolled... <>
+Dice roll time! Let's check the results...
 ~print_dice_results()
 
 {
-- roll_success == true: 
+- roll_success == true:
+    Success!
     
     -> space_12_interaction_1_fight_2_chad_success
 - else:     
+    Defeat!
     -> space_12_interaction_1_fight_2_chad_fail
 }
 
@@ -401,20 +404,14 @@ Chad has fine footwork. He's quick on his feet.
 # speaker: Narrator
 But he is still a boy, and your pet is an enormous insectoid who seemed created for bone splintering mayhem reserved for early 1990s disaster movies before the world felt so genuinely dark. 
 # speaker: Narrator
-In truth, there was never any contest. 
-# speaker: Narrator
 Chad is tossed into the air by a claw, and he comes down hard. 
 # speaker: Chad
-"I should have known..."
-# speaker: Chad
-"Who am I... to tilt at windmills and imagine myself winning?" 
+I should have known... Who am I... to tilt at windmills and imagine myself winning?
 # speaker: Narrator
 Chagrined Chad hobbles down the street, his embarrassed head held high. 
 
 # speaker: Ringo
-Sister, that was incredible!
-# speaker: Ringo
-That must feel amazing. All that destructive power, at your beck and call. 
+Sister, that was incredible! That must feel amazing. All that destructive power, at your beck and call. 
 I bet you feel unstoppable. That the Chads of the world are nothing but loose stones beneath your feet. 
 # speaker: Ringo
 Sometimes I wonder how I would move through the world if I didn't have anything to fear...
@@ -457,30 +454,27 @@ It's okay, sis. You can't win all your fights, even if you are a kaiju sized bug
 ~ current_fight_intro_heard = true
 
 # speaker: Ringo
-"{pc_name}, {pc_name}! It's Chad. He's back!" 
+{pc_name}, {pc_name}! It's Chad. He's back!
 # speaker: Ringo
-"After you beat him at the rematch, he's changed." 
+After you beat him at the rematch, he's changed.
 # speaker: Ringo
-"He's dabbled in profane magicks from unholy tomes written by authors driven mad by their own ruinous words, but not before they had time to proof read and write extensive "acknowledgements" sections."
+He's dabbled in profane magicks from unholy tomes written by authors driven mad by their own ruinous words, but not before they had time to proof read and write extensive "acknowledgements sections.
 # speaker: Ringo
 He's stronger than ever and worst of all: he's still finding time to bully me! 
 
 # speaker: Narrator
 The street is empty and then in a burst of cold light, there is Chad. 
 # speaker: Ringo
-He's got the same baby blue eyes, pouting lips, and frosted tips as before. But it is somehow wrong. Profane. 
+He's got the same baby blue eyes, pouting lips, and frosted tips as before. But his form is somehow wrong. Twisted in a way you can't perceive.
 # speaker: Ringo
 When he speaks, there is a sound like the sea as its last swell is swallowed by the sun. The roar of a beast spent millennia in darkness. The tectonic crash of two planets colliding and remaking the axis of an entire galaxy in a single nauseating instant. 
 
 # speaker: Chad
-Hey, {pc_name}.
-# speaker: Chad
-Wanna fight?
-
+Hey, {pc_name}. Your time upon this Earth is at an end.
 # speaker: Ringo
-Watch out, sis! Chad's strong beyond recoking. 
+Watch out, sis! Chad's strong beyond reckoning. 
 # speaker: Ringo
-His challenge value is 4! So you'll need a 4 or higher to beat him.
+His challenge value is <b>4</b>! So you'll need a 4 or higher to beat him.
 # speaker: Ringo
 If you and {MONSTER_NAME} want to back out, I totally get it...
 # speaker: Ringo
@@ -502,10 +496,12 @@ It's the morally right thing to do!
 
 === space_12_bullyno3_battle === 
 # speaker: Ringo
-"Your current dice pool is {battle_current_number_dice}. Your enemy's challenge value is 4. 
+Your current dice pool is {battle_current_number_dice}. Your enemy's challenge value is 4. 
 {battle_current_number_dice < 5:
     ~ battle_current_number_dice += 1
     + [Gain one town panic to gain one additional dice.] 
+        ~ battle_current_number_dice += 1
+        ~ change_variable("fear", amount_a)
         # speaker: Narrator
         Your monster flexes, growing stronger for the upcoming fight. 
         -> space_12_bullyno3_battle
@@ -516,7 +512,7 @@ It's the morally right thing to do!
     # speaker: Narrator
     Your brother shakes his head in disappointment as you and {MONSTER_NAME} continue on your walk. 
     # speaker: Ringo
-    "Coward!"
+    Coward!
     {testing_in_ink:-> space_12|-> DONE}
 
 
@@ -524,14 +520,15 @@ It's the morally right thing to do!
 ~roll_dice(battle_current_number_dice, 4)
 /// Need to find a way to make this not appear on the same line. 
 # speaker: Narrator
-You rolled... <>
+Dice roll time! Let's check the results...
 ~print_dice_results()
 
 {
 - roll_success == true: 
-    
+    Success!
     -> space_12_interaction_1_fight_3_chad_success
 - else:     
+    Defeat!
     -> space_12_interaction_1_fight_3_chad_fail
 }
 
@@ -549,21 +546,19 @@ Claws. Teeth. A thorax that shoots web.
 With this final item, Young Chad is wrapped up in your creature's unbreakable silk and he stares out, transfixed as if he discovered an answer he had long ago given up ever finding. 
 
 # speaker: Chad
-You know, I really thought I could win. 
-# speaker: Chad
-But I see now that could never be.
+You know, I really thought I could win. But I see now that could never be.
 # speaker: Chad
 Some things cannot be changed in our lives... and we must learn to live with them as they are. 
 
 # speaker: Narrator
-You break Chad free of his bindings, and he walks off into the distance. 
+You break Chad free of his bindings. He walks off into the distance before he ascends on eldritch wings until he is suddenly gripped by a plumb of enveloping darkness and spirited away to parts unknown. 
 # speaker: Ringo
-"Good work, sis! I think you finally beat some sense into him." 
+Good work, sis! I think you finally beat some sense into him.
 # speaker: Ringo
-"And now that Chad won't bother me, I can finally get back to working on my dream project."
+And now that Chad has been claimed by dark powers he foolishly thought to master, I can finally get back to working on my dream project.
 # speaker: Ringo
 ~ change_variable("lap_bonus_food", amount_a)  
-"As thanks, Chad even offered to help us make food for you when everytime you come back home!" 
+As thanks, I'll make an extra big meal for you everytime you come back home!
 
 ~ current_foe = "level_4_bully"
 {testing_in_ink:-> space_12|-> DONE}
@@ -576,9 +571,7 @@ Chad is not <i>of</i> power, he simply <b>is</b> power.
 # speaker: Narrator
 {MONSTER_NAME} is sent ragdolling from Chad, and a long time passes before your pet staggers up to its feet. 
 # speaker: Narrator
-In the meantime, Chad robs you of your creature's snacks. 
-# speaker: Narrator
-It is like you never had them in the first place. 
+In the meantime, Chad robs you of your creature's snacks. It is like you never had them in the first place. 
 # speaker: Ringo
 Too bad, sis. Looks like you'll have to try again next time.
 {testing_in_ink:-> space_12|-> DONE}
@@ -593,52 +586,52 @@ You return to your neighborhood when you spot a familiar figure towering in the 
 # speaker: Narrator
 It's Chad. And he's cowering. 
 # speaker: Chad
-"{pc_name}, we're in trouble..." 
+{pc_name}, we're in trouble...
 # speaker: Chad
-"I've spent the whole of your life bullying your little brother." 
+I've spent the whole of your life bullying your little brother.
 # speaker: Chad
-"While doing so may have done irreperable damage to myself by fostering within me a loathesome fondness for experiencing power over others... now I wish I never stopped." 
+While doing so may have done irreperable damage to myself by fostering within me a loathesome fondness for experiencing power over others... now I wish I never stopped.
 # speaker: Chad
-"Because something even worse has happened now." 
+Because something even worse has happened now. 
 
 # speaker: Narrator
 Just then the building that you noticed earlier <i>moves</i>. 
 # speaker: Narrator
-The structure reveals itself to be an enormous bi-pedal mech with a cockpit in the robot's titanium reinforced mechanical skull." 
+The structure reveals itself to be an enormous bi-pedal mech with a cockpit in the robot's titanium reinforced mechanical skull.
 # speaker: Ringo
-"Hey there, sis!" 
+Hey there, sis!
 # speaker: Ringo
-"Now that Chad isn't bullying me, I finally got a chance to pursue my own dream: creating a sky scraper sized robot and terrorizing the world."
+Now that Chad isn't bullying me, I finally got a chance to pursue my own dream: creating a sky scraper sized robot and terrorizing the world.
 # speaker: Ringo
-"Thanks to you, I'll never have to fear anyone or anything again." 
+Thanks to you, I'll never have to fear anyone or anything again.
 # speaker: Ringo
-"But I swear to be a merciful god. In fact, you and I could rule together. Machine and beast!"
+But I swear to be a merciful god. In fact, you and I could rule together. Machine and beast!
 # speaker: Ringo
-"What say you, sister?" 
+What say you, sister?
 
 * [Rule together] 
     ~ rule_together = true
     # speaker: Ringo
-    "Yes, sister. Truly, this is what mother and father have prepared us for all our lives!" 
+    Yes, sister. Truly, this is what mother and father have prepared us for all our lives!
     # speaker: Ringo
-    "Soon, the world will meet its new monarchs, and they will genuflect and experience the joy that only comes from the generous rule of child dictators." 
+    Soon, the world will meet its new monarchs, and they will genuflect and experience the joy that only comes from the generous rule of child dictators.
     # speaker: Ringo
-    "But I'm getting ahead of myself. The civilized world will probably put up some tedious struggle and try to paint as being unfit to rule even though you're six and know basically everything." 
+    But I'm getting ahead of myself. The civilized world will probably put up some tedious struggle and try to paint as being unfit to rule even though you're six and know basically everything.
     # speaker: Ringo
-    "When next you complete a circuit around the board, I can make you extra food." 
+    When next you complete a circuit around the board, I can make you extra food.
     # speaker: Ringo
-    "And in the meantime we can begin planning for our future roles in world government!" 
+    And in the meantime we can begin planning for our future roles in world government!
     
     {testing_in_ink:-> space_12|-> DONE}
 * [Fight your brother] 
 # speaker: Ringo
 - 
 # speaker: Ringo
-"I should have known..." 
+I should have known... 
 # speaker: Ringo
-"It's like when we were even younger and you hogged the human plushy toy all for yourself. You were never good at sharing." 
+It's like when we were even younger and you hogged the human plushy toy all for yourself. You were never good at sharing.
 # speaker: Ringo
-"Don't worry, I will make a just world of iron and circuits, and there will be space for all: even you. 
+Don't worry, I will make a just world of iron and circuits, and there will be space for all: even you. 
 # speaker: Ringo
 Prepare yourself! My challenge value is an unbeatable five!
 ~ dice_pool_based_on_size()
@@ -650,7 +643,7 @@ Prepare yourself! My challenge value is an unbeatable five!
 # speaker: Narrator
 Your brother Ringo stomps towards you in his massive mech. 
 # speaker: Ringo
-"Come back to embarrass yourself fighting me?" 
+Come back to embarrass yourself fighting me?
 ~ dice_pool_based_on_size()
 -> space_12_bullyno4_battle
 
@@ -659,10 +652,12 @@ Your brother Ringo stomps towards you in his massive mech.
 
 === space_12_bullyno4_battle === 
 # speaker: Ringo
-"Your current dice pool is {battle_current_number_dice}. Your enemy's challenge value is 5. 
+Your current dice pool is {battle_current_number_dice}. Your enemy's challenge value is 5. 
 {battle_current_number_dice < 5:
     + [Gain one town panic to gain one additional dice.] 
         # speaker: Narrator
+        ~ battle_current_number_dice += 1
+        ~ change_variable("fear", amount_a)
         Your monster flexes, growing stronger for the upcoming fight. 
         -> space_12_bullyno4_battle
 }
@@ -672,7 +667,7 @@ Your brother Ringo stomps towards you in his massive mech.
     # speaker: Narrator
     Your brother shakes his head in disappointment as you and {MONSTER_NAME} continue on your walk. 
     # speaker: Ringo
-    "Coward!"
+    Coward!
     {testing_in_ink:-> space_12|-> DONE}
 
 
@@ -680,14 +675,15 @@ Your brother Ringo stomps towards you in his massive mech.
 ~roll_dice(battle_current_number_dice, 5)
 /// Need to find a way to make this not appear on the same line. 
 # speaker: Narrator
-You rolled... <>
+Dice roll time! Let's check the results...
 ~print_dice_results()
 
 {
 - roll_success == true: 
-    
+    Success!
     -> space_12_interaction_1_fight_4_bro_success
 - else:     
+    Defeat!
     -> space_12_interaction_1_fight_4_bro_fail
 }
 
@@ -704,7 +700,7 @@ From his cockpit, Ringo launches fusillades of weaponry that will be used as ref
 # speaker: Narrator
 Off your command, your pet climbs up the body of your brother's mech. 
 # speaker: Ringo
-"Sister, no!"
+Sister, no!
 # speaker: Narrator
 Massive metal wrists come to swat, but your beast is faster-- climbing higher and higher until you arrive up at the headpiece of your brother's mech. 
 # speaker: Narrator
@@ -715,34 +711,34 @@ You catch your brother in your arms as your monster comes back down to the safet
 Together the two of you watch as his mech that briefly terrorized the city falls backward and crashes into the waters of the bay. 
 
 # speaker: Ringo
-"There goes my heart, my very dream."
+There goes my heart, my very dream.
 # speaker: Ringo
-"The worst part, is that for all my engineering and bluster... it never felt right." 
+The worst part, is that for all my engineering and bluster... it never felt right.
 # speaker: Ringo
-"After spending so long under Chad's thumb, I thought having a power of my own would feel liberating." 
+After spending so long under Chad's thumb, I thought having a power of my own would feel liberating. 
 # speaker: Ringo
-"But instead, I felt under the thrall of my own machine designed to rule and dominate." 
+But instead, I felt under the thrall of my own machine designed to rule and dominate.
 # speaker: Ringo
-"I gained freedom but lost my own will as I sought to preserve and grow my own power at any cost..." 
+I gained freedom but lost my own will as I sought to preserve and grow my own power at any cost...
 # speaker: Ringo
-"Sister, how do you do it?" 
+Sister, how do you do it?
 # speaker: Ringo
-"You have immense power in the form of your beloved pet, but how are you not changed by it?" 
+You have immense power in the form of your beloved pet, but how are you not changed by it?
 
 * [I am changed by my pet's influence, you just can't see it.]
     # speaker: Ringo
-    "I suppose we are always changed. By our misfortunes, our victories, and the friends we keep." 
+    I suppose we are always changed. By our misfortunes, our victories, and the friends we keep.
 * [{MONSTER_NAME} is not my power, he is my friend.]
     # speaker: Ringo
-    "I suppose it's better that way that." 
+    I suppose it's better that way that.
     # speaker: Ringo
-    "In a perfect world, power would originate and exist to do right by our friends and the people we care about."
+    In a perfect world, power would originate and exist to do right by our friends and the people we care about.
 - 
 # speaker: Ringo
-"Sister, I think you for saving me. I truly lost myself there for a minute." 
+Sister, I think you for saving me. I truly lost myself there for a minute.
 # speaker: Ringo
 ~ change_variable("lap_bonus_food", amount_a)  
-"The next time you come back home, I'll be sure to use some of this robot equipment to make you an extra big meal." 
+The next time you come back home, I'll be sure to use some of this robot equipment to make you an extra big meal.
 {testing_in_ink:-> space_12|-> DONE}
 
 == space_12_interaction_1_fight_4_bro_fail ==
@@ -755,7 +751,7 @@ Only now do you realize his designs were miraculously and painfully possible.
 # speaker: Narrator
 Your pet heroically shields you from the worst of the damage, but much of your food stores do not survive impact. 
 # speaker: Ringo
-"Sorry, sister! I'd wish you luck next time, but as a newly christened despot, I seek to only speak truth."
+Sorry, sister! I'd wish you luck next time, but as a newly christened despot, I seek to only speak truth.
 {testing_in_ink:-> space_12|-> DONE}
 
 

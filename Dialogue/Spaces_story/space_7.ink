@@ -38,7 +38,7 @@ I just had to be on lunch break when the diner owner’s cat got stuck in a tree
 {MONSTER_NAME} musters all his strength, letting the air seep deep within, and then unleashes a guttural screech. Whiskers’ fur is blown back, his claws loosen their grasp, and his body leaps to the ground. He scores a perfect ten point landing into the arms of Ruby!
 #speaker: Ruby
 Well darn, all I needed was a louder megaphone this whole time! Thanks for your help getting Whiskers down safely. I’ll be sure to tell Whiskers’ owner about the kind strangers who help me out.
-~ change_variable("fear", amount_a*-1)
+~ change_variable("fear", amount_b*-1)
 -> space_7_firetruck_ride
 +[Chuck your pet at the cat.]
 #speaker: Narrator
@@ -47,7 +47,7 @@ Well darn, all I needed was a louder megaphone this whole time! Thanks for your 
 	In a flash, Whiskers eyes are greeted with the sight of something they’ve never witnessed before. Whiskers loosens their grasp on the tree branch. They leap into one of Ruby’s hands, and the other hand catches {MONSTER_NAME}.
 	#speaker: Ruby
 “A bit unorthodox if I say so myself, but hey it worked! Good thing I played football back in highschool. Here’s your uh, pet, back. Thanks for the help, I gotta tell the squad down at the station about this one, hahahaa!”
-~ change_variable("fear", amount_a*-1)
+~ change_variable("fear", amount_b*-1)
 -> space_7_firetruck_ride
 
 ==space_7_interaction_2==
@@ -61,7 +61,7 @@ Plus Barkson likes giving away his spare change, so your good deed won’t go un
 	
 	#speaker: Narrator
 You, {MONSTER_NAME}, and Ruby go in and check on Old dog Barkson. He’s intrigued by {MONSTER_NAME} and asks to hear what hijinks you youths have gotten up to these days. After a few stories and a refreshing round of tea and cookies, he sends you on your way with ten bones. 
-~ change_variable("fear", amount_a*-1)
+~ change_variable("fear", amount_b*-1)
 -> space_7_firetruck_ride
 
 ==space_7_interaction_3==
@@ -86,7 +86,7 @@ Looking over, you see one of the local stores ablaze. Ruby and her squad are alr
 +[Use {MONSTER_NAME}’s saliva to patch up the hose.]
 	#speaker: Ruby
 "Thank you both! Come by the station sometime soon and I’ll be sure to give you two a tour! I wouldn’t have been able to put out that fire without your help!"
-~ change_variable("fear", amount_a*-1)
+~ change_variable("fear", amount_b*-1)
 -> space_7_firetruck_ride
 
 +[Use {MONSTER_NAME}’s ice beam to put out the fire.]
@@ -95,7 +95,7 @@ Looking over, you see one of the local stores ablaze. Ruby and her squad are alr
 "Now that was something to behold! 
 
 If I had the power to shoot off ice beams from my ears, I’d never retire. Why don’t you two come on down by the station sometime soon and I’ll give you both a tour! I wouldn’t have been able to put out that fire without the help!"
-	 ~ change_variable("fear", amount_a*-1)
+	 ~ change_variable("fear", amount_b*-1)
 -> space_7_firetruck_ride
 
 ==space_7_interaction_5==
@@ -108,7 +108,7 @@ Ruby invites you into the station for a tour, and everybody is delighted to see 
 "Hooray! Make room Larry, there’s a new member on the squad!"
 #speaker: Narrator
 Larry, wearing his little firefighter helmet, snaps a fly out of the air with his tongue and blinks at {MONSTER_NAME}. He doesn’t really seem to know what's going on, but he’s enjoying the vibes.
-~ change_variable("fear", amount_a*-1)
+~ change_variable("fear", amount_b*-1)
 -> space_7_firetruck_ride
 
 ==space_7_interaction_6==
@@ -118,7 +118,7 @@ You see Ruby outside the station repainting her firetruck. It would probably be 
 +[Lend a hand.]
 
 You help out and feel a sense of warmth inside yourself. {MONSTER_NAME} smiles at you, joyful for a little break from anything too dramatic.
-~ change_variable("fear", amount_a*-1)
+~ change_variable("fear", amount_b*-1)
 -> space_7_firetruck_ride
 
 ==space_7_interaction_7==
@@ -130,7 +130,7 @@ Would you and {MONSTER_NAME} be willing to give the town a Fire Safety PSA tonig
 +[“We can’t bear to not help out. We don’t want a smokey town after all.”]
 #speaker: Narrator
 Everyone having heard of your adventures is excited to see {MONSTER_NAME} on stage. They all cheer as you point out how to minimize the chance of total ecological catastrophe. 
-~ change_variable("fear", amount_a*-1)
+~ change_variable("fear", amount_b*-1)
 -> space_7_firetruck_ride
 
 ==space_7_interaction_8==
@@ -145,7 +145,7 @@ Desks are flipped over, half the squad is running around, one firefighter has be
 {MONSTER_NAME} swoops down to the floor, whispering to the spider. After a second it hops on {MONSTER_NAME}’s back and they leave the station together. Moments later {MONSTER_NAME} reenters, spiderless.
 #speaker: Ruby
 "WHEW! I for sure thought the station was a goner. Fires are one thing, but spiders? Absolutely not. That’s why I’m making the executive decision to make you both honorary firefighters! We’ll get you your helmets pronto!"
-~ change_variable("fear", amount_a*-1)
+~ change_variable("fear", amount_b*-1)
 -> space_7_firetruck_ride
 
 +[Open Larry’s tank.]
@@ -156,13 +156,13 @@ You and {MONSTER_NAME} look at each other and then back at the scene. The only c
 "By Doggy I thought the station was a goner! I’m glad to see we still had someone with enough courage here. I’m repromoting you to the station mascot Larry, here’s your fire helmet back!"
 #speaker: Narrator
 Ruby places the tiny helmet back on Larry’s head. Larry simply continues to wander the station looking for more bugs to eat. Deciding you’d rather not be a part of the clean up you and {MONSTER_NAME} leave the station, hoping never to encounter another spider there ever again.
-~ change_variable("fear", amount_a*-1)
+~ change_variable("fear", amount_b*-1)
 -> space_7_firetruck_ride
 
 ==space_7_interaction_9==
 #speaker: Rosey
 Looks like Ruby is out on a call right now, helping whereverver she can. She's an amazing dog! Let's hope there's no serious emergencies going on.
-~ change_variable("fear", amount_a*-1)
+~ change_variable("fear", amount_b*-1)
 -> space_7_firetruck_ride
 
 === space_7_destroyed ===

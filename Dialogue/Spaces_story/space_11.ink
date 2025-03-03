@@ -1,4 +1,4 @@
-VAR pc_name = "Rosy"
+VAR pc_name = "Rosey"
 VAR vampire_slain = false
 == space_11 ==
 
@@ -10,11 +10,16 @@ VAR vampire_slain = false
 * [space_11_interaction_5] -> space_11_interaction_5
 * [space_11_interaction_6] -> space_11_interaction_6
 * [space_11_interaction_7] -> space_11_interaction_7
-* [space_11_interaction_8]-> space_11_interaction_8
-* [space_11_destroyed_1] -> space_11_destroyed_1
++ [space_11_interaction_8]-> space_11_interaction_8
+* [space_11_destroyed_1] -> space_11_destroyed
 * [space_11_vampire_slain] -> space_11_vampire_slain
 - else:
+
+{get_variable("is_current_destroyed"): -> space_11_destroyed}
+
 {vampire_slain == true: -> space_11_vampire_slain}
+
+
 {not space_11_interaction_1: -> space_11_interaction_1}
 {not space_11_interaction_2: -> space_11_interaction_2}
 {not space_11_interaction_3: -> space_11_interaction_3}
@@ -67,22 +72,22 @@ With Wolfgang on the prowl, the town has more to worry about than just {MONSTER_
 # speaker: Narrator
 The hair on the back of your neck stands on end as a familar figure vaults from the rooftop, landing right before you. 
 # speaker: Wolfgang Crimson
-I understand it not one jot! Since conversing with you, I've stalked the city's urban center and the only thing everyone wants to talk about: is you and your cursed pet!
+I understand it not one jot! Since conversing with you, I've nightly stalked the city's urban center feasting upon innocents by the dozen!
 # speaker: Wolfgang Crimson
-It's proposterous. I supped on a bus of tourists, exsanguinated the city's comptroller, and turned the giraffes at the zoo into my thralls!
+It's proposterous! I gorged myself on a bus of tourists, exsanguinated the city's comptroller, and turned the giraffes at the zoo into my thralls!
 # speaker: Wolfgang Crimson
 And after this exceptionally heinous streak of villainy, what do the folks of this miserable burg have to say? 
 # speaker: Wolfgang Crimson
 <i>Oh, the bug. {pc_name}'s bug! That vile insect will destroy the town!
 # speaker: Wolfgang Crimson
-They cry 'bug' while I am nightly creating a maelstrom of terror under the cloak of night!
+They cry "insect" while I am creating a maelstrom of terror under the cloak of night!
 * (asked_about_day)[Maybe do it in the day?]
     # speaker: Narrator
     <i>The vampire furrows his brow, fixing you with a look of pure murder.</i>
     # speaker: Wolfgang Crimson
     "I shall make you rue this day! The city shall tremble before my might!"
     
-* (cant_compete_w_bug)[You can't compete with a giant bug]
+* (cant_compete_w_bug)[You can't compete with a giant bug.]
     # speaker: Wolfgang Crimson
     And that's where you're wrong!
     # speaker: Wolfgang Crimson
@@ -98,12 +103,10 @@ You arrive to a familiar alley and find a slumped figure wearing a newly tattere
 # speaker: Wolfgang Crimson
 So here you return to mock the great Wolfgang. I attempted to enact a streak of villainy so fearsome, that all would tremble. 
 # speaker: Wolfgang Crimson
-But try as I might, the people only fear one creature, and that is your boon and too many legged companion. 
-# speaker: Wolfgang Crimson
-To think. I've lived two thousand years and I have seen countless sights curious and strange but never a beast such as this.
-# speaker: Wolfgang Crimson
-And now what am I to be, if I cannot be the scourge of this booming metropolis. My miserable half life's aspirations has all come to naught...
-* [What do you want to do?]
+But try as I might, the people do not fear me as they once did. Now, they only gossip in awesome fear of one creature: your boon and too many legged companion. 
+
+And now what am I to be, if I cannot be the famed scourge of this booming metropolis. My miserable half life's aspirations have come to naught...
+* [Maybe you could do something else?]
     
 * [Have you ever thought of being good?]
     # speaker: Wolfgang Crimson
@@ -112,7 +115,7 @@ And now what am I to be, if I cannot be the scourge of this booming metropolis. 
             
 - 
 # speaker: Wolfgang Crimson
-In all my undead life, all I have wanted is to be the city's fearsome monster. What else is a vampire to do?
+For the whole of my undead life, all I have wanted is to be the city's fearsome monster. What else is a vampire to do?
 # speaker: Wolfgang Crimson
 If I cannot be the most fearsome, what use is there in this vapid misery known as existence?
 # speaker: Narrator
@@ -125,19 +128,18 @@ With Wolfgang experiencing an existential crisis, the town has more to worry abo
 
 === space_11_interaction_4 ===
 # speaker: Narrator
-<i>You return to a familiar alley and nearly trip over a shopping cart of empty ice cream containers and a bucket of dripping blood.</i>
+<i>You return to a familiar alley and nearly trip over a shopping cart of empty ice cream containers.</i>
 # speaker: Wolfgang Crimson
-"Back again, eh?"
-# speaker: Narrator
-<i>Wolfgang Crimson looks up at you and {MONSTER_NAME}, his face smeared with blood infused rocky road ice cream.</i>
+Back again, eh?
+
 # speaker: Wolfgang Crimson
-"Since we last spoke, I sought relief in the form of iced confection topped with sweetened goat blood. 
+Since we last spoke, I sought relief in iced confections topped with goat's blood. 
 # speaker: Wolfgang Crimson
-Unfortunately the only relief I've won myself is indigestion from all this dairy which hath never agreed with my inferior and infernal stomach!"
+Unfortunately the only thing I've accomplished is securing a bout indigestion from this dairy which hath never agreed with my infernal stomach!"
 # speaker: Wolfgang Crimson
-"And now, here thee come with your superior beast to taunt me. There I have said it! Thy beast is more fearsome and noteworthy than I ever hope to be...
+And now, here thee come with your superior beast to taunt me. There I have said it! Thy beast is more fearsome and noteworthy than I ever hope to be...
 # speaker: Wolfgang Crimson
-Self pity. Woe is truly upon me for in all my life, I have never experienced such a despair... Whatever am I to do with myself now?
+Woe is truly upon me for in all my life, I have never experienced such despair... Whatever am I to do with myself now?
 * ["Could you find a new purpose?"]
     # speaker: Wolfgang Crimson
     "A new purpose, you say?"
@@ -146,7 +148,7 @@ Self pity. Woe is truly upon me for in all my life, I have never experienced suc
     # speaker: Wolfgang Crimson
     "Find me again. Perhaps then I shall be ready to consider how else I am to fill my miserable time on this Earth." 
     # speaker: Wolfgang Crimson
-    <i>With that, Wolfgang transforms into his bat form and wheels up into the sky.</i>
+    <i>With that, Wolfgang transforms into bat form and wheels up into the sky.</i>
 * ["He's weak. {MONSTER_NAME}, attack him!"]
     # speaker: Wolfgang Crimson
     "Yes, a battle! Mayhaps this is how my tale is to end. Defeat at the hands of my irksome rival." 
@@ -196,7 +198,7 @@ Back at the familiar alley, you find an embarrassed Wolfgang who walks up to you
 # speaker: Wolfgang Crimson
 "Apologies you had to see me like that last time. You'll notice I cleaned myself up the best I could, a difficult task given mirrors are of little use to me."
 # speaker: Wolfgang Crimson
-"I gave it some thought, but I still don't know what I should next with my life. Have thee any thoughts? 
+"I gave it some thought, but I still don't know what to do with my life. Have thee any thoughts? 
 * (tailor)[Your cravat looks incredible. Maybe you could get into tailoring?]
     # speaker: Wolfgang Crimson
     "You think... so? I swore I'd never learn how to crochet but starting around century three, you start doing all kinds of things you never thought you'd do..." 
@@ -216,9 +218,9 @@ Back at the familiar alley, you find an embarrassed Wolfgang who walks up to you
             "But now, I see there is hope for me yet!
 * (insurance)[Have you considered running an insurance company?]
     # speaker: Wolfgang Crimson
-    "This whole time I thought to sow terror and despair through acts of violence, but now I see there is a greater venue for causing widespread tragedy!" 
+    "This whole time I thought to sow terror through acts of violence, but now I see there is a greater venue for causing collosal misery!" 
     # speaker: Wolfgang Crimson
-    "Yes, I shall join a parasitic company that feeds on fear of disaster and make it my busienss to pay out as little as possible. " 
+    "Yes, I shall join a parasitic company that feeds on literal disaster and make it my busienss to pay out as little as possible. " 
     # speaker: Wolfgang Crimson
     "The best part, it's all perfectly legal!" 
     
@@ -283,7 +285,7 @@ With that, Wolfgang flies off into the night.
 # speaker: Narrator
 <i>You arrive in the alley and watch in surprise as a familiar bat swoops by overhead. They land in the street and reveal themselves as the revitalized vampire, Wolfgang.</i>
 # speaker: Wolfgang Crimson
-"{pc_name}, I followed your advice and wrote up a resume spelling out my callous heart, predeliction for unspeakable violence, and nocturnal hours."
+"{pc_name}, I followed your advice and wrote a resume spelling out my callous heart, predeliction for unspeakable violence, and nocturnal hours."
 # speaker: Wolfgang Crimson
 I submitted my qualifications via LinkedIn quick submission and within an hour, a recruiter from Liberty Mutual offered me a senior level position!
 # speaker: Wolfgang Crimson
@@ -291,7 +293,7 @@ To think, I thought my days of sucking the vitality from this wretched city were
 # speaker: Wolfgang Crimson
 It turns out, abandoning my nightstalking ways has opened me up to new  and exceptionally profittable manners of antagonism far beyond what I dreamed!
 # speaker: Wolfgang Crimson
-I thank you and your monstrous bug for showing me the light in this darkness. 
+I thank you and your monstrous bug for showing me the darkness in this detestable light. 
 # speaker: Wolfgang Crimson
 And might I suggest: destroy the city with reckless abandon! I'll look forward to selling more insurance with every bit of damage and then turning to mist whenever pressed into payment from policy holders. 
 # speaker: Wolfgang Crimson
@@ -339,12 +341,12 @@ Best of all, the three of you split bottles of blood red cranberry soda. At leas
 /// vampire slain space
 === space_11_vampire_slain ===
 # speaker: Narrator
-The street where Wolfgang Crimson hunted is quiet. The sun shines brighter and your hair stops raising whenever he was around.
+The street where Wolfgang Crimson hunted is quiet. The sun shines brighter and your hair stops raising like it did when he was around.
 Relieved that the fiend is no more, a baker rushes out to give you free cookies on the house for ridding the town of its demonic bloodsucker. 
 
 ~ change_variable("hunger", amount_c) 
 
-The baked goods are sweet. Almost too much your taste. {MONSTER_NAME} doesn't mind in the slightest.
+The baked goods are sweet, almost too much your taste. {MONSTER_NAME} doesn't mind in the slightest.
 
 Afterwards {MONSTER_NAME} lets you ride on his back as you continue on your daily walk around the city.
 {testing_in_ink:-> space_11|-> DONE}
@@ -353,7 +355,7 @@ Afterwards {MONSTER_NAME} lets you ride on his back as you continue on your dail
 === space_11_destroyed ===
 # speaker: Narrator
 It's just not the vampire that's been destroyed. It's the florist shop. The bakery. The discount tire shop that keeps weird business hours and always seems open.
-In any case, you won't ever need to wonder why since they've all been demolished. 
+In any case, you won't need to ponder the mysteries of the midnigt auto shop since that and everything else has been summarily demolished. 
 # speaker: BUG
 The culprit picks his teeth with a telephone pole with a smug CHITTER.
 
