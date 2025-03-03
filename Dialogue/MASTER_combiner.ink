@@ -1,5 +1,5 @@
 /// Switch this to false when exporting
-VAR testing_in_ink = true
+VAR testing_in_ink = false
 
 
 /// INK AND GODOT VARIABLES
