@@ -6,16 +6,20 @@ VAR testing_in_ink = false
 VAR current_day = 0 /// David, this should hook into Godot and reference the number of times you've gone around the board. 
 VAR number_of_spaces_destroyed = 0 /// David, this should hook into Godot and reference the number of spaces destroyed. 
 VAR current_evolution_state = "caterpillar" /// Should either be "caterpillar" , "cocoon" , "butterfly"
+VAR is_current_destroyed = false
 
 /// AMOUNT VARIABLES
 /// For anyone who comes after me, I'm creating these so it's easy to adjust numbers as a batch. 
-VAR amount_1 = 1
-VAR amount_2 = 2
-VAR amount_3 = 3
-VAR amount_4 = 4
-VAR amount_5 = 5
-
-
+VAR amount_a = 1 /// weakest effect
+VAR amount_b = 2
+VAR amount_c = 3
+VAR amount_d = 4 
+VAR amount_e = 5 /// mid effect
+VAR amount_f = 6
+VAR amount_g = 7 
+VAR amount_h = 8 
+VAR amount_i = 9
+VAR amount_j = 10 /// max effect
 
 
 ///// LIST OF GODOT FUNCTIONS
@@ -96,3 +100,15 @@ VAR very_strong_effect = 5
 ~return
 === function move_player(delta) ===
 ~return
+
+/// LIST OF INK FUNCTIONS
+=== function coin_flip_for_panic_generatior() ===
+~ temp dice_roll = RANDOM(1, 2)
+{dice_roll == 2:
+    # speaker: bug
+    ~ change_variable("fear", amount_a)
+    In that moment, you feel the <b>town panic</b> rising in fear of {MONSTER_NAME}...
+- else: 
+    # speaker: Narrator
+    Luckily the town panic doesn't spike any higher than what it already is...
+}
