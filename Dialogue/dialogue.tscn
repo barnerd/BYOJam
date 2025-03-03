@@ -25,6 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+mouse_force_pass_scroll_events = false
 script = ExtResource("1_euaaw")
 
 [node name="CenterContainer" type="PanelContainer" parent="."]
@@ -132,6 +133,7 @@ theme_override_constants/margin_top = -20
 
 [node name="Background" type="PanelContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/NameTag"]
 layout_mode = 2
+mouse_force_pass_scroll_events = false
 theme_override_styles/panel = SubResource("StyleBoxFlat_kpsmt")
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/MarginContainer/NameTag/Background"]
