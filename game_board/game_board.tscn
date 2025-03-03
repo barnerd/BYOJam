@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://dvvvs70p5muoe"]
+[gd_scene load_steps=67 format=4 uid="uid://dvvvs70p5muoe"]
 
 [ext_resource type="Script" path="res://game_board/game_board.gd" id="1_7t848"]
 [ext_resource type="Script" path="res://game_board/tile_space.gd" id="2_lrcl5"]
@@ -563,6 +563,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_f3qf4")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_08h6g"]
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_btxqb"]
 _surfaces = [{
 "aabb": AABB(-0.25, 0, -0.25, 0.5, 0.604281, 0.5),
@@ -621,6 +623,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_btxqb")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2m265"]
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_je278"]
 _surfaces = [{
 "aabb": AABB(-0.272763, 0, -0.295, 0.545526, 1.4107, 0.59),
@@ -678,6 +682,26 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_je278")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o0sim"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oild2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i0ae1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gtnac"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1aidg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfs8u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_axf6x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_phaxx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i655w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6vklf"]
 
 [node name="GameBoard" type="Node3D" node_paths=PackedStringArray("board_spaces", "buildings")]
 script = ExtResource("1_7t848")
@@ -875,6 +899,10 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("9_kntqi")
 surface_material_override/1 = ExtResource("10_gvo4m")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buildings/Building1/RigidBody3D"]
+shape = SubResource("BoxShape3D_08h6g")
+disabled = true
+
 [node name="Building2" type="Node3D" parent="Buildings"]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -1.6928, -3.57628e-07, -2.25503)
 script = ExtResource("9_v4c7f")
@@ -892,6 +920,10 @@ mesh = SubResource("ArrayMesh_8n2qd")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("9_kntqi")
 surface_material_override/1 = ExtResource("10_gvo4m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buildings/Building2/RigidBody3D"]
+shape = SubResource("BoxShape3D_2m265")
+disabled = true
 
 [node name="Building3" type="Node3D" parent="Buildings"]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.332993, -5.96046e-08, -2.28254)
@@ -911,6 +943,10 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("9_kntqi")
 surface_material_override/1 = ExtResource("10_gvo4m")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buildings/Building3/RigidBody3D"]
+shape = SubResource("BoxShape3D_o0sim")
+disabled = true
+
 [node name="Building4" type="Node3D" parent="Buildings"]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.31994, 0, -2.26451)
 script = ExtResource("9_v4c7f")
@@ -928,6 +964,10 @@ mesh = SubResource("ArrayMesh_hryfh")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("9_kntqi")
 surface_material_override/1 = ExtResource("10_gvo4m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buildings/Building4/RigidBody3D"]
+shape = SubResource("BoxShape3D_oild2")
+disabled = true
 
 [node name="Building5" type="Node3D" parent="Buildings"]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 1.62039, -3.57628e-07, -2.25503)
@@ -947,6 +987,10 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("9_kntqi")
 surface_material_override/1 = ExtResource("10_gvo4m")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buildings/Building5/RigidBody3D"]
+shape = SubResource("BoxShape3D_i0ae1")
+disabled = true
+
 [node name="Building6" type="Node3D" parent="Buildings"]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.981385, -5.96046e-08, -2.28254)
 script = ExtResource("9_v4c7f")
@@ -964,6 +1008,10 @@ mesh = SubResource("ArrayMesh_lbw2w")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("9_kntqi")
 surface_material_override/1 = ExtResource("10_gvo4m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buildings/Building6/RigidBody3D"]
+shape = SubResource("BoxShape3D_gtnac")
+disabled = true
 
 [node name="Building7" type="Node3D" parent="Buildings"]
 transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, -2.32408, 0, -0.943146)
@@ -983,6 +1031,10 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("9_kntqi")
 surface_material_override/1 = ExtResource("10_gvo4m")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buildings/Building7/RigidBody3D"]
+shape = SubResource("BoxShape3D_1aidg")
+disabled = true
+
 [node name="Building8" type="Node3D" parent="Buildings"]
 transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, -2.33355, -3.57628e-07, -1.63669)
 script = ExtResource("9_v4c7f")
@@ -1000,6 +1052,10 @@ mesh = SubResource("ArrayMesh_8n2qd")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("9_kntqi")
 surface_material_override/1 = ExtResource("10_gvo4m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buildings/Building8/RigidBody3D"]
+shape = SubResource("BoxShape3D_lfs8u")
+disabled = true
 
 [node name="Building9" type="Node3D" parent="Buildings"]
 transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, -2.30605, -5.96046e-08, -0.276887)
@@ -1019,6 +1075,10 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("9_kntqi")
 surface_material_override/1 = ExtResource("10_gvo4m")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buildings/Building9/RigidBody3D"]
+shape = SubResource("BoxShape3D_axf6x")
+disabled = true
+
 [node name="Building10" type="Node3D" parent="Buildings"]
 transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, -2.32408, 0, 0.376046)
 script = ExtResource("9_v4c7f")
@@ -1036,6 +1096,10 @@ mesh = SubResource("ArrayMesh_hryfh")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("9_kntqi")
 surface_material_override/1 = ExtResource("10_gvo4m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buildings/Building10/RigidBody3D"]
+shape = SubResource("BoxShape3D_phaxx")
+disabled = true
 
 [node name="Building11" type="Node3D" parent="Buildings"]
 transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, -2.33355, -3.57628e-07, 1.6765)
@@ -1055,6 +1119,10 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("9_kntqi")
 surface_material_override/1 = ExtResource("10_gvo4m")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buildings/Building11/RigidBody3D"]
+shape = SubResource("BoxShape3D_i655w")
+disabled = true
+
 [node name="Building12" type="Node3D" parent="Buildings"]
 transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, -2.30605, -5.96046e-08, 1.03749)
 script = ExtResource("9_v4c7f")
@@ -1072,3 +1140,7 @@ mesh = SubResource("ArrayMesh_lbw2w")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("9_kntqi")
 surface_material_override/1 = ExtResource("10_gvo4m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buildings/Building12/RigidBody3D"]
+shape = SubResource("BoxShape3D_6vklf")
+disabled = true
