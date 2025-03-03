@@ -47,7 +47,9 @@ Why don’t you take some of these melon buns for the road? I always buy too man
 
 ==space_5_interaction_3==
 #speaker: Knight Squeaksworth
-“Hey {pc_name} and {MONSTER_NAME}! I’ve gotten my creative spirit back lately. I remember that my inspiration came from people and things I’d never seen before, or stuff off the beaten path. Can I paint your portrait, {MONSTER_NAME}? I don’t have any money to compensate you but you can take this Joyful Meal I got earlier, it even has a toy in it!”
+“Hey {pc_name} and {MONSTER_NAME}! I’ve gotten my creative spirit back lately. I remember that my inspiration came from people and things I’d never seen before, or stuff off the beaten path. 
+
+Can I paint your portrait, {MONSTER_NAME}? I don’t have any money to compensate you but you can take this Joyful Meal I got earlier, it even has a toy in it!”
 #speaker: Narrator
 {MONSTER_NAME} seems ecstatic to pose for their portrait, practicing through different styles and looks.
 
@@ -165,10 +167,10 @@ While walking through the art museum you ponder what Knight would have to say ab
 === space_5_destroyed ===
 # speaker: Narrator
 This is where Knight Squeaksworth lived. 
-A budding artist who had yet to see her full potential.
+A budding artist who had yet to see their full potential.
 # speaker: Rosey
-And now I wonder if she ever will... What do you think, bud?
+And now I wonder if they ever will... What do you think, bud?
 # speaker: Narrator
-{MONSTER_NAME} rolls around in her discarded paints, coloring his shell a brilliant ochre and cerulean blue.
+{MONSTER_NAME} rolls around in their paints, painting his shell a brilliant ochre and cerulean blue.
 ~ coin_flip_for_panic_generatior()
 {testing_in_ink:-> space_5|-> DONE}
