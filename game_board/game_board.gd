@@ -106,7 +106,7 @@ func on_pet_starved() -> void:
 func destroy_tile(_reason: String) -> void:
 	var index = randi_range(0, non_destroyed_tiles.size() - 1)
 	var space_to_destroy = non_destroyed_tiles[index]
-	non_destroyed_tiles.erase(index)
+	non_destroyed_tiles.remove_at(index)
 	
 	board_spaces[space_to_destroy].destroy_tile(SPACE_TYPE_MATERIALS[TileSpace.TileType.DESTROYED])
 	spaces_destroyed += 1
@@ -115,11 +115,12 @@ func destroy_tile(_reason: String) -> void:
 	print("switch to knot: %s" % _reason)
 	
 	# Destroy a random building
-	index = randi_range(0, non_destroyed_buildings.size() - 1)
-	var building_to_destroy = non_destroyed_buildings[index]
-	non_destroyed_buildings.erase(index)
-	
-	buildings[building_to_destroy].destroy()
+	if non_destroyed_buildings.size() > 0:
+		index = randi_range(0, non_destroyed_buildings.size() - 1)
+		var building_to_destroy = non_destroyed_buildings[index]
+		non_destroyed_buildings.remove_at(index)
+		
+		buildings[building_to_destroy].destroy()
 
 
 func is_tile_destroyed(_space: int) -> bool:
@@ -133,8 +134,6 @@ func get_story_knot(_space: int) -> String:
 func perform_passing_effect(_space: int, _player: Player) -> void:
 	if _space >= 0 and _space < board_spaces.size():
 		board_spaces[_space].perform_passing_effect(_player)
-	if CORNER_SPACES.has(_space):
-		_player.turn_corner()
 
 
 func perform_landing_effect(_space: int, _player: Player) -> void:

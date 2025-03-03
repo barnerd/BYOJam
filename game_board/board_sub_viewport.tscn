@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmlama2v015m5"]
+[gd_scene load_steps=4 format=3 uid="uid://cmlama2v015m5"]
 
 [ext_resource type="PackedScene" uid="uid://dvvvs70p5muoe" path="res://game_board/game_board.tscn" id="1_wyqwh"]
 [ext_resource type="PackedScene" uid="uid://bkg6qgamif8at" path="res://characters/player/player.tscn" id="2_wr6td"]
 [ext_resource type="PackedScene" uid="uid://cr7khfphhq7ct" path="res://characters/pet/pet.tscn" id="3_im6ty"]
-[ext_resource type="Script" path="res://characters/pet/pet.gd" id="4_2xa7o"]
 
 [node name="SubViewportContainer" type="SubViewportContainer"]
 offset_left = -107.0
@@ -25,11 +24,6 @@ transform = Transform3D(-3.13, 0, 2.73633e-07, 0, 3.13, 0, -2.73633e-07, 0, -3.1
 
 [node name="Pet" parent="SubViewport/Player" instance=ExtResource("3_im6ty")]
 transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 0.061381, -0.00769043, -0.113527)
-script = ExtResource("4_2xa7o")
-max_hunger = 10
-food_on_lap = 3
-starting_hunger = 10
-laps_per_morph = 3
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport"]
 transform = Transform3D(0.707107, -0.353553, 0.612373, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612373, 2, 3, 2)

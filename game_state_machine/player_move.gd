@@ -22,18 +22,23 @@ func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 
 
 func move_spaces() -> void:
-	# TODO: set player moving animation
+	GameAutoload.player.animation_player.play("move")
+	GameAutoload.player.pet.play_animation("move")
 	
 	while num_spaces_left > 0:
 		num_spaces_left -= 1
 		await GameAutoload.player.move_to_next_space(backwards)
 		
+		if GameAutoload.board.CORNER_SPACES.has(GameAutoload.player.current_game_space):
+			GameAutoload.player.turn_corner()
+
 		if not is_story_push:
 			GameAutoload.board.perform_passing_effect(GameAutoload.player.current_game_space, GameAutoload.player)
 		
-		await get_tree().create_timer(0.8).timeout
+		await get_tree().create_timer(0.3).timeout
 	
-	# TODO: set player idle animation
+	GameAutoload.player.animation_player.play("idle")
+	GameAutoload.player.pet.play_animation("idle")
 	
 	GameAutoload.board.perform_landing_effect(GameAutoload.player.current_game_space, GameAutoload.player)
 	
