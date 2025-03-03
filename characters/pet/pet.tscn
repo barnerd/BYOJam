@@ -1,4 +1,6 @@
-[gd_scene load_steps=40 format=4 uid="uid://cr7khfphhq7ct"]
+[gd_scene load_steps=41 format=4 uid="uid://cr7khfphhq7ct"]
+
+[ext_resource type="Script" path="res://characters/pet/pet.gd" id="1_w8f5e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4qoht"]
 resource_name = "beige_mat"
@@ -1114,9 +1116,15 @@ _data = {
 }
 
 [node name="Pet" type="Node3D"]
+script = ExtResource("1_w8f5e")
+max_hunger = 10
+food_on_lap = 3
+starting_hunger = 10
+laps_per_morph = 1
 
 [node name="caccoon" type="Node3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+visible = false
 
 [node name="Skeleton3D" type="Skeleton3D" parent="caccoon"]
 bones/0/name = "god_M_root_jnt"
@@ -1208,6 +1216,7 @@ libraries = {
 
 [node name="mothra" type="Node3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.6, 0)
+visible = false
 
 [node name="Skeleton3D" type="Skeleton3D" parent="mothra"]
 bones/0/name = "god_M_root_jnt"

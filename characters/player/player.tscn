@@ -2101,9 +2101,10 @@ _data = {
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1_kvocm")
+position_offset = Vector3(0.25, 0, -0.1)
 
 [node name="bluey" type="Node3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.00151138, 0, -0.0162213)
+transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 0.00151138, 0, -0.0162213)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="bluey"]
 bones/0/name = "god_M_root_jnt"

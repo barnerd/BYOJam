@@ -22,8 +22,9 @@ func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 	
 	if _data.has("space_num"):
 		# TODO: Pull knot name from TileSpace
-		var is_space_destroyed: bool = GameAutoload.board.is_tile_destroyed(_data.space_num)
 		var story_knot: String = GameAutoload.board.get_story_knot(_data.space_num)
+		if GameAutoload.board.is_tile_destroyed(_data.space_num):
+			print("play the destroyed knot instead: %s" % (story_knot + "_destroyed"))
 		dialogue_screen.start_knot(story_knot)
 	else:
 		print("TODO: story space to play not found; not sure what to do here")
