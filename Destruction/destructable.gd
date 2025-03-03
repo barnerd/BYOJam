@@ -6,4 +6,4 @@ extends Node
 
 func destroy() -> void:
 	rigid_body.set_gravity_scale(1)
-	destronoi_node.destroy(4,4, 1.0)
+	destronoi_node.destroy(4, 4, 1.0)
