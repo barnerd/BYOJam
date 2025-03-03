@@ -23,6 +23,7 @@ var portrait_file_names: Dictionary = {
 	"columbone": "res://ArtAssets/2D Art/Characters/Dogtective-Columbone.png",
 	"kayleigh": "res://ArtAssets/2D Art/Characters/Kayleigh-Buzzbone.png",
 	"ruby": "res://ArtAssets/2D Art/Characters/Ruby-Ruffington.png",
+	"elijah": "res://ArtAssets/2D Art/Characters/Elijah-Truman.png",
 }
 
 
