@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://c0j5wdrc46ee5"]
 
 [ext_resource type="Script" path="res://Dialogue/dialogue.gd" id="1_euaaw"]
-[ext_resource type="Texture2D" uid="uid://bpmr7386h131d" path="res://ArtAssets/2D Art/Characters/Bluey-Main-Character.png" id="2_svaw3"]
+[ext_resource type="Texture2D" uid="uid://cjujut1jojy1i" path="res://ArtAssets/2D Art/Characters/Allison-Wheeler.png" id="2_qabfj"]
 [ext_resource type="Texture2D" uid="uid://cpsstehyff50y" path="res://ArtAssets/2D Art/Characters/Speech-Bubble-Triangle.png" id="3_us6ue"]
 [ext_resource type="Texture2D" uid="uid://yy153vac2alt" path="res://ArtAssets/2D Art/Characters/Continue-Button.png" id="4_v6gmg"]
 [ext_resource type="FontFile" uid="uid://dxsrn10o5v031" path="res://fonts/filson-pro/FilsonProRegular.otf" id="5_7wop7"]
@@ -26,10 +26,6 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 script = ExtResource("1_euaaw")
-
-[node name="Portrait" type="Sprite2D" parent="."]
-position = Vector2(270, 776)
-texture = ExtResource("2_svaw3")
 
 [node name="CenterContainer" type="PanelContainer" parent="."]
 layout_mode = 2
@@ -150,5 +146,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("7_od5xx")
 theme_override_font_sizes/font_size = 35
 text = "NAME"
+
+[node name="Portrait" type="Sprite2D" parent="."]
+position = Vector2(238, 851)
+texture = ExtResource("2_qabfj")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

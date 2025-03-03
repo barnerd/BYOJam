@@ -14,9 +14,12 @@ VAR you_chose_to_destroy_grandmas_house = false
 * [space_4_interaction_3] -> space_4_interaction_3
 * [space_4_interaction_4] -> space_4_interaction_4
 * [space_4_interaction_5] -> space_4_interaction_5
-* [space_4_destroyed_1] -> space_4_destroyed_1
++ [space_4_interaction_6] -> space_4_interaction_6
++ [space_4_destroyed_1] -> space_4_destroyed
 - else: 
 {get_variable("is_current_destroyed"): -> space_4_destroyed}
+{you_chose_to_destroy_grandmas_house: -> space_4_destroyed}
+
 {not space_4_interaction_1: -> space_4_interaction_1}
 {not space_4_interaction_2: -> space_4_interaction_2}
 {not space_4_interaction_3: -> space_4_interaction_3}
@@ -75,7 +78,7 @@ What do your parents think of you taking care of this... <i>thing?</i>
     He might be for now, but what if he keeps growing?
     -> space_4_interaction_2_addendum_1
 }
-* [It was either that or let me get a horse]
+* [It was either that or let me get a horse.]
 # speaker: Allison Wheeler
 Well, horses are sentient people in this world, so I can understand why they wouldn't want to just "get" you a horse... 
     -> space_4_interaction_2_addendum_1
@@ -122,11 +125,11 @@ Listen, honey. I talked to your parents about you keeping {MONSTER_NAME_ACCORDIN
 Grandma, do you have snacks for us, or what?
 # speaker: Allison Wheeler
 ~ change_variable("hunger", amount_c) 
-Yes, yes. I baked you some chocolate cake, but look at this! He's big enough that he's practically blocking out the sun!
+Yes, yes. I baked you some chocolate cake, but look at him! He's big enough that he's practically blocking out the sun!
 
 
 
-And look at those jaws, those pincers! He's bigger than my whole house and good gravy-- we don't even know <i>what</i> he is!
+And look at his jaws, those pincers! It looks he could tear apart a sherman tank, and good gravy-- we don't even know <i>what</i> he is!
 * [He's got gentle eyes. He's nice, and I know it!]
     # speaker: Allison Wheeler
     Honey, I know you think you're doing the right thing by taking care of him, but this is not a normal pet! What if he eats my precious grandbaby whole?
@@ -213,7 +216,7 @@ Take care of yourself, grandkiddo.
     <i>The monster devours the cookies and basket whole.</i>
     ~ change_variable("hunger", amount_c)
     -> space_4_interaction_4_addendum_1
-* [read note]
+* [Read note]
     # speaker: Allison Wheeler
     Hi, grandkiddo.
     # speaker: Allison Wheeler
@@ -232,7 +235,7 @@ Take care of yourself, grandkiddo.
     Anyways, enjoy the mint cookies. I know they're your favorite.
         <i>Grandma</i>
     -> space_4_interaction_4_addendum_1
-* [leave]
+* [Leave]
     {testing_in_ink== true: -> space_4}
     -> DONE
 
@@ -270,12 +273,12 @@ What I wanted to say is that I don't understand you or your connection to this t
         * [Thanks, Grandma]
             # speaker: Allison Wheeler
             Now come here, and give this old lady a squeeze. And you too, you giant, invertebrate boyo!
-            -> space_4_interaction_5_addendum_1
+            {testing_in_ink== true: -> space_4}
             
         * [I'm glad you came around to {MONSTER_NAME}]
             # speaker: Allison Wheeler
             Any friend of yours is a friend of mine. Now come here, and give this old lady a squeeze. And you too, you giant, invertebrate boyo!
-                -> space_4_interaction_5_addendum_1
+            {testing_in_ink== true: -> space_4}
     - else: 
         # speaker: Allison Wheeler
         Now, here's an extra helping of cookies for you and... Honey, this is getting ridiculous! It's time you picked out a name for your pet already! 
@@ -283,17 +286,13 @@ What I wanted to say is that I don't understand you or your connection to this t
                     ~ MONSTER_NAME = "Gemma"
                     ~ MONSTER_NAME_ACCORDING_TO_GRANDMA = "Gemma"
                     # speaker: Allison Wheeler
-                    Honey, you're too sweet, and I can't wait to watch you grow. 
-                    # speaker: Allison Wheeler
-                    The <i>both</i> of you!
-                    -> space_4_interaction_5_addendum_1
+                    Honey, you're too sweet, and I can't wait to watch you grow. The <i>both</i> of you!
+                    {testing_in_ink== true: -> space_4}
                 * [I'm going to name him Cookie!]
                     ~ MONSTER_NAME = "Cookie"
                     ~ MONSTER_NAME_ACCORDING_TO_GRANDMA = "Cookie"
                     # speaker: Allison Wheeler
-                    That's a precious name, and I can't wait to watch you grow. 
-                    # speaker: Allison Wheeler
-                    The <i>both</i> of you!
+                    That's a precious name, and I can't wait to watch you grow. The <i>both</i> of you!
                     -> space_4_interaction_5_addendum_1
     }
     

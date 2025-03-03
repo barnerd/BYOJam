@@ -1120,7 +1120,7 @@ script = ExtResource("1_w8f5e")
 max_hunger = 10
 food_on_lap = 3
 starting_hunger = 10
-laps_per_morph = 1
+laps_per_morph = 3
 
 [node name="caccoon" type="Node3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

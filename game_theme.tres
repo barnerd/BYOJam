@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://8rtfbrfbseru"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://8rtfbrfbseru"]
 
 [ext_resource type="FontFile" uid="uid://dr5w7vnm2a5gh" path="res://fonts/filson-pro/FilsonProBold.otf" id="1_tdbul"]
+[ext_resource type="FontFile" uid="uid://dxsrn10o5v031" path="res://fonts/filson-pro/FilsonProRegular.otf" id="2_sraot"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pu50"]
 bg_color = Color(0, 0, 0, 0)
@@ -22,10 +23,14 @@ border_color = Color(0.90654, 0.804518, 0.129381, 1)
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("1_tdbul")
 CreditsSectionHeader/base_type = &"Label"
-CreditsSectionHeader/colors/font_color = Color(0.704108, 0.295875, 0.0313262, 1)
+CreditsSectionHeader/colors/font_color = Color(0.188235, 0.152941, 0.247059, 1)
 CreditsSectionHeader/colors/font_outline_color = Color(0, 0, 0, 1)
-CreditsSectionHeader/font_sizes/font_size = 24
+CreditsSectionHeader/font_sizes/font_size = 40
+CreditsSectionHeader/fonts/font = ExtResource("1_tdbul")
 CreditsSectionText/base_type = &"Label"
+CreditsSectionText/colors/font_color = Color(1, 1, 1, 1)
+CreditsSectionText/font_sizes/font_size = 30
+CreditsSectionText/fonts/font = ExtResource("2_sraot")
 Dice/base_type = &"PanelContainer"
 Dice/styles/panel = SubResource("StyleBoxFlat_3pu50")
 DiceHighlight/base_type = &"PanelContainer"

@@ -23,6 +23,7 @@ var wait_time: float = 0.1
 
 
 func roll_dice() -> void:
+	is_rolled = false
 	wait_time = 0.1
 	roll_animation()
 
@@ -42,7 +43,7 @@ func roll_animation() -> void:
 	dice_image.texture = load("res://ArtAssets/2D Art/Dice/%d-%s.PNG" % [next_pip + 1, tilt_to_string[next_tilt]])
 	await get_tree().create_timer(wait_time).timeout
 	wait_time += wait_time * wait_time * randf()
-	if wait_time < 0.75:
+	if wait_time < 0.5:
 		roll_animation()
 	else:
 		roll_complete()

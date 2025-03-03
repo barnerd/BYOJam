@@ -14,7 +14,8 @@ func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 	#await get_tree().create_timer(2.0).timeout
 	
 	# TODO: put win and lose conditions here
-	#if player.laps >= 1:
+	if GameAutoload.player.laps >= 10:
+		finished.emit(game_over)
 		#finished.emit(win_state)
 	#elif player.turns_taken >= 5:
 		#finished.emit(lose_state)
