@@ -13,12 +13,6 @@
 ->space_7_interaction_9
 
 
-==space_7_interaction_1==
-#speaker: Ruby
-“Come on, come down here Whiskers. It’s safe. I promise that I’ll catch you!
-Drat! I thought that would work for sure… UGGGH, if only I had brought a ladder with me. 
-
-I just had to be on lunch break when the diner owner’s cat got stuck in a tree. What in Dog’s name do I do now?”
 
 === space_7_firetruck_ride ===
 ~ roll_travel_dice()
@@ -33,15 +27,17 @@ I just had to be on lunch break when the diner owner’s cat got stuck in a tree
     {testing_in_ink:-> space_7|-> DONE}
 
 ==space_7_interaction_1==
-#speaker:Ruby
-Ruby: “Come on, come down here Whiskers. It’s safe. I promise that I’ll catch you!
-Drat! I thought that would work for sure… UGGGH, if only I had brought a ladder with me. I just had to be on lunch break when the diner owner’s cat got stuck in a tree. What in Dog’s name do I do now?”
+#speaker: Ruby
+Come on, come down here Whiskers. It’s safe. I promise that I’ll catch you!
+Drat! I thought that would work for sure… UGGGH, if only I had brought a ladder with me. 
+
+I just had to be on lunch break when the diner owner’s cat got stuck in a tree. What in Dog’s name do I do now?
 
  +[Have your pet screech at the cat.]
 #speaker: Narrator
 {MONSTER_NAME} musters all his strength, letting the air seep deep within, and then unleashes a guttural screech. Whiskers’ fur is blown back, his claws loosen their grasp, and his body leaps to the ground. He scores a perfect ten point landing into the arms of Ruby!
 #speaker: Ruby
-“Well darn, all I needed was a louder megaphone this whole time! Thanks for your help getting Whiskers down safely. I’ll be sure to tell Whiskers’ owner about the kind strangers who help me out.”
+Well darn, all I needed was a louder megaphone this whole time! Thanks for your help getting Whiskers down safely. I’ll be sure to tell Whiskers’ owner about the kind strangers who help me out.
 ~ change_variable("fear", amount_a*-1)
 -> space_7_firetruck_ride
 +[Chuck your pet at the cat.]
@@ -171,7 +167,7 @@ Looks like Ruby is out on a call right now, helping whereverver she can. She's a
 
 === space_7_destroyed ===
 # speaker: Narrator
-You return to the fire station and find that it's newly burned down. 
+You return to the fire station and find that ironically, it's burnt down. 
 You wonder what happened to brave, kind hearted Ruby when you see {MONSTER_NAME} drinking right from the station's hose that's still somehow gushing water.
 You're interupted from your mourning as you try to haul him away. 
 
