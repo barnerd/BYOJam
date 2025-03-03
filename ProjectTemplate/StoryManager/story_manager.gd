@@ -24,7 +24,7 @@ func _ready() -> void:
 	
 	# TODO: Move this to the BootLoad process
 	ink_player.ink_file = load("res://Dialogue/MASTER_combiner.ink.json")
-	ink_player.loads_in_background = true
+	ink_player.loads_in_background = false
 	ink_player.create_story()
 
 
