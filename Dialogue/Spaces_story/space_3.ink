@@ -12,7 +12,7 @@ VAR day_last_visited = 0
 * [space_3_interaction_3] -> space_3_usher
 * [space_3_interaction_4] -> space_3_usher
 * [space_3_interaction_5] -> space_3_usher
-* [space_3_interaction_6] -> space_3_usher
++ [space_3_interaction_6] -> space_3_usher
 - else: 
     {get_variable("is_current_destroyed"): -> space_3_destroyed}
     {not space_3_usher_intro: -> space_3_usher_intro}
@@ -203,7 +203,7 @@ He shoots. The ball circles the rim before dropping down.
 # speaker: Elijah
 Boom! Call the scouting agent. I'm trading the cloth for a b-ball jersey!
 # speaker: Elijah
-Although while I'm waiting, maybe I should get started writing tomorrow's sermon. Plus, there's a new leave-in conditioner I've been meaning to try.
+Although while I'm waiting, maybe I should get started writing tomorrow's sermon. Plus, there's a new leave-in conditioner I've been meaning to try...
 {testing_in_ink:-> space_3|-> DONE}
 
 === space_3_interaction_5 ===

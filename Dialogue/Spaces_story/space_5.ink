@@ -169,6 +169,6 @@ A budding artist who had yet to see her full potential.
 # speaker: Rosey
 And now I wonder if she ever will... What do you think, bud?
 # speaker: Narrator
-{MONSTER_NAME} rolls around in her pets, painting his shell a brilliant ochre and cerulean blue.
+{MONSTER_NAME} rolls around in her discarded paints, coloring his shell a brilliant ochre and cerulean blue.
 ~ coin_flip_for_panic_generatior()
 {testing_in_ink:-> space_5|-> DONE}

@@ -7,7 +7,7 @@
 * [space_6_interaction_4] -> space_6_interaction_4
 * [space_6_interaction_5] -> space_6_interaction_5
 * [space_6_interaction_6] -> space_6_interaction_6
-* [space_6_interaction_7] -> space_6_interaction_7
++ [space_6_interaction_7] -> space_6_interaction_7
 - else: 
     {get_variable("is_current_destroyed"): -> space_6_destroyed}
     {not space_6_interaction_1: -> space_6_interaction_1}
@@ -32,7 +32,7 @@ You can also choose to not take the train and just keep walking.
 -> space_6_trainspringforward
 
 === space_6_trainspringforward ===
-~ change_variable("hunger", amount_c)
+~ change_variable("hunger", amount_b)
 As you ready to leave the train station, you and {MONSTER_NAME} hit up the vending machines as you decide where you want to go next.
 ~ roll_travel_dice()
 
@@ -52,7 +52,7 @@ You and {MONSTER_NAME} arrive in the town’s bustling train station.
 # speaker: Narrator
 Trains whistle as they pull into station and the space is filled with hellos and goodbyes expressed in waves, hugs, and kisses. 
 # speaker: Bandit
-"Come on, Bingo. Let's go!"
+"Come on, Bluey. Let's go!"
 # speaker: Narrator
 You turn and see the DOG. 
 # speaker: Narrator
@@ -65,19 +65,20 @@ VAR dodo_business = "undefined"
 
 === space_6_interaction_2 ===
 # speaker: Narrator
-Returning to the train station, your are stopped in your tracks by a despairing sigh that’s louder than the call of the conductors and the screech of the wheel. 
+Returning to the train station, your are stopped in your tracks by a despairing sigh that’s louder than the conductors's calls or train wheels' screech. 
 # speaker: Narrator
 You and {MONSTER_NAME} turn and see a weary traveler, a dodo in a business suit staring into the middle distance. 
 # speaker: Business Dodo
 Do you ever feel that somewhere walking down the boulevards of life that you’ve taken the wrong turn? 
 # speaker: Business Dodo
-That you stayed too long on the roundabout or went a full left when you should have done a scant left. In short I feel like I used the GPS when I should have traveled by the truest of navigators: the heart. 
+That you stayed too long on the roundabout in your youth or went a full left when you should have done a <i>scant</i> left. 
+In short, I feel like I used my phone's GPS when I should have traveled by the truest of navigators: <i>the heart!</i>
 # speaker: Business Dodo
-And now again I find myself at a grand a crossroads, and I am again lost as to where I should go. 
+And now again I find myself at a crossroads, and I am lost as to where I should go next... 
 # speaker: Business Dodo
 Shall I stay the course and continue work at my family’s law firm? Or do I pursue my dream of opening a ceramics studio? 
 # speaker: Business Dodo
-Little girl, what do you think? 
+Little girl, what do you think? My heart is out of practice leading me, so I turn to you in hopes that you haven't corrupted by the bitter vicissitudes of life.
 
 * [Work for your parents and keep making that mo’nay] 
     ~ dodo_business = "money"
@@ -94,39 +95,33 @@ Thanks for your advice. Maybe we’ll meet again on the highways and by-ways of 
 
 === space_6_interaction_3 ===
 # speaker: Narrator
-You walk along and meet a familiar figure. 
-# speaker: Narrator
-Their form is entirely unfamiliar but their voice, it’s like you’ve known it all your life. 
-# speaker: Narrator
+You walk along and meet a familiar figure. Their form is entirely unfamiliar but their voice, it’s like you’ve known it all your life. 
+
 It’s me. I’m the narrator. 
-# speaker: Narrator
+
 Watch out for the rubble there. A construction crew just took down the fourth wall. 
-# speaker: Narrator
+
 I just wanted to stop by and tell you...
-# speaker: Narrator
-Honestly? I’m not a big fan. It’s nothing personal. I’m just allergic to dogs, and I think kids are a little much for me. 
-# speaker: Narrator
-Truth be told I’m more of a cat person. 
-# speaker: Narrator
-And if I’m being honest, I was in the running to be the narrator for Baldur’s Gate Three, and I’m still working through my disappointment about not getting it.
-# speaker: Narrator
+
+Honestly? I’m not a big fan. I’m allergic to dogs, kids are deeply exhausting to be around, and truth be told: I’m more of a cat person. 
+
+Then again, it's hard to know if that's how I actually feel or if I'm just taking it out on you...
+You see, I was in the running to be the narrator for Baldur’s Gate Three, and I think I'm still working through my disappointment about not getting it.
 Anyways, I’ll let you get back to it. The construction crew is putting that wall back up right now...
 -> space_6_trainspringforward
 
 === space_6_interaction_4 ===
 # speaker: Narrator
-You return to the train station and are met by that singular, salty sweet smell of onions. 
-# speaker: Bug
-{MONSTER_NAME} wrinkles their buggy nose and turns away. 
+You return to the train station and are met by that singular, salty sweet smell of onions. Someone is cutting onions right there in the station!
 # speaker: Onion Man
-“Looks like someone isn’t an onion fan.” 
+“Uh oh. Looks like <i>someone</i> isn’t an onion fan!” 
 # speaker: Bug
 {MONSTER_NAME} paws at their eyes that grow heavy with tears. 
 # speaker: Onion Man
-“Now don’t get scared. That’s all natural.” 
+“Now don’t be scared. Crying when someone cuts onions is a perfectly natural chemical response, even for a giant terrifying bug monster!” 
 # speaker: Onion Man
-“When you cut an onion, it releases a gas called Propanethiol S-oxide. When mixed with certain enzymes in the onion, it creates a sulfur gas. These gases get to your face and create a mild acid which irritates the eyes.”
-# speaker: Rosy
+“Here's a fun fact: when you cut an onion, it releases a gas called Propanethiol S-oxide. When mixed with certain enzymes in the onion, it creates a sulfur gas. These gases get to your face and create a mild acid which irritates your eyes.”
+# speaker: Rosey
 Thanks for that fact, but I don’t think that will really help {MONSTER_NAME}'s anxiety.
 -> space_6_trainspringforward
 
@@ -140,11 +135,11 @@ So we meet again, fellow travelers!
     # speaker: Business Dodo
     Like you suggested, I stayed with my parent’s business. 
     # speaker: Business Dodo
-    After that wobble I had about all my existential despair, I think I’ve come back around to working at their business. 
+    After that bout of embarrassing existential despair, I’ve come back around to working at the family law firm. 
     # speaker: Business Dodo
-    And honestly, life is fine! Or as well as it can be given the hellscape that is the state of current dog politics, the planet’s depleting resources, and the daily terrors of aging. 
+    And honestly, life is fine! Or as well as it can be given the hellscape that is the state of current dog politics, our planet’s depleting resources, and the daily terrors of aging in dog years... 
     # speaker: Business Dodo
-    And working at a solvent company means I get health insurance, my own apartment, and discretionary income to buy the expensive cheeses I like. 
+    But working at a solvent company means I get my own apartment and enough discretionary income to buy the expensive cheeses I like. 
 - else: 
     # speaker: Business Dodo
     I took your advice and struck out on my own starting my own pottery business. 
@@ -171,7 +166,7 @@ Brooke orders fries for the whole table. (THANKS BROOKE!)
 # speaker: Narrator
 Doug is present in spirit, hard at work writing something amazing. 
 # speaker: Narrator
-Steve asks someone to plug his laptop in and tells Ian that he'll think of something to say later for the "developer room" later. 
+Steve asks someone to plug his laptop in and says he'll think of something to say later for the "developer room" later. 
 # speaker: Narrator
 Because Ian wrote this, he’s doing something just impossibly <i>cool.</i>
 # speaker: Narrator
