@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bw2tb34sylvq3"]
+[gd_scene load_steps=3 format=3 uid="uid://bw2tb34sylvq3"]
 
+[ext_resource type="Theme" uid="uid://8rtfbrfbseru" path="res://game_theme.tres" id="1_g1tr1"]
 [ext_resource type="Script" path="res://MainScenes/Credits/credits_section.gd" id="1_yvrna"]
 
 [node name="CreditsSection" type="VBoxContainer"]
+theme = ExtResource("1_g1tr1")
 theme_type_variation = &"CreditsSection"
 script = ExtResource("1_yvrna")
 
