@@ -4,15 +4,11 @@
 {not space_8_interaction_3: -> space_8_interaction_3}
 {not space_8_interaction_4: -> space_8_interaction_4}
 {not space_8_interaction_5: -> space_8_interaction_5}
+->space_8_interaction_6
 
-+[choice one] -> space_8_interaction_1
-+[choice two] ->space_8_interaction_2
-+[choice three] ->space_8_interaction_3
-+[choice four] ->space_8_interaction_4
-+[choice five] ->space_8_interaction_5
 
 ==space_8_interaction_1==
-#speaker:Kay
+#speaker: Kayleigh
 Hey,hey! Welcome to my boutique, how can we style you today? Oh! That is one... interesting looking pet you got there. Maybe an accessory would make them more approachable? 
  
  +[Cat Ears]
@@ -24,19 +20,19 @@ Hey,hey! Welcome to my boutique, how can we style you today? Oh! That is one... 
 "EEK! I didn't think something more horrifying was possible! Though.. it kinda works, not gonna lie."
 //~ change_variable("fear", Bagel)
 
-#speaker:{pc_name}
+#speaker: Rosy
 - "Let's come back again sometime {MONSTER_NAME}, I got a good feeling about this place!"
 ->DONE
 
 ==space_8_interaction_2==
 
-#speaker:Kay
+#speaker: Kayleigh
 "Welcome back my lovlies! I've got a spectacular idea just for you two. What could be cuter than a great pair of shoes? Absolutely nothing! Why don't you two both look around and pick out something showing off that amazing personality of yours!"
 
 +[FiveFinger shoes.]
 "Well, thats certainly a choice... especially when you only have one toe per foot"
 
-#speaker:Narrator
+#speaker: Narrator
 You can feel Kayleigh's judgment of your fashion choices already, but you've made your choice and now you have to live with it.
 //~ change_variable("fear", Bagel)
 
@@ -45,28 +41,28 @@ You can feel Kayleigh's judgment of your fashion choices already, but you've mad
 
 
 //~ change_variable("fear", Bagel)
-
--See ya later!
+#speaker: Kayleigh
+-"See ya later!"
 ->DONE
 
 ==space_8_interaction_3==
 
-#speaker:Kay
-I'm thinking we should make their eyes pop this time. Why don't we apply a little eyeliner?
+#speaker: Kayleigh
+"I'm thinking we should make their eyes pop this time. Why don't we apply a little eyeliner?"
 
 +[Smokey Eyeliner.]
-How retro! You're totally pulling off that mid 2000's look.
+"How retro! You're totally pulling off that mid 2000's look."
 //~ change_variable("fear", Bagel)
 
 +[Double Wing.]
-SLAY!!
+"SLAY!!"
 //~ change_variable("fear", Bagel)
-#speaker:{pc_name}
--"I'm so proud of Mothy embracing different styles!"
+#speaker: Rosy
+-"I'm so proud of {MONSTER_NAME} embracing different styles!"
 ->DONE
 ==space_8_interaction_4==
 
-#speaker:Kay
+#speaker: Kayleigh
 
 "I just got some new tops in, if you're willing to sort through them for me you can for sure take one for free."
 
@@ -76,21 +72,28 @@ SLAY!!
 +[Sundress.]
 "What a perfect pick for this season, that'll get a lot of buzz!"
 //~ change_variable("fear", Bagel)
-#speaker:{pc_name}
--"How kind of Kayleigh to give us something for free."
+#speaker: Rosey
+-"How kind of Kayleigh to give us something for free!"
 ->DONE
 
 ==space_8_interaction_5==
-#speaker:Kay
+#speaker: Kayleigh
 "Any great fit needs a little bow on top that pulls it all together, how about you choose one of these?"
 
 +[Moon Necklace.]
-It's giving... look at me energy. You can't not wear that piece!
+"It's giving... look at me energy. You can't not wear that piece!"
 //~ change_variable("fear", Bagel)
 
 +[Flourescent Lightbulb Earrings]
-It's giving... craft fair vibes. Honestly, not a bad choice!
+"It's giving... craft fair vibes. Honestly, not a bad choice!"
 //~ change_variable("fear", Bagel)
-
+#speaker: Rosy
 -"What would we ever do without this shop? I hope this place never closes."
+->DONE
+
+
+
+==space_8_interaction_6==
+#speaker: Rosy
+Kayleigh seems to be advising another person dipping their toes into the realm, of fashion for the first time. We should probably let her cook without any interuption.
 ->DONE
