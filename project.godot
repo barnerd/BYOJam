@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Godot-Template"
+config/name="BYOJam"
 run/main_scene="res://MainScenes/boot.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
@@ -25,6 +25,7 @@ SceneManager="*res://ProjectTemplate/SceneManager/scene_manager.gd"
 SoundManager="*res://ProjectTemplate/SoundManager/sound_manager.gd"
 SettingsManager="*res://ProjectTemplate/SettingsManager/settings_manager.gd"
 StoryManager="*res://ProjectTemplate/StoryManager/story_manager.gd"
+GameAutoload="*res://scripts/game_autoload.gd"
 
 [display]
 
@@ -35,7 +36,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/inkgd/plugin.cfg")
+enabled=PackedStringArray("res://addons/destronoi/plugin.cfg", "res://addons/inkgd/plugin.cfg", "res://addons/state_machine/plugin.cfg")
 
 [inkgd]
 
@@ -97,7 +98,13 @@ attack_3={
 
 locale/translations=PackedStringArray("res://ProjectTemplate/Localization/Translations/translations.en_US.translation", "res://ProjectTemplate/Localization/Translations/translations.es.translation", "res://ProjectTemplate/Localization/Translations/translations.de.translation", "res://ProjectTemplate/Localization/Translations/translations.fr.translation")
 
+[physics]
+
+3d/physics_engine="JoltPhysics3D"
+
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+limits/global_shader_variables/buffer_size=4096
 environment/defaults/default_clear_color=Color(0.141176, 0.141176, 0.141176, 1)

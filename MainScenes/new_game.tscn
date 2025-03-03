@@ -1,11 +1,289 @@
-[gd_scene format=3 uid="uid://beeo6wb5btqkj"]
+[gd_scene load_steps=32 format=3 uid="uid://beeo6wb5btqkj"]
 
-[node name="NewGame" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://ddawfdqr52jcb" path="res://UI/debug_game_variables.tscn" id="1_xym1b"]
+[ext_resource type="PackedScene" uid="uid://dcypsl0wpgbsn" path="res://UI/game_start_splash.tscn" id="2_glx7w"]
+[ext_resource type="Texture2D" uid="uid://byvi2sxkw6sff" path="res://ArtAssets/2D Art/ui_art/Tree-Blue.png" id="2_r57ih"]
+[ext_resource type="Shader" uid="uid://btytsavr8d5qb" path="res://shaders/tree_sway.tres" id="3_c1l1q"]
+[ext_resource type="PackedScene" uid="uid://djh6ctsqiwsnr" path="res://UI/dice_pool.tscn" id="3_f6iub"]
+[ext_resource type="Texture2D" uid="uid://e1mjgaom7ek3" path="res://ArtAssets/2D Art/ui_art/Tree-Green.png" id="3_rqme5"]
+[ext_resource type="Script" path="res://addons/state_machine/state_machine.gd" id="4_4edl5"]
+[ext_resource type="PackedScene" uid="uid://btuwfdgthh6q3" path="res://UI/restart_game.tscn" id="4_60g5q"]
+[ext_resource type="Texture2D" uid="uid://dvebxak5d7vsg" path="res://ArtAssets/2D Art/ui_art/Bush.png" id="4_fjsrp"]
+[ext_resource type="PackedScene" uid="uid://c0j5wdrc46ee5" path="res://Dialogue/dialogue.tscn" id="4_o5o0p"]
+[ext_resource type="Script" path="res://game_state_machine/load.gd" id="5_ocb74"]
+[ext_resource type="Texture2D" uid="uid://crtioxvdcu41u" path="res://ArtAssets/2D Art/ui_art/Mountain-Background.png" id="5_ovu54"]
+[ext_resource type="Script" path="res://game_state_machine/game_start.gd" id="6_p0lr1"]
+[ext_resource type="Texture2D" uid="uid://bbv5ri2t4l0j4" path="res://ArtAssets/2D Art/ui_art/Ground-Background.png" id="6_pakdk"]
+[ext_resource type="Script" path="res://game_state_machine/turn_start.gd" id="7_0oow1"]
+[ext_resource type="PackedScene" uid="uid://cmlama2v015m5" path="res://game_board/board_sub_viewport.tscn" id="7_8h4ji"]
+[ext_resource type="Script" path="res://game_state_machine/dice_roll.gd" id="8_mwk23"]
+[ext_resource type="Theme" uid="uid://8rtfbrfbseru" path="res://game_theme.tres" id="9_yncrg"]
+[ext_resource type="Script" path="res://game_state_machine/player_move.gd" id="9_yogo3"]
+[ext_resource type="Script" path="res://game_state_machine/story_interaction.gd" id="10_bacfe"]
+[ext_resource type="PackedScene" uid="uid://dpvmsa1eggpnb" path="res://UI/meter/hunger_meter.tscn" id="10_md4fb"]
+[ext_resource type="Script" path="res://game_state_machine/turn_end.gd" id="11_7ea82"]
+[ext_resource type="Script" path="res://game_state_machine/win.gd" id="12_5fs8w"]
+[ext_resource type="Texture2D" uid="uid://ce0ew4jtwg8r8" path="res://ArtAssets/2D Art/ui_art/Meter-Sprite-Sheet.png" id="12_8p5at"]
+[ext_resource type="Script" path="res://game_state_machine/lose.gd" id="13_xg40i"]
+[ext_resource type="Script" path="res://game_state_machine/game_over.gd" id="14_72xus"]
+[ext_resource type="PackedScene" uid="uid://bxtoj7uy6uso0" path="res://UI/meter/fear_meter.tscn" id="14_grw6w"]
+[ext_resource type="PackedScene" uid="uid://cpxvx57rkly6u" path="res://UI/dice_animation_2d.tscn" id="17_t36u5"]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 102.0
-offset_top = 72.0
-offset_right = 280.0
-offset_bottom = 171.0
-theme_override_font_sizes/font_size = 20
-text = "New Game!"
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4x7mg"]
+shader = ExtResource("3_c1l1q")
+shader_parameter/WindStrength = 4.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_konqa"]
+shader = ExtResource("3_c1l1q")
+shader_parameter/WindStrength = 8.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eq86l"]
+
+[node name="NewGame" type="Node"]
+
+[node name="Trees" type="Node2D" parent="."]
+
+[node name="Tree1" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_4x7mg")
+position = Vector2(97, 318)
+scale = Vector2(0.93, 0.93)
+texture = ExtResource("2_r57ih")
+
+[node name="Tree2" type="Sprite2D" parent="Trees"]
+visible = false
+material = SubResource("ShaderMaterial_4x7mg")
+position = Vector2(274, 247)
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("2_r57ih")
+
+[node name="Tree3" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_4x7mg")
+position = Vector2(1106, 337)
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("2_r57ih")
+
+[node name="Tree4" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_4x7mg")
+position = Vector2(1228, 281)
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("2_r57ih")
+
+[node name="Tree5" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_konqa")
+position = Vector2(162, 817)
+texture = ExtResource("3_rqme5")
+
+[node name="Tree6" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_konqa")
+position = Vector2(450, 998)
+texture = ExtResource("3_rqme5")
+
+[node name="Tree7" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_konqa")
+position = Vector2(1008, 1043)
+texture = ExtResource("3_rqme5")
+
+[node name="Tree8" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_konqa")
+position = Vector2(1221, 842)
+texture = ExtResource("3_rqme5")
+
+[node name="Bushes1" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_konqa")
+position = Vector2(153, 452)
+texture = ExtResource("4_fjsrp")
+
+[node name="Bushes2" type="Sprite2D" parent="Trees"]
+material = SubResource("ShaderMaterial_konqa")
+position = Vector2(1220, 428)
+texture = ExtResource("4_fjsrp")
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="MountainBG" type="TextureRect" parent="BackgroundLayer"]
+show_behind_parent = true
+z_index = -1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_right = 960.0
+offset_bottom = 1021.0
+grow_horizontal = 2
+texture = ExtResource("5_ovu54")
+stretch_mode = 2
+
+[node name="GrassBG" type="TextureRect" parent="BackgroundLayer"]
+show_behind_parent = true
+z_index = -1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -654.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_pakdk")
+stretch_mode = 2
+
+[node name="SubViewportContainer" parent="." instance=ExtResource("7_8h4ji")]
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="DebugGameVariables" parent="UILayer" node_paths=PackedStringArray("state_machine") instance=ExtResource("1_xym1b")]
+visible = false
+offset_left = 83.0
+offset_top = 822.0
+offset_right = 251.0
+offset_bottom = 1010.0
+state_machine = NodePath("../../StateMachine")
+
+[node name="RestartGame" parent="UILayer" instance=ExtResource("4_60g5q")]
+visible = false
+offset_left = 1502.0
+offset_top = 761.0
+offset_right = 1666.0
+offset_bottom = 842.0
+
+[node name="PanelContainer" type="PanelContainer" parent="UILayer"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("9_yncrg")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_eq86l")
+
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PanelContainer" type="Sprite2D" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer"]
+texture = ExtResource("12_8p5at")
+centered = false
+region_enabled = true
+region_rect = Rect2(516, 0, 572, 651)
+
+[node name="HungerMeter" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer" instance=ExtResource("10_md4fb")]
+position = Vector2(101, 31)
+signal_name = "pet_hunger_percent_changed"
+is_right_high = false
+
+[node name="FearMeter" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer" instance=ExtResource("14_grw6w")]
+position = Vector2(101, 325)
+signal_name = "board_fear_percent_changed"
+
+[node name="FoodIcon" type="Sprite2D" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
+position = Vector2(95, 100)
+texture = ExtResource("12_8p5at")
+region_enabled = true
+region_rect = Rect2(23, 25, 104, 139)
+
+[node name="HappyIcon" type="Sprite2D" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
+position = Vector2(95, 384)
+texture = ExtResource("12_8p5at")
+region_enabled = true
+region_rect = Rect2(0, 325, 123, 108)
+
+[node name="AfraidIcon" type="Sprite2D" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
+position = Vector2(469, 384)
+texture = ExtResource("12_8p5at")
+region_enabled = true
+region_rect = Rect2(386, 321, 124, 109)
+
+[node name="DicePool" parent="UILayer/PanelContainer/MarginContainer/VBoxContainer" node_paths=PackedStringArray("dice_animation") instance=ExtResource("3_f6iub")]
+custom_minimum_size = Vector2(573, 381)
+layout_mode = 2
+size_flags_horizontal = 4
+dice_animation = NodePath("../../../../../PopupLayer/DiceAnimation2")
+
+[node name="PopupLayer" type="CanvasLayer" parent="."]
+
+[node name="GameSplash" parent="PopupLayer" instance=ExtResource("2_glx7w")]
+visible = false
+offset_left = 813.0
+offset_top = 324.0
+offset_right = 1066.0
+offset_bottom = 418.0
+
+[node name="Dialogue" parent="PopupLayer" instance=ExtResource("4_o5o0p")]
+visible = false
+offset_right = -600.0
+
+[node name="DiceAnimation2" parent="PopupLayer" instance=ExtResource("17_t36u5")]
+visible = false
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("4_4edl5")
+initial_state = NodePath("Load")
+
+[node name="Load" type="Node" parent="StateMachine" node_paths=PackedStringArray("game_start_state")]
+script = ExtResource("5_ocb74")
+game_start_state = NodePath("../GameStart")
+
+[node name="GameStart" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_start_state", "game_start_splash", "dialogue_screen")]
+script = ExtResource("6_p0lr1")
+turn_start_state = NodePath("../TurnStart")
+game_start_splash = NodePath("../../PopupLayer/GameSplash")
+dialogue_screen = NodePath("../../PopupLayer/Dialogue")
+
+[node name="TurnStart" type="Node" parent="StateMachine" node_paths=PackedStringArray("dice_roll_state")]
+script = ExtResource("7_0oow1")
+dice_roll_state = NodePath("../DiceRoll")
+
+[node name="DiceRoll" type="Node" parent="StateMachine" node_paths=PackedStringArray("player_move_state", "dice_pool")]
+script = ExtResource("8_mwk23")
+player_move_state = NodePath("../PlayerMove")
+dice_pool = NodePath("../../UILayer/PanelContainer/MarginContainer/VBoxContainer/DicePool")
+
+[node name="PlayerMove" type="Node" parent="StateMachine" node_paths=PackedStringArray("story_interaction_state")]
+script = ExtResource("9_yogo3")
+story_interaction_state = NodePath("../StoryInteraction")
+
+[node name="StoryInteraction" type="Node" parent="StateMachine" node_paths=PackedStringArray("player_move_state", "turn_end_state", "dialogue_screen")]
+script = ExtResource("10_bacfe")
+player_move_state = NodePath("../PlayerMove")
+turn_end_state = NodePath("../TurnEnd")
+dialogue_screen = NodePath("../../PopupLayer/Dialogue")
+
+[node name="TurnEnd" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_start_state", "win_state", "lose_state", "game_over")]
+script = ExtResource("11_7ea82")
+turn_start_state = NodePath("../TurnStart")
+win_state = NodePath("../Win")
+lose_state = NodePath("../Lose")
+game_over = NodePath("../GameOver")
+
+[node name="Win" type="Node" parent="StateMachine" node_paths=PackedStringArray("game_over_state")]
+script = ExtResource("12_5fs8w")
+game_over_state = NodePath("../GameOver")
+
+[node name="Lose" type="Node" parent="StateMachine" node_paths=PackedStringArray("game_over_state")]
+script = ExtResource("13_xg40i")
+game_over_state = NodePath("../GameOver")
+
+[node name="GameOver" type="Node" parent="StateMachine" node_paths=PackedStringArray("load_state", "restart_game_button", "dialogue_screen")]
+script = ExtResource("14_72xus")
+load_state = NodePath("../Load")
+restart_game_button = NodePath("../../UILayer/RestartGame")
+dialogue_screen = NodePath("../../PopupLayer/Dialogue")

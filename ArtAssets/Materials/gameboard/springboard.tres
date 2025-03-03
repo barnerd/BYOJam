@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cpjppc536ejyp"]
+
+[ext_resource type="Texture2D" uid="uid://c08bwpxy3hj50" path="res://ArtAssets/2D Art/Tiles/Springboard.png" id="1_wntc6"]
+
+[resource]
+albedo_color = Color(0.5, 0.5, 0.5, 1)
+albedo_texture = ExtResource("1_wntc6")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://53tiwitwbiv5"]
+
+[ext_resource type="Script" path="res://characters/player/dice_pool/dice_2d.gd" id="1_1kr5l"]
+[ext_resource type="Theme" uid="uid://8rtfbrfbseru" path="res://game_theme.tres" id="1_thr5b"]
+[ext_resource type="Texture2D" uid="uid://cya04df66wmww" path="res://ArtAssets/2D Art/Dice/1-none.PNG" id="2_35pr8"]
+
+[node name="Dice2D" type="PanelContainer"]
+mouse_filter = 1
+theme = ExtResource("1_thr5b")
+theme_type_variation = &"Dice"
+script = ExtResource("1_1kr5l")
+
+[node name="GFX" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_35pr8")
+stretch_mode = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
