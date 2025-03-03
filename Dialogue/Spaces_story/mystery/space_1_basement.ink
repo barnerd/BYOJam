@@ -6,8 +6,10 @@ This is the basement
 
 {visited_basement == false:
     ~ visited_basement = true
-    <i>You take Lotta Scoops head down to the basement that serves as the house's library</i>
-    "This room is positioned directly below your bedroom, {pc_name}. Maybe something happened here that led to the arrival of that egg in your room?"
+    # speaker: Narrator
+    You take Lotta Scoops head down to the basement that serves as the house's library
+    # speaker: Lotta
+    This room is positioned directly below your bedroom, {pc_name}. Maybe something happened here that led to the arrival of that egg in your room?
 }
 
 {kick_to_end_active == true: 
@@ -31,6 +33,7 @@ This is the basement
 
 
 == space_1_interaction_1_basement_book_1 ==
+# speaker: Narrator
 The book details a list of common monsters that have been known to appear in the world. 
 
 <b>ENTRY 1:</b>
@@ -49,6 +52,7 @@ SIGNS: Their magic is denoted by a powerful yellow light.
 -> space_1_interaction_1_basement
 
 == space_1_interaction_1_basement_book_2 ==
+# speaker: Narrator
 The book details a list of common monsters that have been known to appear in the world. 
 
 <b>ENTRY 3:</b>
@@ -68,53 +72,25 @@ SIGNS: Visitations are denoted by flashes of curious orange, red, or blue light.
 -> space_1_interaction_1_basement
 
 == space_1_interaction_1_basement_toychest ==
+# speaker: Lotta
 "Look at this a toy chest that is strangely... empty?"
+# speaker: Narrator
 You explain that your parents took away your allowance after you threw a spoon at your brother. 
 You complain about having no money to get new toys which you think is grounds for suing the government to get new parents. 
-"...Yeah, I don't think this will make it into the podcast." 
+# speaker: Lotta
+...Yeah, I don't think this will make it into the podcast.
 -> space_1_interaction_1_basement
 
 == space_1_interaction_1_basement_journal ==
-"Ooh, what have we here? A secret journal!" 
-"Let's see, it says here that it's written by your brother Ringo."
-"The latest page is an entry of things {pc_name} says when you've got your mouth guard in." 
-"It looks like the mouth guard really messed with your ability to talk normally..." 
-"<i>My tother ith tho thupid!</i>" 
+# speaker: Lotta
+Ooh, what have we here? A secret journal!" 
+Let's see, it says here that it's written by your brother Ringo."
+The latest page is an entry of things {pc_name} says when you've got your mouth guard in." 
+It looks like the mouth guard really messed with your ability to talk normally..." 
+<i>My tother ith tho thupid!</i>" 
 "<i>Juth becuth Ringo can writhe, doesn't mean heath smarm!</i>" 
 "<i>Where ith my toof waist?</i>" 
 -> space_1_interaction_1_basement
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-nteraction_1_basement
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

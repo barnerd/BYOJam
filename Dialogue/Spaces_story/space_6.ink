@@ -9,12 +9,13 @@
 * [space_6_interaction_6] -> space_6_interaction_6
 * [space_6_interaction_7] -> space_6_interaction_7
 - else: 
+    {get_variable("is_current_destroyed"): -> space_6_destroyed}
     {not space_6_interaction_1: -> space_6_interaction_1}
     {not space_6_interaction_2: -> space_6_interaction_2}
     {not space_6_interaction_3: -> space_6_interaction_3}
     {not space_6_interaction_4: -> space_6_interaction_4}
     {not space_6_interaction_5: -> space_6_interaction_5}
-    {not space_6_interaction_5: -> space_6_interaction_6}
+    {not space_6_interaction_6: -> space_6_interaction_6}
     -> space_6_interaction_7
 }
 
@@ -25,12 +26,14 @@ VAR travel_dice = 0
 
 === space_6_train_explanation ===
 # speaker: Narrator
-Traveling by train allows you to move forward or backward without consuming food or generating town panic. 
+At the train station, you can use the city's public transit to move forward spaces without consuming food or generating town panic. 
 # speaker: Narrator
 You can also choose to not take the train and just keep walking. 
 -> space_6_trainspringforward
 
 === space_6_trainspringforward ===
+~ change_variable("hunger", amount_c)
+As you ready to leave the train station, you and {MONSTER_NAME} hit up the vending machines as you decide where you want to go next.
 ~ roll_travel_dice()
 
 + [Take train to travel forward {travel_dice} spaces] 
@@ -185,7 +188,17 @@ As you walk outside, you strangely find yourself back in the train station.
 # speaker: Narrator
 You return to the pleasant commotion of the train station filled with passengers criss-crossing every which way. 
 # speaker: Narrator
-Your preschool teacher said that the world is moving through space, and here must be the proof since everyone is on the move.
+Your preschool teacher said that the world is moving through time and space, and here must be the proof since everyone is on the move.
 # speaker: Narrator
-You feed {MONSTER_NAME} a vending machine lunch and continue on to the train terminal.
+You and {MONSTER_NAME} sit on a bench and spend a pleasant moment watching everything go by.
 -> space_6_trainspringforward
+
+
+=== space_6_destroyed ===
+# speaker: Narrator
+Ringo got a train set for his fourth birthday. It was his prized possession until Dad accidentally tripped over it and smashed the engine cars, the tracks, and the cardboard bridges and underpasses beneath his clumsy feet.
+This is like but that only dog-scale in the real world train station.
+There's twisted metal from the tracks, severed trains leaking black fluid, and downed powerlines everywhere that jolt with dangerous blue sparks.
+If that's not bad enough, your parents say that traffic has somehow gotten even worse in the city.
+~ coin_flip_for_panic_generatior()
+{testing_in_ink:-> space_6|-> DONE}

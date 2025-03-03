@@ -130,7 +130,10 @@ VAR rule_together = false
     * [space_12_interaction_3] -> space_12_bullyno3_intro
     * [space_12_interaction_4] -> space_12_bullyno4_intro
 - else:
-    {rule_together == true}: -> space_12_ruletogether
+
+    {get_variable("is_current_destroyed"): -> space_12_destroyed}
+
+    {rule_together == true: -> space_12_ruletogether}
     {fights_concluded == true: -> space_12_fights_concluded}
 
     {current_foe == "level_1_bully" && current_fight_intro_heard == false: -> space_12_interaction_1}
@@ -277,6 +280,7 @@ Chad just goes flying over a neighbor's fence and lands face first in a hedge bu
 # speaker: Chad
 "My whole body hurts..." 
 # speaker: Ringo
+~ change_variable("lap_bonus_food", amount_a)  
 "As a reward for helping me, I'll work with mom to make you and {MONSTER_NAME} an extra big snack when you cross twelve space twelve and come back home. 
 # speaker: Ringo
 "Come back again soon. I've got a feeling we haven't heard the last from Chad..." 
@@ -416,6 +420,7 @@ I bet you feel unstoppable. That the Chads of the world are nothing but loose st
 Sometimes I wonder how I would move through the world if I didn't have anything to fear...
 
 # speaker: Ringo
+~ change_variable("lap_bonus_food", amount_a)  
 Anyways, I'm proud of you sister. I'll be sure to help Mom and Dad make you and {MONSTER_NAME} an extra big dinner everytime you guys come home. 
 ~ current_foe = "level_3_bully"
 {testing_in_ink:-> space_12|-> DONE}
@@ -557,6 +562,7 @@ You break Chad free of his bindings, and he walks off into the distance.
 # speaker: Ringo
 "And now that Chad won't bother me, I can finally get back to working on my dream project."
 # speaker: Ringo
+~ change_variable("lap_bonus_food", amount_a)  
 "As thanks, Chad even offered to help us make food for you when everytime you come back home!" 
 
 ~ current_foe = "level_4_bully"
@@ -687,9 +693,10 @@ You rolled... <>
 
 
 == space_12_interaction_1_fight_4_bro_success ==
+
 ~ fights_concluded = true
 # speaker: Narrator
-Your brother's mech hides the sun from your eyes. 
+Your brother's mech seems to block the entire horizon from view. 
 # speaker: Narrator
 From his cockpit, Ringo launches fusillades of weaponry that will be used as reference for super hero movies for years to come. 
 # speaker: Narrator
@@ -734,6 +741,7 @@ Together the two of you watch as his mech that briefly terrorized the city falls
 # speaker: Ringo
 "Sister, I think you for saving me. I truly lost myself there for a minute." 
 # speaker: Ringo
+~ change_variable("lap_bonus_food", amount_a)  
 "The next time you come back home, I'll be sure to use some of this robot equipment to make you an extra big meal." 
 {testing_in_ink:-> space_12|-> DONE}
 
@@ -759,6 +767,10 @@ Your brother gives you an extra helping of food for your help in saving him from
 Thanks for saving me from myself, sis.
 # speaker: Ringo
 The craziest part of all this? Chad and I are becoming friends! What a world, huh?
+~ change_variable("hunger", amount_c) 
+Speaking of which, he and I made a "new friends lasanga!" 
+# speaker: Bug
+Before you can voice your excitement, {MONSTER_NAME} eats the whole thing, metal tray included.
 {testing_in_ink:-> space_12|-> DONE}
 
 
@@ -769,6 +781,17 @@ Sister and future queen of the world!
 Come, there is much work to do to prepare the way for our righteous reign.
 # speaker: Narrator
 You and Ringo spend an enjoyable afternoon making campaign slogans and creating social media accounts for your new world order. 
+~ change_variable("hunger", amount_c) 
+While working, the two of you split a pizza: half cheese, half doggy bones.
+{testing_in_ink:-> space_12|-> DONE}
+
+
+
+=== space_12_destroyed ===
 # speaker: Narrator
-Everyone in town simply thinks the two of you are being "cute" which results in the town's panic of {MONSTER_NAME} lowering. 
+The street near your house is chewed up like an old doggy bone. 
+The ash tree where you and your brother climbed is cleaved in two. 
+That road you and your mom went sledding last winter is pockmarked by gaping holes.
+It takes so little to turn the familiar into something alien and frightening...
+~ coin_flip_for_panic_generatior()
 {testing_in_ink:-> space_12|-> DONE}

@@ -1,4 +1,7 @@
 == space_5 ==
+
+{get_variable("is_current_destroyed"): -> space_5_destroyed}
+
 {not space_5_interaction_1: -> space_5_interaction_1}
 {not space_5_interaction_2: -> space_5_interaction_2}
 {not space_5_interaction_3: -> space_5_interaction_3}
@@ -27,7 +30,7 @@ Oh, I’m sorry I didn’t see you two there, I apologize you had to hear all th
 +[“Fries? Yum, thank you!”]
 #speaker: Narrator
 - You all enjoy a good snack together, and those fries hit just right.
-///~ change_variable("hunger", Donut)
+~ change_variable("hunger", amount_c) 
 ->DONE
 
 ==space_5_interaction_2==
@@ -39,7 +42,7 @@ Oh, I’m sorry I didn’t see you two there, I apologize you had to hear all th
 “My, my those are quite some tales. Fitting for a heroic portrait if I do say so myself… but anyways I don’t want to hold you two up. 
 
 Why don’t you take some of these melon buns for the road? I always buy too many, but the corner store always has a spectacular three for one deal that’d be a waste to pass up on.”
-///~ change_variable("hunger", Donut)
+~ change_variable("hunger", amount_c)
 ->DONE
 
 ==space_5_interaction_3==
@@ -59,7 +62,7 @@ But it’s their destructive words and actions which are deadlier than a laser b
 I know that because I used to live among some real monsters in my past homes. So even if some people look at you and see a monster, take a moment to reflect on what you’ve done and not your appearance. It doesn’t often line up with the tall tales they tell amongst themselves.
 
 Sorry I rambled there, but I like to fill up the space sometimes while I work. Take a gander at how awesome you look! And here’s some food for your troubles, these Joyful Meals are the best.”
-///~ change_variable("hunger", Donut)
+~ change_variable("hunger", amount_c) 
 ->DONE
 
 ==space_5_interaction_4
@@ -73,7 +76,7 @@ Knight pulls out their phone and begins to flip through pictures of pictures, sc
 Knight produces a gift basket of goodies. 
 #speaker: Knight Squeaksworth
 “I don’t usually splurge much outside of art supplies, but you two deserve a treat for all your inspiration. I’ve got to run but, please enjoy, au revoir!”
-///~ change_variable("hunger", Donut)
+~ change_variable("hunger", amount_c) 
 ->DONE
 
 ==space_5_interaction_5==
@@ -92,7 +95,7 @@ You take a moment and look deep into {MONSTER_NAME}’s eyes and gleam his answe
 I’ve been thinking, maybe being a monster doesn’t mean that one is always hurtful or acts the same way as another ‘monster’. There’s layers not everyone recognizes I suppose.
 
 Thank you for being vulnerable and answering my question {MONSTER_NAME}, it was pretty personal. Now, let’s get back to savoring this meal. Oh and would you look at that! They’ve even got key lime pie on the specials menu! I could go for a slice…”
-	///~ change_variable("hunger", Donut)
+	~ change_variable("hunger", amount_c) 
 	->DONE
 	
 +[ “Yes.”]
@@ -103,7 +106,7 @@ Thank you for being vulnerable and answering my question {MONSTER_NAME}, it was 
 Maybe being a monster doesn’t mean that one is always hurtful or acts the same way as another ‘monster’. There’s layers not everyone recognizes I suppose.
 
 Thank you for being vulnerable and answering my question {MONSTER_NAME}, it was pretty personal. Now, let’s get back to savoring this meal. Oh and would you look at that! They’ve even got key lime pie on the specials menu! I could go for a slice…”
-    ///~ change_variable("hunger", Donut)
+    ~ change_variable("hunger", amount_c) 
 ->DONE
 
 ==space_5_interaction_6==
@@ -117,7 +120,7 @@ I promise to send letters to you both about my adventures. Maybe you two will be
 +[Hug Knight goodbye]
 #speaker: Knight Squeaksworth
 "I love you both so much. Ciao bella, {MONSTER_NAME} and {pc_name}!"
-///~ change_variable("hunger", Donut)
+~ change_variable("hunger", amount_c) 
 ->DONE
 
 ==space_5_interaction_7==
@@ -132,7 +135,7 @@ I found this gift card in my wallet for a local cafe back home. Since it’s of 
 
 Until next time,
 	—Knight Squeaksworth”
-	///~ change_variable("hunger", Donut)
+	~ change_variable("hunger", amount_c) 
 	->DONE
 	
 ==space_5_interaction_8==
@@ -151,10 +154,21 @@ Until next time,
 —Knight Squeaksworth”
 #speaker: Narrator
 A collection of art supplies and an assortment of foreign candies has been gifted to you, which you can use however you see fit.
-///~ change_variable("hunger", Donut)
+~ change_variable("hunger", amount_c)
 ->DONE
 
 ==space_5_interaction_9==
 #speaker: Rosey
 While walking through the art museum you ponder what Knight would have to say about some of these pieces. Though on second thought, they'd probably be answering your questions with more questions directed towards you. Maybe they'd be better as a docent and not a companion here.
 ->DONE
+
+=== space_5_destroyed ===
+# speaker: Narrator
+This is where Knight Squeaksworth lived. 
+A budding artist who had yet to see her full potential.
+# speaker: Rosey
+And now I wonder if she ever will... What do you think, bud?
+# speaker: Narrator
+{MONSTER_NAME} rolls around in her pets, painting his shell a brilliant ochre and cerulean blue.
+~ coin_flip_for_panic_generatior()
+{testing_in_ink:-> space_5|-> DONE}

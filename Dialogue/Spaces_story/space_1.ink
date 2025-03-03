@@ -15,25 +15,102 @@ INCLUDE Spaces_story/mystery/space_1_kitchen.ink
 INCLUDE Spaces_story/mystery/space_1_frontyard.ink
 
 ==== space_1 ====
+
+{get_variable("is_current_destroyed"): -> space_1_destroyed}
+
+
 {moth_origin_found == true: 
 -> space_1_moth_found_aftermath
 }
 
 {testing_in_ink == true: 
-+ [space_1_interaction_1] -> space_1_interaction_1
++ [space_1_interaction_1] -> space_1_fear_for_food_explainer
++ [space_1_interaction_2+] -> space_1_fear_for_food_instance
++ [destroyed_space] -> space_1_destroyed
 - else:
-{moth_origin_found == false: -> space_1_interaction_1}
+    {not space_1_fear_for_food_explainer: -> space_1_fear_for_food_explainer}
+    -> space_1_fear_for_food_instance
+
 }
 
-=== space_1_interaction_1 === 
 
-{space_1_interaction_1_explanation == false: -> space_1_interaction_1_explanation}
-{space_1_interaction_1_tutorial == false: -> space_1_interaction_1_tutorial}
+
+=== function cherry_cause_panic_test() ===
+~ temp dice_roll = RANDOM(1, 2)
+{dice_roll == 2:
+    # speaker: Narrator
+    {MONSTER_NAME} scurries up the tree and quickly devours all the cherries before anyone notices him.
+    # speaker: Bug
+    Climbing back down to Earth, he gives a happy BURP, satisfied with his tasty and full meal. 
+    # speaker: Narrator
+    You wipe off his cherry flesh smeared face and continue on your way.
+    ~ change_variable("hunger", amount_e)
+- else:
+    # speaker: Narrator
+    {MONSTER_NAME} roars with savage delight as he ascends the trees and stuffs his face with blood red cherries.
+    Just then a family walks by and barks in gob-smacked terror at your beast's face, smeared with what must look like gore and viscera. 
+    You try to tell him that he's only "hungies," but that only makes it worse. 
+    ~ change_variable("fear", amount_a)
+    <b>The town's panic rises by one.</b>
+    
+    # speaker: Rosey
+    Oh well. At least you got to eat your fill!
+    ~ change_variable("hunger", amount_e)
+}
+
+
+=== space_1_fear_for_food_explainer ===
+# speaker: Narrator
+You and your pet come across an enormous tree heavy with ripe cherries. 
+# speaker: Rosey
+Look at that! I bet if I send {MONSTER_NAME} up there, he can eat a big meal and fill his rumbling tummy.
+But then again, seeing a giant bug crawling up into the canopy with bits of red smeared all over his face make might the town kinda freak out?
+I'm only six, so I haven't taken basic statistics yet, but I'd say letting him eat from the tops of the cherry trees gives me a <b>fifty-fifty chance the town panic goes up by 1</b>.
+Alternatively, he could just eat all the fruit that's fallen on the ground which will be a smaller meal, but no one would worry about that!
+Hmm. I wonder what I do?
+* [Take {amount_e} food but risk raising town panic.] 
+    ~ cherry_cause_panic_test()
+    -> space_1_interaction_1_explanation
+* [Take {amount_c} food at no risk.]
+    ~ change_variable("hunger", amount_c)
+    # speaker: Bug
+    {MONSTER_NAME} burbles unhappily as he eats the fermenting cherries on the ground. 
+    # speaker: Rosey
+    I know it's less food, but this way no one will think you're a blood thirsty killer!
+    Which you definitely aren't, right? 
+    # speaker: Bug
+    BUZZ! <i>BUZZ!</i>
+    -> space_1_interaction_1_explanation
+
+=== space_1_fear_for_food_instance ===
+# speaker: Narrator
+Once again, you and {MONSTER_NAME} come back to the orchard where juicy red cherries are in season. 
+# speaker: Rosey
+Hmm. I wonder what I do?
+* [Take {amount_e} food but risk raising town panic.] 
+    ~ cherry_cause_panic_test()
+ 
+* [Take {amount_c} food at no risk.]
+    ~ change_variable("hunger", amount_c)
+    # speaker: Bug
+    {MONSTER_NAME} burbles unhappily as he eats the fermenting cherries on the ground. 
+    # speaker: Rosey
+    I know it's less food, but this way no one will think you're a blood thirsty killer!
+    Which you definitely aren't, right? 
+    # speaker: Bug
+    BUZZ! <i>BUZZ!</i>
+    
+- -> space_1_interaction_1
+
+
+
+
+=== space_1_interaction_1 === 
 
 
 /// INVESTIGATE HUB OPTIONS
 # speaker: Lotta
-Where should we investigate?
+Hey, there {pc_name}! Time to crack the mystery of your pet's origins! Where should we investigate today?
 {locations_visited >= 3:
 + [I think I know what made the egg...]
     -> space_1_guess
@@ -81,12 +158,12 @@ Where should we investigate?
 {testing_in_ink:-> space_1|-> DONE}
 
 === space_1_interaction_1_explanation === 
+# speaker: Narrator
+Just then, a friendly woman rushes over to you, holding out a microphone.
 # speaker: Lotta
 Hey there, listeners. This is Lotta Scoops, and you may know me from my podcast Small Town Killers, Little Murder in the Big City, and my latest series: It's Always the Boyfriend! 
 # speaker: Lotta
 Today, I'm launching a new season of my seminal show: Origins of a Monster. 
-# speaker: Lotta
-Though previously I focused on getting inside the head of the Monroe Street Murderer, this series is going to have a new different focus. 
 # speaker: Lotta
 Listeners, meet mild mannered, local sweet heart, {pc_name}. 
 * [Is this going to be on streaming?]
@@ -98,7 +175,7 @@ Listeners, meet mild mannered, local sweet heart, {pc_name}.
     
 - 
 # speaker: Lotta
-Let me explain. I was looking for new material for my true crime podcast, and when I saw your giant monsterthat seemingly came out of no where, I was like, hello? Opportunity? Is that <i>you</i> knocking on my door?
+Let me explain. I was looking for new material for my true crime podcast, and when I saw your giant monster, and I was like, hello? Opportunity? Is that <i>you</i> knocking on my door?
 # speaker: Lotta
 Together, you and I can get to the bottom of your bug's mysterious origins while creating a hit podcast! Win-win, especially for me. 
 # speaker: Lotta
@@ -133,9 +210,9 @@ Now tell me everything you can about the origin of your bug. I want to know it a
         
 == space_1_interaction_1_add_2 ==
 # speaker: Narrator
-<i>Last Thursday, you went to bed. It was a perfectly normal night, or so you thought. When you woke up in the morning, a strange EGG was sitting at the front of your bed.</i>
+Last Thursday, you went to bed. It was a perfectly normal night, or so you thought. When you woke up in the morning, a strange EGG was sitting at the front of your bed.
 # speaker: Narrator
-<i>You pushed the egg under your bed and three days later, it hatched into {MONSTER_NAME}.</i>
+You pushed the egg under your bed and three days later, it hatched into {MONSTER_NAME}.
 # speaker: Lotta
 Fascinating! I'm going to go home and rerecord all of this with my ASMR voice, but the next time we meet, we're going to investigate this mystery for real. 
 # speaker: Lotta
@@ -164,73 +241,73 @@ Now this isn't a "how-to" series, so let's get investigating!
 == space_1_guess == 
 + [The moth came from demons]
     # speaker: Lotta
-    "Hmm, that's an interesting idea. There are all these chalk drawings around."
+    Hmm, that's an interesting idea. There are all these chalk drawings around.
     # speaker: Lotta
-    "Plus there were those claw marks on the window, like something was trying to get in." 
+    Plus there were those claw marks on the window, like something was trying to get in.
     # speaker: Lotta
-    "But I don't think it could have been demons. After all, the whole family ate a big meal of garlic, which is a demonic deterrent per that book of yours."
+    But I don't think it could have been demons. After all, the whole family ate a big meal of garlic, which is a demonic deterrent per that book of yours.
     # speaker: Lotta
-    "Looks like we'll have to try figuring this out later..."
+    Looks like we'll have to try figuring this out later...
     # speaker: Narrator
-    "<i>Dang it. We'll have to try solving this next time we come here.</i>"
+    <i>Dang it. We'll have to try solving this next time we come here.</i>
     {testing_in_ink:-> space_1|-> DONE}
 + [The moth came from a yeti]
     # speaker: Lotta
-    "I can see why you think that! Neighbor Greg exhibits the poor musical ability of a hirsute monstrosity." 
+    I can see why you think that! Neighbor Greg exhibits the poor musical ability of a hirsute monstrosity.
     # speaker: Lotta
-    "But as weird as he is, I don't think he's a yeti." 
+    But as weird as he is, I don't think he's a yeti.
     # speaker: Lotta
-    "That book of yours says yetis can never resist doing pranks, and if you remember: he watched your house the entire week!" 
+    That book of yours says yetis can never resist doing pranks, and if you remember: he watched your house the entire week!
     # speaker: Lotta
-    "And he didn't do any pranks, he fixed your microwave. So I don't think it can be him..."
+    And he didn't do any pranks, he fixed your microwave. So I don't think it can be him...
     # speaker: Narrator
-    "<i>Dang it. We'll have to try solving this next time we come here.</i>"
+    <i>Dang it. We'll have to try solving this next time we come here.</i>
     {testing_in_ink:-> space_1|-> DONE}
 + [The moth came from the tooth fairy]
     ~ moth_origin_found = true
     -> space_1_moth_origin_solved
 + [The moth came from aliens]
     # speaker: Lotta
-    "Now that's an intriguing thought! Aliens coming down and leaving a little piece of themselves with us."
+    Now that's an intriguing thought! Aliens coming down and leaving a little piece of themselves with us.
     # speaker: Lotta
-    "And it makes sense, you did talk about being very disoriented when you woke up that morning." 
+    And it makes sense, you did talk about being very disoriented when you woke up that morning.
     # speaker: Lotta
-    "Unfortunately, it can't be them because they're terrified of fish, and guess what you have on your wall, next to where you sleep?" 
+    Unfortunately, it can't be them because they're terrified of fish, and guess what you have on your wall, next to where you sleep?
     # speaker: Lotta
-    "That's right: a giant poster of an aquarium with pictures of all those fish." 
+    That's right: a giant poster of an aquarium with pictures of all those fish.
     # speaker: Lotta
-    "No, I don't think it's aliens, as exciting as that would be..."
+    No, I don't think it's aliens, as exciting as that would be...
     # speaker: Narrator
-    "<i>Dang it. We'll have to try solving this next time we come here.</i>"
+    <i>Dang it. We'll have to try solving this next time we come here.</i>
     {testing_in_ink:-> space_1|-> DONE}
 
 
 === space_1_moth_origin_solved ===
 # speaker: Lotta
-"The tooth fairy, huh?" 
+The tooth fairy, huh?
 # speaker: Lotta
-"I suppose it does make sense..." 
+I suppose it does make sense...
 # speaker: Lotta
-"When we talked about the dinner you ate the night before, you talked about eating slowly for unknown reasons." 
+When we talked about the dinner you ate the night before, you talked about eating slowly for unknown reasons.
 # speaker: Lotta
-"Then there's the tassles that you bought, even though your parents cut off your allowance." 
+Then there's the tassles that you bought, even though your parents cut off your allowance.
 # speaker: Lotta
-"Then there's the matter of the light." 
+Then there's the matter of the light.
 # speaker: Lotta
-"Neighbor Greg said he saw an orange light the night the egg appeared in your room." 
+Neighbor Greg said he saw an orange light the night the egg appeared in your room.
 # speaker: Lotta
-"But then we learned separately that he always wears yellow glasses at night."
+But then we learned separately that he always wears yellow glasses at night.
 # speaker: Lotta
-"So we can conclude that the color he wasn't orange, but red! It only looked orange because he saw them through his yellow tinted glasses."
+So we can conclude that the color he wasn't orange, but red! It only looked orange because he saw them through his yellow tinted glasses.
 # speaker: Lotta
-"But I don't understand... How did the tooth fairy go from giving you money for a tooth to giving you a giant weird monster moth?" 
+But I don't understand... How did the tooth fairy go from giving you money for a tooth to giving you a giant weird monster moth?
 
 # speaker: Lotta
-"Wait until my viewers hear this! I'm going to start livestreaming our discovery right now!"
+Wait until my viewers hear this! I'm going to start livestreaming our discovery right now!
 # speaker: Narrator
 Just when Lotta hits the record button, there is a BURST of light!
 # speaker: Voice
-"Don't hit that record button."
+Don't hit that record button.
 # speaker: Narrator
 A strange figure appears before the three of you. It's... THE TOOTH FAIRY!
 # speaker: Tooth Fairy
@@ -290,8 +367,19 @@ You pat {MONSTER_NAME}.
 == space_1_moth_found_aftermath ==
 # speaker: Narrator
 You visit Lotta in her recording studio. 
-# speaker: Narrator
 She's in the middle of doing voice over for her podcast about a string of horrifying murders committed in the seventies.
-# speaker: Narrator
 You and {MONSTER_NAME} grab some snacks and leave her to recording.
 {testing_in_ink:-> space_1|-> DONE}
+
+
+
+=== space_1_destroyed ===
+# speaker: Narrator
+You and {MONSTER_NAME} head to Lotta Scoops' studio, but the building is leveled to the ground. 
+Strangely, the only thing that remains standing is her recording booth.
+Stepping inside the sound proof room, you shut the door behind you and are amazed you can't hear anything outside! That is, until you remember...
+<i>There's nothing in the ruins to hear.</i>
+~ coin_flip_for_panic_generatior()
+{testing_in_ink:-> space_1|-> DONE}
+
+

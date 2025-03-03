@@ -14,6 +14,7 @@ VAR day_last_visited = 0
 * [space_3_interaction_5] -> space_3_usher
 * [space_3_interaction_6] -> space_3_usher
 - else: 
+    {get_variable("is_current_destroyed"): -> space_3_destroyed}
     {not space_3_usher_intro: -> space_3_usher_intro}
     -> space_3_usher
 }
@@ -25,6 +26,8 @@ You arrive in your town's church, which you mostly come to for its squeaky and s
 An usher approaches you with a beatific smile. 
 # speaker: Church Usher
 {pc_name}, you'll get an extra good treat if you visit our space multiple days in a row. 
+But since this is your first time coming in a while, here. Have some delicious square pizza courtesy the archdiocese.
+~ change_variable("hunger", amount_d) 
 # speaker: Church Usher
 But if you miss a day of service, we won't chastise you. You'll just get a slightly smaller reward. 
 # speaker: Church Usher
@@ -42,6 +45,8 @@ Now, why don't you head in? I hear Elijah, the youth pastor, wanted to speak wit
     The church usher grins at you. 
     # speaker: Church Usher
     I appreciate you coming to service multiple days in a row like this. I hope Dog will smile down upon you this blessed day!
+    Here, enjoy some tasty treats courtesy Her generosity.
+    ~ change_variable("hunger", amount_d) 
 - day_last_visited == current_day:
     /// mild reward for coming multiple days in a row
     # speaker: Narrator
@@ -49,7 +54,8 @@ Now, why don't you head in? I hear Elijah, the youth pastor, wanted to speak wit
     # speaker: Church Usher
     Back again so soon? I feel like you were just here!
     # speaker: Church Usher
-    No matter, I'll give you a small treat for your diligent presence. 
+    No matter, I'll give you a small treat for your diligent presence.
+    ~ change_variable("hunger", amount_b) 
 - else:
     /// Light chastisement for missing a church service.
     # speaker: Church Usher
@@ -249,6 +255,15 @@ Now come along. I'm doing a double shift at the soup kitchen and want to make su
 === space_3_interaction_6 ===
 # speaker: Elijah
 You return to the church and find Elijah back to his usual chipper, joyful self. 
-# speaker: Elijah
-Elijah holds back some of the food and gives it to you and {MONSTER_NAME}. 
+You spend a pleasant afternoon shooting hoops and enjoying the quiet of the afternoon. 
+{testing_in_ink:-> space_3|-> DONE}
+
+
+=== space_3_destroyed ===
+# speaker: Narrator
+Elijah once gave a sermon that the church is more than stone, mortar, and squeaky pews. 
+You sure hope he's right because all those things are decidedly <i>gone</i> now. 
+With any luck, they were good building materials and went to their just resting place high up in the clouds.
+{MONSTER_NAME} gnaws on what's left of the stations of the cross until you shoo him away.
+~ coin_flip_for_panic_generatior()
 {testing_in_ink:-> space_3|-> DONE}

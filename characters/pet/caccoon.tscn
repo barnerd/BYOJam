@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://btq6odbofyomf"]
+
+[ext_resource type="PackedScene" uid="uid://bqf7qt5ye7a8m" path="res://ArtAssets/Models/caccoon.fbx" id="1_m7fad"]
+
+[node name="caccoon" instance=ExtResource("1_m7fad")]

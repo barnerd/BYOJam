@@ -20,6 +20,11 @@ var portrait_file_names: Dictionary = {
 	"wolfgang_crimson": "res://ArtAssets/2D Art/Characters/Wolfgang-Crimson.png",
 	"lotta": "res://ArtAssets/2D Art/Characters/Lotta-Scoops.png",
 	"bug": "res://ArtAssets/2D Art/Characters/Caterpillar.png",
+	"columbone": "res://ArtAssets/2D Art/Characters/Dogtective-Columbone.png",
+	"kayleigh": "res://ArtAssets/2D Art/Characters/Kayleigh-Buzzbone.png",
+	"ruby": "res://ArtAssets/2D Art/Characters/Ruby-Ruffington.png",
+	"elijah": "res://ArtAssets/2D Art/Characters/Elijah-Truman.png",
+	"leasha": "res://ArtAssets/2D Art/Characters/Dogtor-Leasha.png",
 }
 
 

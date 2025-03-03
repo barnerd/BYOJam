@@ -1,5 +1,7 @@
 == space_10 ==
 
+{get_variable("is_current_destroyed"): -> space_10_destroyed}
+
 {not space_10_interaction_1: -> space_10_interaction_1}
 {not space_10_interaction_2: -> space_10_interaction_2}
 {not space_10_interaction_3: -> space_10_interaction_3}
@@ -19,7 +21,7 @@ While out on a walk you two see Dogtor Leasha waving goodbye to a family as they
 "Well I’m glad to hear you’re getting outside and getting some exercise with them. But that’s only a part of what makes a healthy and happy life. You two should stop by soon, You’re due for a check up soon anyways, {pc_name}. I’ll let you two go though, and take a sucker with you."
 #speaker: Narrator
 Now knowing how to help {MONSTER_NAME} grow into a happy and healthy pet, his appetite expands. More visits here will guarantee that continues.
-///~ change_variable("hunger", 1)
+~ change_variable("hunger", amount_b) 
 ->DONE
 
 ==space_10_interaction_2==
@@ -36,7 +38,7 @@ Your parents have been hounding you to go in for a check up, and now even Leasha
 "HOORAY! That’s a great, heart healthy choice. Seems like you’re already on top of a good diet. But don’t forget to balance it out. Why don’t you try to incorporate some protein as well too. Say, a nice grilled chicken breast?
 
 -Please come back next week. You’re fine {pc_name}, but I’d like to see how {MONSTER_NAME} is doing. "
-///~ change_variable("hunger", 2)
+~ change_variable("hunger", amount_c) 
 -> DONE
 
 ==space_10_interaction_3==
@@ -50,6 +52,7 @@ Pop back in soon!"
 Leasha see’s you both out
 #speaker: Leasha
 	"And don’t forget, a balanced diet!"
+	~ change_variable("hunger", amount_d)
 	->DONE
 	
 	==space_10_interaction_4==
@@ -58,6 +61,7 @@ Leasha see’s you both out
 
 +[Talk about some of your adventures with {MONSTER_NAME}]
 "Lovely! Sounds like you two were made for each other. One of the most important parts of any relationship though is play. Take some of these long lasting healthy treats to use as rewards for {MONSTER_NAME}. I’ve been doing some research and these seem to be a good snack for them."
+	~ change_variable("hunger", amount_e) 
 	->DONE
 	
 ==space_10_interaction_5==
@@ -67,14 +71,25 @@ Leasha see’s you both out
 +[A bit of grilled meat, lots of fruits and veggies, a treat, and a few pretzel buns.]
 
 "Hot dog, you two are on fire! Ruby might have to put you two out, hahaha! Keep doing what you’re doing."
+~ change_variable("hunger", amount_f) 
 ->DONE
 
 +[Lots of white cheddar Cheezy Ballz!]
 #speaker: Leasha
 "{pc_name}, while eating white cheddar Cheezy Ballz is okay sometimes and even necessary for some variety, their whole diet cannot consist of them. I’d better see some more variety next time {pc_name}, or you’ll be fearing me more than your dentist!"
+~ change_variable("hunger", amount_e) 
 ->DONE
 
 ==space_10_interaction_6==
 #speaker: Rosey
 Leasha's office seems to be closed for the day. Either that or she really does malusdomesticaphobia, and you ought to throw away that core you've beeen holding onto.
+~ change_variable("hunger", amount_e) 
 ->DONE
+
+=== space_10_destroyed ===
+# speaker: Narrator
+The clinic that once served the whole town is gone. 
+You look into {MONSTER_NAME}'s eyes. Surely he didn't mean to destroy <i>this</i> one. Him wrecking the place responsible for keeping the whole town healthy and safe, this must have been an accident. 
+...Right?
+~ coin_flip_for_panic_generatior()
+{testing_in_ink:-> space_10|-> DONE}

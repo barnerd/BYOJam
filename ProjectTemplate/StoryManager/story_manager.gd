@@ -24,7 +24,7 @@ func _ready() -> void:
 	
 	# TODO: Move this to the BootLoad process
 	ink_player.ink_file = load("res://Dialogue/MASTER_combiner.ink.json")
-	ink_player.loads_in_background = true
+	ink_player.loads_in_background = false
 	ink_player.create_story()
 
 
@@ -62,6 +62,9 @@ func get_variable(variable_name: String) -> float:
 			return GameAutoload.board.current_fear
 		"laps":
 			return GameAutoload.player.turns_taken
+		"is_current_destroyed":
+			var current_space_number = GameAutoload.player.current_game_space
+			return GameAutoload.board.is_tile_destroyed(current_space_number)
 		_:
 			return 0.0
 
