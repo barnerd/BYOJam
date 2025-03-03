@@ -124,7 +124,7 @@ func destroy_tile(_reason: String) -> void:
 		var building_to_destroy = non_destroyed_buildings[index]
 		non_destroyed_buildings.remove_at(index)
 		
-		buildings[building_to_destroy].destroy()
+		#buildings[building_to_destroy].destroy()
 
 
 func is_tile_destroyed(_space: int) -> bool:
