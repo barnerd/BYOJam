@@ -58,6 +58,9 @@ Your paltry bug will be naught but a footnote as I enshrine myself into the nigh
 # speaker: Narrator
 <i>Wolfgang cackles as he turns into a bat and again swoops off into the night.</i>
 
+~ change_variable("max_fear_threshold", amount_a)
+With Wolfgang on the prowl, the town has more to worry about than just {MONSTER_NAME}. <b>The maximum town panic threshold has permanently increased!</b>
+
 {testing_in_ink:-> space_11|-> DONE}
 
 === space_11_interaction_2 ===
@@ -114,6 +117,9 @@ In all my undead life, all I have wanted is to be the city's fearsome monster. W
 If I cannot be the most fearsome, what use is there in this vapid misery known as existence?
 # speaker: Narrator
 <i>With that, the vampire morphs into a bat. They give a forlorn screech as they ascend up into the sky.</i>
+
+~ change_variable("max_fear_threshold", amount_a)
+With Wolfgang experiencing an existential crisis, the town has more to worry about than just {MONSTER_NAME}. <b>The maximum town panic threshold has permanently increased!</b>
 
 {testing_in_ink:-> space_11|-> DONE}
 
@@ -307,6 +313,9 @@ I am much improved these nights, but I am indebted to you for your help.
 # speaker: Wolfgang Crimson
 In any case, I'm sure the town will rest easier now that I've settled into a new and much improved role.
 
+~ change_variable("max_fear_threshold", amount_a)
+With Wolfgang content in his new role, the town has found new tolerance for {MONSTER_NAME}. <b>The maximum town panic threshold has permanently increased!</b>
+
 {testing_in_ink:-> space_11|-> DONE}
 
 === space_11_interaction_8 ===
@@ -314,6 +323,10 @@ In any case, I'm sure the town will rest easier now that I've settled into a new
 Returning to the spooky alley, you run into your pal Wolfgang Crimson. 
 # speaker: Narrator
 He catches you up on his latest adventures and you spend a pleasant afternoon in the company of your two favorite monsters.
+
+~ change_variable("hunger", amount_c) 
+
+Best of all, the three of you split bottles of blood red cranberry soda. At least, that's what you hope it is...
 
 {testing_in_ink:-> space_11|-> DONE}
 
@@ -327,6 +340,22 @@ He catches you up on his latest adventures and you spend a pleasant afternoon in
 === space_11_vampire_slain ===
 # speaker: Narrator
 The street where Wolfgang Crimson hunted is quiet. The sun shines brighter and your hair stops raising whenever he was around.
+Relieved that the fiend is no more, a baker rushes out to give you free cookies on the house for ridding the town of its demonic bloodsucker. 
+
+~ change_variable("hunger", amount_c) 
+
+The baked goods are sweet. Almost too much your taste. {MONSTER_NAME} doesn't mind in the slightest.
+
+Afterwards {MONSTER_NAME} lets you ride on his back as you continue on your daily walk around the city.
+{testing_in_ink:-> space_11|-> DONE}
+
+
+=== space_11_destroyed ===
 # speaker: Narrator
-{MONSTER_NAME} lets you ride on his back as you continue on your daily walk around the city.
+It's just not the vampire that's been destroyed. It's the florist shop. The bakery. The discount tire shop that keeps weird business hours and always seems open.
+In any case, you won't ever need to wonder why since they've all been demolished. 
+# speaker: BUG
+The culprit picks his teeth with a telephone pole with a smug CHITTER.
+
+~ coin_flip_for_panic_generatior()
 {testing_in_ink:-> space_11|-> DONE}

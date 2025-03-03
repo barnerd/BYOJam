@@ -16,6 +16,7 @@ VAR you_chose_to_destroy_grandmas_house = false
 * [space_4_interaction_5] -> space_4_interaction_5
 * [space_4_destroyed_1] -> space_4_destroyed_1
 - else: 
+{get_variable("is_current_destroyed"): -> space_4_destroyed}
 {not space_4_interaction_1: -> space_4_interaction_1}
 {not space_4_interaction_2: -> space_4_interaction_2}
 {not space_4_interaction_3: -> space_4_interaction_3}
@@ -29,7 +30,8 @@ VAR you_chose_to_destroy_grandmas_house = false
 Hey there, grandkiddo! And who's this? Your new friend? 
 # speaker: Allison Wheeler
 You're just like your mother, always bringing in strays-- which is <i>exactly</i> what I said when she brought your father home for the first time!
-# speaker: Allison Wheeler
+~ change_variable("hunger", amount_c) 
+Anyways, I won't bore you with ancient history. Have some tasty treats to share!
 Now tell me, have you picked a name for this, uh, <i>unusual</i> pet?
 * [Marshmallow] 
     ~ MONSTER_NAME = "Marshmallow"
@@ -60,8 +62,7 @@ Okay, {MONSTER_NAME_ACCORDING_TO_GRANDMA}! Open wide!
 
 === space_4_interaction_2 ===
 # speaker: Allison Wheeler
-Bless my stars, that thing's now twice the size you are!
-# speaker: Allison Wheeler
+Bless my stars, that thing's now twice the size you are! 
 What do your parents think of you taking care of this... <i>thing?</i>
 {MONSTER_NAME != "<i>Un-named Bug Friend</i>":
     * [He's not a thing, his name is <i>{MONSTER_NAME}!</i>]
@@ -81,6 +82,7 @@ Well, horses are sentient people in this world, so I can understand why they wou
 
 == space_4_interaction_2_addendum_1 ==
 # speaker: Allison Wheeler
+~ change_variable("hunger", amount_c) 
 Anyway, here's some cookies for you and {MONSTER_NAME_ACCORDING_TO_GRANDMA}. Now do you know if your parents are home? 
 # speaker: Allison Wheeler
 Because I might want to talk them about something, not that you <i>or</i> {MONSTER_NAME_ACCORDING_TO_GRANDMA} need to worry about it!
@@ -114,9 +116,17 @@ Okay, grandkiddo, take your time.
 
 === space_4_interaction_3 ===
 # speaker: Allison Wheeler
-Listen, honey. I talked to your parents about you keeping {MONSTER_NAME_ACCORDING_TO_GRANDMA}, and I'm starting to get worried. 
+Listen, honey. I talked to your parents about you keeping {MONSTER_NAME_ACCORDING_TO_GRANDMA}, and I'm starting to get worried.
+
+# speaker: Rosey
+Grandma, do you have snacks for us, or what?
 # speaker: Allison Wheeler
-Just look at him! He's bigger than you and good gravy-- we don't even know <i>what</i> he even is!
+~ change_variable("hunger", amount_c) 
+Yes, yes. I baked you some chocolate cake, but look at this! He's big enough that he's practically blocking out the sun!
+
+
+
+And look at those jaws, those pincers! He's bigger than my whole house and good gravy-- we don't even know <i>what</i> he is!
 * [He's got gentle eyes. He's nice, and I know it!]
     # speaker: Allison Wheeler
     Honey, I know you think you're doing the right thing by taking care of him, but this is not a normal pet! What if he eats my precious grandbaby whole?
@@ -142,7 +152,7 @@ You know I love you to the mooncake and back, but I think it's time you set this
 * [{MONSTER_NAME}, attack grandma!] 
     # speaker: Narrator
     <i>The monster roars and surges ahead towards Grandma's house!</i>
-    ~ change_variable("hunger", very_strong_effect)
+    ~ change_variable("hunger", amount_j) 
     /// Destroy this space permanently.
     ~ you_chose_to_destroy_grandmas_house = true
     # speaker: Narrator
@@ -198,9 +208,10 @@ Take care of yourself, grandkiddo.
 
 == space_4_interaction_4_addendum_1 == 
 * [Feed cookies to monster] 
+
     # speaker: Bug
     <i>The monster devours the cookies and basket whole.</i>
-    ~ change_variable("hunger", medium_effect)
+    ~ change_variable("hunger", amount_c)
     -> space_4_interaction_4_addendum_1
 * [read note]
     # speaker: Allison Wheeler
@@ -254,6 +265,7 @@ What I wanted to say is that I don't understand you or your connection to this t
     Just ask your mother about the time she told me she was marrying your father!
     {MONSTER_NAME != "<i>Un-named Bug Friend</i>":
     # speaker: Allison Wheeler
+    ~ change_variable("hunger", amount_d)
     Now, here's an extra helping of cookies for you and <i>{MONSTER_NAME_ACCORDING_TO_GRANDMA}</i>.
         * [Thanks, Grandma]
             # speaker: Allison Wheeler
@@ -293,6 +305,7 @@ What I wanted to say is that I don't understand you or your connection to this t
 # speaker: Narrator
 Grandma waits for you and {MONSTER_NAME} on her porch. 
 # speaker: Narrator
+~ change_variable("hunger", amount_c)
 Today, she's baked a giant cake for the two of you. You sit there on the stoop and share it together, watching the world whirl by.
 
 {testing_in_ink== true: -> space_4}
@@ -314,17 +327,23 @@ You miss Grandma...
 
 === space_4_interaction_6 === 
 {you_chose_to_destroy_grandmas_house == true:
-    # speaker: Narrator
-    Grandma's house is a pile of rubble. A desolate wind blows by.
-    Seeing you, a family walking by on the sidewalk crosses over to the other side of the road. 
-    # speaker: Narrator
-    You miss Grandma. 
-    {testing_in_ink== true: -> space_4}
+    -> space_4_destroyed
 }
 # speaker: Narrator
+~ change_variable("hunger", amount_c)
 You come back to grandma's house and find her bustling around the kitchen, something delicious cooking in the oven. 
-# speaker: Narrator
 You spend a pleasant afternoon telling her about your day, asking her about what cartoons she grew up watching, and how soon you think {MONSTER_NAME} will molt.
 {testing_in_ink== true: -> space_4}
 
 {testing_in_ink== true: -> space_4}
+
+
+=== space_4_destroyed ===
+# speaker: Narrator
+You arrive back at grandma's house, only you can't call it quite that anymore. 
+There's still a front door. Most of the walls are intact as is the fireplace you're "definitely" not supposed to play in.
+Meanwhile the kitchen has toppled over, and the front yard with its once flowering garden is irredeemably ruined. 
+But the real reason you can't call it grandma's house is because she's not inside it anymore.
+A desolate wind blows by, and you feel yourself shiver. 
+~ coin_flip_for_panic_generatior()
+{testing_in_ink:-> space_4|-> DONE}
