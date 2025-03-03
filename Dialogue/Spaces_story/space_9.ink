@@ -1,5 +1,8 @@
 == space_9 ==
 
+{get_variable("is_current_destroyed"): -> space_9_destroyed}
+
+
 {not space_9_interaction_1: -> space_9_interaction_1}
 {not space_9_interaction_2: -> space_9_interaction_2}
 {not space_9_interaction_3: -> space_9_interaction_3}
@@ -19,6 +22,7 @@ Ah! Thank you, thank you! I gotta get back down to the station, I’m late for w
 #speaker: Rosy
 +["Nope. Can’t say we have, sorry."]
 -
+~ change_variable("fear", amount_a*-1)
 #speaker: Columbone
 "Thanks! I’ll be happy to report this all a bunch of baloney or a confused person not realizing they saw a barn owl. I’m sorry to have bothered you both.
 
@@ -42,6 +46,7 @@ Have you happened to see anything suspicous lately regarding that monster rumor?
 #speaker: Columbone
 
 "Good, good. I'm very pleased to hear that, I'll be on my way then. Sorry to have bothered you both." 
+~ change_variable("fear", amount_a*-1)
 ->DONE
 
 
@@ -55,7 +60,7 @@ Have you happened to see anything suspicous lately regarding that monster rumor?
 I mean that's plain ridiculous, I've never seen a bug that big. I mean have you {MONSTER_NAME}? Oh! I'm sorry I meant you {pc_name}. 
 
 Anyway's I'll let you two go, until next time."
-
+~ change_variable("fear", amount_a*-1)
 ->DONE
 ==space_9_interaction_3==
 
@@ -65,7 +70,7 @@ Anyway's I'll let you two go, until next time."
 +["Still nothing!]
 
 Hmm... maybe that a good sign then. I figured that it was all a rumor. Carry on as you two were!"
-
+~ change_variable("fear", amount_a*-1)
 ->DONE
 //{number_of_spaces_destroyed > 2:
 +[Uh... nope! (Moderlty guilty)]
@@ -75,7 +80,7 @@ Hmm... maybe that a good sign then. I figured that it was all a rumor. Carry on 
 That's odd, innit! Can you imagine a little girl or something like that teaming up with a scary, life ruining monster?
 
 I can't! Anyways be on the look out you two, and stay safe, I thought I saw you both near one of those collapsed buildings. That isn't a playground. Well, as you two were."
-
+~ change_variable("fear", amount_a*-1)
 ->DONE
 ==space_9_interaction_4==
 
@@ -84,10 +89,15 @@ I can't! Anyways be on the look out you two, and stay safe, I thought I saw you 
 Turn's out that the monster and their handler have a name the're going by! It's... it's... oh now what was it? Oh yes! Bluey and Mothra!"
 
 +[Great to hear! We'll be on the look out for them.]
+
+~ change_variable("fear", amount_a*-1)
+
 ->DONE
 
 //{number_of_spaces_destroyed > 3:
 +[Hey that's not right! It's (pc_name) and {MONSTER_NAME}]
+
+~ change_variable("fear", amount_a*-1)
 
 #speaker: Columbone
 "{pc_name} and {MONSTER_NAME} do you two happen to hear the problem with that? If what you're saying is true, then that means you two are responsible for all this chaos.
@@ -110,3 +120,11 @@ So take a couple days and then say goodbye, okay kid? I won't bother you again, 
 #speaker: Rosey
 Columbone is nowhere to be found, but you always seem to feel his presance watching your every move... maybe it's best to move away from this space.
 ->DONE
+
+
+=== space_9_destroyed ===
+# speaker: Narrator
+This is where Columbone worked, solving cases from theft to Lupicide. Who wil the town turn to now to solve their future cases? If only Sherlock Bones were a real dog...
+
+~ coin_flip_for_panic_generatior()
+{testing_in_ink:-> space_5|-> DONE}
