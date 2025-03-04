@@ -17,6 +17,7 @@ VAR visited_bedroom = false
     + [Examine night stand] -> space_1_interaction_1_bedroom_nightstand 
     + [Examine wall] -> space_1_interaction_1_bedroom_wall 
     * [Exit]
+        Okay, we can resume investigating when you come here again. Don't forget to like, subscribe, and yada, yada, yada.
         ~ kick_to_end_active = false
         {testing_in_ink:-> space_1|-> DONE}
 - else: 

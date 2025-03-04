@@ -39,9 +39,9 @@ While eating out on the lawn and waiting for the smoke alarms to quiet down you 
 # speaker: Narrator
 It sounds like the shredding of a thousand dictionaries. A curtain rising before the start of a new show. 
 # speaker: Narrator
-Your whole family turns and sees {MONSTER_NAME} emerge from his chrysalis. He shudders out of his rock hard shell and crawls up onto the grass, his carapace still slick with viscous blue liquid from his sudden rebirth. 
+Your whole family turns and sees {MONSTER_NAME} emerge from his chrysalis. He shudders out of his rock hard shell and crawls up onto the grass, his carapace still slick with viscous blue liquid from his grizzly rebirth. 
 # speaker: Narrator
-He new form is magnificient, radiant. He regards you through iridescent compound eyes as a monarch gazing upon its feeble, insipid subjects. 
+His new form is magnificient, radiant. He regards you through iridescent compound eyes as a monarch gazing upon its feeble, insipid subjects. 
 # speaker: Narrator
 And a monarch he truly is. Wings the color of a thousand suns unfold from his back, telescoping into wide sails extending a hundred feet on either side of him. 
 # speaker: Narrator
@@ -51,7 +51,7 @@ These massive wings push against the air and he is borne aloft, carried up over 
 # speaker: Bug
 BUZZ! <i>BUZZZ!</i>
 # speaker: Narrator
-The wind swirls, kicked up by his mighty updraft before he lands before you, rattling cars all the way down the block. 
+The wind swirls, kicked up by his wings before he lands before you, rattling cars all the way down the block. 
 # speaker: Narrator
 The concrete cracks below his six legs shaped like jagged broadswords meant to be weilded for giants of old. 
 # speaker: Rogue Wheeler (Dad)
