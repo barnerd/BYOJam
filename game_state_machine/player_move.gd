@@ -5,9 +5,17 @@ extends State
 var num_spaces_left: int = 0
 var backwards: bool
 var is_story_push: bool = false
+var is_moving: bool = false
+
+
+func _ready() -> void:
+	SignalBus.connect_to_signal("board_fear_max", on_fear_crisis)
+	SignalBus.connect_to_signal("pet_hunger_starving", on_hunger_crisis)
+	SignalBus.connect_to_signal("pet_morphed", on_pet_morphed)
 
 
 func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
+	is_moving = false
 	if _data.has("num_spaces"):
 		num_spaces_left = _data.num_spaces
 	
@@ -22,6 +30,7 @@ func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 
 
 func move_spaces() -> void:
+	is_moving = true
 	GameAutoload.player.animation_player.play("move")
 	GameAutoload.player.pet.play_animation("move")
 	
@@ -42,4 +51,20 @@ func move_spaces() -> void:
 	
 	GameAutoload.board.perform_landing_effect(GameAutoload.player.current_game_space, GameAutoload.player)
 	
+	is_moving = false
 	finished.emit(story_interaction_state, { "space_num": GameAutoload.player.current_game_space })
+
+
+func on_fear_crisis() -> void:
+	if is_moving:
+		print("moving and fear happened")
+
+
+func on_hunger_crisis() -> void:
+	if is_moving:
+		print("moving and hunger happened")
+
+
+func on_pet_morphed() -> void:
+	if is_moving:
+		print("moving and morph happened")
