@@ -13,7 +13,7 @@ First, we can find places to get you <b>FOOD!</b>
 Secondly, we can find places to lower the <b>TOWN PANIC</b> because <i>some</i> dogs have it in their heads that I'm raising a "murderous abomination hell bent on destroying the city."
 # speaker: Rosey
 Speaking of, Mom says that every "turn," the <b>TOWN PANIC</b> will go up by <b>1</b>. 
-Also, you're a big eater which means that for every space we travel, you'll eat <b>1</b> of our food reserves.
+Also, you're a big eater which means for every space we travel, you'll eat <b>1</b> of our food reserves.
 # speaker: Rosey
 Since I'm very responsible, I'm sure we'll <i>never</i> find out what happens if the <b>hunger gets to zero</b> or if the <b>town panic reaches its limit</b>.
 # speaker: Rosey

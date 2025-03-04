@@ -60,8 +60,12 @@ func get_variable(variable_name: String) -> float:
 			return GameAutoload.player.pet.current_hunger
 		"fear":
 			return GameAutoload.board.current_fear
-		"laps":
+		"turns":
 			return GameAutoload.player.turns_taken
+		"laps":
+			return GameAutoload.player.laps
+		"current_day":
+			return GameAutoload.player.laps
 		"is_current_destroyed":
 			var current_space_number = GameAutoload.player.current_game_space
 			return GameAutoload.board.is_tile_destroyed(current_space_number)

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c08bwpxy3hj50"
 path.s3tc="res://.godot/imported/Springboard.png-2557ad865584bf5d0fb6755daba29944.s3tc.ctex"
+path.etc2="res://.godot/imported/Springboard.png-2557ad865584bf5d0fb6755daba29944.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://ArtAssets/2D Art/Tiles/Springboard.png"
-dest_files=["res://.godot/imported/Springboard.png-2557ad865584bf5d0fb6755daba29944.s3tc.ctex"]
+dest_files=["res://.godot/imported/Springboard.png-2557ad865584bf5d0fb6755daba29944.s3tc.ctex", "res://.godot/imported/Springboard.png-2557ad865584bf5d0fb6755daba29944.etc2.ctex"]
 
 [params]
 

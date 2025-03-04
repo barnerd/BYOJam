@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cas3r84ny1jpv"
 path.s3tc="res://.godot/imported/Lower-Fear.png-3cccd0088c7d8e02840455c8d20e6183.s3tc.ctex"
+path.etc2="res://.godot/imported/Lower-Fear.png-3cccd0088c7d8e02840455c8d20e6183.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://ArtAssets/2D Art/Tiles/Lower-Fear.png"
-dest_files=["res://.godot/imported/Lower-Fear.png-3cccd0088c7d8e02840455c8d20e6183.s3tc.ctex"]
+dest_files=["res://.godot/imported/Lower-Fear.png-3cccd0088c7d8e02840455c8d20e6183.s3tc.ctex", "res://.godot/imported/Lower-Fear.png-3cccd0088c7d8e02840455c8d20e6183.etc2.ctex"]
 
 [params]
 

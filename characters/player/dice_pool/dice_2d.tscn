@@ -11,9 +11,10 @@ theme_type_variation = &"Dice"
 script = ExtResource("1_1kr5l")
 
 [node name="GFX" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 texture = ExtResource("2_35pr8")
-stretch_mode = 2
+expand_mode = 3
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,6 +1,7 @@
 class_name Pet
 extends Node3D
 
+signal pet_morphed(stage: String)
 signal pet_hunger_starving
 signal pet_hunger_full
 signal pet_hunger_changed(num: int)
@@ -29,6 +30,7 @@ var current_stage: EvolutionStage = EvolutionStage.CATERPILLAR
 
 
 func _init() -> void:
+	SignalBus.register_signal("pet_morphed", pet_morphed)
 	SignalBus.register_signal("pet_hunger_starving", pet_hunger_starving)
 	SignalBus.register_signal("pet_hunger_full", pet_hunger_full)
 	SignalBus.register_signal("pet_hunger_changed", pet_hunger_changed)
@@ -110,8 +112,9 @@ func morph_pet() -> void:
 			current_stage = EvolutionStage.COCOON
 			caterpillar_mesh.visible = false
 			cocoon_mesh.visible = true
+			pet_morphed.emit("cocoon")
 		EvolutionStage.COCOON:
 			current_stage = EvolutionStage.MOTH
 			cocoon_mesh.visible = false
 			moth_mesh.visible = true
-	print("switch to pet morph knot: %d" % current_stage)
+			pet_morphed.emit("butterfly")

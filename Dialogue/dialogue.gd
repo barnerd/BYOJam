@@ -24,6 +24,7 @@ var portrait_file_names: Dictionary = {
 	"kayleigh": "res://ArtAssets/2D Art/Characters/Kayleigh-Buzzbone.png",
 	"ruby": "res://ArtAssets/2D Art/Characters/Ruby-Ruffington.png",
 	"elijah": "res://ArtAssets/2D Art/Characters/Elijah-Truman.png",
+	"knight_squeaksworth": "res://ArtAssets/2D Art/Characters/Knight-Squeaksworth.png",
 	"leasha": "res://ArtAssets/2D Art/Characters/Dogtor-Leasha.png",
 }
 
@@ -57,7 +58,7 @@ func start_knot(knot: String = "") -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		if event.pressed:
+		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			if not StoryManager.ink_player.has_choices:
 				#print("Mouse Click/Unclick at: ", event.position)
 				StoryManager.ink_player.continue_story()

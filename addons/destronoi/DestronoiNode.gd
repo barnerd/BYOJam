@@ -38,19 +38,21 @@ func _ready():
 		print("[Destronoi] No MeshInstance3D sibling found")
 		return # no mesh; return early
 	_root = VSTNode.new(mesh_instance)
-	
-	# TODO: Move this to it's own function
-	## Plot 2 sites for the subdivision
-	#plot_sites_random(_root)
-	## Generate 2 children from the root
-	#bisect(_root)
-	## Perform additional subdivisions depending on tree height
-	#for i in range(tree_height - 1):
-		#var leaves = []
-		#_root.get_leaf_nodes(_root,leaves);
-		#for leaf in range(leaves.size()):
-			#plot_sites_random(leaves[leaf])
-			#bisect(leaves[leaf])
+
+
+func generate() -> void:
+	# Plot 2 sites for the subdivision
+	plot_sites_random(_root)
+	# Generate 2 children from the root
+	bisect(_root)
+	# Perform additional subdivisions depending on tree height
+	for i in range(tree_height - 1):
+		var leaves = []
+		_root.get_leaf_nodes(_root,leaves);
+		for leaf in range(leaves.size()):
+			plot_sites_random(leaves[leaf])
+			bisect(leaves[leaf])
+
 
 ## Assigns data to [method VSTNode._sites] of a specified [VSTNode].
 ## [br][color=yellow]Note:[/color] Site coordinates are relative to the centre of [member VSTNode._mesh_instance].

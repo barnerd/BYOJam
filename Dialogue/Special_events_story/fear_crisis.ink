@@ -14,6 +14,7 @@ Lotta leaves and {MONSTER_NAME} responds by knocking her recording studio into t
 -> DONE
 
 === space_2_destoryed_by_fear ===
+# speaker: Narrator
 The inhabitants of space_2 flee the town in terror of {MONSTER_NAME}. Oh no!
 -> DONE
 
@@ -38,11 +39,11 @@ You mean, me and {MONSTER_NAME}?
 # speaker: Allison Wheeler
 Oh, honey... I'm going to find an entomologist or maybe the Orkin man CEO. Someone's got to have a solution for this... this thing! This monster!
 # speaker: Bug
-{MONSTER_NAME} hisses as your grandma piles into her car and drives away. 
-She's not out of the driveway, before he races to the house and tears it apart in a fit of fury. 
+{MONSTER_NAME} hisses as your grandma piles into her car. She's not out of the driveway, before your pet races over and tears her house apart in a fit of fury. 
 -> DONE
 
 === space_5_destoryed_by_fear ===
+# speaker: Narrator
 The inhabitants of space_5 flee the town in terror of {MONSTER_NAME}. Oh no!
 -> DONE
 
@@ -55,18 +56,22 @@ He smashes apart the station until there is nothing left but dust, ash, and many
 -> DONE
 
 === space_7_destoryed_by_fear ===
+# speaker: Narrator
 The inhabitants of space_7 flee the town in terror of {MONSTER_NAME}. Oh no!
 -> DONE
 
 === space_8_destoryed_by_fear ===
+# speaker: Narrator
 The inhabitants of space_8 flee the town in terror of {MONSTER_NAME}. Oh no!
 -> DONE
 
 === space_9_destoryed_by_fear ===
+# speaker: Narrator
 The inhabitants of space_9 flee the town in terror of {MONSTER_NAME}. Oh no!
 -> DONE
 
 === space_10_destoryed_by_fear ===
+# speaker: Narrator
 The inhabitants of space_10 flee the town in terror of {MONSTER_NAME}. Oh no!
 -> DONE
 
@@ -81,6 +86,7 @@ When Wolfgang turns into a bat and flies off into the night, {MONSTER_NAME} resp
 -> DONE
 
 === space_12_destoryed_by_fear ===
+# speaker: Narrator
 Where once you had a bustling neighborhood, now all the houses are boarded up. 
 A few put up "for sale" signs, but even more of them left in the dead of night. 
 The streets still marked by tire marks where they peeled out, desperate to get away from your beloved pet. 
