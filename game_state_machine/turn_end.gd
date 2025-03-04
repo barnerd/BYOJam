@@ -19,5 +19,5 @@ func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 		#finished.emit(win_state)
 	#elif player.turns_taken >= 5:
 		#finished.emit(lose_state)
-	#else:
-	finished.emit(turn_start_state)
+	else:
+		finished.emit(turn_start_state)

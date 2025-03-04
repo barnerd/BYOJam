@@ -2,6 +2,7 @@ extends State
 
 @export var player_move_state: State
 @export var turn_end_state: State
+@export var event_story_state: State
 @export var dialogue_screen: Dialogue
 
 var move_player: bool
@@ -9,8 +10,6 @@ var num_spaces: int
 
 var has_event: bool = false
 var event_knot: String
-
-var old_data: Dictionary
 
 
 func _ready() -> void:
@@ -30,14 +29,7 @@ func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 	
 	var knot_to_play: String
 	
-	if has_event:
-		has_event = false
-		knot_to_play = event_knot
-		old_data = _data
-	elif _data.has("special_story"):
-		knot_to_play = _data["special_story"]
-		old_data = _data
-	elif _data.has("space_num"):
+	if _data.has("space_num"):
 		# Pull knot name from TileSpace
 		var story_knot: String = GameAutoload.board.get_story_knot(_data.space_num)
 		if GameAutoload.board.is_tile_destroyed(_data.space_num):
@@ -53,7 +45,6 @@ func enter(_previous_state: Node, _data: Dictionary = {}) -> void:
 func exit() -> void:
 	dialogue_screen.story_section_complete.disconnect(_on_section_complete)
 	dialogue_screen.visible = false
-	old_data = {}
 
 
 func story_moves_player(_num: int) -> void:
@@ -62,23 +53,30 @@ func story_moves_player(_num: int) -> void:
 
 
 func _on_section_complete() -> void:
-	# is there old_data available
-	# does the story want to move the player
-	# has a new event come ind
-	if has_event:
-		old_data.special_story = event_knot
-	
 	if move_player:
-		if old_data.keys().size() > 0:
-			old_data.num_spaces = num_spaces
-			old_data.story_push = true
-			finished.emit(self, old_data)
+		if has_event:
+			var data: Dictionary = {}
+			data.event_knot = event_knot
+			data.next_state = player_move_state
+			data.next_data = {}
+			data.next_data.num_spaces = num_spaces
+			data.next_data.story_push = true
+			finished.emit(event_story_state, data)
+			has_event = false
+			event_knot = ""
 		else:
 			finished.emit(player_move_state, { "num_spaces": num_spaces, "story_push": true })
-	elif old_data.keys().size() > 0:
-		finished.emit(self, old_data)
 	else:
-		finished.emit(turn_end_state)
+		if has_event:
+			var data: Dictionary = {}
+			data.event_knot = event_knot
+			data.next_state = turn_end_state
+			data.next_data = {}
+			finished.emit(event_story_state, data)
+			has_event = false
+			event_knot = ""
+		else:
+			finished.emit(turn_end_state)
 
 
 func on_crisis_occurred(type: String, space_knot: String) -> void:

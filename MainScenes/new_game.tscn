@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://beeo6wb5btqkj"]
+[gd_scene load_steps=33 format=3 uid="uid://beeo6wb5btqkj"]
 
 [ext_resource type="PackedScene" uid="uid://ddawfdqr52jcb" path="res://UI/debug_game_variables.tscn" id="1_xym1b"]
 [ext_resource type="PackedScene" uid="uid://dcypsl0wpgbsn" path="res://UI/game_start_splash.tscn" id="2_glx7w"]
@@ -28,6 +28,7 @@
 [ext_resource type="Script" path="res://game_state_machine/game_over.gd" id="14_72xus"]
 [ext_resource type="PackedScene" uid="uid://bxtoj7uy6uso0" path="res://UI/meter/fear_meter.tscn" id="14_grw6w"]
 [ext_resource type="PackedScene" uid="uid://cpxvx57rkly6u" path="res://UI/dice_animation_2d.tscn" id="17_t36u5"]
+[ext_resource type="Script" path="res://game_state_machine/event_story.gd" id="25_ycjgo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4x7mg"]
 shader = ExtResource("3_c1l1q")
@@ -261,10 +262,15 @@ dice_pool = NodePath("../../UILayer/PanelContainer/MarginContainer/VBoxContainer
 script = ExtResource("9_yogo3")
 story_interaction_state = NodePath("../StoryInteraction")
 
-[node name="StoryInteraction" type="Node" parent="StateMachine" node_paths=PackedStringArray("player_move_state", "turn_end_state", "dialogue_screen")]
+[node name="StoryInteraction" type="Node" parent="StateMachine" node_paths=PackedStringArray("player_move_state", "turn_end_state", "event_story_state", "dialogue_screen")]
 script = ExtResource("10_bacfe")
 player_move_state = NodePath("../PlayerMove")
 turn_end_state = NodePath("../TurnEnd")
+event_story_state = NodePath("../EventStory")
+dialogue_screen = NodePath("../../PopupLayer/Dialogue")
+
+[node name="EventStory" type="Node" parent="StateMachine" node_paths=PackedStringArray("dialogue_screen")]
+script = ExtResource("25_ycjgo")
 dialogue_screen = NodePath("../../PopupLayer/Dialogue")
 
 [node name="TurnEnd" type="Node" parent="StateMachine" node_paths=PackedStringArray("turn_start_state", "win_state", "lose_state", "game_over")]
@@ -287,3 +293,4 @@ script = ExtResource("14_72xus")
 load_state = NodePath("../Load")
 restart_game_button = NodePath("../../UILayer/RestartGame")
 dialogue_screen = NodePath("../../PopupLayer/Dialogue")
+new_game_scene_path = "res://MainScenes/main_menu.tscn"

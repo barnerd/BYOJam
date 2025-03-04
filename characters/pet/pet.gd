@@ -118,4 +118,3 @@ func morph_pet() -> void:
 			cocoon_mesh.visible = false
 			moth_mesh.visible = true
 			pet_morphed.emit("butterfly")
-	print("switch to pet morph knot: %d" % current_stage)
