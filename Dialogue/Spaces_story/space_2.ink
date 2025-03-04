@@ -117,7 +117,7 @@ A placid lake rests undistrubed by the the world. To change that peace would be 
 
 === space_2_destroyed ===
 # speaker: Narrator
-The lake is dried out. The park trampled and the play structure is in ruins.
+The lake is dried out. The park trampled and the play structure is in ruins. 
 # speaker: Bug
 {MONSTER_NAME} gazes upon his mighty work with a satisfied roar. 
 ~ coin_flip_for_panic_generatior()

@@ -113,7 +113,9 @@ We should probably let her cook without any interuption.
 === space_8_destroyed ===
 # speaker: Narrator
 You and {MONSTER_NAME} return to the boutique and instead only find ruins.
-Without this store, it's like the town has lost its color.
+Without this store, it's like the town has lost its originality. 
+
+The only consolation is that at all the 100% polyester pieces burned to a crisp.
 
 ~ coin_flip_for_panic_generatior()
 {testing_in_ink:-> space_8|-> DONE}

@@ -114,5 +114,7 @@ Leasha's office seems to be closed for the day. Either that or she really does m
 The clinic that once served the whole town is gone. 
 You look into {MONSTER_NAME}'s eyes. Surely he didn't mean to destroy <i>this</i> one. Him wrecking the place responsible for keeping the whole town healthy and safe, this must have been an accident. 
 ...Right?
+
+Hopefully this doesn't count as a warcrime.
 ~ coin_flip_for_panic_generatior()
 {testing_in_ink:-> space_10|-> DONE}

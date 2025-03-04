@@ -222,6 +222,8 @@ A budding artist who had yet to see their full potential.
 # speaker: Rosey
 And now I wonder if they ever will... What do you think, bud?
 # speaker: Narrator
-{MONSTER_NAME} rolls around in their paints, painting his shell a brilliant ochre and cerulean blue.
+{MONSTER_NAME} rolls around in their paints, dousing his shell a brilliant ochre and cerulean blue. Then falling onto a blank canvas, and rolling around, {MONSTER_NAME} paints their magnum opus:
+
+A picture of two bears high-fiving.
 ~ coin_flip_for_panic_generatior()
 {testing_in_ink:-> space_5|-> DONE}
