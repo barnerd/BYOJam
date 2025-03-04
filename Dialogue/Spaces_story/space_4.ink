@@ -122,7 +122,7 @@ Okay, grandkiddo, take your time.
 Listen, honey. I talked to your parents about you keeping {MONSTER_NAME_ACCORDING_TO_GRANDMA}, and I'm starting to get worried.
 
 # speaker: Rosey
-Grandma, do you have snacks for us, or what?
+Grandma, do you have snacks for us?
 # speaker: Allison Wheeler
 ~ change_variable("hunger", amount_c) 
 Yes, yes. I baked you some chocolate cake, but look at him! He's big enough that he's practically blocking out the sun!

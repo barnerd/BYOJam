@@ -73,11 +73,11 @@ Sorry I rambled there, but I like to fill up the space sometimes while I work. T
 #speaker: Narrator
 Knight pulls out their phone and begins to flip through pictures of pictures, sculptures, paintings, collages, and drawings.
  #speaker: Knight Squeaksworth
- “I haven’t felt this alive for quite awhile. Thank you both for helping me out of my slump. Please, take this for your troubles.”
+ I haven’t felt this alive for quite awhile. Thank you both for helping me out of my slump. Please, take this for your troubles.
 #speaker: Narrator
 Knight produces a gift basket of goodies. 
 #speaker: Knight Squeaksworth
-“I don’t usually splurge much outside of art supplies, but you two deserve a treat for all your inspiration. I’ve got to run but, please enjoy, au revoir!”
+I don’t usually splurge much outside of art supplies, but you two deserve a treat for all your inspiration. I’ve got to run but, please enjoy, au revoir!
 ~ change_variable("hunger", amount_c) 
 ->DONE
 
@@ -87,12 +87,12 @@ Knight produces a gift basket of goodies.
 #speaker: Narrator
 Midway through your meal…
  #speaker: Knight Squeaksworth
-“I’ve been meaning to ask… {MONSTER_NAME}, in your opinion, do you believe that you’re a monster?”
+I’ve been meaning to ask… {MONSTER_NAME}, in your opinion, do you believe that you’re a monster?
 #speaker:Narrator
 You take a moment and look deep into {MONSTER_NAME}’s eyes and gleam his answer.
 +[“No.”]
 #speaker: Knight Squeaksworth
-“Hmmm… hm. Well, I’m glad to hear that you aren’t buying into what some people might say about you. Even if you were a monster though {MONSTER_NAME}, then I’d accept you all the same, whoever you are, or whoever you may be. 
+Hmmm… hm. Well, I’m glad to hear that you aren’t buying into what some people might say about you. Even if you were a monster though {MONSTER_NAME}, then I’d accept you all the same, whoever you are, or whoever you may be. 
 
 I’ve been thinking, maybe being a monster doesn’t mean that one is always hurtful or acts the same way as another ‘monster’. There’s layers not everyone recognizes I suppose.
 

@@ -47,9 +47,9 @@ Your parents have been hounding you to go in for a check up, and now even Leasha
 
 I’m no absolute expert when it comes to the biology of… little adorable bundles of joy, but generally speaking good grooming practices usually improve self confidence and lead to longer lives. I’d like to see a tiny bit more care taken of {MONSTER_NAME}’s appearance next time, {pc_name}, but otherwise solid work. It seems you two get along well. 
 
-Pop back in soon!"
+Pop back in soon!
 #speaker: Narrator
-Leasha see’s you both out
+Leasha sees you both out
 #speaker: Leasha
 	"And don’t forget, a balanced diet!"
 	~ change_variable("hunger", amount_d)

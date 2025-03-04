@@ -15,6 +15,7 @@ VAR visited_kitchen = false
     + [Examine microwave] -> space_1_interaction_1_kitchen_window
 
     * [Exit]
+        Okay, we can resume investigating when you come here again. Don't forget to like, subscribe, and yada, yada, yada.
         ~ kick_to_end_active = false
         {testing_in_ink:-> space_1|-> DONE}
 - else: 

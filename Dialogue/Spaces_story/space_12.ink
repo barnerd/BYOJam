@@ -173,7 +173,7 @@ You think I'm scared of your sister and her abnormally large bug monster? Don't 
         * * [Let's fight!] 
         * * [Have we really exhausted all non-violent options?]
             # speaker: Ringo
-            Sister, if you don't do something, he's going to exhaust me-- <i>of living!</i>. 
+            Sister, if you don't do something, he's going to exhaust me-- <i>of living!</i>
             * * * [Okay, fight time!]
             * * * [I just think we weirdly valorize violence as a society.]
                 # speaker: Ringo

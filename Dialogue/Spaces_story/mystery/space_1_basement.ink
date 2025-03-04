@@ -19,6 +19,8 @@ This is the basement
     + [Examine toy chest] -> space_1_interaction_1_basement_toychest
     + [Examine secret journal] -> space_1_interaction_1_basement_journal
     * [Exit]
+        # speaker: Lotta
+        Okay, we can resume investigating when you come here again. Don't forget to like, subscribe, and yada, yada, yada.
         ~ kick_to_end_active = false
         {testing_in_ink:-> space_1|-> DONE}
 - else: 

@@ -91,7 +91,7 @@ Hey, there, {pc_name}! I hope you're having a blessed and totally "on fleek" day
 # speaker: Elijah 
 Just when you think you've seen all the wonders of Dog's creation, She turns around and surprises you with somethign new. Haha!
 # speaker: Elijah 
-I mean, what even is this thing?
+And I'm absolutely serious. What am I looking at right now?
 * [He's my magic pet!]
     # speaker: Elijah 
     Ma-magic? There's no such thing! In fact, the Good Boy Book says the only true power in the known universe belongs to Her.
