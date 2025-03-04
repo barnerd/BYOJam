@@ -57,23 +57,27 @@ Welp, another endeavor failed successfully. Better be more careful next time.
 #speaker: Narrator
 A few days ago there was a flyer for a cosplay contest taking place at the lake’s amphitheater today. Everybody is dressed up in such cool costumes! 
 
-There’s a Dwayne the Rock Johnson (though they may be more of a look alike than a cosplay or is it actually him???), a Saber, a Joel and Ellie duo, a group doing the main characters from the Last Airbender, and a Godzilla who has recently stepped up on stage. 
+There’s a Dwayne the Rock Johnson (though they may be more of a look alike than a cosplay, or is it actually him???), a Saber, a Joel and Ellie duo, a group doing the main characters from the Last Airbender, and a Godzilla who has recently stepped up on stage. 
 
-Uh oh…
+<i>Uh oh…</i>
 	
-{MONSTER_NAME} rushes at the Godzilla cosplayer with a buzzing fervor. The crowd begins to cheer with enthusiasm. The cosplayer is confused at first but starts to pose in different fighting stances, to which {MONSTER_NAME} screeches then unleashes a small beam that clips off the top of the Godzilla’s foam head. The judges glance at each other then huddle to confer. 
-#speaker: J1
-	“I’ve never seen a better group cosplay!”
-#speaker: J2
-	“The dramatic display, the effects and all, I’m awestruck!”
-#speaker: J3
-“I hesitate to call that perfection…”
-#speaker: J1
-“Can it Cowell!”
+{MONSTER_NAME} rushes at the Godzilla cosplayer with a buzzing fervor. The crowd begins to cheer with enthusiasm! The cosplayer is confused at first but starts to pose in different fighting stances, to which {MONSTER_NAME} screeches then unleashes a small beam that clips off the top of the Godzilla’s foam head. 
+
+The judges glance at each other then huddle to confer. 
+#speaker: Judge 1
+I’ve never seen a better group cosplay!
+#speaker: Judge 2
+The dramatic display, the effects and all, I’m awestruck!
+#speaker: Judge 3
+I hesitate to call that <i>perfection…</i>
+#speaker: Judge 1
+Can it Cowell!
 #speaker: Narrator
 A 10, a 10, and a 9. A near perfect score!
 
-The cosplayer, gathering their senses, grabs one of {MONSTER_NAME}’s limbs and raises it up in mutual victory. Not one to look a gift monster in the mouth, you’re awarded the grand prize of a contest with Godzilla: A huge box of snacks, candies, noodles, tea, along with a year long subscription to CrunchyRoll. 
+The cosplayer, gathering their senses, grabs one of {MONSTER_NAME}’s limbs and raises it up in mutual victory.
+
+Not one to look a gift monster in the mouth, you’re awarded the grand prize of a contest with Godzilla: A huge box of snacks, candies, noodles, tea, along with a year long subscription to CrunchyRoll. 
 
 What a steal!
 ~ change_variable("hunger", amount_e)
@@ -87,13 +91,13 @@ A third sign has popped up under the previous two:
 WARNING: THE ENVIRONMENTAL PUPTECTION AGENCY HAS DETECTED TRACE AMOUNT OF RADIATION IN THE AREA. ENTER AT YOUR OWN RISK.
 #speaker: Rosey
 
-"{MONSTER_NAME}, we may have done a bit too much damage here, I’m starting to feel a bit queasy…"
+{MONSTER_NAME}, we may have done a bit too much damage here, I’m starting to feel a bit queasy…
 ~ change_variable("hunger", amount_c)
 ->DONE
 
 ==space_2_interaction_7==
 # speaker: Narrator
-A placid lake rests undistrubed by the the world; to disturb that peace would be a grave shame. Perhaps we ought to move on.
+A placid lake rests undistrubed by the the world. To change that peace would be a grave shame, so perhaps we ought to move on.
 ->DONE
 
 === space_2_destroyed ===
