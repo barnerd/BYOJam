@@ -73,11 +73,13 @@ SLAY!!
 ==space_8_interaction_4==
 
 #speaker: Kayleigh
-
 I just got some new tops in, if you're willing to sort through them for me you can for sure take one for free.
 
 +[Three Wolf Moon Tee Shirt.]
 Wow, what a... <i>statement piece</i>... How do these keep showing up here???
+
+#speaker: Rosey
+This may be the most evil decision we've made all week.
 ~ change_variable("fear", amount_b*-1)
 +[Sundress.]
 What a perfect pick for this season, that'll get a lot of <i>buzz!</i>
@@ -103,7 +105,9 @@ Any great fit needs a little bow on top that pulls it all together, how about yo
 
 ==space_8_interaction_6==
 #speaker: Rosey
-Kayleigh seems to be advising another person dipping their toes into the realm, of fashion for the first time. We should probably let her cook without any interuption.
+Kayleigh seems to be advising another person dipping their toes into the realm of fashion for the first time. 
+
+We should probably let her cook without any interuption.
 ->DONE
 
 === space_8_destroyed ===

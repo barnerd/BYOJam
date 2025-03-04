@@ -18,7 +18,6 @@
 #speaker: Narrator
 The weather is gorgeous, so the lake is full of people out fishing today. However, most of them are having no luck. 
 
-#speaker: bug
 {MONSTER_NAME} is determined to see what a fish looks like though. 
 
 #speaker: Narrator
@@ -28,7 +27,6 @@ Suddenly tons of fish start flopping out of the water trying to take a bite out 
 
 In the fishes' fruitless endeavors, their mouths become hooked, or their bodies land on the ground. This is the biggest bounty anyone has ever seen, plus 
 
-#speaker: bug
 {MONSTER_NAME} is ecstatic to have finally seen a fish!
 ~ change_variable("hunger", amount_e)
 ->DONE
@@ -75,7 +73,7 @@ There’s a Dwayne the Rock Johnson (though they may be more of a look alike tha
 a Saber, a Joel and Ellie duo, a group doing the main characters from the Last Airbender, and a Godzilla who has recently stepped up on stage. 
 
 <i>Uh oh…</i>
-#speaker: bug	
+
 {MONSTER_NAME} rushes at the Godzilla cosplayer with a buzzing fervor. The crowd begins to cheer with enthusiasm! 
 #speaker: Narrator
 The cosplayer is confused at first but starts to pose in different fighting stances, to which {MONSTER_NAME} screeches then unleashes a small beam that clips off the top of the Godzilla’s foam head. 
@@ -87,7 +85,7 @@ I’ve never seen a better group cosplay!
 The dramatic display, the effects and all, I’m awestruck!
 #speaker: Simon Cowell
 I hesitate to call that <i>perfection…</i>
-#speaker: Lotta
+#speaker: Knight Squeaksworth
 Can it Cowell!
 #speaker: Narrator
 A 10, a 10, and a 9. A near perfect score!
