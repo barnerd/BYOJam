@@ -4,6 +4,7 @@ extends Node3D
 signal board_fear_max
 signal board_fear_changed(num: int, max: int)
 signal board_fear_percent_changed(percent: float)
+signal crisis_occurred(type: String, space_knot: String)
 
 const SPACE_TYPE_MATERIALS: Dictionary = {
 	TileSpace.TileType.FOOD: preload("res://ArtAssets/Materials/gameboard/food_mat.tres") as StandardMaterial3D,
@@ -35,6 +36,7 @@ func _init() -> void:
 	SignalBus.register_signal("board_fear_max", board_fear_max)
 	SignalBus.register_signal("board_fear_changed", board_fear_changed)
 	SignalBus.register_signal("board_fear_percent_changed", board_fear_percent_changed)
+	SignalBus.register_signal("crisis_occurred", crisis_occurred)
 	
 	GameAutoload.board = self
 
@@ -116,8 +118,9 @@ func destroy_tile(_reason: String) -> void:
 	board_spaces[space_to_destroy].destroy_tile(SPACE_TYPE_MATERIALS[TileSpace.TileType.DESTROYED])
 	spaces_destroyed += 1
 	
-	# TODO: Do something different based on _reason == fear or hunger
-	print("switch to knot: %s" % _reason)
+	var story_space: String = board_spaces[space_to_destroy].story_knot
+	crisis_occurred.emit(_reason, story_space)
+	print("%s crisis!" % _reason)
 	
 	# Destroy a random building
 	if non_destroyed_buildings.size() > 0:
