@@ -57,10 +57,10 @@ The concrete cracks below his six legs shaped like jagged broadswords meant to b
 # speaker: Rogue Wheeler (Dad)
 Uh, sweetie? I know {MONSTER_NAME} is your pet, but I'm starting to get worried...
 # speaker: Rogue Wheeler (Dad)
-There will come a day pretty soon when you'll need to decide what to do with him. 
+{pc_name}, there will come a day pretty soon when you'll need to decide what to do with him. 
 # speaker: Rogue Wheeler (Dad)
-And I mean <i>soon</i>. In a few days, you'll have to <b>make a choice</b> about what to do with him. 
-# speaker: Narrator
+And I mean <i>soon</i>. In a few days, you'll have to <b>make a choice</b> about what to do with your bet. 
+# speaker: Bug
 {MONSTER_NAME} turns to you, his eyes unreadable. 
 # speaker: Narrator
 Make the most of your time with your pet. <i>All things must come to an end.</i>

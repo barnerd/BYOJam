@@ -285,7 +285,7 @@ Sister, that was amazing! Your giant bug saved me!
 My whole body hurts...
 # speaker: Ringo
 ~ change_variable("lap_bonus_food", amount_a)  
-As a reward for helping me, I'll work with mom to make you and {MONSTER_NAME} an extra big snack when you cross twelve space twelve and come back home. 
+As a reward for helping me, I'll work with mom to make you and {MONSTER_NAME} an extra big snack when you cross space twelve. 
 # speaker: Ringo
 Come back again soon. I've got a feeling we haven't heard the last from Chad...
 ~ current_foe = "level_2_bully" 
@@ -297,7 +297,7 @@ Come back again soon. I've got a feeling we haven't heard the last from Chad...
 # speaker: Narrator
 Your bug charges, but young Chad uses his comparitevely diminutive size to dodge {MONSTER_NAME}'s attack.
 # speaker: Narrator
-Your beast gets themselves stuck in the side of a building, and Chad reins a flurry of enthusiastic if ineffective blows on {MONSTER_NAME}'s carapace.
+Your beast gets themselves stuck in the side of a building, and Chad rains a flurry of enthusiastic if ineffective blows on {MONSTER_NAME}'s carapace.
 # speaker: Narrator
 What really hurts is when Chad manages to steal food you meant to give your pet. 
 # speaker: Ringo

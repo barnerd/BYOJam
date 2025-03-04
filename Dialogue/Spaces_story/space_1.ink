@@ -68,10 +68,10 @@ But then again, seeing a giant bug crawling up into the canopy with bits of red 
 I'm only six, so I haven't taken basic statistics yet, but I'd say letting him eat from the tops of the cherry trees gives me a <b>fifty-fifty chance the town panic goes up by 1</b>.
 Alternatively, he could just eat all the fruit that's fallen on the ground which will be a smaller meal, but no one would worry about that!
 Hmm. I wonder what I do?
-* [Take {amount_e} food but risk raising town panic.] 
++ [Take {amount_e} food but risk raising town panic.] 
     ~ cherry_cause_panic_test()
     -> space_1_interaction_1_explanation
-* [Take {amount_c} food at no risk.]
++ [Take {amount_c} food at no risk.]
     ~ change_variable("hunger", amount_c)
     # speaker: Bug
     {MONSTER_NAME} burbles unhappily as he eats the fermenting cherries on the ground. 
@@ -110,7 +110,7 @@ Hmm. I wonder what I do?
 
 /// INVESTIGATE HUB OPTIONS
 # speaker: Lotta
-Hey, there {pc_name}! Time to crack the mystery of your pet's origins! Where should we investigate today?
+Hey, there {pc_name}! Time to crack the mystery of your pet's origins! Where in your house should we investigate today?
 {locations_visited >= 3:
 + [I think I know what made the egg...]
     -> space_1_guess
@@ -196,7 +196,7 @@ Now tell me everything you can about the origin of your bug. I want to know it a
         ...Okay, anything else? 
         * * * [<i>Tell her everything that happened.</i>]
             -> space_1_interaction_1_add_2
-        * * * [<i>Say poop.</i>]
+        * * * [<i>Say butt, but really loud.</i>]
             # speaker: Lotta
             Okay, let's just get it out of your system. 
             * * * * [<i>Tell her everything that happened.</i>]

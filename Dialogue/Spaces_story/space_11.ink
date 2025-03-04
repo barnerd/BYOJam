@@ -37,7 +37,7 @@ VAR vampire_slain = false
 "You!" <i>shouts someone from above.</i>
 # speaker: Narrator
 <i>Suddenly a bat swoops down from the twilight and transforms into the menacing, long toothed form of a... VAMPIRE!</i>
-* (introduce)[Hi, I'm Ruthie!]
+* (introduce)[Hi, I'm {pc_name}!]
     
 * (attack)[{MONSTER_NAME}, attack!]
     # speaker: Narrator
@@ -110,14 +110,14 @@ And now what am I to be, if I cannot be the famed scourge of this booming metrop
     
 * [Have you ever thought of being good?]
     # speaker: Wolfgang Crimson
-    Good? What use is goodness? Throughout my centuries long life, I have seen countless societies and people inhabit this area. And the happiest folk are rarely, if ever, the most good. 
+    Throughout my centuries long life, I have seen countless societies inhabit this valley, and the happiest folk are rarely, if ever, the most "good."
     * * [What do you want to do?] 
             
 - 
 # speaker: Wolfgang Crimson
 For the whole of my undead life, all I have wanted is to be the city's fearsome monster. What else is a vampire to do?
 # speaker: Wolfgang Crimson
-If I cannot be the most fearsome, what use is there in this vapid misery known as existence?
+If I cannot be the biggest monster, what use is there in this vapid misery known as existence?
 # speaker: Narrator
 <i>With that, the vampire morphs into a bat. They give a forlorn screech as they ascend up into the sky.</i>
 
