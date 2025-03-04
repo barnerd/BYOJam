@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://dvvvs70p5muoe"]
+[gd_scene load_steps=68 format=4 uid="uid://dvvvs70p5muoe"]
 
 [ext_resource type="Script" path="res://game_board/game_board.gd" id="1_7t848"]
 [ext_resource type="Script" path="res://game_board/tile_space.gd" id="2_lrcl5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cas3r84ny1jpv" path="res://ArtAssets/2D Art/Tiles/Lower-Fear.png" id="5_8ehxq"]
 [ext_resource type="Material" uid="uid://cpjppc536ejyp" path="res://ArtAssets/Materials/gameboard/springboard.tres" id="5_ukrwy"]
 [ext_resource type="Material" uid="uid://bn6bbxnd4p1lf" path="res://ArtAssets/Materials/gameboard/perm_fear_mat.tres" id="6_xq213"]
+[ext_resource type="Material" uid="uid://e43v25n1y6o" path="res://ArtAssets/Materials/gameboard/food_mat.tres" id="9_3otdf"]
 [ext_resource type="Script" path="res://addons/destronoi/DestronoiNode.gd" id="9_5hcxt"]
 [ext_resource type="Material" uid="uid://hvrxf81crmwp" path="res://ArtAssets/Materials/house_mat.tres" id="9_kntqi"]
 [ext_resource type="Script" path="res://Destruction/destructable.gd" id="9_v4c7f"]
@@ -707,7 +708,7 @@ shadow_mesh = SubResource("ArrayMesh_je278")
 script = ExtResource("1_7t848")
 board_spaces = [NodePath("BoardSpaces/Start"), NodePath("BoardSpaces/Space1"), NodePath("BoardSpaces/Space2"), NodePath("BoardSpaces/Space3"), NodePath("BoardSpaces/Space4"), NodePath("BoardSpaces/Space5"), NodePath("BoardSpaces/Space6"), NodePath("BoardSpaces/Space7"), NodePath("BoardSpaces/Space8"), NodePath("BoardSpaces/Space9"), NodePath("BoardSpaces/Space10"), NodePath("BoardSpaces/Space11")]
 buildings = [NodePath("Buildings/Building1"), NodePath("Buildings/Building2"), NodePath("Buildings/Building3"), NodePath("Buildings/Building4"), NodePath("Buildings/Building5"), NodePath("Buildings/Building6"), NodePath("Buildings/Building7"), NodePath("Buildings/Building8"), NodePath("Buildings/Building9"), NodePath("Buildings/Building10"), NodePath("Buildings/Building11"), NodePath("Buildings/Building12")]
-max_fear = 5
+max_fear = 6
 fear_per_turn = 1
 
 [node name="BoardSpaces" type="Node3D" parent="."]
@@ -852,7 +853,7 @@ mesh = SubResource("ArrayMesh_28dty")
 skeleton = NodePath("")
 
 [node name="space7" type="MeshInstance3D" parent="GameBoardGeo"]
-material_override = ExtResource("5_ukrwy")
+material_override = ExtResource("9_3otdf")
 mesh = SubResource("ArrayMesh_jh1gd")
 skeleton = NodePath("")
 
