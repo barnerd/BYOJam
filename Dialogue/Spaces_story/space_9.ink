@@ -23,14 +23,18 @@
 #speaker: Columbone
 Ah excuse me, you two! Would you be able to tell me what time it is? 
 
-I seem to have forgotten my watch at home. You know, my wife is always having to remind me of all the important clutter I leave behind stormin’  in and out of the house on business. By Dog, I feel terrible, and I need to get better. 
+I seem to have forgotten my watch at home. You know, my wife is always having to remind me of all the important clutter I leave behind stormin’  in and out of the house on business. 
+
+By Dog, I feel terrible, and I need to get better. 
 
 Anywho I’m sorry for rambling, I do that sometimes, what’s the time again?
 
 +[It’s 3:02 PM.] 
 -
 #speaker: Columbone
-Ah! Thank you, thank you! I gotta get back down to the station, I’m late for writing up a report on this case I’m investigating. Something about a monster terrorizing the town, and scaring everybody. 
+Ah! Thank you, thank you!
+
+I gotta get back down to the station, I’m late for writing up a report on this case I’m investigating. Something about a monster terrorizing the town, and scaring everybody. 
 
 Either of you haven’t happened to see anything of the sort, have you?
 
@@ -50,7 +54,9 @@ Thanks! I’ll be happy to report this all a bunch of baloney or a confused pers
 #speaker: Columbone
 Oh geez! What are the odds of running into you two here? I happened to be in this part of town to grab a bowl at my favorite chow place. 
 
-Actually, that’s not true. My wife has been telling me I gotta be more honest even when it’s socially awkward. I really came out here to see you two. I don’t want to appear presumptuous but the situation demanded a follow up.
+Actually, that’s not true. My wife has been telling me I gotta be more honest even when it’s socially awkward. 
+
+I really came out here to see you two. I don’t want to appear presumptuous but the situation demanded a follow up.
 
 Have you happened to see anything suspicous lately regarding that monster rumor?
 
@@ -61,7 +67,9 @@ Have you happened to see anything suspicous lately regarding that monster rumor?
     #speaker: Columbone
     Good, good. I'm very pleased to hear that, I'll be on my way then. Sorry to have bothered you both. 
     
-    But before I do, you know what the oddest thing is that I can't piece together about this case is? It's why everyone keeps saying that this monster is a bug of some sort. 
+    But before I do, you know what the oddest thing is that I can't piece together about this case is? 
+    
+    It's why everyone keeps saying that this monster is a bug of some sort. 
     
     I mean that's plain ridiculous, I've never seen a bug that big. I mean have you {MONSTER_NAME}? Oh! I'm sorry I meant you {pc_name}. 
     
@@ -109,7 +117,9 @@ Hmm... maybe that a good sign then. I figured that it was all a rumor. Carry on 
 #speaker: Columbone
 Dog garn, am I happy to see you both! 
 
-I have a very promising lead on this case as soon as I was ready to toss it out. I thought that you two both deserved to hear, after all how I've been bugging you like a mosquito and all that.
+I have a very promising lead on this case as soon as I was ready to toss it out. 
+
+I thought that you two both deserved to hear, after all how I've been bugging you like a mosquito and all that.
 
 Turn's out that the monster and their handler have a name the're going by! It's... it's... oh now what was it? Oh yes! Bluey and Mothra!
 
@@ -129,7 +139,9 @@ Turn's out that the monster and their handler have a name the're going by! It's.
     
     We thought "Oh it's only a little guy, he won't be much trouble. He's a reptile, they don't need much anyway if we're away a lot." 
     
-    But the little guy wasn't going to be tiny forever, and before we knew it he was too much. We had to let him go. Properly of course, to a proper zoo he'd be taken care of, not down the toilet. 
+    But the little guy wasn't going to be tiny forever, and before we knew it he was too much. We had to let him go. 
+    
+    Properly of course, to a proper zoo he'd be taken care of, not down the toilet. 
     
     What I'm trying to say is that sometimes the responsibility of another being outweighs where we ourselves are at in life. 
     
@@ -137,7 +149,9 @@ Turn's out that the monster and their handler have a name the're going by! It's.
     
     {pc_name} I'm not gonna take you in, you're a kid after all and nobody has passed away from this all, thank Dog. But it's better to let {MONSTER_NAME} go. 
     
-    So take a couple days and then say goodbye, okay kid? I won't bother you again, but if if something happens one more time then it's game over you hear!
+    So take a couple days and then say goodbye, okay kid? 
+    
+    I won't bother you again, but if if something happens one more time then it's game over you hear!
 
 ->DONE
 }
@@ -152,13 +166,17 @@ Turn's out that the monster and their handler have a name the're going by! It's.
 
 ==space_9_interaction_5==
 #speaker: Rosey
-Columbone is nowhere to be found, but you always seem to feel his presence watching your every move... maybe it's best to get away from this space. FAST.
+Columbone is nowhere to be found, but you always seem to feel his presence watching your every move... 
+
+Maybe it's best to get away from this space. <i>FAST.</i>
 ->DONE
 
 
 === space_9_destroyed ===
 # speaker: Narrator
-This is where Columbone worked, solving cases from theft to Lupicide. Who wil the town turn to now to solve their future cases? If only Sherlock Bones were a real dog...
+This is where Columbone worked, solving cases from theft to Lupicide.
+
+Who wil the town turn to now to solve their future cases? If only Sherlock Bones were a real dog...
 
 ~ coin_flip_for_panic_generatior()
 {testing_in_ink:-> space_5|-> DONE}

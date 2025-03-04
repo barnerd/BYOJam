@@ -13,13 +13,17 @@
 ==space_10_interaction_1==
 #speaker: Narrator
 While out on a walk you two see Dogtor Leasha waving goodbye to a family as they walk out of her office. Upon seeing you two she waves hello.
-#speaker: Leasha
-Well who is this little guy? {pc_name}, I don’t think I’ve met them before.
 
-It’s my new mons— pet! Yeah, <i>pet</i>. His name is {MONSTER_NAME}. I adopted him recently from a family member who had a litter of uh… adorable little bundles of joy!
 #speaker: Leasha
-Well I’m glad to hear you’re getting outside and getting some exercise with them. But that’s only a part of what makes a healthy and happy life. 
+Well who is this very large creature? {pc_name}, I don’t think I’ve met him before.
 
+#speaker: Rosey
+He's my new mons— pet! His name is {MONSTER_NAME}, and he just kinda appeared in my room one day.
+
+I'm declaring him a <i>big bundle of joy!</i> Since I discovered him, I'm pretty sure I get to name his genus.
+
+#speaker: Leasha
+Well I’m glad to hear you’re getting outside and getting him some exercise. But that’s only a part of what makes a healthy lifestyle.
 You two should stop by soon, you’re due for a check up soon anyways, {pc_name}. I’ll let you both go though, and take a sucker with you.
 #speaker: Narrator
 Now knowing how to help {MONSTER_NAME} grow into a happy and healthy pet, his stomach expands. More visits here will guarantee that continues.
@@ -37,7 +41,6 @@ While I’m happy to hear there’s <i>a veggie</i> in there, deep fried foods a
 
 You need balance! I’m prescribing some Kale with a tiny bit of olive oil and pepper instead. You’ll still get some good flavor that way.
     
-
 +[Baby spinach.]
 HOORAY! 
 
@@ -51,9 +54,11 @@ Say, a nice grilled chicken breast?
 
 ==space_10_interaction_3==
 #speaker: Leasha
-Welcome back {pc_name} and {MONSTER_NAME}, let’s take a look at you dear. Seems all in order, but I’m a bit concerned about hygiene. There seems to be a lot of goo around {MONSTER_NAME}’s mouth. 
+Welcome back {pc_name} and {MONSTER_NAME}, let’s take a look at you dear.
 
-I’m no absolute expert when it comes to the biology of… <i>adorable little bundles of joy </i>, 
+Seems all in order, but I’m a bit concerned about hygiene. There seems to be a lot of goo around {MONSTER_NAME}’s mouth. 
+
+I’m no absolute expert when it comes to the biology of… <i>big bundles of joy </i>, 
 
 but generally speaking good grooming practices usually improve self confidence and lead to longer lives. 
 
@@ -109,5 +114,7 @@ Leasha's office seems to be closed for the day. Either that or she really does m
 The clinic that once served the whole town is gone. 
 You look into {MONSTER_NAME}'s eyes. Surely he didn't mean to destroy <i>this</i> one. Him wrecking the place responsible for keeping the whole town healthy and safe, this must have been an accident. 
 ...Right?
+
+Hopefully this doesn't count as a warcrime.
 ~ coin_flip_for_panic_generatior()
 {testing_in_ink:-> space_10|-> DONE}

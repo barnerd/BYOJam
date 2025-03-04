@@ -47,26 +47,18 @@ Well darn, all I needed was a louder megaphone this whole time!
 Thanks for your help getting Whiskers down safely. I’ll be sure to tell Whiskers’ owner about the kind strangers who helped me out.
 ~ change_variable("fear", amount_b*-1)
 -> space_7_firetruck_ride
-+[Chuck your pet at the cat.]
++[Have {MONSTER_NAME} <i>attempt</i> to grab the cat.]
 
-#speaker: Narrator
-You gaze deep into {MONSTER_NAME}’s eyes. You ask: Do you trust me?
-#speaker: bug
-{MONSTER_NAME} thinks for a moment then nods with confirmation.
-#speaker: Narrator
-You scoop {MONSTER_NAME} up like a football and chuck him at Whiskers. 
-#speaker: bug
-<i>YA YEET!</i>
 #speaker: narrator
 In a flash, Whiskers eyes are greeted with the sight of something they’ve never witnessed before. 
 
 #speaker: bug 
-<b>Mmmnghggmmgmgngmgmgngmm</b>
+<b>Mmmnghggmmgmgngmgmgngmm... CHIRP!</b> 
 
 #speaker: Narrator
-Whiskers loosens their grasp on the tree branch. They leap into one of Ruby’s hands, and the other hand catches {MONSTER_NAME}.
+Whiskers loosens their grasp on the tree branch in terror, and they leap into one of Ruby’s hands {MONSTER_NAME}.
 	#speaker: Ruby
-A bit unorthodox if I say so myself, but hey, it worked! Good thing I played football back in highschool. Here’s your uh, <i>pet</i>, back. Thanks for the help.
+A bit unorthodox if I say so myself, but hey, it worked! Good thing I played football back in highschool. Thanks for the help.
 
 I gotta tell the squad down at the station about this one, hahahaa!
 ~ change_variable("fear", amount_b*-1)
@@ -76,7 +68,9 @@ I gotta tell the squad down at the station about this one, hahahaa!
 #speaker: Narrator
 	You see Ruby walking up the driveway of an elderly neighbor’s house.
 #speaker: Ruby
-Hey friends, happy to see you two again! Would you mind joining me for this wellness check? Old dog Barkson enjoys having fun visitors, and I forgot to bring the squad’s emotional support iguana, Larry, with me.
+Hey friends, happy to see you two again! Would you mind joining me for this wellness check? 
+
+Old dog Barkson enjoys having fun visitors, and I forgot to bring the squad’s emotional support iguana, Larry, with me.
 
 Plus Barkson likes giving away his spare change, so your good deed won’t go unrewarded. What do you say?
 +[Sure, let’s go {MONSTER_NAME}!]
@@ -84,7 +78,9 @@ Plus Barkson likes giving away his spare change, so your good deed won’t go un
 	#speaker: Narrator
 You, {MONSTER_NAME}, and Ruby go in and check on Old dog Barkson.
 
-He’s intrigued by {MONSTER_NAME} and asks to hear what hijinks you youths have gotten up to these days. After a few stories and a refreshing round of tea and cookies, he sends you on your way with ten bones. 
+He’s intrigued by {MONSTER_NAME} and asks to hear what hijinks you youths have gotten up to these days.
+
+After a few stories and a refreshing round of tea and cookies, he sends you on your way with ten bones. 
 ~ change_variable("fear", amount_b*-1)
 -> space_7_firetruck_ride
 
@@ -107,14 +103,18 @@ That’s right! Could you demonstrate for all these pups what that looks like?
 	#speaker:Narrator
 Sirens and lights are going off in a flurry as the firetruck stops across the street from you and {MONSTER_NAME}. Looking over, you see one of the local stores ablaze. 
 
-Ruby and her squad are already on the scene, attaching the hose to a fire hydrant and busting into the store to get everyone out. But for some reason the water isn’t coming out of the hose. 
+Ruby and her squad are already on the scene, attaching the hose to a fire hydrant and busting into the store to get everyone out. 
+
+But for some reason the water isn’t coming out of the hose. 
 
 That’s when you spot that in all the panic, a passing car ran over the hose, tearing open a hole. 
 
 +[Use {MONSTER_NAME}’s saliva to patch up the hose.]
 	
 #speaker: Ruby
-Thank you both! Come by the station sometime soon and I’ll be sure to give you two a tour. I wouldn’t have been able to put out that fire without your help!
+Thank you both! Come by the station sometime soon and I’ll be sure to give you two a tour. 
+
+I wouldn’t have been able to put out that fire without your help!
 ~ change_variable("fear", amount_b*-1)
 -> space_7_firetruck_ride
 
@@ -129,7 +129,9 @@ Why don’t you two come on down by the station sometime soon and I’ll give yo
 
 ==space_7_interaction_5==
 #speaker: Narrator
-Ruby invites you into the station for a tour, and everybody is delighted to see you here. There’s a banner with {MONSTER_NAME}’s name, a cake, and streamers galore.  
+Ruby invites you into the station for a tour, and everybody is delighted to see you here. 
+
+There’s a banner with {MONSTER_NAME}’s name, a cake, and streamers galore.  
 #speaker: Ruby
 Everybody was so impressed by your quick thinking at that fire, that we decided to celebrate and make {MONSTER_NAME} our station’s new mascot. What do you say?
 
@@ -138,7 +140,9 @@ Everybody was so impressed by your quick thinking at that fire, that we decided 
 #speaker: Ruby
 Hooray! Make room <i>Larry</i>, there’s a new member on the squad!
 #speaker: Narrator
-Larry, wearing his little firefighter helmet, snaps a fly out of the air with his tongue and blinks at {MONSTER_NAME}. He doesn’t really seem to know what's going on, but he’s enjoying the vibes.
+Larry, wearing his little firefighter helmet, snaps a fly out of the air with his tongue and blinks at {MONSTER_NAME}. 
+
+He doesn’t really seem to know what's going on, but he’s enjoying the vibes.
 ~ change_variable("fear", amount_b*-1)
 -> space_7_firetruck_ride
 
@@ -176,10 +180,16 @@ WHAT DO YOU MEAN WE ONLY HAVE WATER????!?!
 
 I THOUGHT WE WERE THE <i>FIRE</i> DEPARTMENT!!!</b>
 #speaker: Narrator
-Desks are flipped over, half the squad is running around, one firefighter has begun penning their will, and Ruby is backed into a corner as far away from the thing she’s pointing at on the floor… a spider.  
+Desks are flipped over, half the squad is running around, and one firefighter has begun penning their will.
+
+Ruby is backed into a corner as far away from the thing she’s pointing at on the floor… 
+
+a spider.  
 +[Have {MONSTER_NAME} deal with the spider.]
 #speaker: Narrator
-{MONSTER_NAME} swoops down to the floor, whispering to the spider. After a second it hops on {MONSTER_NAME}’s back and they leave the station together. Moments later {MONSTER_NAME} reenters, spiderless.
+{MONSTER_NAME} swoops down to the floor, whispering to the spider. After a second it hops on {MONSTER_NAME}’s back and they leave the station together. 
+
+Moments later {MONSTER_NAME} reenters, spiderless.
 #speaker: Ruby
 WHEW! I for sure thought the station was a goner. Fires are one thing, <i>but spiders</i>? Absolutely not! 
 
@@ -196,7 +206,9 @@ You and {MONSTER_NAME} look at each other and then back at the scene. The only c
 Finally close enough to the spider, Larry fwhips his tongue out, devouring the wretched beast. 
 
 #speaker: Ruby
-By Doggy I thought the station was a goner! I’m glad to see we still had someone with enough courage here. I’m repromoting you to the station mascot Larry, here’s your fire helmet back!
+By Doggy I thought the station was a goner! 
+
+I’m glad to see we still had someone with enough courage here. I’m repromoting you to the station mascot Larry, here’s your fire helmet back!
 #speaker: Narrator
 Ruby places the tiny helmet back on Larry’s head. Larry simply continues to wander the station looking for more bugs to eat. 
 
