@@ -16,11 +16,20 @@
 
 ==space_2_interaction_1==
 #speaker: Narrator
-The weather is gorgeous, so the lake is full of people out fishing today. However, most of them are having no luck. {MONSTER_NAME} is determined to see what a fish looks like though. 
+The weather is gorgeous, so the lake is full of people out fishing today. However, most of them are having no luck. 
 
-{MONSTER_NAME} darts away from your side towards the lake. Reaching a superspeed faster than your paws can carry you, they take off across the surface of the lake. Suddenly tons of fish start flopping out of the water trying to take a bite out of {MONSTER_NAME}’s body.
+#speaker: bug
+{MONSTER_NAME} is determined to see what a fish looks like though. 
 
-In the fishes' fruitless endeavors, their mouths become hooked, or their bodies land on the ground. This is the biggest bounty anyone has ever seen, plus {MONSTER_NAME} is ecstatic to have finally seen a fish!
+#speaker: Narrator
+{MONSTER_NAME} darts away from your side towards the lake. Reaching a superspeed faster than your paws can carry you, they take off across the surface of the lake. 
+
+Suddenly tons of fish start flopping out of the water trying to take a bite out of {MONSTER_NAME}’s body.
+
+In the fishes' fruitless endeavors, their mouths become hooked, or their bodies land on the ground. This is the biggest bounty anyone has ever seen, plus 
+
+#speaker: bug
+{MONSTER_NAME} is ecstatic to have finally seen a fish!
 ~ change_variable("hunger", amount_e)
 ->DONE
 	
@@ -38,7 +47,11 @@ Looks like last week’s ruckus might have caused a bit too much commotion, bett
 	#speaker: Narrator
 Another gorgeous day with perfect weather, and lots of families are out barbecuing. Almost everyone is playing fetch with their pets. Maybe joining a group would be fun!
 
-Everybody loves {MONSTER_NAME}! So much so that the ground is left much messier than before, and mud is plastered across all the pavilion buildings. Everyone has worked up an appetite from all the exercise, but thankfully there’s more than enough BBQ to go around. You’re even able to leave with a doggy bag of leftovers.
+Everybody loves {MONSTER_NAME}! So much so that the ground is left much messier than before, and mud is plastered across all the pavilion buildings. 
+
+Everyone has worked up an appetite from all the exercise, but thankfully there’s more than enough BBQ to go around. 
+
+You’re even able to leave with a doggy bag of leftovers!
 ~ change_variable("hunger", amount_e)
 ->DONE
 
@@ -57,20 +70,24 @@ Welp, another endeavor failed successfully. Better be more careful next time.
 #speaker: Narrator
 A few days ago there was a flyer for a cosplay contest taking place at the lake’s amphitheater today. Everybody is dressed up in such cool costumes! 
 
-There’s a Dwayne the Rock Johnson (though they may be more of a look alike than a cosplay, or is it actually him???), a Saber, a Joel and Ellie duo, a group doing the main characters from the Last Airbender, and a Godzilla who has recently stepped up on stage. 
+There’s a Dwayne the Rock Johnson (though they may be more of a look alike than a cosplay, or is it actually him???), 
+
+a Saber, a Joel and Ellie duo, a group doing the main characters from the Last Airbender, and a Godzilla who has recently stepped up on stage. 
 
 <i>Uh oh…</i>
-	
-{MONSTER_NAME} rushes at the Godzilla cosplayer with a buzzing fervor. The crowd begins to cheer with enthusiasm! The cosplayer is confused at first but starts to pose in different fighting stances, to which {MONSTER_NAME} screeches then unleashes a small beam that clips off the top of the Godzilla’s foam head. 
+#speaker: bug	
+{MONSTER_NAME} rushes at the Godzilla cosplayer with a buzzing fervor. The crowd begins to cheer with enthusiasm! 
+#speaker: Narrator
+The cosplayer is confused at first but starts to pose in different fighting stances, to which {MONSTER_NAME} screeches then unleashes a small beam that clips off the top of the Godzilla’s foam head. 
 
 The judges glance at each other then huddle to confer. 
-#speaker: Judge 1
+#speaker: Knight Squeaksworth
 I’ve never seen a better group cosplay!
-#speaker: Judge 2
+#speaker: Kayleigh
 The dramatic display, the effects and all, I’m awestruck!
-#speaker: Judge 3
+#speaker: Simon Cowell
 I hesitate to call that <i>perfection…</i>
-#speaker: Judge 1
+#speaker: Lotta
 Can it Cowell!
 #speaker: Narrator
 A 10, a 10, and a 9. A near perfect score!

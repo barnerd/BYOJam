@@ -52,14 +52,16 @@ Hey {pc_name} and {MONSTER_NAME}! I’ve gotten my creative spirit back lately. 
 Could I paint your portrait, {MONSTER_NAME}? 
 
 I don’t have any money to compensate you but you can take this Joyful Meal I got earlier, it even has a toy in it!
-#speaker: Narrator
+#speaker: bug
 {MONSTER_NAME} seems ecstatic to pose for their portrait, practicing through different styles and looks.
 
 +[Absolutely, Knight!]
 
 Knight begins painting and is silent for a bit before they speak…
 #speaker: Knight Squeaksworth
-I’ve heard rumblings from some people that {MONSTER_NAME} is a monster. My two cents is that those words aren’t kind things to say. Plus even if you were a monster {MONSTER_NAME}, you’re <i>the coolest</i> one I’ve ever met; and I’ve met scarier monsters out there. Monsters that we’d say look normal on the outside. 
+I’ve heard rumblings from some people that {MONSTER_NAME} is a monster. My two cents is that those words aren’t kind things to say. 
+
+Plus even if you were a monster {MONSTER_NAME}, you’re <i>the coolest</i> one I’ve ever met; and I’ve met scarier monsters out there. Monsters that we’d say look normal on the outside. 
 
 It’s their destructive words and actions which are deadlier than a laser beam or a crushed building. You can see the damage it caused then. The stuff that isn’t always visible roots itself deep. 
 
@@ -85,14 +87,21 @@ I don’t usually splurge much outside of art supplies, but you two deserve a tr
 
 ==space_5_interaction_5==
 #speaker: Knight Squeaksworth
-{MONSTER_NAME}, {pc_name}! I’m blessed to see you two again! Luckily, I’ve got a new gallery show to display all my latest work at, and as a result I have a bit of pocket change to spare. I insist we all have a meal together, on me. I won’t hear no for an answer!
+{MONSTER_NAME}, {pc_name}! I’m blessed to see you two again! 
+
+Luckily, I’ve got a new gallery show to display all my latest work at, and as a result I have a bit of pocket change to spare. I insist we all have a meal together, on me. 
+
+I won’t hear no for an answer!
 #speaker: Narrator
 Midway through your meal…
  #speaker: Knight Squeaksworth
 I’ve been meaning to ask… {MONSTER_NAME}, in your opinion, do you believe that you’re a monster?
-#speaker:Narrator
+#speaker: bug
 You take a moment and look deep into {MONSTER_NAME}’s eyes and gleam his answer.
+
+
 +[No.]
+
 #speaker: Knight Squeaksworth
 Hmmm… hm. Well, I’m glad to hear that you aren’t buying into what some people might say about you. Even if you were a monster though {MONSTER_NAME}, then I’d accept you all the same, whoever you are, or whoever you may be. 
 
@@ -103,7 +112,7 @@ Thank you for being vulnerable and answering my question {MONSTER_NAME}, it was 
 <i>Oh and would you look at that!</i> They’ve even got key lime pie on the specials menu! I could go for a slice…
 	~ change_variable("hunger", amount_c) 
 	->DONE
-	
+
 +[ “Yes.”]
 
 #speaker: Knight Squeaksworth
@@ -123,18 +132,21 @@ I’m leaving this place soon. Don’t tear up my darlings, it won’t be foreve
 
 At first I wanted to leave here to record the atrocities of the real monsters out there that I’ve seen. To hold their feet to the fire so someone knows what they do in the light and the dark. 
 
-However, I don’t want to <i>only</i> create those pieces anymore. I’d rather create moments of joy; experiences we sometimes forget, or that we have trouble recognizing everyday. Forever sulking and grieving will <i>NOT</i> be the whole of the collection.
+However, I don’t want to <i>only</i> create those pieces anymore. I’d rather create moments of joy; experiences we sometimes forget, or that we have trouble recognizing everyday. 
+
+Forever sulking and grieving will <i>NOT</i> be the whole of the collection.
 
 I promise to send letters to you both about my adventures. Maybe you two will be inspired to venture outside of this cozy little town as well.
  
 +[Hug Knight goodbye]
-#speaker: Knight Squeaksworth
+
+
 I love you both so much. Ciao bella, {MONSTER_NAME} and {pc_name}!
 ~ change_variable("hunger", amount_c) 
 ->DONE
 
 ==space_5_interaction_7==
-#speaker:Narrator
+#speaker: Narrator
 A letter addressed to {MONSTER_NAME} and {pc_name} from Knight Squeaksworth is handed to you by the local postdog. 
 #speaker: Knight Squeaksworth
 Dear {MONSTER_NAME} and {pc_name},
@@ -156,11 +168,15 @@ Dear {MONSTER_NAME} and {pc_name},
 
 There’s been some important moments of reflection in my life as of late.
 
-When I began creating my newest collection in the town, I placed the responsibility solely on your two shoulders. But my therapist reminded me of all the effort I put in, and how even when I place the control outside of myself, I’m the one doing the work. How I bring my value to my creations, not that my creations determine my value.
+When I began creating my newest collection in the town, I placed the responsibility solely on your two shoulders. 
+
+But my therapist reminded me of all the effort I put in, and how even when I place the control outside of myself, I’m the one doing the work. How I bring my value to my creations, not that my creations determine my value.
 
 If you felt indebted somehow or that you had to do what I asked, I apologize. Or rather, thank you two for being kind friends. You two are wonderful beings. 
 
-For your support, {MONSTER_NAME} and {pc_name}, I’ve included a small parcel of beginner art supplies, as well as some of the local candies from where I’m visiting. Go forth, dream big, dream beautiful, and create in whatever form it takes! 
+For your support, {MONSTER_NAME} and {pc_name}, I’ve included a small parcel of beginner art supplies, as well as some of the local candies from where I’m visiting. 
+
+Go forth, dream big, dream beautiful, and create in whatever form it takes! 
 
 Until next time,
 —Knight Squeaksworth
@@ -171,7 +187,9 @@ A collection of art supplies and an assortment of foreign candies has been gifte
 
 ==space_5_interaction_9==
 #speaker: Rosey
-While walking through the art museum you ponder what Knight would have to say about some of these pieces. Though on second thought, they'd probably be answering your questions with more questions directed towards you. Maybe they'd be better as a docent and not a companion here.
+While walking through the art museum you ponder what Knight would have to say about some of these pieces. Though on second thought, they'd probably be answering your questions with more questions directed towards you. 
+
+Maybe they'd be better as a docent and not a companion here.
 ->DONE
 
 === space_5_destroyed ===
@@ -180,7 +198,7 @@ This is where Knight Squeaksworth lived.
 A budding artist who had yet to see their full potential.
 # speaker: Rosey
 And now I wonder if they ever will... What do you think, bud?
-# speaker: Narrator
+# speaker: bug
 {MONSTER_NAME} rolls around in their paints, painting his shell a brilliant ochre and cerulean blue.
 ~ coin_flip_for_panic_generatior()
 {testing_in_ink:-> space_5|-> DONE}

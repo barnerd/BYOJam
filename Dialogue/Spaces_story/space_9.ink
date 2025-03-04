@@ -26,14 +26,14 @@ Ah excuse me, you two! Would you be able to tell me what time it is?
 I seem to have forgotten my watch at home. You know, my wife is always having to remind me of all the important clutter I leave behind stormin’  in and out of the house on business. By Dog, I feel terrible, and I need to get better. 
 
 Anywho I’m sorry for rambling, I do that sometimes, what’s the time again?
-#speaker: Rosey
+
 +[It’s 3:02 PM.] 
 -
 #speaker: Columbone
 Ah! Thank you, thank you! I gotta get back down to the station, I’m late for writing up a report on this case I’m investigating. Something about a monster terrorizing the town, and scaring everybody. 
 
 Either of you haven’t happened to see anything of the sort, have you?
-#speaker: Rosy
+
 +[Nope. Can’t say we have, sorry.]
 -
 ~ change_variable("fear", amount_b*-1)
@@ -106,7 +106,7 @@ Hmm... maybe that a good sign then. I figured that it was all a rumor. Carry on 
 ->DONE
 
 ==space_9_interaction_4==
-
+#speaker: Columbone
 Dog garn, am I happy to see you both! 
 
 I have a very promising lead on this case as soon as I was ready to toss it out. I thought that you two both deserved to hear, after all how I've been bugging you like a mosquito and all that.
@@ -125,11 +125,15 @@ Turn's out that the monster and their handler have a name the're going by! It's.
     
    <i>Sigh</i>
     
-    Look, when me and my wife were engaged we decided on to get an alligator as a pet. A little one. We thought "Oh it's only a little guy, he won't be much trouble. He's a reptile, they don't need much anyway if we're away a lot." 
+    Look, when me and my wife were engaged we decided on to get an alligator as a pet. A little one. 
+    
+    We thought "Oh it's only a little guy, he won't be much trouble. He's a reptile, they don't need much anyway if we're away a lot." 
     
     But the little guy wasn't going to be tiny forever, and before we knew it he was too much. We had to let him go. Properly of course, to a proper zoo he'd be taken care of, not down the toilet. 
     
-    What I'm trying to say is that sometimes the responsibility of another being outweighs where we ourselves are at in life. It doesn't mean we don't love them, but we need to grow ourselves more before we can give them the proper love and care tthey deserve. 
+    What I'm trying to say is that sometimes the responsibility of another being outweighs where we ourselves are at in life. 
+    
+    It doesn't mean we don't love them, but we need to grow ourselves more before we can give them the proper love and care tthey deserve. 
     
     {pc_name} I'm not gonna take you in, you're a kid after all and nobody has passed away from this all, thank Dog. But it's better to let {MONSTER_NAME} go. 
     

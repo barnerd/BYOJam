@@ -33,13 +33,17 @@ Your parents have been hounding you to go in for a check up, and now even Leasha
 Now when it comes to diet what have you been feeding {MONSTER_NAME}?
 
 +[Deep fried buffalo kale!]
-While I’m happy to hear there’s <i>a veggie</i> in there, deep fried foods aren’t something to consume in vast amounts. You need balance! I’m prescribing some Kale with a tiny bit of olive oil and pepper instead. You’ll still get some good flavor that way.
+While I’m happy to hear there’s <i>a veggie</i> in there, deep fried foods aren’t something to consume in vast amounts. 
+
+You need balance! I’m prescribing some Kale with a tiny bit of olive oil and pepper instead. You’ll still get some good flavor that way.
     
 
 +[Baby spinach.]
 HOORAY! 
 
-That’s a great, heart healthy choice. Seems like you’re already on top of a good diet. But don’t forget to balance it out. Why don’t you try to incorporate some protein as well too. Say, a nice grilled chicken breast?
+That’s a great, heart healthy choice. Seems like you’re already on top of a good diet. But don’t forget to balance it out. Why don’t you try to incorporate some protein as well too. 
+
+Say, a nice grilled chicken breast?
 
 -Please come back next week. You’re fine {pc_name}, but I’d like to see how {MONSTER_NAME} is doing. 
 ~ change_variable("hunger", amount_c) 
@@ -49,7 +53,9 @@ That’s a great, heart healthy choice. Seems like you’re already on top of a 
 #speaker: Leasha
 Welcome back {pc_name} and {MONSTER_NAME}, let’s take a look at you dear. Seems all in order, but I’m a bit concerned about hygiene. There seems to be a lot of goo around {MONSTER_NAME}’s mouth. 
 
-I’m no absolute expert when it comes to the biology of… <i>adorable little bundles of joy </i>, but generally speaking good grooming practices usually improve self confidence and lead to longer lives. 
+I’m no absolute expert when it comes to the biology of… <i>adorable little bundles of joy </i>, 
+
+but generally speaking good grooming practices usually improve self confidence and lead to longer lives. 
 
 I’d like to see a tiny bit more care taken of {MONSTER_NAME}’s appearance next time, {pc_name}, but otherwise solid work. It seems you two get along well. 
 

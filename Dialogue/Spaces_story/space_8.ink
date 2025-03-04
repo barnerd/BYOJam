@@ -36,7 +36,9 @@ EEK! I didn't think something more horrifying was possible! Though.. it kinda wo
 #speaker: Kayleigh
 Welcome back my lovlies! 
 
-I've got a spectacular idea just for you two. What could be cuter than a great pair of shoes? Absolutely nothing! Why don't you two both look around and pick out something to show that amazing personality of yours!
+I've got a spectacular idea just for you two. What could be cuter than a great pair of shoes? Absolutely nothing! 
+
+Why don't you two both look around and pick out something to show that amazing personality of yours!
 
 +[FiveFinger shoes.]
 Well, thats certainly a <i>choice</i>... especially when you only have one toe per foot.
