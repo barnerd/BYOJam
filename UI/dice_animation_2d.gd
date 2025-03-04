@@ -6,7 +6,7 @@ signal dice_rolled(selected_value: int, rolled_values: Array[int])
 var dice_prefab: PackedScene = preload("res://characters/player/dice_pool/dice_2d.tscn")
 var dice_pool: Array[Dice2D] = []
 
-@onready var dice_container: Container = $GridContainer
+@onready var dice_container: Container = $MarginContainer/MarginContainer/GridContainer
 
 
 func _ready() -> void:

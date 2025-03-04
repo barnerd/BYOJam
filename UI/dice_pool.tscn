@@ -38,17 +38,18 @@ theme_override_constants/separation = 0
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme_override_constants/h_separation = 50
 columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(145, 145)
 layout_mode = 2
 texture = ExtResource("1_tqqn8")
 expand_mode = 1
 stretch_mode = 4
 
 [node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(145, 145)
 layout_mode = 2
 texture = ExtResource("2_t0lip")
 expand_mode = 1
