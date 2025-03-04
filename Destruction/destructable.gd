@@ -1,15 +1,15 @@
 class_name Destructable
 extends Node
 
-var thread: Thread = Thread.new()
+#var thread: Thread = Thread.new()
 
 @onready var rigid_body: RigidBody3D = get_node('RigidBody3D')
 @onready var destronoi_node: DestronoiNode = get_node('RigidBody3D/DestronoiNode')
 
 
 # Thread must be disposed (or "joined"), for portability.
-func _exit_tree() -> void:
-	thread.wait_to_finish()
+#func _exit_tree() -> void:
+	#thread.wait_to_finish()
 
 
 func generate_destruction_mesh() -> void:
@@ -18,7 +18,8 @@ func generate_destruction_mesh() -> void:
 
 
 func destroy() -> void:
-	thread.start(generate_destruction_mesh, Thread.PRIORITY_LOW)
+	generate_destruction_mesh()
+	#thread.start(generate_destruction_mesh, Thread.PRIORITY_LOW)
 
 
 func run_destruction() -> void:
