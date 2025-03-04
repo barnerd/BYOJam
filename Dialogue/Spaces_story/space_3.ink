@@ -34,11 +34,13 @@ But if you miss a day of service, we won't chastise you. You'll just get a sligh
 Now, why don't you head in? I hear Elijah, the youth pastor, wanted to speak with you.
 + [Proceed]
 
+~ get_variable("current_day")
 ~ day_last_visited = current_day
 -> space_3_interaction_1
 
 
 === space_3_usher === 
+~ get_variable("current_day")
 {
 - day_last_visited == current_day + 1:
     /// Reward for coming to church multiple days in a row.
@@ -65,6 +67,7 @@ Now, why don't you head in? I hear Elijah, the youth pastor, wanted to speak wit
     Be that as it may, you are always welcome here. Speaking of, enjoy a small treat for stopping by!
 }
 
+~ get_variable("current_day")
 ~ day_last_visited = current_day
 
 {
@@ -142,58 +145,64 @@ You return to church and see Elijah pacing in front of his pulpit.
 # speaker: Elijah 
 It's a funny thing, {pc_name}. I was giving the nine o' clock sermon on the authority of Dog in our lives. 
 # speaker: Elijah 
-How She is the ultimate knower and power in our lives, the world. That She worked through cosmic, mathematic, genelogical, and evolutionary forces to create existence and life as we know it. 
+I spoke about how She is the ultimate power in our universe who used cosmic, mathematic, genelogical, and evolutionary forces to create existence and life as we know it. 
 # speaker: Elijah 
 This is what I've believed all my life, and then what crosses my mind but an image of your pet scuttling by.
 # speaker: Elijah 
-I mean, your bug defies physics, the one true Dog's very laws of the universe.
+I mean, your bug defies the tenets of physics which are Dog's laws of the universe!
 # speaker: Elijah 
-You're feeding it a couple pizzas and all of a sudden it's the size of a three story building?
+You just feed him a few pizzas, and all of a sudden he's the size of a three story building? How does that make any sense?!
 # speaker: Elijah 
-Your pet, she isn't just physically problematic-- she's impossible! Scientifically, physically, and ecclesiastically. 
+Your pet isn't just physically problematic-- he's impossible! Scientifically, physically, and I'm realizing... <i>ecclesiastically.</i>
 # speaker: Elijah 
-I scoured the Good Boy Book, but there is nothing. Nothing that tells me how I'm supposed to make sense of such a thing.
+I scoured the Good Boy Book, but there is nothing-- <i>nothing</i> that tells me how I'm supposed to make sense of such a thing.
 * [You worry too much.]
     # speaker: Elijah 
-    I know I do, but this is different. I feel like my whole religion is unraveling before my very eyes...
+    I know I do, but this is different. I feel like my whole belief system and understanding of the universe is unraveling before my very eyes...
 
 * [Call the pope!]
     # speaker: Elijah 
     I tried, but he just kept telling me to let that "old bug" fly out the window? 
     # speaker: Elijah 
-     Maybe that's some kind of papal riddle, but I don't know. He's twenty-two which is ancient in dog years...
+     Maybe that's some kind of papal riddle, but he's twenty-two which is pretty old in dog years...
     
 - 
 # speaker: Elijah 
-But I shouldn't trouble you with this. Besides I still have to prepare for the eleven o' clock sermon...
+But I shouldn't trouble you with this. Besides I still have to prepare for the eleven o' clock sermon. 
+Somehow in the middle of this, I still have to go to the pulpit and pretend that I know what I'm talking about.
 {testing_in_ink:-> space_3|-> DONE}
 
 === space_3_interaction_4 ===
 # speaker: Narrator
 You find Elijah in the church gym alone, shooting free throws. 
+He seems distant and uncharacteristically melancholy compared to his usual chipper if cringe-worthy self.
 # speaker: Elijah 
 Oh, hey there, {pc_name}. You think I've got a shot at making the NBA this year, or what? 
 # speaker: Narrator
 He shoots and doesn't even hit the rim.
 # speaker: Elijah 
-I came from a big litter and when I was a kid, the court was the one place I could be alone with my thoughts. 
+I came from a big litter and when I was a kid, the basketball court was the one place I could be alone with my thoughts. 
 # speaker: Elijah
-It's funny. When I took the cloth, the bishop said to be on guard against the evils of the world, all the temptations to turn away from Her truth. 
+It's funny. When I took the cloth, the bishop said to be on guard against the evils of the world and its many temptations to turn away from Her truth. 
 # speaker: Elijah
 So imagine my surprise when the thing that has me question everything is a giant bug kept by a member of my congregation. 
-# speaker: Elijah
+# speaker: Narrator
 He shoots. He hits the rim, but the ball bounces out. 
  
 * [What will you do?]
     # speaker: Elijah
     It's written that the one true Dog knows our past, present, and even our future. So even while I don't know what I'm going to do, somehow She does. 
     # speaker: Elijah
-    Maybe that should give me comfort. Knowing that there is a future where I can live with this thing. That there'll be a time when I don't wake up confused and questioning what feels like every choice I made before. 
+    Maybe that should give me comfort. Knowing that there is a future where I can live with this thing. 
+    That there'll be a time when I don't wake up confused and questioning what feels like every choice I made before. 
+    I shouldn't lay this all on you, {pc_name}. Then again, maybe it's good for kids to see that no one, not adults or ordained priests  have it all figured out...
+    # speaker: Elijah
+    We're all out here, just trying to piece it together. 
 * [<i>Say nothing</i>]
     # speaker: Elijah
     I want to keep the faith. I really do. But it's hard to see living proof of something that exists outside everything I thought I knew.
     # speaker: Elijah
-    I shouldn't lay this all on you, {pc_name}. Then again, maybe it's good for kids to see that no one, not adults or ordained priests truly have it all figured out...
+    I shouldn't lay this all on you, {pc_name}. Then again, maybe it's good for kids to see that no one, not adults or ordained priests  have it all figured out...
     # speaker: Elijah
     We're all out here, just trying to piece it together. 
 
@@ -201,14 +210,14 @@ He shoots. He hits the rim, but the ball bounces out.
 # speaker: Narrator
 He shoots. The ball circles the rim before dropping down. 
 # speaker: Elijah
-Boom! Call the scouting agent. I'm trading the cloth for a b-ball jersey!
+Boom! Call the scouting agent. I'm trading the cloth for a b-ball jersey! Kidding of course...
 # speaker: Elijah
-Although while I'm waiting, maybe I should get started writing tomorrow's sermon. Plus, there's a new leave-in conditioner I've been meaning to try...
+Anyhow I should probably get started writing tomorrow's sermon. Plus, there's a new leave-in conditioner I've been meaning to try...
 {testing_in_ink:-> space_3|-> DONE}
 
 === space_3_interaction_5 ===
 # speaker: Narrator
-You arrive at the church and find Elijah sitting in the pews staring up at the empty podium. 
+You arrive at the church and find Elijah sitting in the pews staring up at the empty pulpit. 
 # speaker: Elijah
 Well, if it isn't my favorite parishoner! Don't tell the rest of my congregation I said that. 
 # speaker: Elijah
@@ -225,11 +234,11 @@ There's so much about my faith and the world I profoundly don't understand.
 # speaker: Elijah
 If heaven is real, is it a corpreal place? Do the laws of physics work there? 
 # speaker: Elijah
-How long did Dog exist in the silence and blackness of the world before she set the universe in motion to create us? 
+How long did Dog exist in the silence of the cosmos before she set the universe in motion and created us through billions of years of evolution beginning at a microscopic level?
 # speaker: Elijah
 And why us? Why not create a world sentient trees? Birds? Or Dog forbid: cats!
 # speaker: Elijah
-What is being alive if not accepting of powers and mysteries beyond our understanding?
+Then again, what is being alive if not accepting powers and mysteries beyond our understanding?
 {moth_origin_found == true: 
     # speaker: Rosey
     Actually, the moth comes from the tooth fairy, and--
@@ -248,6 +257,8 @@ And this living mystery that towers before us, what are we supposed to do but lo
 
 # speaker: Elijah
 Truly, I see now it is not my place to understand, but to love our confounding, joyful lives with all its mysteries that are not for us to solve.
+I don't know what this strange creature is, but I believe that he can find a place in the beauty of this strange and sometimes fearsome world.
+Thanks for beign such a good listener, {pc_name}. I won't forget your patience as I work this out.
 # speaker: Elijah
 Now come along. I'm doing a double shift at the soup kitchen and want to make sure I'm there early to set up.
 
@@ -255,8 +266,8 @@ Now come along. I'm doing a double shift at the soup kitchen and want to make su
 
 === space_3_interaction_6 ===
 # speaker: Elijah
-You return to the church and find Elijah back to his usual chipper, joyful self. 
-You spend a pleasant afternoon shooting hoops and enjoying the quiet of the afternoon. 
+You return to the church and find Elijah back to his usual chipper self with his truly enviable hair.
+You spend a pleasant afternoon shooting hoops and talking about the mysteries of the universe. 
 {testing_in_ink:-> space_3|-> DONE}
 
 

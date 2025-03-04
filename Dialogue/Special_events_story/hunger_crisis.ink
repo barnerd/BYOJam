@@ -12,10 +12,12 @@ I guess I won't be getting that Square Space partnership after all...
 -> DONE
 
 === space_2_destoryed_by_hunger ===
+# speaker: Narrator
 {MONSTER_NAME} eats the building and inhabitants of space_2. Oh no!
 -> DONE
 
 === space_3_destoryed_by_hunger ===
+# speaker: Narrator
 {MONSTER_NAME} is starving, ravenous. You manage to calm him down until he hears the tolling of the distant church bell. 
 Although to him, the noise is more of a dinner bell. 
 In the months to come, fringe religious newspapers will report that a demon tore its way through the underworld and ate the church whole for their sordid sins. 
@@ -23,6 +25,7 @@ The truth is far more banal. {MONSTER_NAME} was hungry, and he feasted on the ve
 -> DONE
 
 === space_4_destoryed_by_hunger ===
+# speaker: Narrator
 {you_chose_to_destroy_grandmas_house == false:
     # speaker: Narrator
     Grandma is nothing if not kind and generous. She always has something cooking in the oven for you and your friends.
@@ -36,6 +39,7 @@ The truth is far more banal. {MONSTER_NAME} was hungry, and he feasted on the ve
 -> DONE
 
 === space_5_destoryed_by_hunger ===
+# speaker: Narrator
 {MONSTER_NAME} eats the building and inhabitants of space_5. Oh no!
 -> DONE
 
@@ -49,18 +53,22 @@ It's hard to tell what's worse: giving those idiots more talking points or the g
 -> DONE
 
 === space_7_destoryed_by_hunger ===
+# speaker: Narrator
 {MONSTER_NAME} eats the building and inhabitants of space_7. Oh no!
 -> DONE
 
 === space_8_destoryed_by_hunger ===
+# speaker: Narrator
 {MONSTER_NAME} eats the building and inhabitants of space_8. Oh no!
 -> DONE
 
 === space_9_destoryed_by_hunger ===
+# speaker: Narrator
 {MONSTER_NAME} eats the building and inhabitants of space_9. Oh no!
 -> DONE
 
 === space_10_destoryed_by_hunger ===
+# speaker: Narrator
 {MONSTER_NAME} eats the building and inhabitants of space_10. Oh no!
 -> DONE
 

@@ -1,13 +1,13 @@
 VAR visited_basement = false
 
 == space_1_interaction_1_basement ==
-This is the basement
+
 
 
 {visited_basement == false:
     ~ visited_basement = true
     # speaker: Narrator
-    You take Lotta Scoops head down to the basement that serves as the house's library
+    You and Lotta Scoops head down to the basement that serves as the house's library.
     # speaker: Lotta
     This room is positioned directly below your bedroom, {pc_name}. Maybe something happened here that led to the arrival of that egg in your room?
 }
@@ -85,11 +85,11 @@ You complain about having no money to get new toys which you think is grounds fo
 
 == space_1_interaction_1_basement_journal ==
 # speaker: Lotta
-Ooh, what have we here? A secret journal!" 
-Let's see, it says here that it's written by your brother Ringo."
+Ooh, what have we here? A secret journal! 
+Let's see, it says here that it's written by your brother Ringo.
 The latest page is an entry of things {pc_name} says when you've got your mouth guard in." 
-It looks like the mouth guard really messed with your ability to talk normally..." 
-<i>My tother ith tho thupid!</i>" 
+It looks like the mouth guard really messed with your ability to talk normally... 
+"<i>My tother ith tho thupid!</i>" 
 "<i>Juth becuth Ringo can writhe, doesn't mean heath smarm!</i>" 
 "<i>Where ith my toof waist?</i>" 
 -> space_1_interaction_1_basement

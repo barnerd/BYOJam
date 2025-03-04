@@ -182,6 +182,9 @@ I baked these cookies, so you might as well have them.
 ...
 # speaker: Allison Wheeler
 Take care of yourself, grandkiddo.
+# speaker: Narrator
+Grandma SLAMS the door shut behind you as you and {MONSTER_NAME} leave.
+
 
 {MONSTER_NAME == "<i>Un-named Bug Friend</i>":
 * [Grandma, wait! I thought of a name for my bug!] 
@@ -222,7 +225,8 @@ Take care of yourself, grandkiddo.
     # speaker: Allison Wheeler
     I'm taking the day off to do some thinking. 
     # speaker: Allison Wheeler
-    You know, when you were a baby and your parents first moved to town, I was so excited! I couldn't wait to get a front row seat to watching you grow into an incredible young woman. 
+    You know, when you were a baby and your parents first moved to town, I was so excited! 
+    I couldn't wait to get a front row seat to watching you grow into an incredible young woman. 
     # speaker: Allison Wheeler
     But sometimes it's hard watching you get older and make different choices than I would have made for you. 
     # speaker: Allison Wheeler
@@ -259,9 +263,11 @@ Hey kiddo!
     I won't be mean this time, I promise.
 - 
 # speaker: Allison Wheeler
-What I wanted to say is that I don't understand you or your connection to this thing. But then I did some thinking and realized it's not a grandma's job to understand you or what you're up to.
+What I wanted to say is that I don't understand you or your connection to this thing. 
+But then I did some thinking and realized it's not a grandma's job to understand you or what you're up to.
 # speaker: Allison Wheeler
-    Honestly, the older I get, the more I realize how big and wild the world is. There's not enough smarts in this old gal to wrap her head around all the "what's-its" and "thing-a-ma-whatevers."
+    Honestly, the older I get, the more I realize how big and wild the world is. 
+    There's not enough smarts in this old gal to wrap her head around all the "what's-its" and "thing-a-ma-whatevers."
     # speaker: Allison Wheeler
     But it is a grandma's job to love and support her grandbaby, no matter who or <i>what</i> she drags home.
     # speaker: Allison Wheeler
