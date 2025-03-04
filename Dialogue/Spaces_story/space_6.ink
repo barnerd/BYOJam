@@ -78,7 +78,7 @@ And now again I find myself at a crossroads, and I am lost as to where I should 
 # speaker: Business Dodo
 Shall I stay the course and continue work at my family’s law firm? Or do I pursue my dream of opening a ceramics studio? 
 # speaker: Business Dodo
-Little girl, what do you think? My heart is out of practice leading me, so I turn to you in hopes that you haven't corrupted by the bitter vicissitudes of life.
+Little girl, what do you think? My heart is out of practice leading me, so I turn to you in hopes that you haven't been corrupted by life's bitter vicissitudes.
 
 * [Work for your parents and keep making that mo’nay] 
     ~ dodo_business = "money"

@@ -94,7 +94,7 @@ Luckily, I’ve got a new gallery show to display all my latest work at, and as 
 I won’t hear no for an answer!
 #speaker: Narrator
 Midway through your meal…
- #speaker: Knight Squeaksworth
+#speaker: Knight Squeaksworth
 I’ve been meaning to ask… {MONSTER_NAME}, in your opinion, do you believe that you’re a monster?
 #speaker: bug
 You take a moment and look deep into {MONSTER_NAME}’s eyes and gleam his answer.

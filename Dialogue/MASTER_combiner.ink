@@ -103,8 +103,8 @@ VAR very_strong_effect = 5
 
 /// LIST OF INK FUNCTIONS
 === function coin_flip_for_panic_generatior() ===
-~ temp dice_roll = RANDOM(1, 2)
-{dice_roll == 2:
+~ temp dice_roll = RANDOM(1, 4)
+{dice_roll == 4:
     # speaker: bug
     ~ change_variable("fear", amount_a)
     In that moment, you feel the <b>town panic</b> rising in fear of {MONSTER_NAME}...

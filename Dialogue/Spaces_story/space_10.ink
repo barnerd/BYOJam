@@ -61,7 +61,7 @@ I’d like to see a tiny bit more care taken of {MONSTER_NAME}’s appearance ne
 
 Pop back in soon!
 #speaker: Narrator
-Leasha see’s you both out
+Leasha sees you both out
 #speaker: Leasha
 And don’t forget, a balanced diet!
 	~ change_variable("hunger", amount_d)

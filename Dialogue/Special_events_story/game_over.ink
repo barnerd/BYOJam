@@ -5,9 +5,9 @@ You return home with {MONSTER_NAME} in tow.
 # speaker: Narrator
 It seemed like it was yesterday that your pet followed you around as a caterpillar or when you bodily rolled him along in cocoon form, crushing dogs' cars and gardens in your wake. 
 # speaker: Narrator
-But lately, he's taken to flying above, only coming down for food or to fly at bright lights including light houses, street signs, and Christmas decorations that the one annoying neighbor left up year round. 
+But lately, he's taken to flying above, only coming down for food or to fly at bright lights including light houses, street signs, and Christmas decorations from that annoying neighbor who leaves them up year round. 
 # speaker: Narrator
-But he flies down to you now with no new food or light source in sight. The ground shakes with his mighty form, but you stand firm before him. 
+But {MONSTER_NAME} flies down to you now with no new food or light source in sight. The ground shakes with his mighty form, but you stand firm before him. 
 # speaker: Narrator
 He stares deep into your eyes. Imperious. Fearsome. <i>Waiting.</i>
 
@@ -17,6 +17,7 @@ Looking at him, you feel...
     # speaker: Narrator
     {MONSTER_NAME} is your friend and despite everything, you know he would never let anything bad happen to you.
 * [Scared]
+    ~ get_variable("number_of_spaces_destroyed")
     {number_of_spaces_destroyed > 0:
         # speaker: Narrator
         You've seen {MONSTER_NAME} do terrible things. Ruins left in his wake. 
@@ -31,7 +32,7 @@ Looking at him, you feel...
     You have witnessed this creature grow at alarming, shocking speed. 
     {moth_origin_found == true: 
         # speaker: Narrator
-        You discovered he's created from the unfathomable powers of fey, but that does little to assuage your worries about what he is destined to become now that he has grown so large and so fearsome. 
+        You discovered he's created from the unfathomable powers of fey, but that does little to assuage your worries about what he is destined to become now that he towers over the tallest sky scrapers in town. 
     -else: 
         # speaker: Narrator
         You still have no idea where he came from and what terrible forces of the chaotic universe brought him forth. 
@@ -52,7 +53,7 @@ Looking at him, you feel...
 # speaker: Narrator
 Your pet stares at you, as if waiting your command. 
 # speaker: Narrator
-You take a deep breath. You're only six years, and you've got the whole world in the palm of your paws.
+You take a deep breath. You're only six years, and you've got the whole world in your paws.
 # speaker: Narrator
 <i>What do you want to do?</i>
 
@@ -73,9 +74,9 @@ You stroke under his chin just where he likes it.
 # speaker: Rosey
 Come on, you big goof. Let's get you some dinner.
 # speaker: Narrator
-We've got a whole life to get to, and I don't want to another minute getting to the good stuff!
+We've got a whole life to get to, and I don't want to waste another minute getting to the good stuff!
 # speaker: Narrator
-You and {MONSTER_NAME} soar up into the air and arrive home just in time for another meal. 
+You and {MONSTER_NAME} soar up into the air and arrive home just in time for dessert. 
 
 -> DONE
 
@@ -97,7 +98,7 @@ You wipe your eyes and watch as {MONSTER_NAME} takes off, flying higher and high
 # speaker: Rosey
 "I hope they have pizza on Alpha Centauri." 
 # speaker: Narrator
-He soars higher and higher and then he is gone to travel the stars beyond and the one beyond even that.
+He soars up, up, up and then he is gone to travel the stars and the places beyond even that.
 -> DONE
 
 
@@ -113,7 +114,7 @@ It is the right thing, you think, as you prepare him a pizza laced with an extra
 # speaker: Rosey
 Here you go, {MONSTER_NAME}. Eat up. 
 # speaker: Narrator
-Your pet regards you with recognition. Fury. For a moment you freeze. 
+Your pet regards you with recognition. Fury. For a moment, you freeze. 
 # speaker: Narrator
 But then he lowers his head, and he eats the meal bite by cheesey bite until he's consumed it all. He wipes his mouth with a pincer and gives a BURP that shatters windows up and down the block.
 # speaker: Narrator
@@ -121,11 +122,11 @@ It takes the poison a week to work its way though its system. He seems to regres
 # speaker: Narrator
 You sit up with him, watching his final moments. 
 # speaker: Narrator
-Though you brought about his end, you cared for him all his life, and you feel you owe it to him. 
+Though you brought about his end, you cared for him all his life, and you feel you owe him this at least. 
 # speaker: Narrator
 At last, he breathes his last, and then it is done. 
 # speaker: Narrator
-The town throws you a parade for slaying the terrible bug, and they dress you in a blood red dress and have you wave from atop his head that they drive through the town on a massive pickup truck.
+The town throws you a parade for slaying the terrible bug, and they dress you in a blood red dress and have you wave from atop his severed head that they drive through the town on a massive pickup truck.
 # speaker: Narrator
 Afterwards life resumes, and things somehow, impossibly go back to normal.
 # speaker: Narrator
@@ -144,7 +145,7 @@ Several missile sites go up in a burst in flames.
 # speaker: Narrator
 A pro-{MONSTER_NAME} campaign springs up overnight and has the perfect verisimilitude of a real grass roots organization. 
 # speaker: Narrator
-When they install you and {MONSTER_NAME} as chancellors of the world, it's not after a years long campaign of terror. 
+When they install you and {MONSTER_NAME} as chancellors of the world, it's not after a violent coup or from a years long campaign of terror. 
 # speaker: Narrator
 It's with a parade. Glowing articles in the papers and social media abuzz with messages about being carried forward into a brighter world on wings of hope. 
 # speaker: Narrator
