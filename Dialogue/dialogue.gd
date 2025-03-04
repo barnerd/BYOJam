@@ -24,7 +24,7 @@ var portrait_file_names: Dictionary = {
 	"kayleigh": "res://ArtAssets/2D Art/Characters/Kayleigh-Buzzbone.png",
 	"ruby": "res://ArtAssets/2D Art/Characters/Ruby-Ruffington.png",
 	"elijah": "res://ArtAssets/2D Art/Characters/Elijah-Truman.png",
-	"squeaksworth": "res://ArtAssets/2D Art/Characters/Knight-Squeaksworth.png",
+	"knight_squeaksworth": "res://ArtAssets/2D Art/Characters/Knight-Squeaksworth.png",
 	"leasha": "res://ArtAssets/2D Art/Characters/Dogtor-Leasha.png",
 }
 
