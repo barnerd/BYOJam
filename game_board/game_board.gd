@@ -92,6 +92,7 @@ func on_turn_taken(_turns: int) -> void:
 
 func change_fear(_delta: int) -> void:
 	current_fear += _delta
+	current_fear = max(current_fear, 0)
 	
 	if current_fear >= (max_fear + current_max_fear_bonus):
 		current_fear = (max_fear + current_max_fear_bonus)
@@ -124,7 +125,7 @@ func destroy_tile(_reason: String) -> void:
 		var building_to_destroy = non_destroyed_buildings[index]
 		non_destroyed_buildings.remove_at(index)
 		
-		#buildings[building_to_destroy].destroy()
+		buildings[building_to_destroy].destroy()
 
 
 func is_tile_destroyed(_space: int) -> bool:
